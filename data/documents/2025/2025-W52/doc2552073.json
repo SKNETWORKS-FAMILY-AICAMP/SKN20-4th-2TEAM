@@ -1,0 +1,14 @@
+{
+  "context": "The proposed framework integrates 2D material maps into 3D geometry using diffusion models and Gaussian Splatting, enhancing relighting and photorealism in reconstructed scenes. Manual modeling of material parameters and 3D geometry is a time consuming yet essential task in the gaming and film industries. While recent advances in 3D reconstruction have enabled accurate approximations of scene geometry and appearance, these methods often fall short in relighting scenarios due to the lack of precise, spatially varying material parameters. At the same time,diffusion modelsoperating on 2D images have shown strong performance in predicting physically based rendering (PBR) properties such asalbedo,roughness, andmetallicity. However, transferring these 2D material maps onto reconstructed 3D geometry remains a significant challenge. We propose a framework for fusing 2D material data into 3D geometry using a combination of novel learning-based and projection-based approaches. We begin by reconstructing scene geometry viaGaussian Splatting. From the input images, a diffusion model generates 2D maps foralbedo,roughness, and metallic parameters. Any existing diffusion model that can convert images or videos toPBRmaterials can be applied. The predictions are further integrated into the 3D representation either by optimizing an image-based loss or by directly projecting the material parameters onto the Gaussians usingGaussian ray tracing. To enhance fine-scale accuracy and multi-view consistency, we further introduce a light-weight neural refinement step (Neural Merger), which takes ray-traced material features as input and produces detailed adjustments. Our results demonstrate that the proposed methods outperform existing techniques in both quantitative metrics and perceived visual realism. This enables more accurate, relightable, and photorealistic renderings from reconstructed scenes, significantly improving the realism and efficiency of asset creation workflows in content production pipelines. 🌐https://matspray.jdihlmann.com/📃https://arxiv.org/abs/2512.18314💾https://github.com/cgtuebingen/MatSpray arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/matspray-fusing-2d-material-world-knowledge-on-3d-geometry-8272-2d3624e4 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552073",
+    "title": "MatSpray: Fusing 2D Material World Knowledge on 3D Geometry",
+    "authors": [
+      "Jan-Niklas Dihlmann"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/cgtuebingen/MatSpray",
+    "huggingface_url": "https://huggingface.co/papers/2512.18314",
+    "upvote": 8
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "DeContext defends against unauthorized in-context image editing by weakening cross-attention pathways in multimodal attention layers, preserving visual quality while blocking unwanted modifications. In-context diffusion modelsallow users to modify images with remarkable ease and realism. However, the same power raises serious privacy concerns: personal images can be easily manipulated for identity impersonation, misinformation, or other malicious uses, all without the owner's consent. While prior work has explored input perturbations to protect against misuse in personalized text-to-image generation, the robustness of modern, large-scale in-context DiT-based models remains largely unexamined. In this paper, we proposeDeContext, a new method to safeguard input images from unauthorized in-context editing. Our key insight is that contextual information from the source image propagates to the output primarily throughmultimodal attention layers. By injecting small, targeted perturbations that weaken thesecross-attention pathways,DeContextbreaks this flow, effectively decouples the link between input and output. This simple defense is both efficient and robust. We further show that earlydenoising stepsand specifictransformer blocksdominate context propagation, which allows us to concentrate perturbations where they matter most. Experiments onFlux KontextandStep1X-Editshow thatDeContextconsistently blocks unwanted image edits while preserving visual quality. These results highlight the effectiveness of attention-based perturbations as a powerful defense against image manipulation. ✨Image editing is awesome; but it can leak user information!🛡️ IntroducingDeContext: the first method to safeguard input images from unauthorized DiT-based in-context editing. 📄 Paper:https://arxiv.org/abs/2512.16625💻 Code:https://github.com/LinghuiiShen/DeContext🌐 Project Page:https://linghuiishen.github.io/decontext_project_page/ arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/decontext-as-defense-safe-image-editing-in-diffusion-transformers-3370-a86427c1 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551046",
+    "title": "DeContext as Defense: Safe Image Editing in Diffusion Transformers",
+    "authors": [
+      "Xingyi Yang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/LinghuiiShen/DeContext",
+    "huggingface_url": "https://huggingface.co/papers/2512.16625",
+    "upvote": 24
+  }
+}

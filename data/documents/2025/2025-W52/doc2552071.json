@@ -1,0 +1,12 @@
+{
+  "context": "FaithLens, a cost-efficient faithfulness hallucination detection model using advanced LLMs for training data synthesis and rule-based reinforcement learning, outperforms models like GPT-4.1 and o3 on 12 tasks with high-quality explanations. Recognizing whether outputs fromlarge language models (LLMs)containfaithfulness hallucinationis crucial for real-world applications, e.g.,retrieval-augmented generationandsummarization. In this paper, we introduceFaithLens, a cost-efficient and effectivefaithfulness hallucinationdetection model that can jointly providebinary predictionsand correspondingexplanationsto improvetrustworthiness. To achieve this, we first synthesize training data withexplanationsvia advanced LLMs and apply a well-defineddata filtering strategyto ensure label correctness,explanation quality, anddata diversity. Subsequently, we fine-tune the model on these well-curated training data as acold startand further optimize it withrule-based reinforcement learning, using rewards for bothprediction correctnessandexplanation quality. Results on 12 diverse tasks show that the 8B-parameterFaithLensoutperforms advanced models such as GPT-4.1 and o3. Also,FaithLenscan produce high-qualityexplanations, delivering a distinctive balance oftrustworthiness,efficiency, andeffectiveness. In this paper, we introduce FaithLens, a cost-efficient and effective faithfulness hallucination detection model that can jointly provide binary predictions and corresponding explanations to improve trustworthiness. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/faithlens-detecting-and-explaining-faithfulness-hallucination-9128-761ef9f4 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552071",
+    "title": "FaithLens: Detecting and Explaining Faithfulness Hallucination",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/S1s-Z/FaithLens",
+    "huggingface_url": "https://huggingface.co/papers/2512.20182",
+    "upvote": 8
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "The rapid proliferation of Large Language Models (LLMs) and diverse specialized benchmarks necessitates a shift from fragmented, task-specific metrics to a holistic, competitive ranking system that effectively aggregates performance across multiple ability dimensions. Primarily using static scoring, current evaluation methods are fundamentally limited. They struggle to determine the proper mix ratio across diverse benchmarks, and critically, they fail to capture a model's dynamic competitive fitness or its vulnerability when confronted with sequential, high-stakes tasks. To address this, we introduce the novel Competitive Swiss-System Dynamics (CSD) framework. CSD simulates a multi-round, sequential contest where models are dynamically paired across a curated sequence of benchmarks based on their accumulated win-loss record. And Monte Carlo Simulation (N=100,000 iterations) is used to approximate the statistically robust Expected Win Score (E[S_m]), which eliminates the noise of random pairing and early-round luck. Furthermore, we implement a Failure Sensitivity Analysis by parameterizing the per-round elimination quantity (T_k), which allows us to profile models based on their risk appetite--distinguishing between robust generalists and aggressive specialists. We demonstrate that CSD provides a more nuanced and context-aware ranking than traditional aggregate scoring and static pairwise models, representing a vital step towards risk-informed, next-generation LLM evaluation. Proposes Competitive Swiss-System Dynamics to rank LLMs across multiple benchmarks using dynamic pairings, Monte Carlo Estimated Win Score, and failure sensitivity analysis for risk-aware evaluation. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/llm-swiss-round-aggregating-multi-benchmark-performance-via-competitive-swiss-system-dynamics-139-489ecf70 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552081",
+    "title": "LLM Swiss Round: Aggregating Multi-Benchmark Performance via Competitive Swiss-System Dynamics",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.21010",
+    "upvote": 2
+  }
+}

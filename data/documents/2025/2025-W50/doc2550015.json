@@ -1,0 +1,18 @@
+{
+  "context": "An automated framework uses unsupervised decomposition and natural language descriptions to identify and explain visual representations in human brain fMRI data. Understanding how the human brain represents visual concepts, and in which brain regions these representations are encoded, remains a long-standing challenge. Decades of work have advanced our understanding of visual representations, yet brain signals remain large and complex, and the space of possible visual concepts is vast. As a result, most studies remain small-scale, rely on manual inspection, focus on specific regions and properties, and rarely include systematic validation. We present a large-scale, automated framework for discovering and explaining visual representations across the human cortex. Our method comprises two main stages. First, we discover candidate interpretable patterns infMRIactivity through unsupervised, data-driven decomposition methods. Next, we explain each pattern by identifying the set ofnatural imagesthat most strongly elicit it and generating a natural-language description of their shared visual meaning. To scale this process, we introduce an automated pipeline that tests multiple candidate explanations, assigns quantitative reliability scores, and selects the most consistent description for each voxel pattern. Our framework reveals thousands of interpretable patterns spanning many distinct visual concepts, including fine-grained representations previously unreported.  We present a large-scale, automated framework for discovering and explaining visual representations across the human cortex. Dive into BrainExplore!https://huggingface.co/spaces/mcosarinsky/BrainExplore-demoOur demo lets you discover hundreds of visual concepts hidden in different brain regions — and compare how they emerge under multiple decomposition strategies. An intuitive window into the visual cortex. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550015",
+    "title": "BrainExplore: Large-Scale Discovery of Interpretable Visual Representations in the Human Brain",
+    "authors": [
+      "Navve Wasserman",
+      "Matias Cosarinsky",
+      "Yuval Golbari",
+      "Antonio Torralba",
+      "Tamar Rott Shaham"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.08560",
+    "upvote": 38
+  }
+}

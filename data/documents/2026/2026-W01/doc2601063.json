@@ -1,0 +1,16 @@
+{
+  "context": "A novel reward modeling approach called Dopamine-Reward addresses limitations in reinforcement learning for robotics by introducing a step-aware process reward model and theoretically sound reward shaping to improve policy learning efficiency and generalization. The primary obstacle for applyingreinforcement learning(RL) to real-world robotics is the design of effective reward functions. While recently learning-basedProcess Reward Models(PRMs) are a promising direction, they are often hindered by two fundamental limitations: their reward models lackstep-aware understandingand rely on single-view perception, leading to unreliable assessments of fine-grained manipulation progress; and their reward shaping procedures are theoretically unsound, often inducing a semantic trap that misguides policy optimization. To address these, we introduce Dopamine-Reward, a novelreward modelingmethod for learning a general-purpose, step-aware process reward model from multi-view inputs. At its core is ourGeneral Reward Model(GRM), trained on a vast 3,400+ hour dataset, which leveragesStep-wise Reward Discretizationfor structural understanding andMulti-Perspective Reward Fusionto overcome perceptual limitations. Building upon Dopamine-Reward, we propose Dopamine-RL, a robustpolicy learningframework that employs a theoretically-soundPolicy-Invariant Reward Shapingmethod, which enables the agent to leverage dense rewards for efficient self-improvement without altering the optimal policy, thereby fundamentally avoiding the semantic trap. Extensive experiments across diverse simulated and real-world tasks validate our approach. GRM achieves state-of-the-art accuracy in reward assessment, and Dopamine-RL built on GRM significantly improvespolicy learningefficiency. For instance, after GRM is adapted to a new task in a one-shot manner from a single expert trajectory, the resulting reward model enables Dopamine-RL to improve the policy from near-zero to 95% success with only 150 online rollouts (approximately 1 hour of real robot interaction), while retaining strong generalization across tasks. Project website: https://robo-dopamine.github.io Upload Robo-Dopamine This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/robo-dopamine-general-process-reward-modeling-for-high-precision-robotic-manipulation-7184-e9fe2a06 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601063",
+    "title": "Robo-Dopamine: General Process Reward Modeling for High-Precision Robotic Manipulation",
+    "authors": [
+      "Huajie Tan",
+      "Yijie Xu",
+      "Zixiao Wang"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/FlagOpen/Robo-Dopamine",
+    "huggingface_url": "https://huggingface.co/papers/2512.23703",
+    "upvote": 5
+  }
+}

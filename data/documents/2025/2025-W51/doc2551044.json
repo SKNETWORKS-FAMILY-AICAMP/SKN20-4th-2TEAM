@@ -1,0 +1,16 @@
+{
+  "context": "A unified framework and benchmark called MentraSuite is introduced to enhance reliable mental-health reasoning in large language models, with a post-trained model named Mindora achieving superior performance through a hybrid SFT-RL approach optimized for consistency and faithfulness. Mental health disorders affect hundreds of millions globally, and the Web now serves as a primary medium for accessing support, information, and assessment.Large language models(LLMs) offer scalable and accessible assistance, yet their deployment in mental-health settings remains risky when their reasoning is incomplete, inconsistent, or ungrounded. Existing psychological LLMs emphasize emotional understanding or knowledge recall but overlook the step-wise, clinically aligned reasoning required for appraisal, diagnosis, intervention planning, abstraction, and verification. To address these issues, we introduceMentraSuite, a unified framework for advancing reliablemental-health reasoning. We proposeMentraBench, a comprehensive benchmark spanning five core reasoning aspects, six tasks, and 13 datasets, evaluating both task performance and reasoning quality across five dimensions: conciseness, coherence, hallucination avoidance, task understanding, and internal consistency. We further presentMindora, a post-trained model optimized through ahybrid SFT-RL frameworkwith aninconsistency-detection rewardto enforce faithful and coherent reasoning. To support training, we construct high-quality trajectories using a novelreasoning trajectory generationstrategy, that strategically filters difficult samples and applies a structured, consistency-oriented rewriting process to produce concise, readable, and well-balanced trajectories. Across 20 evaluated LLMs,Mindoraachieves the highest average performance onMentraBenchand shows remarkable performances in reasoning reliability, demonstrating its effectiveness for complex mental-health scenarios.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551044",
+    "title": "MentraSuite: Post-Training Large Language Models for Mental Health Reasoning and Assessment",
+    "authors": [
+      "Kailai Yang",
+      "Ziyan Kuang",
+      "Qianqian Xie"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/elsa66666/MentraSuite",
+    "huggingface_url": "https://huggingface.co/papers/2512.09636",
+    "upvote": 25
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "ORCA, a framework for goal-directed planning in video avatars, uses an internal world model and dual-system architecture to enable autonomous task completion in stochastic environments. Current video avatar generation methods excel at identity preservation and motion alignment but lack genuine agency, they cannot autonomously pursue long-term goals through adaptive environmental interaction. We address this by introducingL-IVA(Long-horizon Interactive Visual Avatar), a task and benchmark for evaluating goal-directed planning in stochastic generative environments, andORCA(Online Reasoning and Cognitive Architecture), the first framework enabling active intelligence in video avatars.ORCAembodiesInternal World Model(IWM) capabilities through two key innovations: (1) aclosed-loop OTAR cycle(Observe-Think-Act-Reflect) that maintains robust state tracking under generative uncertainty by continuously verifying predicted outcomes against actual generations, and (2) ahierarchical dual-system architecturewhere System 2 performs strategic reasoning with state prediction while System 1 translates abstract plans into precise, model-specific action captions. By formulating avatar control as aPOMDPand implementing continuousbelief updatingwithoutcome verification,ORCAenables autonomous multi-step task completion in open-domain scenarios. Extensive experiments demonstrate thatORCAsignificantly outperforms open-loop and non-reflective baselines in task success rate and behavioral coherence, validating ourIWM-inspired design for advancing video avatar intelligence from passive animation to active, goal-oriented behavior. project page:https://xuanhuahe.github.io/ORCA/ arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/active-intelligence-in-video-avatars-via-closed-loop-world-modeling-8787-e58533b4 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552070",
+    "title": "Active Intelligence in Video Avatars via Closed-loop World Modeling",
+    "authors": [
+      "Ruiqi Wu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.20615",
+    "upvote": 8
+  }
+}

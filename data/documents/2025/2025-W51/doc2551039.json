@@ -1,0 +1,15 @@
+{
+  "context": "MemFlow dynamically updates a memory bank by retrieving relevant historical frames for each video chunk, ensuring narrative coherence and generation efficiency with minimal computational overhead. The core challenge for streaming video generation is maintaining the content consistency in long context, which poses high requirement for the memory design. Most existing solutions maintain the memory by compressinghistorical frameswith predefined strategies. However, different to-generate video chunks should refer to different historical cues, which is hard to satisfy with fixed strategies. In this work, we propose MemFlow to address this problem. Specifically, before generating the coming chunk, we dynamically update thememory bankby retrieving the most relevanthistorical frameswith thetext promptof this chunk. This design enables narrative coherence even if new event happens or scenario switches in future frames. In addition, during generation, we only activate the most relevant tokens in thememory bankfor each query in theattention layers, which effectively guarantees the generation efficiency. In this way, MemFlow achieves outstanding long-context consistency with negligible computation burden (7.9% speed reduction compared with the memory-free baseline) and keeps the compatibility with any streaming video generation model withKV cache. MemFlow uses a retrieval-driven adaptive memory and selective attention to maintain narrative coherence in long-streaming video generation with minimal overhead. ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551039",
+    "title": "MemFlow: Flowing Adaptive Memory for Consistent and Efficient Long Video Narratives",
+    "authors": [
+      "Sihui Ji",
+      "Hengshuang Zhao"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.14699",
+    "upvote": 27
+  }
+}

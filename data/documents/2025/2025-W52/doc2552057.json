@@ -1,0 +1,14 @@
+{
+  "context": "QuantiPhy is a benchmark that quantitatively assesses state-of-the-art vision perception models' ability to reason about physical properties such as size, velocity, and acceleration from video observations, revealing gaps between qualitative plausibility and numerical correctness. Understanding the physical world is essential for generalist AI agents. However, it remains unclear whether state-of-the-art vision perception models (e.g., largeVLMs) can reason physical properties quantitatively. Existing evaluations are predominantly VQA-based and qualitative, offering limited insight into whether these models can infer the kinematic quantities of moving objects from video observations. To address this, we presentQuantiPhy, the first benchmark designed to quantitatively measure a VLM'sphysical reasoningability. Comprising more than 3.3K video-text instances withnumerical ground truth,QuantiPhyevaluates a VLM's performance on estimating an object'ssize,velocity, andaccelerationat a given timestamp, using one of these properties as an input prior. The benchmark standardizes prompts and scoring to assessnumerical accuracy, enabling fair comparisons across models. Our experiments on state-of-the-artVLMsreveal a consistent gap between their qualitative plausibility and actual numerical correctness. We further provide an in-depth analysis of key factors likebackground noise,counterfactual priors, andstrategic promptingand find that state-of-the-artVLMslean heavily on pre-trained world knowledge rather than faithfully using the provided visual and textual inputs as references when reasoningkinematic propertiesquantitatively.QuantiPhyoffers the first rigorous, scalable testbed to moveVLMsbeyond mere verbal plausibility toward a numerically grounded physical understanding. QuantiPhy is the first benchmark that asks vision–language models to do physics with numerical accuracy.Across 3,300+ video–text instances, we show that today’s VLMs often sound plausible but fail quantitatively on physical reasoning tasks—they rely more on memorized world knowledge from pretraining than on the actual video and text inputs. QuantiPhy benchmarks the critical gap between qualitative understanding and quantitative reasoning, providing a rigorous testbed for building input-faithful, physically grounded AI. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/quantiphy-a-quantitative-benchmark-evaluating-physical-reasoning-abilities-of-vision-language-models-7998-607dcf2e ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552057",
+    "title": "QuantiPhy: A Quantitative Benchmark Evaluating Physical Reasoning Abilities of Vision-Language Models",
+    "authors": [
+      "Ehsan Adeli"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.19526",
+    "upvote": 11
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "MMSI-Video-Bench is a comprehensive benchmark for video-based spatial intelligence in MLLMs, revealing significant gaps between human and AI performance and highlighting challenges in geometric reasoning, motion grounding, and cross-video correspondence. Spatial understanding over continuous visual input is crucial forMLLMsto evolve into general-purpose assistants in physical environments. Yet there is still no comprehensive benchmark that holistically assesses the progress toward this goal. In this work, we introduceMMSI-Video-Bench, a fully human-annotated benchmark for video-basedspatial intelligenceinMLLMs. It operationalizes a four-level framework,Perception,Planning,Prediction, andCross-Video Reasoning, through 1,106 questions grounded in 1,278 clips from 25 datasets and in-house videos. Each item is carefully designed and reviewed by3DV expertswith explanatory rationales to ensure precise, unambiguous grounding. Leveraging its diverse data sources and holistic task coverage,MMSI-Video-Benchalso supports three domain-oriented sub-benchmarks (Indoor ScenePerceptionBench, Robot Bench and Grounding Bench) for targeted capability assessment. We evaluate 25 strong open-source and proprietaryMLLMs, revealing a striking human--AI gap: many models perform near chance, and the best reasoning model lags humans by nearly 60%. We further find that spatially fine-tuned models still fail to generalize effectively on our benchmark.Fine-grained error analysisexposes systematic failures ingeometric reasoning,motion grounding,long-horizon prediction, andcross-video correspondence. We also show that typicalframe-sampling strategiestransfer poorly to our reasoning-intensive benchmark, and that neither3D spatial cuesnorchain-of-thought promptingyields meaningful gains. We expect our benchmark to establish a solid testbed for advancing video-basedspatial intelligence. Our homepage:https://rbler1234.github.io/MMSI-VIdeo-Bench.github.ioGitHub Page:https://github.com/InternRobotics/MMSI-Video-BenchHuggingFace:https://huggingface.co/datasets/rbler/MMSI-Video-BenchArxiv:https://arxiv.org/abs/2512.10863 arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/mmsi-video-bench-a-holistic-benchmark-for-video-based-spatial-intelligence-1688-2f5547f7 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551048",
+    "title": "MMSI-Video-Bench: A Holistic Benchmark for Video-Based Spatial Intelligence",
+    "authors": [
+      "Jingli Lin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/InternRobotics/MMSI-Video-Bench",
+    "huggingface_url": "https://huggingface.co/papers/2512.10863",
+    "upvote": 21
+  }
+}

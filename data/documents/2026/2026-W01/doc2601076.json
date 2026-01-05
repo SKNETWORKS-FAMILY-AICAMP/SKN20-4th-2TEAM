@@ -1,0 +1,14 @@
+{
+  "context": "This paper presents a new state-of-the-art algorithm for exact 3times3 matrix multiplication over general non-commutative rings, achieving a rank-23 scheme with only 58 scalar additions. This improves the previous best additive complexity of 60 additions without a change of basis. The result was discovered through an automated search combining ternary-restricted flip-graph exploration with greedy intersection reduction for common subexpression elimination. The resulting scheme uses only coefficients from {-1, 0, 1}, ensuring both efficiency and portability across arbitrary fields. The total scalar operation count is reduced from 83 to 81. A 58-addition, rank-23 scheme for exact 3×3 matrix multiplication sets a new SOTA. This improves the previous best of 60 additions without basis change. The scheme uses only ternary coefficients {-1,0,1} and was discovered via combinatorial flip-graph search + greedy CSE heuristics. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/a-58-addition-rank-23-scheme-for-general-3x3-matrix-multiplication-2271-09dd975e ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601076",
+    "title": "A 58-Addition, Rank-23 Scheme for General 3x3 Matrix Multiplication",
+    "authors": [
+      "A. I. Perminov"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/dronperminov/ternary_flip_graph",
+    "huggingface_url": "https://huggingface.co/papers/2512.21980",
+    "upvote": 2
+  }
+}

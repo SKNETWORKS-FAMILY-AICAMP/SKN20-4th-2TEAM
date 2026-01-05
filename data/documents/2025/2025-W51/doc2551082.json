@@ -1,0 +1,12 @@
+{
+  "context": "MeshSplatting enables real-time novel view synthesis by combining mesh-based reconstruction with differentiable rendering to produce high-quality, efficient 3D meshes. Primitive-based splatting methods like3D Gaussian Splattinghave revolutionizednovel view synthesiswith real-time rendering. However, their point-based representations remain incompatible withmesh-based pipelinesthat power AR/VR and game engines. We present MeshSplatting, amesh-based reconstructionapproach that jointly optimizes geometry and appearance throughdifferentiable rendering. By enforcing connectivity via restrictedDelaunay triangulationand refiningsurface consistency, MeshSplatting creates end-to-end smooth, visually high-quality meshes that render efficiently inreal-time 3D engines. On Mip-NeRF360, it boosts PSNR by +0.69 dB over the current state-of-the-art MiLo for mesh-basednovel view synthesis, while training 2x faster and using 2x less memory, bridgingneural renderingand interactive 3D graphics for seamless real-time scene interaction. The project page is available at https://meshsplatting.github.io/. MeshSplatting introduces a differentiable rendering approach that reconstructs connected, fully opaque triangle meshes for fast, memory efficient, high quality novel view synthesis.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/meshsplatting-differentiable-rendering-with-opaque-meshes-3886-1d3e00da ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551082",
+    "title": "MeshSplatting: Differentiable Rendering with Opaque Meshes",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/meshsplatting/mesh-splatting",
+    "huggingface_url": "https://huggingface.co/papers/2512.06818",
+    "upvote": 10
+  }
+}

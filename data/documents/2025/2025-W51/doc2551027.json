@@ -1,0 +1,12 @@
+{
+  "context": "Seedance 1.5 pro, a dual-branch Diffusion Transformer model, achieves high-quality audio-visual synchronization and generation through cross-modal integration, post-training optimizations, and an acceleration framework. Recent strides in video generation have paved the way for unified audio-visual generation. In this work, we present Seedance 1.5 pro, a foundational model engineered specifically for native, joint audio-video generation. Leveraging a dual-branchDiffusion Transformerarchitecture, the model integrates across-modal joint modulewith a specialized multi-stage data pipeline, achieving exceptional audio-visual synchronization and superior generation quality. To ensure practical utility, we implement meticulous post-training optimizations, includingSupervised Fine-Tuning(SFT) on high-quality datasets andReinforcement Learning from Human Feedback(RLHF) withmulti-dimensional reward models. Furthermore, we introduce an acceleration framework that boosts inference speed by over 10X. Seedance 1.5 pro distinguishes itself through precisemultilingual and dialect lip-syncing,dynamic cinematic camera control, and enhancednarrative coherence, positioning it as a robust engine for professional-grade content creation. Seedance 1.5 pro is now accessible on Volcano Engine at https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision?type=GenVideo. Seedance 1.5 pro Technical Report arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/seedance-1-5-pro-a-native-audio-visual-joint-generation-foundation-model-1377-90bc0f99 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551027",
+    "title": "Seedance 1.5 pro: A Native Audio-Visual Joint Generation Foundation Model",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.13507",
+    "upvote": 38
+  }
+}

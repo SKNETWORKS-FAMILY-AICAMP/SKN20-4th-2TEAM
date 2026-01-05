@@ -1,0 +1,16 @@
+{
+  "context": "The survey analyzes the cognitive architecture of medical AI systems, focusing on the shift from generative text prediction to agentic autonomy, and categorizes methods into four archetypes based on knowledge source and agency objective. Clinical dialogue represents a complex duality requiring both the empathetic fluency of natural conversation and the rigorous precision of evidence-based medicine. WhileLarge Language Modelspossess unprecedented linguistic capabilities, their architectural reliance on reactive andstateless processingoften favors probabilistic plausibility over factual veracity. This structural limitation has catalyzed a paradigm shift in medical AI from generative text prediction toagentic autonomy, where the model functions as a central reasoning engine capable of deliberate planning and persistent memory. Moving beyond existing reviews that primarily catalog downstream applications, this survey provides a first-principles analysis of thecognitive architectureunderpinning this shift. We introduce a novel taxonomy structured along the orthogonal axes of knowledge source and agency objective to delineate the provenance of clinical knowledge against the system's operational scope. This framework facilitates a systematic analysis of the intrinsic trade-offs between creativity and reliability by categorizing methods into four archetypes:Latent Space Clinicians,Emergent Planners,Grounded Synthesizers, andVerifiable Workflow Automators. For each paradigm, we deconstruct the technical realization across the entire cognitive pipeline, encompassingstrategic planning,memory management,action execution,collaboration, andevolutionto reveal how distinct architectural choices balance the tension between autonomy and safety. Fresh medical LLM survey This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550089",
+    "title": "Reinventing Clinical Dialogue: Agentic Paradigms for LLM Enabled Healthcare Communication",
+    "authors": [
+      "Xiaoquan Zhi",
+      "Likang Wu",
+      "Chuang Zhao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/xqz614/Awesome-Agentic-Clinical-Dialogue",
+    "huggingface_url": "https://huggingface.co/papers/2512.01453",
+    "upvote": 5
+  }
+}

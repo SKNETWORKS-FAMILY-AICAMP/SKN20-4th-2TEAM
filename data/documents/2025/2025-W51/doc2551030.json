@@ -1,0 +1,14 @@
+{
+  "context": "StereoPilot, a feed-forward model leveraging a learnable domain switcher and cycle consistency loss, synthesizes high-quality stereo video directly without depth maps, outperforming existing methods in visual fidelity and computational efficiency. The rapid growth of stereoscopic displays, including VR headsets and 3D cinemas, has led to increasing demand for high-quality stereo video content. However, producing 3D videos remains costly and complex, while automatic Monocular-to-Stereo conversion is hindered by the limitations of the multi-stage ``Depth-Warp-Inpaint'' (DWI) pipeline. This paradigm suffers from error propagation, depth ambiguity, and format inconsistency between parallel and converged stereo configurations. To address these challenges, we introduceUniStereo, the first large-scale unified dataset forstereo video conversion, covering bothstereo formatsto enable fair benchmarking and robust model training. Building upon this dataset, we proposeStereoPilot, an efficientfeed-forward modelthat directly synthesizes the target view without relying on explicit depth maps or iterative diffusion sampling. Equipped with alearnable domain switcherand acycle consistency loss,StereoPilotadapts seamlessly to differentstereo formatsand achieves improved consistency. Extensive experiments demonstrate thatStereoPilotsignificantly outperforms state-of-the-art methods in bothvisual fidelityandcomputational efficiency. Project page: https://hit-perfect.github.io/StereoPilot/. StereoPilot replaces the fragile \"Depth-Warp-Inpaint\" pipeline with a single-step feed-forward model that leverages video diffusion priors for efficient, high-fidelity monocular-to-stereo conversion. By training on the large-scale UniStereo dataset with a learnable domain switcher, it provides a unified and efficient solution for both parallel and converged 3D video formats. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/stereopilot-learning-unified-and-efficient-stereo-conversion-via-generative-priors-8836-cf9ad6c0 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551030",
+    "title": "StereoPilot: Learning Unified and Efficient Stereo Conversion via Generative Priors",
+    "authors": [
+      "Donghao Zhou"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/KlingTeam/StereoPilot",
+    "huggingface_url": "https://huggingface.co/papers/2512.16915",
+    "upvote": 37
+  }
+}

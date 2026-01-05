@@ -1,0 +1,14 @@
+{
+  "context": "Discrete diffusion language models exhibit different scaling behaviors depending on noise types, with uniform diffusion requiring fewer parameters and less data for efficient training compared to masked diffusion. Modern LLM pre-training consumes vast amounts of compute and training data, making the scaling behavior, orscaling laws, of different models a key distinguishing factor.Discrete diffusion language models(DLMs) have been proposed as an alternative toautoregressive language models(ALMs). However, their scaling behavior has not yet been fully explored, with prior work suggesting that they require more data and compute to match the performance of ALMs.\n  We study the scaling behavior of DLMs on differentnoise typesby smoothly interpolating between masked anduniform diffusionwhile paying close attention to crucial hyperparameters such as batch size and learning rate. Our experiments reveal that the scaling behavior of DLMs strongly depends on the noise type and is considerably different from ALMs. While allnoise typesconverge to similar loss values incompute-bound scaling, we find thatuniform diffusionrequires more parameters and less data for compute-efficient training compared tomasked diffusion, making them a promising candidate indata-bound settings. We scale ouruniform diffusionmodel up to 10B parameters trained for 10^{22}FLOPs, confirming the predicted scaling behavior and making it the largest publicly knownuniform diffusionmodel to date. We scale diffusion language models up to 3B (masked and uniform diffusion) and 10B (uniform diffusion) parameters,  pre-trained on a pure diffusion objective (mixture of unconditional and conditional) via Nemotron-CC. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/scaling-behavior-of-discrete-diffusion-language-models-3994-b24adc27 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551102",
+    "title": "Scaling Behavior of Discrete Diffusion Language Models",
+    "authors": [
+      "Dimitri von Rütte"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/dvruette/gidd-easydel",
+    "huggingface_url": "https://huggingface.co/papers/2512.10858",
+    "upvote": 7
+  }
+}

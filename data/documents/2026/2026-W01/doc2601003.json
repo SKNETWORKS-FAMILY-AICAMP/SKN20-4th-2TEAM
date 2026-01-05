@@ -1,0 +1,14 @@
+{
+  "context": "MiA-RAG enhances long-context reasoning in LLM-based RAG systems by incorporating hierarchical summarization to create global semantic representations that guide both retrieval and generation processes. Humans understand long and complex texts by relying on a holistic semantic representation of the content. This global view helps organize prior knowledge, interpret new information, and integrate evidence dispersed across a document, as revealed by theMindscape-Aware Capability of humans in psychology. CurrentRetrieval-Augmented Generation(RAG) systems lack such guidance and therefore struggle with long-context tasks. In this paper, we proposeMindscape-Aware RAG (MiA-RAG), the first approach that equipsLLM-based RAG systemswith explicitglobal context awareness. MiA-RAG builds amindscapethroughhierarchical summarizationand conditions both retrieval and generation on this global semantic representation. This enables the retriever to form enrichedquery embeddingsand the generator to reason over retrieved evidence within a coherent global context. We evaluate MiA-RAG across diverse long-context and bilingual benchmarks forevidence-based understandingandglobal sense-making. It consistently surpasses baselines, and further analysis shows that it aligns local details with acoherent global representation, enabling more human-likelong-context retrievaland reasoning. Our trained models can be downloaded from:https://huggingface.co/MindscapeRAG This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/mindscape-aware-retrieval-augmented-generation-for-improved-long-context-understanding-4195-776e6730 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601003",
+    "title": "Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding",
+    "authors": [
+      "Mo Yu"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.17220",
+    "upvote": 107
+  }
+}

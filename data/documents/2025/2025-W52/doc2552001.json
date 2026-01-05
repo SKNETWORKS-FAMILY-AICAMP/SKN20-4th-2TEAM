@@ -1,0 +1,16 @@
+{
+  "context": "DataFlow is an LLM-driven data preparation framework that enhances data quality and reproducibility for various tasks, improving LLM performance with automatically generated pipelines. The rapidly growing demand for high-quality data inLarge Language Models (LLMs)has intensified the need for scalable, reliable, and semantically richdata preparation pipelines. However, current practices remain dominated by ad-hoc scripts and loosely specified workflows, which lack principled abstractions, hinder reproducibility, and offer limited support for model-in-the-loop data generation. To address these challenges, we presentDataFlow, a unified and extensible LLM-driven data preparation framework.DataFlowis designed withsystem-level abstractionsthat enable modular, reusable, and composable data transformations, and provides aPyTorch-style pipeline construction APIfor building debuggable and optimizabledataflows. The framework consists of nearly 200reusable operatorsand sixdomain-general pipelinesspanning text, mathematical reasoning, code,Text-to-SQL,agentic RAG, andlarge-scale knowledge extraction. To further improve usability, we introduceDataFlow-Agent, which automatically translates natural-language specifications into executable pipelines viaoperator synthesis,pipeline planning, anditerative verification. Across six representative use cases,DataFlowconsistently improves downstream LLM performance. Our math, code, and text pipelines outperform curated human datasets and specialized synthetic baselines, achieving up to +3\\% execution accuracy inText-to-SQLover SynSQL, +7\\% average improvements on code benchmarks, and 1--3 point gains on MATH, GSM8K, and AIME. Moreover, a unified 10K-sample dataset produced byDataFlowenables base models to surpass counterparts trained on 1M Infinity-Instruct data. These results demonstrate thatDataFlowprovides a practical and high-performance substrate for reliable, reproducible, and scalable LLM data preparation, and establishes a system-level foundation for future data-centric AI development. code link:https://github.com/OpenDCAI/DataFlow Does this project have any restrictions on which models can be used? For example, are the use of Gemini or Claude limited? Can I use my own locally deployed models? The DataFlow serving module supports both open-source models and locally deployed models. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/dataflow-an-llm-driven-framework-for-unified-data-preparation-and-workflow-automation-in-the-era-of-data-centric-ai-3906-5f097fd0 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552001",
+    "title": "DataFlow: An LLM-Driven Framework for Unified Data Preparation and Workflow Automation in the Era of Data-Centric AI",
+    "authors": [
+      "Xiaochen Ma",
+      "Zhen Hao Wong",
+      "Zewei Pan"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/OpenDCAI/DataFlow",
+    "huggingface_url": "https://huggingface.co/papers/2512.16676",
+    "upvote": 201
+  }
+}

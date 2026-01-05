@@ -1,0 +1,14 @@
+{
+  "context": "SAM Audio, a diffusion transformer-based foundation model, achieves superior performance in general audio separation using unified text, visual, and temporal span prompts across various audio types. General audio source separation is a key capability for multimodal AI systems that can perceive and reason about sound. Despite substantial progress in recent years, existing separation models are either domain-specific, designed for fixed categories such asspeechormusic, or limited in controllability, supporting only a single prompting modality such as text. In this work, we present SAM Audio, a foundation model for generalaudio separationthat unifies text, visual, and temporal span prompting within a single framework. Built on adiffusion transformer architecture, SAM Audio is trained withflow matchingon large-scale audio data spanningspeech,music, andgeneral sounds, and can flexibly separate target sources described by language, visual masks, or temporal spans. The model achieves state-of-the-art performance across a diverse suite of benchmarks, includinggeneral sound,speech,music, andmusical instrument separationin both in-the-wild andprofessionally produced audios, substantially outperforming prior general-purpose and specialized systems. Furthermore, we introduce a newreal-world separation benchmarkwithhuman-labeled multimodal promptsand areference-free evaluation modelthat correlates strongly with human judgment. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/sam-audio-segment-anything-in-audio-1718-de85c75a ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552036",
+    "title": "SAM Audio: Segment Anything in Audio",
+    "authors": [
+      "Apoorv Vyas"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/facebookresearch/sam-audio",
+    "huggingface_url": "https://huggingface.co/papers/2512.18099",
+    "upvote": 21
+  }
+}

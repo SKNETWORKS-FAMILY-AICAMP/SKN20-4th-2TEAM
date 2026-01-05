@@ -1,0 +1,15 @@
+{
+  "context": "InfCam generates high-fidelity videos with accurate camera poses by using infinite homography warping and augmenting synthetic datasets with diverse trajectories. Recent progress invideo diffusion modelshas spurred growing interest in camera-controlled novel-view video generation for dynamic scenes, aiming to provide creators with cinematic camera control capabilities in post-production. A key challenge incamera-controlled video generationis ensuring fidelity to the specified camera pose, while maintaining view consistency and reasoning about occluded geometry from limited observations. To address this, existing methods either traintrajectory-conditioned video generationmodel on trajectory-video pair dataset, or estimate depth from the input video to reproject it along a target trajectory and generate the unprojected regions. Nevertheless, existing methods struggle to generate camera-pose-faithful, high-quality videos for two main reasons: (1) reprojection-based approaches are highly susceptible to errors caused by inaccurate depth estimation; and (2) the limited diversity of camera trajectories in existing datasets restricts learned models. To address these limitations, we present InfCam, adepth-free, camera-controlled video-to-video generation framework with high pose fidelity. The framework integrates two key components: (1)infinite homography warping, which encodes3D camera rotationsdirectly within the2D latent spaceof a video diffusion model. Conditioning on this noise-free rotational information, theresidual parallax termis predicted through end-to-end training to achieve high camera-pose fidelity; and (2) adata augmentation pipelinethat transforms existing syntheticmultiview datasetsinto sequences with diverse trajectories andfocal lengths. Experimental results demonstrate that InfCam outperforms baseline methods in camera-pose accuracy and visual fidelity, generalizing well from synthetic to real-world data. Link to our project page:https://emjay73.github.io/InfCam/   Project page:https://emjay73.github.io/InfCam/Arxiv:https://arxiv.org/pdf/2512.17040Github:https://github.com/emjay73/InfCam arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/infinite-homography-as-robust-conditioning-for-camera-controlled-video-generation-9329-6a17ee6a ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552030",
+    "title": "Infinite-Homography as Robust Conditioning for Camera-Controlled Video Generation",
+    "authors": [
+      "Min-Jung Kim",
+      "Hoiyeong Jin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/emjay73/InfCam",
+    "huggingface_url": "https://huggingface.co/papers/2512.17040",
+    "upvote": 27
+  }
+}

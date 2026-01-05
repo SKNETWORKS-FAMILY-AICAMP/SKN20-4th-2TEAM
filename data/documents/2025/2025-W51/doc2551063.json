@@ -1,0 +1,16 @@
+{
+  "context": "A resynthesis framework enhances deepfake detection by verifying authenticity with low false positive rates and robustness against efficient adversaries, supporting multiple modalities. Generative models can synthesize highly realistic content, so-calleddeepfakes, that are already being misused at scale to undermine digital media authenticity. Currentdeepfake detectionmethods are unreliable for two reasons: (i) distinguishing inauthentic content post-hoc is often impossible (e.g., with memorized samples), leading to an unboundedfalse positive rate(FPR); and (ii) detection lacks robustness, as adversaries can adapt to known detectors with near-perfect accuracy using minimal computational resources. To address these limitations, we propose aresynthesis frameworkto determine if a sample is authentic or if its authenticity can be plausibly denied. We make two key contributions focusing on the high-precision, low-recall setting against efficient (i.e., compute-restricted) adversaries. First, we demonstrate that our calibrated resynthesis method is the most reliable approach for verifying authentic samples while maintaining controllable, low FPRs. Second, we show that our method achievesadversarial robustnessagainst efficient adversaries, whereas prior methods are easily evaded under identical compute budgets. Our approach supports multiple modalities and leverages state-of-the-artinversion techniques. The paper “Robust and Calibrated Detection of Authentic Multimedia Content” presents a new framework for identifying whether multimedia particularly deepfakes produced by generative models is genuinely authentic or can be plausibly denied as fake, addressing key shortcomings of current detection methods which suffer from unbounded false positive rates and are easily defeated by adaptive attackers; by introducing a calibrated resynthesis approach that focuses on high precision and adversarial robustness under realistic (compute-limited) threat models, the authors demonstrate that their method reliably verifies authentic samples with controllable false positive rates while resisting evasion by efficient adversaries, supports multiple modalities, and leverages cutting-edge inversion techniques to improve robustness and calibration compared to prior work. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/robust-and-calibrated-detection-of-authentic-multimedia-content-8238-2cedbf18 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551063",
+    "title": "Robust and Calibrated Detection of Authentic Multimedia Content",
+    "authors": [
+      "Sarim Hashmi",
+      "Abdelrahman Elsayed",
+      "Mohammed Talha Alam"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.15182",
+    "upvote": 15
+  }
+}

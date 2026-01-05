@@ -1,0 +1,14 @@
+{
+  "context": "Saber is a scalable zero-shot framework for reference-to-video generation that uses video-text pairs to learn identity-consistent representations and outperforms models trained with explicit reference data. Reference-to-video (R2V) generationaims to synthesize videos that align with a text prompt while preserving the subject identity from reference images. However, current R2V methods are hindered by the reliance on explicit reference image-video-text triplets, whose construction is highly expensive and difficult to scale. We bypass this bottleneck by introducing Saber, a scalable zero-shot framework that requires no explicit R2V data. Trained exclusively on video-text pairs, Saber employs amasked training strategyand a tailoredattention-based model designto learn identity-consistent and reference-aware representations.Mask augmentationtechniques are further integrated to mitigate copy-paste artifacts common in reference-to-video generation. Moreover, Saber demonstrates remarkable generalization capabilities across a varying number of references and achieves superior performance on theOpenS2V-Eval benchmarkcompared to methods trained with R2V data. Reference-to-video (R2V) generation aims to synthesize videos that align with a text prompt while preserving the subject identity from reference images. However, current R2V methods are hindered by the reliance on explicit reference image-video-text triplets, whose construction is highly expensive and difficult to scale. We bypass this bottleneck by introducing Saber, a scalable zero-shot framework that requires no explicit R2V data. Trained exclusively on video-text pairs, Saber employs a masked training strategy and a tailored attention-based model design to learn identity-consistent and reference-aware representations. Mask augmentation techniques are further integrated to mitigate copy-paste artifacts common in reference-to-video generation. Moreover, Saber demonstrates remarkable generalization capabilities across a varying number of references and achieves superior performance on the OpenS2V-Eval benchmark compared to methods trained with R2V data.   This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550024",
+    "title": "Scaling Zero-Shot Reference-to-Video Generation",
+    "authors": [
+      "Zijian Zhou"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/franciszzj/Saber",
+    "huggingface_url": "https://huggingface.co/papers/2512.06905",
+    "upvote": 28
+  }
+}

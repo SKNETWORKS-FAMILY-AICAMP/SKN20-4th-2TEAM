@@ -1,0 +1,14 @@
+{
+  "context": "VideoSSM, a hybrid state-space memory model combining AR diffusion, achieves state-of-the-art temporal consistency and motion stability in long-video generation by coordinating short- and long-term context. Autoregressive (AR) diffusion enables streaming, interactive long-video generation by producing frames causally, yet maintaining coherence over minute-scale horizons remains challenging due to accumulated errors, motion drift, and content repetition. We approach this problem from a memory perspective, treating video synthesis as a recurrent dynamical process that requires coordinated short- and long-term context. We proposeVideoSSM, a Long Video Model that unifies AR diffusion with a hybrid state-space memory. Thestate-space model(SSM) serves as an evolvingglobal memoryofscene dynamicsacross the entire sequence, while acontext windowprovideslocal memoryformotion cuesandfine details. This hybrid design preserves global consistency without frozen, repetitive patterns, supports prompt-adaptive interaction, and scales in linear time with sequence length. Experiments on short- and long-range benchmarks demonstrate state-of-the-arttemporal consistencyandmotion stabilityamong autoregressive video generator especially at minute-scale horizons, enablingcontent diversityand interactiveprompt-based control, thereby establishing a scalable, memory-aware framework for long video generation. We introduce VideoSSM, an AR video diffusion model equipped with a novel hybrid memory architecture that combines a causal sliding-window local lossless cache with an SSM-based global compressed memory for long video generation. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550093",
+    "title": "VideoSSM: Autoregressive Long Video Generation with Hybrid State-Space Memory",
+    "authors": [
+      "Yifei Yu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.04519",
+    "upvote": 4
+  }
+}

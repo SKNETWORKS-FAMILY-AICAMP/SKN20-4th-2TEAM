@@ -1,0 +1,14 @@
+{
+  "context": "ShowTable, a pipeline combining MLLMs and diffusion models, excels in creative table visualization by generating high-fidelity infographics from data tables, outperforming existing methods in multi-modal reasoning and error correction. While existinggenerationand unified models excel at general imagegeneration, they struggle with tasks requiring deep reasoning, planning, and precise data-to-visual mapping abilities beyond general scenarios. To push beyond the existing limitations, we introduce a new and challenging task: creative table visualization, requiring the model to generate an infographic that faithfully and aesthetically visualizes the data from a given table. To address this challenge, we propose ShowTable, a pipeline that synergizesMLLMswithdiffusion modelsvia a progressiveself-correcting process. The MLLM acts as the central orchestrator for reasoning the visual plan and judging visual errors to provide refined instructions, the diffusion execute the commands from MLLM, achieving high-fidelity results. To support this task and our pipeline, we introduce three automated data construction pipelines for training different modules. Furthermore, we introduceTableVisBench, a new benchmark with 800 challenging instances across 5 evaluation dimensions, to assess performance on this task. Experiments demonstrate that our pipeline, instantiated with different models, significantly outperforms baselines, highlighting its effectivemulti-modal reasoning,generation, anderror correctioncapabilities. Nano Banana Pro excels at this. We hope our methods and bench can draw more community's attention to this type of genenration ability. ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551062",
+    "title": "ShowTable: Unlocking Creative Table Visualization with Collaborative Reflection and Refinement",
+    "authors": [
+      "Zhihang Liu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.13303",
+    "upvote": 16
+  }
+}

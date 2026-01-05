@@ -1,0 +1,12 @@
+{
+  "context": "Self-E is a novel self-evaluating text-to-image model trained from scratch that supports any-step generation and combines local learning with self-driven global matching to achieve high quality even at low step counts. We introduce theSelf-Evaluating Model (Self-E), a novel, from-scratch training approach for text-to-image generation that supports any-step inference. Self-E learns from data similarly to aFlow Matching model, while simultaneously employing a novelself-evaluation mechanism: it evaluates its own generated samples using its currentscore estimates, effectively serving as adynamic self-teacher. Unlike traditionaldiffusion or flow models, it does not rely solely onlocal supervision, which typically necessitates many inference steps. Unlikedistillation-based approaches, it does not require apretrained teacher. This combination ofinstantaneous local learningandself-driven global matchingbridges the gap between the two paradigms, enabling the training of a high-quality text-to-image model from scratch that excels even at very low step counts. Extensive experiments on large-scale text-to-image benchmarks show that Self-E not only excels infew-step generation, but is also competitive with state-of-the-artFlow Matching models at 50 steps. We further find that its performance improves monotonically as inference steps increase, enabling both ultra-fastfew-step generationand high-quality long-trajectory sampling within a single unified model. To our knowledge, Self-E is the first from-scratch,any-step text-to-image model, offering aunified frameworkfor efficient and scalable generation.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/self-evaluation-unlocks-any-step-text-to-image-generation-8574-1333c697 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601039",
+    "title": "Self-Evaluation Unlocks Any-Step Text-to-Image Generation",
+    "authors": [],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.22374",
+    "upvote": 15
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "context": "COREA is a unified framework that jointly learns 3D Gaussians and a Signed Distance Field for accurate geometry reconstruction and faithful relighting, using a coarse-to-fine bidirectional 3D-to-3D alignment strategy. We present COREA, the first unified framework that jointly learnsrelightable 3D Gaussiansand aSigned Distance Field (SDF)for accurategeometry reconstructionandfaithful relighting. While recent3D Gaussian Splatting (3DGS)methods have extended towardmesh reconstructionandphysically-based rendering (PBR), their geometry is still learned from 2D renderings, leading to coarse surfaces and unreliable BRDF-lighting decomposition. To address these limitations, COREA introduces acoarse-to-fine bidirectional 3D-to-3D alignmentstrategy that allows geometric signals to be learned directly in 3D space. Within this strategy, depth provides coarse alignment between the two representations, whiledepth gradientsandnormalsrefine fine-scale structure, and the resulting geometry supports stable BRDF-lighting decomposition. Adensity-control mechanismfurther stabilizes Gaussian growth, balancing geometric fidelity with memory efficiency. Experiments on standard benchmarks demonstrate that COREA achieves superior performance innovel-view synthesis,mesh reconstruction, and PBR within a unified framework.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550071",
+    "title": "COREA: Coarse-to-Fine 3D Representation Alignment Between Relightable 3D Gaussians and SDF via Bidirectional 3D-to-3D Supervision",
+    "authors": [
+      "Jaeyoon Lee",
+      "Hojoon Jung",
+      "Jihyong Oh"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/CAU-VILab/COREA-arXiv",
+    "huggingface_url": "https://huggingface.co/papers/2512.07107",
+    "upvote": 8
+  }
+}

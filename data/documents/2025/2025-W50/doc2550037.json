@@ -1,0 +1,12 @@
+{
+  "context": "DualVLN integrates high-level reasoning and low-level action execution to improve vision-language navigation in dynamic environments, achieving robust real-time control and long-horizon planning. While recent large vision-language models (VLMs) have improved generalization invision-language navigation(VLN), existing methods typically rely on end-to-end pipelines that map vision-language inputs directly to short-horizon discrete actions. Such designs often produce fragmented motions, incur high latency, and struggle with real-world challenges like dynamic obstacle avoidance. We propose DualVLN, the firstdual-systemVLNfoundation model that synergistically integrates high-level reasoning with low-level action execution. System 2, a VLM-basedglobal planner, \"grounds slowly\" by predicting mid-term waypoint goals viaimage-grounded reasoning. System 1, a lightweight, multi-modal conditioningDiffusion Transformerpolicy, \"moves fast\" by leveraging both explicitpixel goalsandlatent featuresfrom System 2 to generate smooth and accurate trajectories. Thedual-systemdesign enables robustreal-time controlandadaptive local decision-makingin complex, dynamic environments. By decoupling training, the VLM retains its generalization, while System 1 achieves interpretable and effective local navigation. DualVLNoutperforms prior methods across allVLNbenchmarks and real-world experiments demonstrate robustlong-horizon planningandreal-time adaptabilityin dynamic environments. Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-Language Navigation This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550037",
+    "title": "Ground Slow, Move Fast: A Dual-System Foundation Model for Generalizable Vision-and-Language Navigation",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/InternRobotics/InternNav",
+    "huggingface_url": "https://huggingface.co/papers/2512.08186",
+    "upvote": 21
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "Modern deep residual networks perform substantial redundant computation by evaluating all residual blocks for every input, even when identity mappings suffice. We introduce CosineGate, an end-to-end differentiable architecture for dynamic routing in residual networks that uses cosine incompatibility between identity and residual feature representations as a self-supervised skip signal. CosineGate measures semantic redundancy through the Cosine Incompatibility Ratio (CIR), defined as 1 - cos(x, F(x)), and uses Gumbel-Softmax relaxation to enable per-sample, per-block gating during training. A progressive FLOPs regularization term controls average compute usage without destabilizing optimization. On CIFAR-10, CosineGate spans the accuracy-efficiency Pareto frontier: an aggressive configuration achieves 89.9 percent accuracy with 24.1 percent FLOPs savings, a balanced configuration achieves 91.3 percent accuracy with 28.5 percent savings at epoch 160, and a conservative configuration reaches a peak of 93.2 percent accuracy with minimal compute reduction. These results match or exceed ResNet-20 (91.3 percent) while reducing computation, without auxiliary supervision, distillation, or task-specific heuristics. Our results demonstrate that simple geometric measures of feature incompatibility provide a principled and effective signal for dynamic residual routing. \"I introduce CosineGate, a SOTA dynamic routing mechanism for ResNets that uses the Cosine Incompatibility Ratio (CIR) as a self-supervised signal.🚀 Why it matters: It matches ResNet-20 accuracy on CIFAR-10 while slashing computation by 28.5%—without needing extra 'predictor' sub-networks or distillation.🛠️ Key Features:Fully differentiable (via Gumbel-Softmax).Bio-inspired (Predictive Coding).Plug-and-play for efficient computer vision.Check out our GitHub Repo linked in the sidebar for the implementation!\" This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/cosinegate-semantic-dynamic-routing-via-cosine-incompatibility-in-residual-networks-8037-c008c06c ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601079",
+    "title": "CosineGate: Semantic Dynamic Routing via Cosine Incompatibility in Residual Networks",
+    "authors": [
+      "Yogeswar Reddy Thota"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/thotayogeswarreddy/CosineGate",
+    "huggingface_url": "https://huggingface.co/papers/2512.22206",
+    "upvote": 1
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "UnityVideo, a unified framework, enhances video generation by integrating multiple modalities and paradigms, leading to improved quality and alignment with real-world constraints. Recent video generation models demonstrate impressive synthesis capabilities but remain limited by single-modality conditioning, constraining their holistic world understanding. This stems from insufficient cross-modal interaction and limited modal diversity for comprehensive world knowledge representation. To address these limitations, we introduceUnityVideo, a unified framework for world-aware video generation that jointly learns across multiple modalities (segmentation masks,human skeletons,DensePose,optical flow, anddepth maps) and training paradigms. Our approach features two core components: (1)dynamic noisingto unify heterogeneous training paradigms, and (2) amodality switcherwith anin-context learnerthat enables unified processing via modular parameters and contextual learning. We contribute a large-scale unified dataset with 1.3M samples. Throughjoint optimization,UnityVideoaccelerates convergence and significantly enhanceszero-shot generalizationto unseen data. We demonstrate thatUnityVideoachieves superior video quality, consistency, and improved alignment with physical world constraints. Code and data can be found at: https://github.com/dvlab-research/UnityVideo Project Websitehttps://jackailab.github.io/Projects/UnityVideo/  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550050",
+    "title": "UnityVideo: Unified Multi-Modal Multi-Task Learning for Enhancing World-Aware Video Generation",
+    "authors": [
+      "Xu He"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/dvlab-research/UnityVideo",
+    "huggingface_url": "https://huggingface.co/papers/2512.07831",
+    "upvote": 16
+  }
+}

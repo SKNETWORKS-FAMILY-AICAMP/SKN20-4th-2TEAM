@@ -1,0 +1,12 @@
+{
+  "context": "INTELLECT-3, a large Mixture-of-Experts model trained with reinforcement learning, achieves top performance across various benchmarks and is supported by an open-source RL infrastructure framework. We present INTELLECT-3, a 106B-parameterMixture-of-Expertsmodel (12B active) trained with large-scalereinforcement learningon our end-to-endRL infrastructurestack. INTELLECT-3 achieves state of the art performance for its size across math, code, science and reasoning benchmarks, outperforming many larger frontier models. We open-source the model together with the full infrastructure stack used to create it, including RL frameworks, complete recipe, and a wide collection of environments, built with the verifiers library, for training and evaluation from our Environments Hub community platform. Built for this effort, we introduceprime-rl, an open framework for large-scaleasynchronous reinforcement learning, which scales seamlessly from a single node to thousands of GPUs, and is tailored for agentic RL with first-class support for multi-turn interactions and tool use. Using this stack, we run bothSFTand RL training on top of theGLM-4.5-Air-Basemodel, scaling RL training up to 512H200swith high training efficiency. INTELLECT-3: Technical Report arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/intellect-3-technical-report-8935-14e73d86 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552046",
+    "title": "INTELLECT-3: Technical Report",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.16144",
+    "upvote": 16
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "D4RT, a unified transformer-based model, efficiently reconstructs 4D scenes from videos by querying 3D positions in space-time, outperforming previous methods. Understanding and reconstructing the complex geometry and motion of dynamic scenes from video remains a formidable challenge in computer vision. This paper introduces D4RT, a simple yet powerfulfeedforward modeldesigned to efficiently solve this task. D4RT utilizes aunified transformer architectureto jointly infer depth,spatio-temporal correspondence, and fullcamera parametersfrom a single video. Its core innovation is a novelquerying mechanismthat sidesteps the heavy computation of dense, per-frame decoding and the complexity of managing multiple,task-specific decoders. Our decoding interface allows the model to independently and flexibly probe the 3D position of any point in space and time. The result is a lightweight and highly scalable method that enables remarkably efficient training and inference. We demonstrate that our approach sets a new state of the art, outperforming previous methods across a wide spectrum of4D reconstructiontasks. We refer to the project webpage foranimated results: https://d4rt-paper.github.io/. 📍 A simple, unified interface for 3D tracking, depth, and pose🌟 SOTA results on 4D reconstruction & tracking🚀 Up to 100x faster pose estimation than prior works This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550070",
+    "title": "Efficiently Reconstructing Dynamic Scenes One D4RT at a Time",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.08924",
+    "upvote": 8
+  }
+}

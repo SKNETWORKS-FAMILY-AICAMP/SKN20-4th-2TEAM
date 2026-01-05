@@ -1,0 +1,16 @@
+{
+  "context": "OmniPSD, a diffusion framework within the Flux ecosystem, enables text-to-PSD generation and image-to-PSD decomposition, achieving high-fidelity results with transparency awareness. Recent advances indiffusion modelshave greatly improved image generation and editing, yet generating or reconstructing layered PSD files with transparent alpha channels remains highly challenging. We proposeOmniPSD, a unified diffusion framework built upon theFlux ecosystemthat enables both text-to-PSD generation and image-to-PSD decomposition throughin-context learning. For text-to-PSD generation,OmniPSDarranges multiple target layers spatially into a single canvas and learns their compositional relationships throughspatial attention, producing semantically coherent and hierarchically structured layers. For image-to-PSD decomposition, it performsiterative in-context editing, progressively extracting and erasing textual and foreground components to reconstruct editable PSD layers from a single flattened image. AnRGBA-VAEis employed as an auxiliary representation module to preserve transparency without affecting structure learning. Extensive experiments on our newRGBA-layered datasetdemonstrate thatOmniPSDachieves high-fidelity generation, structural consistency, and transparency awareness, offering a new paradigm for layered design generation and decomposition withdiffusion transformers. OmniPSD presents a diffusion-transformer framework for text-to-PSD generation and image-to-PSD decomposition, enabling layered, transparent PSDs with hierarchical, editable channels via in-context learning. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend A cover of the Christmas card ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550010",
+    "title": "OmniPSD: Layered PSD Generation with Diffusion Transformer",
+    "authors": [
+      "Yiren Song",
+      "Haofan Wang",
+      "Mike Zheng Shou"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.09247",
+    "upvote": 46
+  }
+}

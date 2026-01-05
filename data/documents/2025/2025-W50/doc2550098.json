@@ -1,0 +1,15 @@
+{
+  "context": "Fed-SE, a Federated Self-Evolution framework, enhances LLM agents in privacy-constrained environments by local parameter-efficient fine-tuning and global aggregation in a low-rank subspace. LLM agents are widely deployed in complex interactive tasks, yet privacy constraints often preclude centralized optimization and co-evolution across dynamic environments. WhileFederated Learning (FL)has proven effective on static datasets, its extension to the open-ended self-evolution of agents remains underexplored. Directly applying standard FL is challenging: heterogeneous tasks and sparse, trajectory-level rewards introduce severe gradient conflicts, destabilizing the global optimization process. To bridge this gap, we proposeFed-SE, a Federated Self-Evolution framework for LLM agents.Fed-SEestablishes a local evolution-global aggregation paradigm. Locally, agents employparameter-efficient fine-tuningon filtered,high-return trajectoriesto achieve stable gradient updates. Globally,Fed-SEaggregates updates within alow-rank subspacethat disentangles environment-specific dynamics, effectively reducing negative transfer across clients. Experiments across five heterogeneous environments demonstrate thatFed-SEimproves average task success rates by approximately 18% overfederated baselines, validating its effectiveness in robustcross-environment knowledge transferin privacy-constrained deployments. Check this out! This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550098",
+    "title": "Fed-SE: Federated Self-Evolution for Privacy-Constrained Multi-Environment LLM Agents",
+    "authors": [
+      "Yuling Shi",
+      "Qizhen Lan"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.08870",
+    "upvote": 3
+  }
+}

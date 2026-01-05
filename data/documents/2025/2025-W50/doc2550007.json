@@ -1,0 +1,18 @@
+{
+  "context": "The paper proposes a method to enhance Rotary Position Embeddings by utilizing both the real and imaginary components of the complex-valued dot product, improving long-context modeling in Large Language Models. Rotary Position Embeddings(RoPE) have become a standard for encoding sequence order inLarge Language Models(LLMs) by applying rotations to query and key vectors in the complex plane. Standard implementations, however, utilize only the real component of thecomplex-valued dot productforattention scorecalculation. This simplification discards the imaginary component, which contains valuable phase information, leading to a potential loss of relational details crucial for modelinglong-context dependencies. In this paper, we propose an extension that re-incorporates this discarded imaginary component. Our method leverages the full complex-valued representation to create a dual-componentattention score. We theoretically and empirically demonstrate that this approach enhances the modeling oflong-context dependenciesby preserving morepositional information. Furthermore, evaluations on a suite of long-context language modeling benchmarks show that our method consistently improves performance over the standard RoPE, with the benefits becoming more significant as context length increases. The code is available at https://github.com/OpenMOSS/rope_pp. Rotary Position Embeddings (RoPE) have become a standard for encoding sequence order in Large Language Models (LLMs) by applying rotations to query and key vectors in the complex plane. Standard implementations, however, utilize only the real component of the complex-valued dot product for attention score calculation. This simplification discards the imaginary component, which contains valuable phase information, leading to a potential loss of relational details crucial for modeling long-context dependencies. In this paper, we propose an extension that re-incorporates this discarded imaginary component. Our method leverages the full complex-valued representation to create a dual-component attention score. We theoretically and empirically demonstrate that this approach enhances the modeling of long-context dependencies by preserving more positional information. Furthermore, evaluations on a suite of long-context language modeling benchmarks show that our method consistently improves performance over the standard RoPE, with the benefits becoming more significant as context length increases. The code is available athttps://github.com/OpenMOSS/rope_pp. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550007",
+    "title": "Beyond Real: Imaginary Extension of Rotary Position Embeddings for Long-Context LLMs",
+    "authors": [
+      "Xiaoran Liu",
+      "Zengfeng Huang",
+      "Qipeng Guo",
+      "Ziwei He",
+      "Xipeng Qiu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/OpenMOSS/rope_pp",
+    "huggingface_url": "https://huggingface.co/papers/2512.07525",
+    "upvote": 56
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "QuCo-RAG uses objective corpus statistics to mitigate hallucinations in large language models during generation, improving accuracy across various benchmarks. Dynamic Retrieval-Augmented Generationadaptively determines when to retrieve during generation to mitigatehallucinationsinlarge language models(LLMs). However, existing methods rely onmodel-internal signals(e.g.,logits,entropy), which are fundamentally unreliable because LLMs are typically ill-calibrated and often exhibit high confidence in erroneous outputs. We propose QuCo-RAG, which shifts from subjective confidence to objective statistics computed frompre-training data. Our method quantifies uncertainty through two stages: (1) before generation, we identifylow-frequency entitiesindicating long-tail knowledge gaps; (2) during generation, we verifyentity co-occurrencein the pre-training corpus, where zero co-occurrence often signals hallucination risk. Both stages leverageInfini-gramfor millisecond-latency queries over 4 trillion tokens, triggering retrieval when uncertainty is high. Experiments onmulti-hop QAbenchmarks show QuCo-RAG achievesEM gainsof 5--12 points over state-of-the-art baselines withOLMo-2models, and transfers effectively to models with undisclosedpre-training data(Llama,Qwen,GPT), improving EM by up to 14 points.Domain generalizationonbiomedical QAfurther validates the robustness of our paradigm. These results establishcorpus-grounded verificationas a principled, practically model-agnostic paradigm for dynamic RAG. Our code is publicly available at https://github.com/ZhishanQ/QuCo-RAG. A new framework for dynamic retrieval-augmented generation. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/quco-rag-quantifying-uncertainty-from-the-pre-training-corpus-for-dynamic-retrieval-augmented-generation-2889-2830b220 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552022",
+    "title": "QuCo-RAG: Quantifying Uncertainty from the Pre-training Corpus for Dynamic Retrieval-Augmented Generation",
+    "authors": [
+      "Dehai Min"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/ZhishanQ/QuCo-RAG",
+    "huggingface_url": "https://huggingface.co/papers/2512.19134",
+    "upvote": 31
+  }
+}

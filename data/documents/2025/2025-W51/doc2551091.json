@@ -1,0 +1,15 @@
+{
+  "context": "RePo, a novel context re-positioning mechanism in LLMs, reduces extraneous cognitive load by differentiably assigning token positions, enhancing performance on noisy and long contexts without compromising short-context tasks. In-context learningis fundamental to modern Large Language Models (LLMs); however, prevailing architectures impose a rigid and fixed contextual structure by assigning linear or constant positional indices. Drawing onCognitive Load Theory(CLT), we argue that this uninformative structure increasesextraneous cognitive load, consuming finiteworking memorycapacity that should be allocated todeep reasoningandattention allocation. To address this, we proposeRePo, a novel mechanism that reduces extraneous load via context re-positioning. Unlike standard approaches,RePoutilizes adifferentiable module,f_φ, to assign token positions that capturecontextual dependencies, rather than replying on pre-defined integer range. By continually pre-training on theOLMo-2 1Bbackbone, we demonstrate thatRePosignificantly enhances performance on tasks involvingnoisy contexts,structured data, andlonger context length, while maintaining competitive performance on generalshort-context tasks. Detailed analysis reveals thatRePosuccessfully allocate higherattentionto distant but relevant information, assign positions indenseandnon-linear space, and capture theintrinsic structureof the input context. Our code is available at https://github.com/SakanaAI/repo. TL;DR: We want to give LLMs the architectural ability to reorganize input context just like humans do. Our solution is to incorporate a lightweight RePo module to dynamically assign positions before position encoding functions. ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551091",
+    "title": "RePo: Language Models with Context Re-Positioning",
+    "authors": [
+      "Huayang Li",
+      "Tianyu Zhao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/SakanaAI/repo",
+    "huggingface_url": "https://huggingface.co/papers/2512.14391",
+    "upvote": 8
+  }
+}

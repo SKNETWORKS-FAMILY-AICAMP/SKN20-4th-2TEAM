@@ -1,0 +1,14 @@
+{
+  "context": "RoboTracer, a 3D-aware visual language model, enhances spatial tracing by combining supervised and reinforcement fine-tuning with a universal spatial encoder and regression-supervised decoder, achieving state-of-the-art performance on TraceSpatial-Bench. Spatial tracing, as a fundamental embodied interaction ability for robots, is inherently challenging as it requires multi-step metric-grounded reasoning compounded with complexspatial referringand real-world metric measurement. However, existing methods struggle with this compositional task. To this end, we propose RoboTracer, a3D-aware VLMthat first achieves both 3Dspatial referringand measuring via auniversal spatial encoderand aregression-supervised decoderto enhance scale awareness duringsupervised fine-tuning(SFT). Moreover, RoboTracer advances multi-step metric-grounded reasoning viareinforcement fine-tuning(RFT) withmetric-sensitive process rewards, supervising key intermediate perceptual cues to accurately generate spatial traces. To support SFT and RFT training, we introduceTraceSpatial, a large-scale dataset of 30M QA pairs, spanning outdoor/indoor/tabletop scenes and supporting complex reasoning processes (up to 9 steps). We further presentTraceSpatial-Bench, a challenging benchmark filling the gap to evaluatespatial tracing. Experimental results show that RoboTracer surpasses baselines inspatial understanding, measuring, and referring, with an average success rate of 79.1%, and also achieves SOTA performance onTraceSpatial-Benchby a large margin, exceeding Gemini-2.5-Pro by 36% accuracy. Notably, RoboTracer can be integrated with various control policies to execute long-horizon, dynamic tasks across diverse robots (UR5,G1 humanoid) in cluttered real-world scenes. Project Page:https://zhoues.github.io/RoboTracer/ We present RoboTracer, the first 3D-aware VLM for multi-step metric-grounded spatial tracing with explicit reasoning. Highlights: RoboTracer first acquires both 3D spatial referring and measuring via SFT, and further advances multi-step metric-grounded spatial tracing via RFT. To support SFT and RFT training, we introduce TraceSpatial, a large-scale dataset of 30M QA pairs, spanning outdoor/indoor/tabletop scenes, and containing complex reasoning processes (up to 9 steps). SFT-trained RoboTracer achieves SOTA spatial understanding/measuring/referring, and RFT-trained RoboTracer exhibits strong spatial tracing under novel cluttered and dynamic scenes with complex reasoning processes. Motivation: Model Framework: Dataset Construction: ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551031",
+    "title": "RoboTracer: Mastering Spatial Trace with Reasoning in Vision-Language Models for Robotics",
+    "authors": [
+      "Enshen Zhou"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Zhoues/RoboTracer",
+    "huggingface_url": "https://huggingface.co/papers/2512.13660",
+    "upvote": 36
+  }
+}

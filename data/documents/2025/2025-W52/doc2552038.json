@@ -1,0 +1,15 @@
+{
+  "context": "A novel framework for flow matching combines norm-aligned training with directionally-pruned sampling to improve generation quality and sampling efficiency by addressing mode discrepancy and path entanglement. Flow matchinghas emerged as a powerful generative modeling approach with flexible choices ofsource distribution. WhileGaussian distributionsare commonly used, the potential for better alternatives in high-dimensional data generation remains largely unexplored. In this paper, we propose a novel 2D simulation that captures high-dimensional geometric properties in an interpretable 2D setting, enabling us to analyze the learning dynamics offlow matchingduring training. Based on this analysis, we derive several key insights aboutflow matchingbehavior: (1)density approximationcan paradoxically degrade performance due to mode discrepancy, (2)directional alignmentsuffers frompath entanglementwhen overly concentrated, (3) Gaussian's omnidirectional coverage ensures robust learning, and (4)norm misalignmentincurs substantial learning costs. Building on these insights, we propose a practical framework that combinesnorm-aligned trainingwithdirectionally-pruned sampling. This approach maintains the robust omnidirectional supervision essential for stable flow learning, while eliminating initializations in data-sparse regions during inference. Importantly, our pruning strategy can be applied to anyflow matchingmodel trained with a Gaussian source, providing immediate performance gains without the need for retraining. Empirical evaluations demonstrate consistent improvements in both generation quality and sampling efficiency. Our findings provide practical insights and guidelines forsource distributiondesign and introduce a readily applicable technique for improving existingflow matchingmodels. Our code is available at https://github.com/kwanseokk/SourceFM. code :https://github.com/kwanseokk/SourceFM ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552038",
+    "title": "Is There a Better Source Distribution than Gaussian? Exploring Source Distributions for Image Flow Matching",
+    "authors": [
+      "Junho Lee",
+      "Kwanseok Kim"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/kwanseokk/SourceFM",
+    "huggingface_url": "https://huggingface.co/papers/2512.18184",
+    "upvote": 20
+  }
+}

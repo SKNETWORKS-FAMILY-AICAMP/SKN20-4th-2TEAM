@@ -1,0 +1,12 @@
+{
+  "context": "BEAVER is a framework that provides deterministic and sound probability bounds for verifying constraints in large language models, achieving tighter bounds and identifying more high-risk instances than baseline methods. Aslarge language models(LLMs) transition from research prototypes to production systems, practitioners often need reliable methods to verify that model outputs satisfy required constraints. While sampling-based estimates provide an intuition of model behavior, they offer no sound guarantees. We presentBEAVER, the first practical framework for computing deterministic,sound probability boundson LLM constraint satisfaction. Given anyprefix-closed semantic constraint,BEAVERsystematically explores the generation space using noveltoken trieandfrontier data structures, maintaining provably sound bounds at every iteration. We formalize the verification problem, prove soundness of our approach, and evaluateBEAVERoncorrectness verification,privacy verificationandsecure code generationtasks across multiple state of the artLLMs.BEAVERachieves 6 to 8 times tighter probability bounds and identifies 3 to 4 times more high risk instances compared to baseline methods under identical computational budgets, enabling precise characterization and risk assessment that loose bounds or empirical evaluation cannot provide. BEAVER is the first practical framework to formally verify an LLM’s output distribution. It enables rigorous assessment and comparison beyond traditional sampling-based evaluation. BEAVER computes deterministic, sound bounds on the total probability that a model’s responses satisfy given specifications. Across popular benchmarks, it yields tight certificates for correctness, security, and privacy and scales efficiently to large open-weight LLMs (e.g., 70B). This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550018",
+    "title": "BEAVER: An Efficient Deterministic LLM Verifier",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.05439",
+    "upvote": 35
+  }
+}

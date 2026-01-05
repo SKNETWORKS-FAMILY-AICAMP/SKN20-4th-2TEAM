@@ -1,0 +1,15 @@
+{
+  "context": "TurboDiffusion accelerates video generation by 100-200x using attention acceleration, step distillation, and quantization, while maintaining video quality. We introduce TurboDiffusion, avideo generationacceleration framework that can speed up end-to-enddiffusion generationby 100-200x while maintaining video quality. TurboDiffusion mainly relies on several components for acceleration: (1) Attention acceleration: TurboDiffusion uses low-bitSageAttentionand trainableSparse-Linear Attention(SLA) to speed up attention computation. (2) Step distillation: TurboDiffusion adoptsrCMfor efficient step distillation. (3)W8A8 quantization: TurboDiffusion quantizes model parameters and activations to 8 bits to accelerate linear layers and compress the model. In addition, TurboDiffusion incorporates several other engineering optimizations.\n  We conduct experiments on the Wan2.2-I2V-14B-720P, Wan2.1-T2V-1.3B-480P, Wan2.1-T2V-14B-720P, and Wan2.1-T2V-14B-480P models. Experimental results show that TurboDiffusion achieves 100-200x speedup forvideo generationeven on a singleRTX 5090 GPU, while maintaining comparable video quality. The GitHub repository, which includes model checkpoints and easy-to-use code, is available at https://github.com/thu-ml/TurboDiffusion. TurboDiffusion:100–200× acceleration in video generation on a single RTX 5090. A high-quality5-second video can be generated in just 1.9 seconds. Efficient inference code, as well as model parameters (checkpoints) for TurboWan2.2/2.1 for Text-to-Video and Image-to-Video generation, have been open-sourced for one-click generation. The core techniques are:SageAttention+Sparse-Linear Attention (SLA)+rCM+ W8A8. Github:https://github.com/thu-ml/TurboDiffusion Technical Report:https://jt-zhang.github.io/files/TurboDiffusion_Technical_Report.pdf  arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/dramabench-a-six-dimensional-evaluation-framework-for-drama-script-continuation-5729-c37ec496 Do you possibly have an X page, this is a new feet if you ask me ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552003",
+    "title": "TurboDiffusion: Accelerating Video Diffusion Models by 100-200 Times",
+    "authors": [
+      "Jintao Zhang",
+      "Kaiwen Zheng"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/thu-ml/TurboDiffusion",
+    "huggingface_url": "https://huggingface.co/papers/2512.16093",
+    "upvote": 91
+  }
+}

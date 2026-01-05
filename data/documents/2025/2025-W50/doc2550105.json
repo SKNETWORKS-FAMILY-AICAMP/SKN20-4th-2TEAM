@@ -1,0 +1,17 @@
+{
+  "context": "A framework is proposed to improve phonemization quality in TTS systems without sacrificing real-time performance through lightweight context-aware phonemization and a service-oriented architecture. Lightweight, real-time text-to-speech systems are crucial for accessibility. However, the most efficient TTS models often rely on lightweight phonemizers that struggle with context-dependent challenges. In contrast, more advanced phonemizers with a deeper linguistic understanding typically incur high computational costs, which preventsreal-time performance.\n  This paper examines the trade-off betweenphonemization qualityandinference speedinG2P-aided TTSsystems, introducing a practical framework to bridge this gap. We propose lightweight strategies forcontext-aware phonemizationand a service-oriented TTS architecture that executes these modules as independent services. This design decouples heavy context-aware components from the core TTS engine, effectively breaking the latency barrier and enabling real-time use of high-quality phonemization models. Experimental results confirm that the proposed system improvespronunciation soundnessandlinguistic accuracywhile maintaining real-time responsiveness, making it well-suited for offline and end-device TTS applications. Lightweight, real-time text-to-speech systems are crucial for accessibility. However, the most efficient TTS models often rely on lightweight phonemizers that struggle with context-dependent challenges. In contrast, more advanced phonemizers with a deeper linguistic understanding typically incur high computational costs, which prevents real-time performance.This paper examines the trade-off between phonemization quality and inference speed in G2P-aided TTS systems, introducing a practical framework to bridge this gap. We propose lightweight strategies for context-aware phonemization and a service-oriented TTS architecture that executes these modules as independent services. This design decouples heavy context-aware components from the core TTS engine, effectively breaking the latency barrier and enabling real-time use of high-quality phonemization models. Experimental results confirm that the proposed system improves pronunciation soundness and linguistic accuracy while maintaining real-time responsiveness, making it well-suited for offline and end-device TTS applications. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550105",
+    "title": "Beyond Unified Models: A Service-Oriented Approach to Low Latency, Context Aware Phonemization for Real Time TTS",
+    "authors": [
+      "Mahta Fetrat",
+      "Donya Navabi",
+      "Zahra Dehghanian",
+      "Hamid R. Rabiee"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/MahtaFetrat/Piper-with-LCA-Phonemizer",
+    "huggingface_url": "https://huggingface.co/papers/2512.08006",
+    "upvote": 2
+  }
+}

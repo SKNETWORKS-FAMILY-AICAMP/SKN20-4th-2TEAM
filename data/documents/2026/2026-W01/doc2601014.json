@@ -1,0 +1,15 @@
+{
+  "context": "While recent Multimodal Large Language Models (MLLMs) have attained significant strides in multimodal reasoning, their reasoning processes remain predominantly text-centric, leading to suboptimal performance in complex long-horizon, vision-centric tasks. In this paper, we establish a novel Generative Multimodal Reasoning paradigm and introduce DiffThinker, a diffusion-based reasoning framework. Conceptually, DiffThinker reformulates multimodal reasoning as a native generative image-to-image task, achieving superior logical consistency and spatial precision in vision-centric tasks. We perform a systematic comparison between DiffThinker and MLLMs, providing the first in-depth investigation into the intrinsic characteristics of this paradigm, revealing four core properties: efficiency, controllability, native parallelism, and collaboration. Extensive experiments across four domains (sequential planning, combinatorial optimization, constraint satisfaction, and spatial configuration) demonstrate that DiffThinker significantly outperforms leading closed source models including GPT-5 (+314.2\\%) and Gemini-3-Flash (+111.6\\%), as well as the fine-tuned Qwen3-VL-32B baseline (+39.0\\%), highlighting generative multimodal reasoning as a promising approach for vision-centric reasoning. TLDR: A new paradigm for multi-modal reasoning with image-to-image generation. Diffusion could think too! Project Page:https://diffthinker-project.github.io arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/diffthinker-towards-generative-multimodal-reasoning-with-diffusion-models-8277-5a4d5999 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/diffthinker-towards-generative-multimodal-reasoning-with-diffusion-models ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601014",
+    "title": "DiffThinker: Towards Generative Multimodal Reasoning with Diffusion Models",
+    "authors": [
+      "Zefeng He",
+      "Tong Zhu"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/lcqysl/DiffThinker",
+    "huggingface_url": "https://huggingface.co/papers/2512.24165",
+    "upvote": 42
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "context": "SHARP synthesizes photorealistic views from a single image using a 3D Gaussian representation, achieving state-of-the-art results with rapid processing. We present SHARP, an approach tophotorealistic view synthesisfrom a single image. Given a single photograph, SHARP regresses the parameters of a3D Gaussian representationof the depicted scene. This is done in less than a second on a standard GPU via a singlefeedforward passthrough aneural network. The3D Gaussian representationproduced by SHARP can then be rendered in real time, yielding high-resolution photorealistic images for nearby views. The representation is metric, with absolute scale, supporting metric camera movements. Experimental results demonstrate that SHARP delivers robustzero-shot generalizationacross datasets. It sets a new state of the art on multiple datasets, reducingLPIPSby 25-34% andDISTSby 21-43% versus the best prior model, while lowering the synthesis time by three orders of magnitude. Code and weights are provided at https://github.com/apple/ml-sharp Sharp Monocular View Synthesis in Less Than a Secondhttps://huggingface.co/papers/2512.10685Real-time photorealistic view synthesis from a single image. Given a single photograph, regresses the parameters of a 3D Gaussian representation of the depicted scene. Synthesis in less than a second on a standard GPU via a single feedforward pass through a neural network. The synthesized representation is then rendered in real time, yielding high-resolution photorealistic images for nearby views. The representation is metric, with absolute scale, supporting metric camera movements. Robust zero-shot generalization. SOTA on multiple datasets while lowering the synthesis time by three orders of magnitude.Learn mode at  andhttps://huggingface.co/apple/Sharp  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551043",
+    "title": "Sharp Monocular View Synthesis in Less Than a Second",
+    "authors": [
+      "Lars Mescheder",
+      "Wei Dong",
+      "Amaël Delaunoy"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/apple/ml-sharp",
+    "huggingface_url": "https://huggingface.co/papers/2512.10685",
+    "upvote": 25
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "We present PFP, a neural network structure to compress long videos into short contexts, with an explicit pretraining objective to preserve the high-frequency details of single frames at arbitrary temporal positions. The baseline model can compress a 20-second video into a context at about 5k length, where random frames can be retrieved with perceptually preserved appearances. Such pretrained models can be directly fine-tuned as memory encoders for autoregressive video models, enabling long history memory with low context cost and relatively low fidelity loss. We evaluate the framework with ablative settings and discuss the trade-offs of possible neural architecture designs. Arxiv:https://arxiv.org/abs/2512.23851Repo:https://github.com/lllyasviel/PFP This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/pretraining-frame-preservation-in-autoregressive-video-memory-compression-6536-d0522150 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601029",
+    "title": "Pretraining Frame Preservation in Autoregressive Video Memory Compression",
+    "authors": [
+      "Anyi Rao"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/lllyasviel/PFP",
+    "huggingface_url": "https://huggingface.co/papers/2512.23851",
+    "upvote": 19
+  }
+}

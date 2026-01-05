@@ -1,0 +1,15 @@
+{
+  "context": "MemLoRA and MemLoRA-V enhance small language and vision-language models with memory adapters, enabling efficient local deployment, improved performance, and native visual understanding in multimodal contexts. Memory-augmented Large Language Models (LLMs)have demonstrated remarkable consistency during prolonged dialogues by storing relevant memories and incorporating them as context. Such memory-based personalization is also key in on-device settings that allow users to keep their conversations and data private. However, memory-augmented systems typically rely on LLMs that are too costly for local on-device deployment. Even thoughSmall Language Models (SLMs)are more suitable for on-device inference than LLMs, they cannot achieve sufficient performance. Additionally, these LLM-based systems lack native visual capabilities, limiting their applicability inmultimodal contexts. In this paper, we introduce (i)MemLoRA, a novel memory system that enables local deployment by equipping SLMs with specialized memory adapters, and (ii) its vision extensionMemLoRA-V, which integratessmall Vision-Language Models (SVLMs)to memory systems, enabling native visual understanding. Followingknowledge distillationprinciples, each adapter is trained separately for specific memory operationsx2013knowledge extraction,memory update, andmemory-augmented generation. Equipped with memory adapters, small models enable accurate on-device memory operations without cloud dependency. On text-only operations,MemLoRAoutperforms 10times larger baseline models (e.g., Gemma2-27B) and achieves performance comparable to 60times larger models (e.g., GPT-OSS-120B) on the LoCoMo benchmark. To evaluate visual understanding operations instead, we extend LoCoMo with challengingVisual Question Answeringtasks that require direct visual reasoning. On this, our VLM-integratedMemLoRA-Vshows massive improvements over caption-based approaches (81.3 vs. 23.7 accuracy) while keeping strong performance in text-based tasks, demonstrating the efficacy of our method inmultimodal contexts. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550103",
+    "title": "MemLoRA: Distilling Expert Adapters for On-Device Memory Systems",
+    "authors": [
+      "Massimo Bini",
+      "Ondrej Bohdal"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.04763",
+    "upvote": 3
+  }
+}

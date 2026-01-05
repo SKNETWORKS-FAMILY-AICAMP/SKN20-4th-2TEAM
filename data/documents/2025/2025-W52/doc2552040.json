@@ -1,0 +1,14 @@
+{
+  "context": "Reasoning Palette enhances large language models by using a latent-modulation framework to guide internal planning and improve both inference and reinforcement learning performance. Exploration capacity shapes both inference-time performance andreinforcement learning (RL)training for large (vision-) language models, as stochastic sampling often yields redundant reasoning paths with little high-level diversity. This paper proposes Reasoning Palette, a novellatent-modulation frameworkthat endows the model with astochastic latent variableforstrategic contextualization, guiding its internal planning prior to token generation. Thislatent contextis inferred from themean-pooled embeddingof a question-answer pair via avariational autoencoder (VAE), where each sampled latent potentially encodes a distinct reasoning context. During inference, a sampled latent is decoded into learnabletoken prefixesand prepended to the input prompt, modulating the model'sinternal reasoning trajectory. In this way, the model performs internal sampling over reasoning strategies prior to output generation, which shapes the style and structure of the entire response sequence. A briefsupervised fine-tuning (SFT)warm-up phase allows the model to adapt to this latent conditioning. Within RL optimization, Reasoning Palette facilitatesstructured explorationby enabling on-demand injection fordiverse reasoning modes, significantly enhancing exploration efficiency and sustained learning capability. Experiments across multiple reasoning benchmarks demonstrate that our method enables interpretable and controllable control over the (vision-) language model'sstrategic behavior, thereby achieving consistent performance gains over standard RL methods. Reasoning Palette addresses the challenge of controlling LLM generation style and enabling effective exploration in RL by introducing a stochastic latent variable that encodes diverse reasoning strategies. This latent, inferred via a VAE from question-answer pairs, is decoded into token prefixes that modulate the model's internal reasoning before generation. A brief SFT phase adapts the model to this conditioning, and during RL, it enables structured, on-demand exploration, boosting both efficiency and performance across reasoning benchmarks. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/reasoning-palette-modulating-reasoning-via-latent-contextualization-for-controllable-exploration-for-v-lms-5259-8d9900cc ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552040",
+    "title": "Reasoning Palette: Modulating Reasoning via Latent Contextualization for Controllable Exploration for (V)LMs",
+    "authors": [
+      "Yang Li"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.17206",
+    "upvote": 19
+  }
+}

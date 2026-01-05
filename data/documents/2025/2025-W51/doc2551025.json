@@ -1,0 +1,17 @@
+{
+  "context": "Scone is a unified method for subject distinction in multi-subject image generation that uses semantic bridging and two-stage training to improve both composition and subject identification. Subject-driven image generation has advanced from single- to multi-subjectcomposition, while neglecting distinction, the ability to identify and generate the correct subject when inputs contain multiple candidates. This limitation restricts effectiveness in complex, realistic visual settings. We propose Scone, a unified understanding-generation method that integratescompositionand distinction. Scone enables the understanding expert to act as a semantic bridge, conveying semantic information and guiding the generation expert to preserve subject identity while minimizing interference. Atwo-stage trainingscheme first learnscomposition, then enhances distinction throughsemantic alignmentandattention-based masking. We also introduce SconeEval, a benchmark for evaluating bothcompositionand distinction across diverse scenarios. Experiments demonstrate that Scone outperforms existing open-source models incompositionand distinction tasks on two benchmarks. Our model, benchmark, and training data are available at: https://github.com/Ryann-Ran/Scone. Code:https://github.com/Ryann-Ran/Scone ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551025",
+    "title": "Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling",
+    "authors": [
+      "Yuran Wang",
+      "Bohan Zeng",
+      "Yang Shi",
+      "Xiaochen Ma"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Ryann-Ran/Scone",
+    "huggingface_url": "https://huggingface.co/papers/2512.12675",
+    "upvote": 40
+  }
+}

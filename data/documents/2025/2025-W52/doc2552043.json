@@ -1,0 +1,14 @@
+{
+  "context": "RadarGen generates realistic automotive radar point clouds from camera images using diffusion models adapted to bird's-eye-view representations with guidance from visual scene cues. We present RadarGen, a diffusion model for synthesizing realistic automotiveradar point cloudsfrom multi-view camera imagery. RadarGen adapts efficient image-latent diffusion to the radar domain by representing radar measurements inbird's-eye-viewform that encodes spatial structure together withradar cross section(RCS) andDoppler attributes. A lightweight recovery step reconstructs point clouds from the generated maps. To better align generation with the visual scene, RadarGen incorporates BEV-aligned depth, semantic, and motion cues extracted frompretrained foundation models, which guide thestochastic generationprocess toward physically plausible radar patterns. Conditioning on images makes the approach broadly compatible, in principle, with existing visual datasets and simulation frameworks, offering a scalable direction formultimodal generative simulation. Evaluations on large-scale driving data show that RadarGen captures characteristic radar measurement distributions and reduces the gap toperception modelstrained on real data, marking a step toward unified generative simulation across sensing modalities. Check out radargen.github.io arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/radargen-automotive-radar-point-cloud-generation-from-cameras-1700-286d07df ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552043",
+    "title": "RadarGen: Automotive Radar Point Cloud Generation from Cameras",
+    "authors": [
+      "Tomer Borreda"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/tomerborreda/RadarGen",
+    "huggingface_url": "https://huggingface.co/papers/2512.17897",
+    "upvote": 17
+  }
+}

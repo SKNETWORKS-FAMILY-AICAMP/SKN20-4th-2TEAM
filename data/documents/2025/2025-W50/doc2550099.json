@@ -1,0 +1,14 @@
+{
+  "context": "Terrain Diffusion uses diffusion models and a novel algorithm called InfiniteDiffusion to generate realistic, seamless, and boundless procedural worlds with constant-time random access. For decades, procedural worlds have been built onprocedural noisefunctions such asPerlin noise, which are fast and infinite, yet fundamentally limited in realism and large-scale coherence. We introduceTerrain Diffusion, an AI-era successor toPerlin noisethat bridges the fidelity ofdiffusion modelswith the properties that madeprocedural noiseindispensable:seamless infinite extent,seed-consistency, andconstant-time random access. At its core isInfiniteDiffusion, a novel algorithm for infinite generation, enabling seamless, real-time synthesis of boundless landscapes. Ahierarchical stackofdiffusion modelscouplesplanetary contextwithlocal detail, while acompact Laplacian encodingstabilizes outputs acrossEarth-scale dynamic ranges. An open-sourceinfinite-tensor frameworksupportsconstant-memory manipulationof unbounded tensors, andfew-step consistency distillationenables efficient generation. Together, these components establishdiffusion modelsas a practical foundation for procedural world generation, capable of synthesizing entire planets coherently, controllably, and without limits. Terrain Diffusion introduces a procedural generation primitive built around InfiniteDiffusion, a sampling method that delivers seamless, seed-consistent, infinite-domain generation with constant-time random access. A multi-scale diffusion hierarchy models planetary structure through a stack of diffusion models that couples planetary context with local detail,. The framework can stream entire worlds and is demonstrated in real time through a full Minecraft integration. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550099",
+    "title": "Terrain Diffusion: A Diffusion-Based Successor to Perlin Noise in Infinite, Real-Time Terrain Generation",
+    "authors": [
+      "Alexander Goslin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/xandergos/terrain-diffusion",
+    "huggingface_url": "https://huggingface.co/papers/2512.08309",
+    "upvote": 3
+  }
+}

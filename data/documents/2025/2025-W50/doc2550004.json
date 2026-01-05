@@ -1,0 +1,18 @@
+{
+  "context": "NPR, a teacher-free framework, enhances Large Language Models with native parallel reasoning capabilities through self-distilled training, Parallel-Aware Policy Optimization, and a robust NPR Engine, achieving substantial performance and speed improvements. We introduceNative Parallel Reasoner(NPR), a teacher-free framework that enablesLarge Language Models(LLMs) toself-evolvegenuineparallel reasoningcapabilities. NPR transforms the model from sequential emulation to native parallel cognition through three key innovations: 1) aself-distilled progressive trainingparadigm that transitions from ``cold-start'' format discovery to stricttopological constraintswithout external supervision; 2) a novelParallel-Aware Policy Optimization(PAPO) algorithm that optimizesbranching policiesdirectly within theexecution graph, allowing the model to learnadaptive decompositionviatrial and error; and 3) a robustNPR Enginethat refactorsmemory managementandflow controlof SGLang to enable stable, large-scaleparallel RL training. Across eightreasoning benchmarks, NPR trained onQwen3-4Bachieves performance gains of up to 24.5% and inference speedups up to 4.6x. Unlike prior baselines that often fall back toautoregressive decoding, NPR demonstrates 100%genuine parallel execution, establishing a new standard for self-evolving, efficient, and scalableagentic reasoning. Paper:https://arxiv.org/abs/2512.07461 Code:https://github.com/bigai-nlco/Native-Parallel-Reasoner Model & Data:https://huggingface.co/bigai-NPR Website:https://bigai-nlco.github.io/Native-Parallel-Reasoner This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/native-parallel-reasoner-reasoning-in-parallelism-via-self-distilled-reinforcement-learning-5052-11bb72d9 Thanks so much! ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550004",
+    "title": "Native Parallel Reasoner: Reasoning in Parallelism via Self-Distilled Reinforcement Learning",
+    "authors": [
+      "Tong Wu",
+      "Yang Liu",
+      "Jun Bai",
+      "Yanting Wang",
+      "Zilong Zheng"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/bigai-nlco/Native-Parallel-Reasoner",
+    "huggingface_url": "https://huggingface.co/papers/2512.07461",
+    "upvote": 75
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "MVP, a scalable multi-view transformer architecture, efficiently reconstructs large 3D scenes from multiple images using dual hierarchies and achieves state-of-the-art quality. We proposeMulti-view Pyramid Transformer(MVP), a scalable multi-view transformer architecture that directly reconstructs large3D scenesfrom tens to hundreds of images in a single forward pass. Drawing on the idea of ``looking broader to see the whole, looking finer to see the details,\"MVPis built on two core design principles: 1) alocal-to-global inter-view hierarchythat gradually broadens the model's perspective from local views to groups and ultimately the full scene, and 2) afine-to-coarse intra-view hierarchythat starts from detailed spatial representations and progressively aggregates them into compact, information-dense tokens. This dual hierarchy achieves both computational efficiency and representational richness, enabling fast reconstruction of large and complex scenes. We validateMVPon diverse datasets and show that, when coupled with3D Gaussian Splattingas the underlying 3D representation, it achieves state-of-the-artgeneralizable reconstruction qualitywhile maintaining high efficiency andscalabilityacross a wide range ofview configurations. We are excited to share our recent work \"Multi-view Pyramid Transformer: Look Coarser to See Broader\" Paper:https://arxiv.org/abs/2512.07806Project page:https://gynjn.github.io/MVP/Code:https://github.com/Gynjn/MVP This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550040",
+    "title": "Multi-view Pyramid Transformer: Look Coarser to See Broader",
+    "authors": [
+      "Gyeongjin Kang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Gynjn/MVP",
+    "huggingface_url": "https://huggingface.co/papers/2512.07806",
+    "upvote": 20
+  }
+}

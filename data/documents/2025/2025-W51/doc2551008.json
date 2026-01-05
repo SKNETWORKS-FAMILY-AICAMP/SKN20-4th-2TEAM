@@ -1,0 +1,19 @@
+{
+  "context": "This paper presents a framework for agent and tool adaptation in agentic AI systems, clarifying design strategies and identifying open challenges for improving AI capabilities. Cutting-edgeagentic AI systemsare built onfoundation modelsthat can be adapted to plan, reason, and interact with external tools to perform increasingly complex and specialized tasks. As these systems grow in capability and scope, adaptation becomes a central mechanism for improving performance, reliability, and generalization. In this paper, we unify the rapidly expanding research landscape into a systematic framework that spans bothagent adaptationsandtool adaptations. We further decompose these intotool-execution-signaledandagent-output-signaledforms of agent adaptation, as well asagent-agnosticandagent-supervisedforms of tool adaptation. We demonstrate that this framework helps clarify the design space of adaptation strategies in agentic AI, makes their trade-offs explicit, and provides practical guidance for selecting or switching among strategies during system design. We then review the representative approaches in each category, analyze their strengths and limitations, and highlight key open challenges and future opportunities. Overall, this paper aims to offer a conceptual foundation and practical roadmap for researchers and practitioners seeking to build more capable, efficient, and reliableagentic AI systems. Cutting-edge agentic AI systems are built on foundation models that can be adapted to plan, reason, and interact with external tools to perform increasingly complex and specialized tasks. As these systems grow in capability and scope, adaptation becomes a central mechanism for improving performance, reliability, and generalization. In this paper, we unify the rapidly expanding research landscape into a systematic framework that spans both agent adaptations and tool adaptations. We further decompose these into tool-execution-signaled and agent-output-signaled forms of agent adaptation, as well as agent-agnostic and agent-supervised forms of tool adaptation. We demonstrate that this framework helps clarify the design space of adaptation strategies in agentic AI, makes their trade-offs explicit, and provides practical guidance for selecting or switching among strategies during system design. We then review the representative approaches in each category, analyze their strengths and limitations, and highlight key open challenges and future opportunities. Overall, this paper aims to offer a conceptual foundation and practical roadmap for researchers and practitioners seeking to build more capable, efficient, and reliable agentic AI systems. Thanks for sharing our paper! Interesting paper :D arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/adaptation-of-agentic-ai-9983-5d39f82c Stop spamming arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/adaptation-of-agentic-ai ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551008",
+    "title": "Adaptation of Agentic AI",
+    "authors": [
+      "Pengcheng Jiang",
+      "Jiacheng Lin",
+      "Zhiyi Shi",
+      "Peiyang Song",
+      "Heng Wang",
+      "Xueqiang Xu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/pat-jj/Awesome-Adaptation-of-Agentic-AI",
+    "huggingface_url": "https://huggingface.co/papers/2512.16301",
+    "upvote": 98
+  }
+}

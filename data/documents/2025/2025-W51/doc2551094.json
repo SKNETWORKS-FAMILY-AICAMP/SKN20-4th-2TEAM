@@ -1,0 +1,12 @@
+{
+  "context": "AEGIS, a Vision-Language-Safe Action architecture with a plug-and-play safety constraint layer using control barrier functions, enhances safety and performance in robotic manipulation tasks. Vision-Language-Action (VLA) models have demonstrated remarkable capabilities in generalizing across diverse robotic manipulation tasks. However, deploying these models in unstructured environments remains challenging due to the critical need for simultaneous task compliance and safety assurance, particularly in preventing potential collisions during physical interactions. In this work, we introduce a Vision-Language-Safe Action (VLSA) architecture, namedAEGIS, which contains a plug-and-play safety constraint (SC) layer formulated viacontrol barrier functions.AEGISintegrates directly with existing VLA models to improve safety with theoretical guarantees, while maintaining their original instruction-following performance. To evaluate the efficacy of our architecture, we construct a comprehensive safety-critical benchmarkSafeLIBERO, spanning distinct manipulation scenarios characterized by varying degrees of spatial complexity and obstacle intervention. Extensive experiments demonstrate the superiority of our method over state-of-the-art baselines. Notably,AEGISachieves a 59.16% improvement inobstacle avoidance ratewhile substantially increasing thetask execution success rateby 17.25%. To facilitate reproducibility and future research, we make our code, models, and the benchmark datasets publicly available at https://vlsa-aegis.github.io/. Project Page:https://vlsa-aegis.github.io This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551094",
+    "title": "VLSA: Vision-Language-Action Models with Plug-and-Play Safety Constraint Layer",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.11891",
+    "upvote": 8
+  }
+}

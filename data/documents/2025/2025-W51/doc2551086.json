@@ -1,0 +1,15 @@
+{
+  "context": "A method distills structure-preserving motion priors from a video tracking model into a diffusion model, improving video generation quality through bidirectional feature fusion and local Gram Flow loss. Reality is a dance between rigid constraints and deformable structures. For video models, that means generating motion that preserves fidelity as well as structure. Despite progress indiffusion models, producing realistic structure-preserving motion remains challenging, especially for articulated and deformable objects such as humans and animals. Scaling training data alone, so far, has failed to resolve physically implausible transitions. Existing approaches rely on conditioning with noisy motion representations, such as optical flow or skeletons extracted using an external imperfect model. To address these challenges, we introduce an algorithm to distill structure-preservingmotion priorsfrom anautoregressive video tracking model(SAM2) into abidirectional video diffusion model(CogVideoX). With our method, we train SAM2VideoX, which contains two innovations: (1) a bidirectionalfeature fusion modulethat extracts global structure-preservingmotion priorsfrom a recurrent model like SAM2; (2) aLocal Gram Flow lossthat aligns how local features move together. Experiments onVBenchand in human studies show that SAM2VideoX delivers consistent gains (+2.60\\% onVBench, 21-22\\% lowerFVD, and 71.4\\% human preference) over prior baselines. Specifically, onVBench, we achieve 95.51\\%, surpassing REPA (92.91\\%) by 2.60\\%, and reduceFVDto 360.57, a 21.20\\% and 22.46\\% improvement over REPA- and LoRA-finetuning, respectively. The project website can be found at https://sam2videox.github.io/ . We introduce an algorithm to distill structure-preserving motion priors from an autoregressive video tracking model (SAM2) into a bidirectional video diffusion model (CogVideoX). This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551086",
+    "title": "Structure From Tracking: Distilling Structure-Preserving Motion for Video Generation",
+    "authors": [
+      "Yang Fei",
+      "Benlin Liu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.11792",
+    "upvote": 9
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "O3-Bench evaluates multimodal reasoning with interleaved attention to visual details, while InSight-o3 uses a multi-agent framework to improve performance through specialized visual search and reasoning tasks. The ability for AI agents to \"think with images\" requires a sophisticated blend ofreasoningandperception. However, current openmultimodal agentsstill largely fall short on thereasoningaspect crucial for real-world tasks like analyzing documents with dense charts/diagrams and navigating maps. To address this gap, we introduceO3-Bench, a new benchmark designed to evaluate multimodalreasoningwithinterleaved attentionto visual details.O3-Benchfeatures challenging problems that require agents to piece together subtle visual information from distinct image areas through multi-stepreasoning. The problems are highly challenging even for frontier systems like OpenAI o3, which only obtains 40.8% accuracy onO3-Bench. To make progress, we propose InSight-o3, a multi-agent framework consisting of avisual reasoningagent (vReasoner) and avisual searchagent (vSearcher) for which we introduce the task ofgeneralized visual search-- locating relational, fuzzy, or conceptual regions described in free-form language, beyond just simple objects or figures in natural images. We then present amultimodal LLMpurpose-trained for this task viareinforcement learning. As a plug-and-play agent, ourvSearcherempowers frontier multimodal models (asvReasoners), significantly improving their performance on a wide range of benchmarks. This marks a concrete step towards powerful o3-like open systems. Our code and dataset can be found at https://github.com/m-Just/InSight-o3 . Check out O3-Bench athttps://huggingface.co/datasets/m-Just/O3-Bench! This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/insight-o3-empowering-multimodal-foundation-models-with-generalized-visual-search-5256-2600b6fd ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601048",
+    "title": "InSight-o3: Empowering Multimodal Foundation Models with Generalized Visual Search",
+    "authors": [
+      "Kaican Li"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/m-Just/InSight-o3",
+    "huggingface_url": "https://huggingface.co/papers/2512.18745",
+    "upvote": 11
+  }
+}

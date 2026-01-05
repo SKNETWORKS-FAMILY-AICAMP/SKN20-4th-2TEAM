@@ -1,0 +1,14 @@
+{
+  "context": "Diffusion large language model drafters address limitations of autoregressive decoding in speculative frameworks through parallel processing and improved probabilistic modeling, achieving significant speedup in code generation tasks. Efficiency, as a critical practical challenge for LLM-driven agentic and reasoning systems, is increasingly constrained by the inherent latency of autoregressive (AR) decoding.Speculative decodingmitigates this cost through adraft-verify scheme, yet existing approaches rely on AR draft models (a.k.a., drafters), which introduce two fundamental issues: (1) step-wise uncertainty accumulation leads to a progressive collapse of trust between the target model and the drafter, and (2) inherently sequential decoding of AR drafters. Together, these factors cause limitedspeedups. In this paper, we show that adiffusion large language model(dLLM) drafters can naturally overcome these issues through its fundamentally differentprobabilistic modelingand efficientparallel decodingstrategy. Building on this insight, we introduce DEER, an efficientspeculative decodingframework that drafts with diffusion and verifies with AR models. To enable high-quality drafting, DEER employs atwo-stage training pipelineto align thedLLM-based drafters with the target AR model, and further adoptssingle-step decodingto generate long draft segments. Experiments show DEER reachesdraft acceptance lengths of up to 32 tokens, far surpassing the 10 tokens achieved by EAGLE-3. Moreover, on HumanEval with Qwen3-30B-A3B, DEER attains a 5.54xspeedup, while EAGLE-3 achieves only 2.41x. Code, model, demo, etc, will be available at https://czc726.github.io/DEER/ Simultaneously leveraging the efficiency of dLLM and the performance of AR models. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/deer-draft-with-diffusion-verify-with-autoregressive-models-9497-d2ff79e7 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551020",
+    "title": "DEER: Draft with Diffusion, Verify with Autoregressive Models",
+    "authors": [
+      "Meng-Hao Guo"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.15176",
+    "upvote": 41
+  }
+}

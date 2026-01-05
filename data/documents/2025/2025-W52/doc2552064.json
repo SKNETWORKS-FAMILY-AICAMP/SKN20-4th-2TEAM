@@ -1,0 +1,14 @@
+{
+  "context": "AniX synthesizes temporally coherent videos by extending controllable-entity models to support diverse, user-defined character interactions in static 3D environments using conditional autoregressive video generation. Recent advances inworld modelshave greatly enhanced interactive environment simulation. Existing methods mainly fall into two categories: (1)static world generationmodels, which construct3D environmentswithout active agents, and (2)controllable-entity models, which allow a single entity to perform limited actions in an otherwise uncontrollable environment. In this work, we introduceAniX, leveraging the realism and structural grounding ofstatic world generationwhile extendingcontrollable-entity modelsto support user-specified characters capable of performing open-ended actions. Users can provide a3DGS sceneand a character, then direct the character throughnatural languageto perform diverse behaviors from basic locomotion toobject-centric interactionswhile freely exploring the environment.AniXsynthesizes temporally coherent video clips that preserve visual fidelity with the provided scene and character, formulated as aconditional autoregressive video generationproblem. Built upon a pre-trainedvideo generator, our training strategy significantly enhancesmotion dynamicswhile maintaininggeneralizationacross actions and characters. Our evaluation covers a broad range of aspects, includingvisual quality,character consistency,action controllability, andlong-horizon coherence. Introducing AniX, a system enables users to provide 3DGS scene along with a 3D or multi-view character, enabling interactive control of the character's behaviors and active exploration of the environment through natural language commands. The system features: arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/animate-any-character-in-any-world-2345-697e792a ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552064",
+    "title": "Animate Any Character in Any World",
+    "authors": [
+      "Yitong Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/snowflakewang/AniX",
+    "huggingface_url": "https://huggingface.co/papers/2512.17796",
+    "upvote": 10
+  }
+}

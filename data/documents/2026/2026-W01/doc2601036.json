@@ -1,0 +1,12 @@
+{
+  "context": "Diffusion models offer appealing properties for language generation, such as parallel decoding and iterative refinement, but the discrete and highly structured nature of text challenges the direct application of diffusion principles. In this paper, we revisit diffusion language modeling from the view of diffusion process and language modeling, and outline five properties that separate diffusion mechanics from language-specific requirements. We first categorize existing approaches into continuous diffusion in embedding space and discrete diffusion over tokens. We then show that each satisfies only part of the five essential properties and therefore reflects a structural trade-off. Through analyses of recent large diffusion language models, we identify two central issues: (i) uniform corruption does not respect how information is distributed across positions, and (ii) token-wise marginal training cannot capture multi-token dependencies during parallel decoding. These observations motivate diffusion processes that align more closely with the structure of text, and encourage future work toward more coherent diffusion language models. TL;DR: We identify two core failure modes in current large diffusion LLMs: uniform corruption ignores where information lives in a sentence, and token-wise marginal training struggles with multi-token dependencies during parallel decoding. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/on-the-role-of-discreteness-in-diffusion-llms-9596-52294349 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/on-the-role-of-discreteness-in-diffusion-llms ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601036",
+    "title": "On the Role of Discreteness in Diffusion LLMs",
+    "authors": [],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.22630",
+    "upvote": 17
+  }
+}

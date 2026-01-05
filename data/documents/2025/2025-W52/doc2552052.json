@@ -1,0 +1,12 @@
+{
+  "context": "A new autoregressive visual generative pretraining framework called NExT-Vid is introduced, which uses masked next-frame prediction to jointly model images and videos while improving semantic representation and generation quality through context-isolated predictors and flow-matching decoders. Recent advances in pretraining general foundation models have significantly improved performance across diverse downstream tasks. While autoregressive (AR) generative models like GPT have revolutionized NLP, mostvisual generative pretrainingmethods still rely on BERT-style masked modeling, which often disregards the temporal information essential for video analysis. The few existing autoregressive visual pretraining methods suffer from issues such as inaccurate semantic localization and poor generation quality, leading to poor semantics. In this work, we propose NExT-Vid, a novel autoregressivevisual generative pretrainingframework that utilizesmasked next-frame predictionto jointly model images and videos. NExT-Vid introduces acontext-isolated autoregressive predictorto decouple semantic representation from target decoding, and a conditionedflow-matching decoderto enhance generation quality and diversity. Through context-isolated flow-matching pretraining, our approach achieves strong representations. Extensive experiments on large-scale pretrained models demonstrate that our proposed method consistently outperforms previous generative pretraining methods for visual representation learning viaattentive probingindownstream classification. Code:https://github.com/Singularity0104/NExT-Vid arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/learning-from-next-frame-prediction-autoregressive-video-modeling-encodes-effective-representations-2001-df8b55a6 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552052",
+    "title": "Learning from Next-Frame Prediction: Autoregressive Video Modeling Encodes Effective Representations",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Singularity0104/NExT-Vid",
+    "huggingface_url": "https://huggingface.co/papers/2512.21004",
+    "upvote": 12
+  }
+}

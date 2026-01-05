@@ -1,0 +1,16 @@
+{
+  "context": "OpenSubject, a large-scale video-derived dataset, enhances subject-driven image generation and manipulation through a four-stage pipeline that maintains identity fidelity and handles complex scenes. Despite the promising progress in subject-driven image generation, current models often deviate from the reference identities and struggle in complex scenes with multiple subjects. To address this challenge, we introduce OpenSubject, a video-derived large-scale corpus with 2.5M samples and 4.35M images for subject-driven generation and manipulation. The dataset is built with a four-stage pipeline that exploits cross-frame identity priors. (i) Video Curation. We apply resolution and aesthetic filtering to obtain high-quality clips. (ii) Cross-Frame Subject Mining and Pairing. We utilizevision-language model(VLM)-basedcategory consensus,local grounding, anddiversity-aware pairingto select image pairs. (iii) Identity-Preserving Reference Image Synthesis. We introducesegmentation map-guided outpaintingto synthesize the input images for subject-driven generation andbox-guided inpaintingto generate input images for subject-driven manipulation, together withgeometry-aware augmentationsandirregular boundary erosion. (iv) Verification and Captioning. We utilize a VLM to validate synthesized samples, re-synthesize failed samples based on stage (iii), and then construct short and long captions. In addition, we introduce a benchmark covering subject-driven generation and manipulation, and then evaluateidentity fidelity,prompt adherence,manipulation consistency, andbackground consistencywith a VLM judge. Extensive experiments show that training with OpenSubject improves generation and manipulation performance, particularly in complex scenes. OpenSubject is a video-derived large-scale corpus for subject-driven generation and manipulation. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550048",
+    "title": "OpenSubject: Leveraging Video-Derived Identity and Diversity Priors for Subject-driven Image Generation and Manipulation",
+    "authors": [
+      "Yexin Liu",
+      "Yueze Wang",
+      "Dian Zheng"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/LAW1223/OpenSubject",
+    "huggingface_url": "https://huggingface.co/papers/2512.08294",
+    "upvote": 17
+  }
+}

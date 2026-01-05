@@ -1,0 +1,14 @@
+{
+  "context": "Controlled synthetic pretraining reveals CANON LAYERS, lightweight architectural components that enhance information flow and model capabilities across various sequence architectures. Understanding architectural differences in language models is challenging, especially at academic-scale pretraining (e.g., 1.3B parameters, 100B tokens), where results are often dominated by noise and randomness. To overcome this, we introduce controlled synthetic pretraining tasks that isolate and evaluate core model capabilities. Within this framework, we discover CANON LAYERS: lightweight architectural components -- named after the musical term \"canon\" -- that promote horizontal information flow across neighboring tokens. Canon layers compute weighted sums of nearby token representations and integrate seamlessly into Transformers,linear attention,state-space models, or any sequence architecture.\n  We present 12 key results. This includes how Canon layers enhancereasoning depth(e.g., by 2times),reasoning breadth,knowledge manipulation, etc. They lift weak architectures likeNoPEto matchRoPE, andlinear attentionto rival SOTA linear models likeMamba2/GDN-- validated both through synthetic tasks and real-world academic-scale pretraining. This synthetic playground offers an economical, principled path to isolate core model capabilities often obscured at academic scales. Equipped with infinite high-quality data, it may even PREDICT how future architectures will behave as training pipelines improve -- e.g., through better data curation or RL-based post-training -- unlocking deeper reasoning and hierarchical inference. https://x.com/ZeyuanAllenZhu/status/2000892470306152701https://physics.allen-zhu.com/part-4-architecture-design/part-4-1  arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/physics-of-language-models-part-4-1-architecture-design-and-the-magic-of-canon-layers-7348-84205db6 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552032",
+    "title": "Physics of Language Models: Part 4.1, Architecture Design and the Magic of Canon Layers",
+    "authors": [
+      "Zeyuan Allen-Zhu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/facebookresearch/PhysicsLM4",
+    "huggingface_url": "https://huggingface.co/papers/2512.17351",
+    "upvote": 25
+  }
+}

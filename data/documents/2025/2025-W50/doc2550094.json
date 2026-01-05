@@ -1,0 +1,12 @@
+{
+  "context": "DuetSVG generates both image and SVG tokens end-to-end, improving SVG quality with a test-time scaling strategy. Recentvision-language model(VLM)-based approaches have achieved impressive results onSVG generation. However, because they generate only text and lack visual signals during decoding, they often struggle with complex semantics and fail to produce visually appealing or geometrically coherent SVGs. We introduce DuetSVG, a unifiedmultimodal modelthat jointly generatesimage tokensand correspondingSVG tokensin an end-to-end manner. DuetSVG is trained on both image and SVG datasets. At inference, we apply a noveltest-time scaling strategythat leverages the model's nativevisual predictionsas guidance to improve SVG decoding quality. Extensive experiments show that our method outperforms existing methods, producing visually faithful,semantically aligned, andsyntactically cleanSVGs across a wide range of applications. We introduce DuetSVG, a unified multimodal model that jointly generates image tokens and corresponding SVG tokens in an end-to-end manner. DuetSVG is trained on both image and SVG datasets. At inference, we apply a novel test-time scaling strategy that leverages the model's native visual predictions as guidance to improve SVG decoding quality. Extensive experiments show that our method outperforms existing methods, producing visually faithful, semantically aligned, and syntactically clean SVGs across a wide range of applications. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550094",
+    "title": "DuetSVG: Unified Multimodal SVG Generation with Internal Visual Guidance",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.10894",
+    "upvote": 3
+  }
+}

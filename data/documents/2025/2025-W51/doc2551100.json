@@ -1,0 +1,14 @@
+{
+  "context": "A systematic study adapts diffusion distillation techniques to text-to-image generation, providing guidelines for successful implementation and deployment. Diffusion distillationhas dramatically acceleratedclass-conditional image synthesis, but its applicability to open-ended text-to-image (T2I) generation is still unclear. We present the first systematic study that adapts and compares state-of-the-art distillation techniques on a strong T2I teacher model,FLUX.1-lite. By casting existing methods into aunified framework, we identify the key obstacles that arise when moving fromdiscrete class labelstofree-form language prompts. Beyond a thorough methodological analysis, we offer practical guidelines oninput scaling,network architecture, andhyperparameters, accompanied by an open-source implementation and pretrained student models. Our findings establish a solid foundation for deploying fast, high-fidelity, and resource-efficientdiffusion generatorsin real-world T2I applications. Code is available on github.com/alibaba-damo-academy/T2I-Distill. A Systematic Study of Diffusion Distillation for Text-to-Image Synthesis towards truly applicable few steps distillation, casting existing distillation methods (sCM, MeanFlow and IMM) into a unified framework for fair comparison. Code is available athttps://github.com/alibaba-damo-academy/T2I-Distill.git This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551100",
+    "title": "Few-Step Distillation for Text-to-Image Generation: A Practical Guide",
+    "authors": [
+      "Yifan Pu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/alibaba-damo-academy/T2I-Distill.git",
+    "huggingface_url": "https://huggingface.co/papers/2512.13006",
+    "upvote": 7
+  }
+}

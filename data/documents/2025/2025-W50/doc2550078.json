@@ -1,0 +1,15 @@
+{
+  "context": "A novel knowledge editing framework, Edit-then-Consolidate, addresses overfitting and lack of knowledge integration in large language models through targeted fine-tuning and policy optimization, enhancing reliability and generalization. Knowledge editingaims to update specific facts inlarge language models(LLMs) without full retraining. Prior efforts sought to tune the knowledge layers of LLMs, proving effective for making selective edits. However, a significant gap exists between their performance in controlled,teacher-forcing evaluationsand their real-world effectiveness inlifelong learningscenarios, which greatly limits their practical applicability. This work's empirical analysis reveals two recurring issues associated with this gap: (1) Most traditional methods lead the edited model to overfit to the new fact, thereby degrading pre-trained capabilities; (2) There is a critical absence of aknowledge consolidationstage, leaving new facts insufficiently integrated into LLMs' inference-time behavior under autoregressive generation, thereby leading to a mismatch between parametric knowledge and actual generation behavior. To this end, we propose Edit-then-Consolidate, a novelknowledge editingparadigm that aims to bridge the gap between theoreticalknowledge editingmethods and their real-world applicability. Specifically, (1) our framework mitigatesoverfittingviaTargeted Proximal Supervised Fine-Tuning(TPSFT) that localizes the edit via atrust-region objectiveto limitpolicy drift; (2) Then, a consolidation stage usingGroup Relative Policy Optimization(GRPO) aligns the edited knowledge withCoT-based inference policyby optimizingtrajectory-level behaviorundercomprehensive reward signals. Extensive experiments demonstrate our framework consistently improves editing reliability and generalization under real-world evaluations, while better preserving locality and pre-trained capabilities. EtCon: Edit-then-Consolidate for Reliable Knowledge Editing This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550078",
+    "title": "EtCon: Edit-then-Consolidate for Reliable Knowledge Editing",
+    "authors": [
+      "Yibin Wang",
+      "Junchi Yan"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/RlinL/EtCon",
+    "huggingface_url": "https://huggingface.co/papers/2512.04753",
+    "upvote": 7
+  }
+}

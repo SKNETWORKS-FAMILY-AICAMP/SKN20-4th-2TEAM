@@ -1,0 +1,14 @@
+{
+  "context": "TimeLens establishes a robust baseline for video temporal grounding by improving benchmark quality, addressing noisy training data, and developing efficient algorithmic design principles for multimodal large language models. This paper does not introduce a novel method but instead establishes a straightforward, incremental, yet essential baseline forvideo temporal grounding(VTG), a core capability in video understanding. Whilemultimodal large language models(MLLMs) excel at various video understanding tasks, the recipes for optimizing them for VTG remain under-explored. In this paper, we presentTimeLens, a systematic investigation into building MLLMs with strong VTG ability, along two primary dimensions: data quality and algorithmic design. We first expose critical quality issues in existing VTG benchmarks and introduceTimeLens-Bench, comprising meticulously re-annotated versions of three popular benchmarks with strict quality criteria. Our analysis reveals dramatic model re-rankings compared to legacy benchmarks, confirming the unreliability of prior evaluation standards. We also address noisy training data through an automated re-annotation pipeline, yieldingTimeLens-100K, a large-scale, high-quality training dataset. Building on our data foundation, we conduct in-depth explorations of algorithmic design principles, yielding a series of meaningful insights and effective yet efficient practices. These includeinterleaved textual encodingfor time representation, athinking-free reinforcement learning with verifiable rewards(RLVR) approach as the training paradigm, and carefully designed recipes forRLVRtraining. These efforts culminate inTimeLensmodels, a family of MLLMs with state-of-the-art VTG performance among open-source models and even surpass proprietary models such asGPT-5andGemini-2.5-Flash. All codes, data, and models will be released to facilitate future research. 🏠Project Page:https://timelens-arc-lab.github.io/💻Code:https://github.com/TencentARC/TimeLens🤗Model & Data:https://huggingface.co/collections/TencentARC/timelens🏆TimeLens-Bench Leaderboard:https://timelens-arc-lab.github.io/#leaderboard ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551051",
+    "title": "TimeLens: Rethinking Video Temporal Grounding with Multimodal LLMs",
+    "authors": [
+      "Jun Zhang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/TencentARC/TimeLens",
+    "huggingface_url": "https://huggingface.co/papers/2512.14698",
+    "upvote": 19
+  }
+}

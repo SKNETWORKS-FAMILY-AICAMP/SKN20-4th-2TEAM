@@ -1,0 +1,14 @@
+{
+  "context": "ReCo is a novel instructional video editing paradigm that enhances accuracy and reduces token interference by incorporating constraint modeling and regularization techniques during in-context generation. TheIn-context generationparadigm recently has demonstrated strong power in instructional image editing with both data efficiency and synthesis quality. Nevertheless, shaping such in-context learning for instruction-based video editing is not trivial. Without specifying editing regions, the results can suffer from the problem of inaccurate editing regions and the token interference between editing and non-editing areas duringdenoising. To address these, we presentReCo, a newinstructional video editingparadigm that novelly delves intoconstraint modelingbetween editing and non-editing regions duringin-context generation. Technically,ReCowidth-wise concatenates source and target video for jointdenoising. To calibratevideo diffusion learning,ReCocapitalizes on two regularization terms, i.e., latent andattention regularization, conducting on one-stepbackward denoised latentsandattention maps, respectively. The former increases the latent discrepancy of the editing region between source and target videos while reducing that of non-editing areas, emphasizing the modification on editing area and alleviating outside unexpected content generation. The latter suppresses the attention of tokens in the editing region to the tokens in counterpart of the source video, thereby mitigating their interference during novel object generation in target video. Furthermore, we propose a large-scale, high-quality video editing dataset, i.e.,ReCo-Data, comprising 500Kinstruction-video pairsto benefit model training. Extensive experiments conducted on four major instruction-basedvideo editing tasksdemonstrate the superiority of our proposal. Region-Constraint In-Context Generation for Instructional Video Editing Paper:https://arxiv.org/abs/2512.17650Project Page:https://zhw-zhang.github.io/ReCo-page/Github:https://github.com/HiDream-ai/ReCoReCo-Data:https://huggingface.co/datasets/HiDream-ai/ReCo-DataReCo-Bench:https://huggingface.co/datasets/HiDream-ai/ReCo-Bench arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/region-constraint-in-context-generation-for-instructional-video-editing-6367-832f5280 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552014",
+    "title": "Region-Constraint In-Context Generation for Instructional Video Editing",
+    "authors": [
+      "Fuchen Long"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/HiDream-ai/ReCo",
+    "huggingface_url": "https://huggingface.co/papers/2512.17650",
+    "upvote": 50
+  }
+}

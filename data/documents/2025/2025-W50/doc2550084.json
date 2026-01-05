@@ -1,0 +1,12 @@
+{
+  "context": "Active Video Perception (AVP) improves long video understanding by iteratively selecting and evaluating query-relevant video evidence, achieving higher accuracy with reduced computational cost. Long video understanding(LVU) is challenging because answering real-world queries often depends on sparse, temporally dispersed cues buried in hours of mostly redundant and irrelevant content. Whileagentic pipelinesimprove video reasoning capabilities, prevailing frameworks rely on aquery-agnostic captionerto perceive video information, which wastes computation on irrelevant content and blurs fine-grained temporal and spatial information. Motivated byactive perception theory, we argue that LVU agents should actively decide what, when, and where to observe, and continuously assess whether the current observation is sufficient to answer the query. We presentActive Video Perception(AVP), an evidence-seeking framework that treats the video as an interactive environment and acquires compact, queryrelevant evidence directly from pixels. Concretely, AVP runs an iterativeplan-observe-reflect processwithMLLM agents. In each round, a planner proposes targeted video interactions, an observer executes them to extracttime-stamped evidence, and a reflector evaluates the sufficiency of the evidence for the query, either halting with an answer or triggering further observation. Across five LVU benchmarks, AVP achieves highest performance with significant improvements. Notably, AVP outperforms the best agentic method by 5.7% in average accuracy while only requires 18.4% inference time and 12.4% input tokens.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550084",
+    "title": "Active Video Perception: Iterative Evidence Seeking for Agentic Long Video Understanding",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.05774",
+    "upvote": 6
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "context": "MMGR evaluates video and image models across reasoning abilities in multiple domains, revealing performance gaps and highlighting limitations in perceptual data and causal correctness. Video foundation models generate visually realistic andtemporally coherent content, but their reliability asworld simulatorsdepends on whether they capturephysical,logical, and spatial constraints. Existing metrics such asFrechet Video Distance (FVD)emphasizeperceptual qualityand overlookreasoning failures, including violations ofcausality,physics, andglobal consistency. We introduceMMGR(Multi-Modal Generative Reasoning Evaluation and Benchmark), a principled evaluation framework based on five reasoning abilities:Physical,Logical,3D Spatial,2D Spatial, andTemporal.MMGRevaluatesgenerative reasoningacross three domains:Abstract Reasoning(ARC-AGI,Sudoku),Embodied Navigation(real-world 3D navigation and localization), andPhysical Commonsense(sports and compositional interactions).MMGRapplies fine-grained metrics that requireholistic correctnessacross both video and image generation. We benchmark leading video models (Veo-3,Sora-2,Wan-2.2) and image models (Nano-banana,Nano-banana Pro,GPT-4o-image,Qwen-image), revealing strong performance gaps across domains. Models show moderate success onPhysical Commonsensetasks but perform poorly onAbstract Reasoning(below 10 percent accuracy onARC-AGI) and struggle with long-horizon spatial planning in embodied settings. Our analysis highlights key limitations in current models, including overreliance on perceptual data, weak global state consistency, and objectives that reward visual plausibility over causal correctness.MMGRoffers a unified diagnostic benchmark and a path toward reasoning-aware generative world models. MMGR proposes a principled, multi-domain benchmark for evaluating generative models' physical, logical, and spatial reasoning in video and image generation, diagnosing global consistency and causal correctness. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/mmgr-multi-modal-generative-reasoning-148-0ef453cd arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/mmgr-multi-modal-generative-reasoning ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551005",
+    "title": "MMGR: Multi-Modal Generative Reasoning",
+    "authors": [
+      "Haoyi Qiu",
+      "Tianyi Ma",
+      "Gengze Zhou"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.14691",
+    "upvote": 114
+  }
+}

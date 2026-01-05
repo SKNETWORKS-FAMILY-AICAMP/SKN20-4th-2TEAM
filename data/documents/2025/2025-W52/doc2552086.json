@@ -1,0 +1,14 @@
+{
+  "context": "Research explores syllogistic reasoning in LLMs, examining their symbolic inference and natural language understanding capabilities, with some models showing perfect symbolic performance. We studysyllogistic reasoningin LLMs from the logical and natural language perspectives. In process, we explore fundamental reasoning capabilities of the LLMs and the direction this research is moving forward. To aid in our studies, we use 14large language modelsand investigate theirsyllogistic reasoningcapabilities in terms ofsymbolic inferencesas well asnatural language understanding. Even though this reasoning mechanism is not a uniform emergent property across LLMs, the perfect symbolic performances in certain models make us wonder whether LLMs are becoming more and more formal reasoning mechanisms, rather than making explicit the nuances of human reasoning. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/understanding-syllogistic-reasoning-in-llms-from-formal-and-natural-language-perspectives-822-84433a31 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552086",
+    "title": "Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives",
+    "authors": [
+      "Aheli Poddar"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/XAheli/Logic-in-LLMs",
+    "huggingface_url": "https://huggingface.co/papers/2512.12620",
+    "upvote": 2
+  }
+}

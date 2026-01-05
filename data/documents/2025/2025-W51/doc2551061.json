@@ -1,0 +1,15 @@
+{
+  "context": "Researchers developed SAGE, an agent system that enables flexible video reasoning across different time scales by using multi-turn processing and reinforcement learning, achieving improved performance on long-form video analysis tasks. As humans, we are natural any-horizon reasoners, i.e., we can decide whether to iteratively skim long videos or watch short ones in full when necessary for a given task. With this in mind, one would expectvideo reasoningmodels to reason flexibly across different durations. However, SOTA models are still trained to predict answers in a single turn while processing a large number of frames, akin to watching an entire long video, requiring significant resources. This raises the question: Is it possible to develop performant any-horizonvideo reasoningsystems? Inspired by human behavior, we first proposeSAGE, an agent system that performsmulti-turn reasoningon long videos while handling simpler problems in a single turn. Secondly, we introduce an easy synthetic data generation pipeline using Gemini-2.5-Flash to train the orchestrator,SAGE-MM, which lies at the core ofSAGE. We further propose an effective RL post-training recipe essential for instilling any-horizon reasoning ability inSAGE-MM. Thirdly, we curateSAGE-Benchwith an average duration of greater than 700 seconds for evaluatingvideo reasoningability in real-world entertainment use cases. Lastly, we empirically validate the effectiveness of our system, data, and RL recipe, observing notable improvements of up to 6.1% on open-endedvideo reasoningtasks, as well as an impressive 8.2% improvement on videos longer than 10 minutes. 📜 explainer thread:https://x.com/allen_ai/status/2001351082916630586🔗 Project page:https://lnkd.in/eff-DjHx💻 Code: github.com/allenai/SAGE📦 Models & data:https://lnkd.in/eT9iVVRk📝 Paper: arxiv.org/abs/2512.13874 arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/sage-training-smart-any-horizon-agents-for-long-video-reasoning-with-reinforcement-learning-3452-525d4526 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551061",
+    "title": "SAGE: Training Smart Any-Horizon Agents for Long Video Reasoning with Reinforcement Learning",
+    "authors": [
+      "Jitesh Jain",
+      "Jialuo Li"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/allenai/SAGE",
+    "huggingface_url": "https://huggingface.co/papers/2512.13874",
+    "upvote": 16
+  }
+}

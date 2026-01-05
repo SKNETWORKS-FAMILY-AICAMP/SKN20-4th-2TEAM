@@ -1,0 +1,14 @@
+{
+  "context": "SemanticGen addresses slow convergence and computational costs in video generation by using a two-stage diffusion model approach that first generates semantic features and then VAE latents, leading to faster convergence and high-quality results. State-of-the-art video generative models typically learn the distribution of video latents in theVAE spaceand map them to pixels using aVAE decoder. While this approach can generate high-quality videos, it suffers from slow convergence and is computationally expensive when generating long videos. In this paper, we introduce SemanticGen, a novel solution to address these limitations by generating videos in thesemantic space. Our main insight is that, due to the inherent redundancy in videos, the generation process should begin in a compact, high-levelsemantic spacefor global planning, followed by the addition of high-frequency details, rather than directly modeling a vast set of low-level video tokens usingbi-directional attention. SemanticGen adopts a two-stage generation process. In the first stage, adiffusion modelgenerates compactsemantic video features, which define the global layout of the video. In the second stage, anotherdiffusion modelgenerates VAE latents conditioned on these semantic features to produce the final output. We observe that generation in thesemantic spaceleads to faster convergence compared to the VAE latent space. Our method is also effective and computationally efficient when extended to long video generation. Extensive experiments demonstrate that SemanticGen produces high-quality videos and outperforms state-of-the-art approaches and strong baselines. Project Page:https://jianhongbai.github.io/SemanticGen/ arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/semanticgen-video-generation-in-semantic-space arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/semanticgen-video-generation-in-semantic-space-9853-92c3f4c3 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552004",
+    "title": "SemanticGen: Video Generation in Semantic Space",
+    "authors": [
+      "Qinghe Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.20619",
+    "upvote": 89
+  }
+}

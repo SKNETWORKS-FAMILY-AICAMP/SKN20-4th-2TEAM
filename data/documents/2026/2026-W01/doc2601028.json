@@ -1,0 +1,14 @@
+{
+  "context": "GR-Dexter introduces a hardware-model-data framework for bimanual dexterous-hand robot manipulation using vision-language-action models, combining teleoperation data and multimodal datasets to achieve robust generalization. Vision-language-action (VLA) modelshave enabled language-conditioned, long-horizon robot manipulation, but most existing systems are limited to grippers. Scaling VLA policies to bimanual robots with high degree-of-freedom (DoF) dexterous hands remains challenging due to the expanded action space, frequent hand-object occlusions, and the cost of collecting real-robot data. We present GR-Dexter, a holistic hardware-model-data framework for VLA-based generalist manipulation on a bimanual dexterous-hand robot. Our approach combines the design of a compact 21-DoF robotic hand, an intuitive bimanual teleoperation system for real-robot data collection, and atraining recipethat leverages teleoperated robot trajectories together with large-scale vision-language and carefully curatedcross-embodiment datasets. Across real-world evaluations spanning long-horizon everyday manipulation and generalizable pick-and-place, GR-Dexter achieves strong in-domain performance and improved robustness to unseen objects and unseen instructions. We hope GR-Dexter serves as a practical step toward generalist dexterous-hand robotic manipulation. VLAs go from grippers to 21 DoF dexterous ByteDexter V2 :) wooooow that demo video.....  gosh that's impressive, This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/gr-dexter-technical-report-8325-b98bf062 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601028",
+    "title": "GR-Dexter Technical Report",
+    "authors": [
+      "Wei Xu"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.24210",
+    "upvote": 20
+  }
+}

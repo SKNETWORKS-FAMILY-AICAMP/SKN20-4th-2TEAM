@@ -1,0 +1,16 @@
+{
+  "context": "OneStory generates coherent multi-shot videos by modeling global cross-shot context through a Frame Selection module and an Adaptive Conditioner, leveraging pretrained image-to-video models and a curated dataset. Storytelling in real-world videos often unfolds through multiple shots -- discontinuous yet semantically connected clips that together convey a coherent narrative. However, existingmulti-shot video generation(MSV) methods struggle to effectively model long-range cross-shot context, as they rely on limited temporal windows or single keyframe conditioning, leading to degraded performance under complex narratives. In this work, we propose OneStory, enabling global yet compact cross-shot context modeling for consistent and scalable narrative generation. OneStory reformulates MSV as anext-shot generationtask, enablingautoregressive shot synthesiswhile leveraging pretrained image-to-video (I2V) models for strong visual conditioning. We introduce two key modules: aFrame Selection modulethat constructs asemantically-relevant global memorybased on informative frames from prior shots, and anAdaptive Conditionerthat performsimportance-guided patchificationto generate compact context for direct conditioning. We further curate a high-quality multi-shot dataset withreferential captionsto mirror real-world storytelling patterns, and design effective training strategies under the next-shot paradigm. Finetuned from a pretrained I2V model on our curated 60K dataset, OneStory achieves state-of-the-art narrative coherence across diverse and complex scenes in both text- andimage-conditionedsettings, enabling controllable and immersive long-form video storytelling.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550014",
+    "title": "OneStory: Coherent Multi-Shot Video Generation with Adaptive Memory",
+    "authors": [
+      "Zhaochong An",
+      "Zijian Zhou",
+      "Kumara Kahatapitiya"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.07802",
+    "upvote": 43
+  }
+}

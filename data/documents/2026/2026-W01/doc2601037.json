@@ -1,0 +1,15 @@
+{
+  "context": "Inversion-based visual editing provides an effective and training-free way to edit an image or a video based on user instructions. Existing methods typically inject source image information during the sampling process to maintain editing consistency. However, this sampling strategy overly relies on source information, which negatively affects the edits in the target image (e.g., failing to change the subject's atributes like pose, number, or color as instructed). In this work, we propose ProEdit to address this issue both in the attention and the latent aspects. In the attention aspect, we introduce KV-mix, which mixes KV features of the source and the target in the edited region, mitigating the influence of the source image on the editing region while maintaining background consistency. In the latent aspect, we propose Latents-Shift, which perturbs the edited region of the source latent, eliminating the influence of the inverted latent on the sampling. Extensive experiments on several image and video editing benchmarks demonstrate that our method achieves SOTA performance. In addition, our design is plug-and-play, which can be seamlessly integrated into existing inversion and editing methods, such as RF-Solver, FireFlow and UniEdit. Project page:https://isee-laboratory.github.io/ProEdit This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/proedit-inversion-based-editing-from-prompts-done-right-4528-2237d7df ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601037",
+    "title": "ProEdit: Inversion-based Editing From Prompts Done Right",
+    "authors": [
+      "Zhi Ouyang",
+      "Dian Zheng"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/iSEE-Laboratory/ProEdit",
+    "huggingface_url": "https://huggingface.co/papers/2512.22118",
+    "upvote": 17
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "Sparse-LaViDa accelerates Masked Discrete Diffusion Models by dynamically truncating masked tokens during inference, maintaining quality and achieving up to a 2x speedup across various tasks. Masked Discrete Diffusion Models(MDMs) have achieved strong performance across a wide range of multimodal tasks, including image understanding, generation, and editing. However, their inference speed remains suboptimal due to the need to repeatedly process redundant masked tokens at every sampling step. In this work, we proposeSparse-LaViDa, a novel modeling framework that dynamically truncates unnecessary masked tokens at each inference step to accelerate MDM sampling. To preserve generation quality, we introduce specializedregister tokensthat serve as compact representations for the truncated tokens. Furthermore, to ensure consistency between training and inference, we design a specializedattention maskthat faithfully matches the truncated sampling procedure during training. Built upon the state-of-the-art unified MDMLaViDa-O,Sparse-LaViDaachieves up to a 2x speedup across diverse tasks includingtext-to-image generation,image editing, andmathematical reasoning, while maintaining generation quality. Efficient Training and Inference for unified multi-modal diffusion language models ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551083",
+    "title": "Sparse-LaViDa: Sparse Multimodal Discrete Diffusion Language Models",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.14008",
+    "upvote": 9
+  }
+}

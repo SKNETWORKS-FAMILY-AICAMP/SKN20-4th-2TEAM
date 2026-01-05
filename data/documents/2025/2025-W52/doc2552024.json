@@ -1,0 +1,12 @@
+{
+  "context": "A novel RL framework, SAGE, enhances LLM-based agents' self-improvement capabilities by systematically incorporating skills from a skill library, leading to better performance and efficiency in new environments. Large Language Model (LLM)-based agents have demonstrated remarkable capabilities in complex reasoning and multi-turn interactions but struggle to continuously improve and adapt when deployed in new environments. One promising approach is implementing skill libraries that allow agents to learn, validate, and apply new skills. However, current skill library approaches rely primarily on LLM prompting, making consistent skill library implementation challenging. To overcome these challenges, we propose aReinforcement Learning(RL)-based approach to enhance agents' self-improvement capabilities with a skill library. Specifically, we introduceSkill Augmented GRPO for self-Evolution(SAGE), a novelRLframework that systematically incorporates skills into learning. The framework's key component,Sequential Rollout, iteratively deploys agents across a chain of similar tasks for each rollout. As agents navigate through the task chain, skills generated from previous tasks accumulate in the library and become available for subsequent tasks. Additionally, the framework enhances skill generation and utilization through aSkill-integrated Rewardthat complements the original outcome-based rewards. Experimental results on AppWorld demonstrate thatSAGE, when applied to supervised-finetuned model with expert experience, achieves 8.9% higherScenario Goal Completionwhile requiring 26% fewerinteraction stepsand generating 59% fewertokens, substantially outperforming existing approaches in both accuracy and efficiency. Apply RL to Skill Library Agent. First work I have read that really feels like a real learning for coding agents because in code - reusability is the king arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/reinforcement-learning-for-self-improving-agent-with-skill-library-247-ca02f926 👀 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552024",
+    "title": "Reinforcement Learning for Self-Improving Agent with Skill Library",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.17102",
+    "upvote": 30
+  }
+}

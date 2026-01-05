@@ -1,0 +1,14 @@
+{
+  "context": "Respiratory sound classification is hindered by the limited size, high noise levels, and severe class imbalance of benchmark datasets like ICBHI 2017. While Transformer-based models offer powerful feature extraction capabilities, they are prone to overfitting and often converge to sharp minima in the loss landscape when trained on such constrained medical data. To address this, we introduce a framework that enhances the Audio Spectrogram Transformer (AST) using Sharpness-Aware Minimization (SAM). Instead of merely minimizing the training loss, our approach optimizes the geometry of the loss surface, guiding the model toward flatter minima that generalize better to unseen patients. We also implement a weighted sampling strategy to handle class imbalance effectively. Our method achieves a state-of-the-art score of 68.10% on the ICBHI 2017 dataset, outperforming existing CNN and hybrid baselines. More importantly, it reaches a sensitivity of 68.31%, a crucial improvement for reliable clinical screening. Further analysis using t-SNE and attention maps confirms that the model learns robust, discriminative features rather than memorizing background noise. Hi all, We present a robust framework for Lung Sound Classification usingASTbackbones enhanced withSAM optimizer. Traditional transformers often struggle with limited medical data, but our experiments show that geometry-aware optimization (SAM) leads to a massive boost in sensitivity. We achieved a68.10% Scoreon the official ICBHI 2017 split. We invite everyone to benchmark our results. The repository includes: Check it out here:GitHub Link This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/geometry-aware-optimization-for-respiratory-sound-classification-enhancing-sensitivity-with-sam-optimized-audio-spectrogram-transformers-1379-cf619800 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601066",
+    "title": "Geometry-Aware Optimization for Respiratory Sound Classification: Enhancing Sensitivity with SAM-Optimized Audio Spectrogram Transformers",
+    "authors": [
+      "Atakan Işık"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/Atakanisik/ICBHI-AST-SAM",
+    "huggingface_url": "https://huggingface.co/papers/2512.22564",
+    "upvote": 5
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "Large vision-language models (VLMs) often benefit from intermediate visual cues, either injected via external tools or generated as latent visual tokens during reasoning, but these mechanisms still overlook fine-grained visual evidence (e.g., polylines in charts), generalize poorly across domains, and incur high inference-time cost. In this paper, we propose Bi-directional Perceptual Shaping (BiPS), which transforms question-conditioned masked views into bidirectional where-to-look signals that shape perception during training. BiPS first applies a KL-consistency constraint between the original image and an evidence-preserving view that keeps only question-relevant regions, encouraging coarse but complete coverage of supporting pixels. It then applies a KL-separation constraint between the original and an evidence-ablated view where critical pixels are masked so the image no longer supports the original answer, discouraging text-only shortcuts (i.e., answering from text alone) and enforcing fine-grained visual reliance. Across eight benchmarks, BiPS boosts Qwen2.5-VL-7B by 8.2% on average and shows strong out-of-domain generalization to unseen datasets and image types. A framework that leverages programmatically generated paired views to train VLMs to focus on critical visual evidence while rejecting text-only shortcuts. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/see-less-see-right-bi-directional-perceptual-shaping-for-multimodal-reasoning-3730-0991837d ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601045",
+    "title": "See Less, See Right: Bi-directional Perceptual Shaping For Multimodal Reasoning",
+    "authors": [
+      "Yizhen Zhang"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/zss02/BiPS",
+    "huggingface_url": "https://huggingface.co/papers/2512.22120",
+    "upvote": 13
+  }
+}

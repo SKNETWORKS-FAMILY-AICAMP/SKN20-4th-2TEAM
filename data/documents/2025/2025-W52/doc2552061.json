@@ -1,0 +1,12 @@
+{
+  "context": "Capitalization tie-out in legal diligence is a complex task that current agentic systems struggle to automate due to its multi-document reasoning and evidence traceability requirements. Before closing venture capital financing rounds, lawyers conduct diligence that includes tying out thecapitalization table: verifying that every security (for example,shares,options,warrants) and issuance term (for example,vesting schedules,acceleration triggers,transfer restrictions) is supported by large sets of underlying legal documentation. While LLMs continue to improve on legal benchmarks, specialized legal workflows, such as capitalization tie-out, remain out of reach even for strong agentic systems. The task requiresmulti-document reasoning, strictevidence traceability, anddeterministic outputsthat current approaches fail to reliably deliver. We characterize capitalization tie-out as an instance of a real-world benchmark forlegal AI, analyze and compare the performance of existing agentic systems, and propose aworld model architecturetowardtie-out automation-and more broadly as a foundation forapplied legal intelligence. Most LLMs today are powerful at language but weak at worlds: they generate fluent outputs without maintaining a consistent, verifiable model of reality. As a result, many AI applications plateau at demos or copilots and fail in complex, high-stakes workflows. This paper shows that progress requires shifting from ad-hoc reasoning to explicit, evidence-grounded world models. Cap table tie-out exposes this gap—and demonstrates how closing it enables genuinely autonomous systems. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/does-it-tie-out-towards-autonomous-legal-agents-in-venture-capital-2295-10429ce1 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552061",
+    "title": "Does It Tie Out? Towards Autonomous Legal Agents in Venture Capital",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.18658",
+    "upvote": 10
+  }
+}
