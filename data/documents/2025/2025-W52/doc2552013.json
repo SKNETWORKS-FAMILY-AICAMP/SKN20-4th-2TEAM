@@ -1,0 +1,15 @@
+{
+  "context": "A multi-agent framework, involving a master LLM, grounding agent, and vision agent, enhances long-video QA by improving temporal grounding and leveraging visual and textual data. Recent advances inmultimodal LLMsand systems that use tools forlong-video QApoint to the promise of reasoning over hour-long episodes. However, many methods still compress content into lossy summaries or rely on limited toolsets, weakeningtemporal groundingand missing fine-grained cues. We propose amulti-agent frameworkin which a master LLM coordinates agrounding agentto localize question-relevant segments and avision agentto extract targeted textual observations. The master agent plans with a step limit, and is trained withreinforcement learningto encourage concise, correct, and efficient multi-agent cooperation. This design helps the master agent focus on relevant clips via grounding, complements subtitles with visual detail, and yields interpretable trajectories. On our proposedLongTVQAandLongTVQA+which are episode-level datasets aggregated from TVQA/TVQA+, our multi-agent system significantly outperforms strong non-agent baselines. Experiments also showreinforcement learningfurther strengthens reasoning and planning for the trained agent. Code and data will be shared at https://longvideoagent.github.io/. Recent advances in multimodal LLMs and systems that use tools for long-video QA point to the promise of reasoning over hour-long episodes. However, many methods still compress content into lossy summaries or rely on limited toolsets, weakening temporal grounding and missing fine-grained cues. We propose a multi-agent framework in which a master LLM coordinates a grounding agent to localize question-relevant segments and a vision agent to extract targeted textual observations. The master agent plans with a step limit, and is trained with reinforcement learning to encourage concise, correct, and efficient multi-agent cooperation. This design helps the master agent focus on relevant clips via grounding, complements subtitles with visual detail, and yields interpretable trajectories. On our proposed LongTVQA and LongTVQA+ which are episode-level datasets aggregated from TVQA/TVQA+, our multi-agent system significantly outperforms strong non-agent baselines. Experiments also show reinforcement learning further strengthens reasoning and planning for the trained agent. Code and data will be shared athttps://longvideoagent.github.io/. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/longvideoagent-multi-agent-reasoning-with-long-videos-7049-432edf49 Featured on awesome multi agent papers! https://github.com/kyegomez/awesome-multi-agent-papers/blob/main/README.md ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552013",
+    "title": "LongVideoAgent: Multi-Agent Reasoning with Long Videos",
+    "authors": [
+      "Runtao Liu",
+      "Jiaqi Tang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/longvideoagent/LongVideoAgent",
+    "huggingface_url": "https://huggingface.co/papers/2512.20618",
+    "upvote": 53
+  }
+}

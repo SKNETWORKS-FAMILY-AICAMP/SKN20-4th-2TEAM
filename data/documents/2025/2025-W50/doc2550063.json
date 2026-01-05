@@ -1,0 +1,14 @@
+{
+  "context": "HiF-VLA integrates motion for bidirectional temporal reasoning in VLA models, improving long-horizon manipulation performance with minimal additional latency. Vision-Language-Action (VLA) models have recently enabled robotic manipulation by grounding visual and linguistic cues into actions. However, most VLAs assume the Markov property, relying only on the current observation and thus suffering from temporal myopia that degrades long-horizon coherence. In this work, we viewmotionas a more compact and informative representation of temporal context and world dynamics, capturing inter-state changes while filtering static pixel-level noise. Building on this idea, we propose HiF-VLA (Hindsight, Insight, and Foresight for VLAs), a unified framework that leveragesmotionforbidirectional temporal reasoning. HiF-VLA encodes past dynamics throughhindsight priors, anticipates futuremotionviaforesight reasoning, and integrates both through ahindsight-modulated joint expertto enable a ''think-while-acting'' paradigm for long-horizon manipulation. As a result, HiF-VLA surpasses strong baselines onLIBERO-LongandCALVIN ABC-D benchmarks, while incurring negligible additional inference latency. Furthermore, HiF-VLA achieves substantial improvements inreal-world long-horizon manipulation tasks, demonstrating its broad effectiveness in practical robotic settings. Code and checkpoints are available!Github:https://github.com/OpenHelix-Team/HiF-VLAProject page:https://hifvla.github.io/ This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550063",
+    "title": "HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models",
+    "authors": [
+      "Siteng Huang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/OpenHelix-Team/HiF-VLA",
+    "huggingface_url": "https://huggingface.co/papers/2512.09928",
+    "upvote": 11
+  }
+}

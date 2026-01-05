@@ -1,0 +1,25 @@
+{
+  "context": "T-pro 2.0 is an open-weight Russian LLM for hybrid reasoning and efficient inference, using a Cyrillic-dense tokenizer and EAGLE speculative-decoding pipeline. We introduce T-pro 2.0, an open-weight Russian LLM forhybrid reasoningandefficient inference. The model supports direct answering andreasoning-trace generation, using aCyrillic-dense tokenizerand an adaptedEAGLE speculative-decoding pipelineto reduce latency. To enable reproducible and extensible research, we release the model weights, the T-Wix 500k instruction corpus, the T-Math reasoning benchmark, and the EAGLE weights on Hugging Face. These resources allow users to study Russian-language reasoning and to extend or adapt both the model and the inference pipeline. A public web demo exposes reasoning and non-reasoning modes and illustrates the speedups achieved by our inference stack across domains. T-pro 2.0 thus serves as an accessible open system for building and evaluating efficient, practical Russian LLM applications. T-pro 2.0 is an open-weight Russian LLM with hybrid reasoning and fast inference, released with datasets, benchmarks, and an optimized decoding pipeline to support reproducible research and practical applications. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend i see yah handed in yah paper work that was requested ;) arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/t-pro-2-0-an-efficient-russian-hybrid-reasoning-model-and-playground-9218-6c3a80fc ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550002",
+    "title": "T-pro 2.0: An Efficient Russian Hybrid-Reasoning Model and Playground",
+    "authors": [
+      "Dmitrii Stoianov",
+      "Danil Taranets",
+      "Olga Tsymboi",
+      "Ramil Latypov",
+      "Almaz Dautov",
+      "Vladislav Kruglikov",
+      "German Abramov",
+      "Dmitry Abulkhanov",
+      "Mikhail Gashkov",
+      "Artem Batalov",
+      "Aleksandr Medvedev",
+      "Anatolii Potapov"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.10430",
+    "upvote": 113
+  }
+}

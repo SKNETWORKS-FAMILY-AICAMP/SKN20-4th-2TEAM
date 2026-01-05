@@ -1,0 +1,14 @@
+{
+  "context": "Omni-Weather is a multimodal foundation model that integrates weather generation and understanding using a shared self-attention mechanism and a Chain-of-Thought dataset to enable interpretable, high-quality outputs. Weather modeling requires both accurate prediction and mechanistic interpretation, yet existing methods treat these goals in isolation, separating generation from understanding. To address this gap, we present Omni-Weather, the firstmultimodal foundation modelthat unifies weather generation and understanding within a single architecture. Omni-Weather integrates aradar encoderfor weather generation tasks, followed by unified processing using ashared self-attention mechanism. Moreover, we construct aChain-of-Thought datasetfor causal reasoning in weather generation, enabling interpretable outputs and improved perceptual quality. Extensive experiments show Omni-Weather achieves state-of-the-art performance in both weather generation and understanding. Our findings further indicate that generative and understanding tasks in the weather domain can mutually enhance each other. Omni-Weather also demonstrates the feasibility and value of unifying weather generation and understanding. Submit Omni-Weather This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/omni-weather-unified-multimodal-foundation-model-for-weather-generation-and-understanding-7521-8a598bda ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601047",
+    "title": "Omni-Weather: Unified Multimodal Foundation Model for Weather Generation and Understanding",
+    "authors": [
+      "Yuandong Pu"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.21643",
+    "upvote": 11
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "context": "StereoWorld generates high-quality stereo video from monocular input using a pretrained video generator with geometry-aware regularization and spatio-temporal tiling. The growing adoption of XR devices has fueled strong demand for high-qualitystereo video, yet its production remains costly and artifact-prone. To address this challenge, we present StereoWorld, an end-to-end framework that repurposes apretrained video generatorfor high-fidelitymonocular-to-stereovideo generation. Our framework jointly conditions the model on the monocular video input while explicitly supervising the generation with ageometry-aware regularizationto ensure 3D structural fidelity. Aspatio-temporal tilingscheme is further integrated to enable efficient, high-resolution synthesis. To enable large-scale training and evaluation, we curate ahigh-definition stereo video datasetcontaining over 11M frames aligned tonatural human interpupillary distance (IPD). Extensive experiments demonstrate that StereoWorld substantially outperforms prior methods, generatingstereo videos with superiorvisual fidelityandgeometric consistency. The project webpage is available at https://ke-xing.github.io/StereoWorld/. StereoWorld presents geometry-aware monocular-to-stereo video generation using a pretrained video generator with geometry regularization and tiling for high-resolution, consistent stereo videos. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/stereoworld-geometry-aware-monocular-to-stereo-video-generation-2538-ca5ce6e1 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550006",
+    "title": "StereoWorld: Geometry-Aware Monocular-to-Stereo Video Generation",
+    "authors": [
+      "Ke Xing",
+      "Yuyang Yin"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.09363",
+    "upvote": 71
+  }
+}

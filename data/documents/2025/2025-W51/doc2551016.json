@@ -1,0 +1,20 @@
+{
+  "context": "Finch, a benchmark for AI agents in enterprise finance and accounting, evaluates performance across complex, real-world workflows using authentic data from Enron and other institutions. We introduce a finance & accounting benchmark (Finch) for evaluating AI agents on real-world, enterprise-grade professional workflows -- interleaving data entry, structuring, formatting, web search, cross-file retrieval, calculation, modeling, validation, translation, visualization, and reporting. Finch is sourced from authentic enterprise workspaces at Enron (15,000spreadsheetsand 500,000 emails from 150 employees) and other financial institutions, preserving in-the-wild messiness across multimodal artifacts (text, tables, formulas, charts, code, and images) and spanning diverse domains such as budgeting, trading, and asset management.\n  We propose a workflow construction process that combinesLLM-assisted discoverywithexpert annotation: (1) LLM-assisted, expert-verified derivation of workflows from real-world email threads and version histories of spreadsheet files, and (2) meticulousexpert annotationfor workflows, requiring over 700 hours of domain-expert effort. This yields 172composite workflowswith 384 tasks, involving 1,710spreadsheetswith 27 million cells, along withPDFsand other artifacts, capturing the intrinsically messy, long-horizon, knowledge-intensive, and collaborative nature of real-world enterprise work.\n  We conduct both human and automated evaluations of frontierAI systemsincludingGPT 5.1,Claude Sonnet 4.5,Gemini 3 Pro,Grok 4, andQwen 3 Max, andGPT 5.1Pro spends 48 hours in total yet passes only 38.4% of workflows, whileClaude Sonnet 4.5passes just 25.0%. Comprehensive case studies further surface the challenges that real-world enterprise workflows pose for AI agents. Real-world F&A work is messy, spanning heterogeneous and large-scale artifacts such as spreadsheets and PDFs. It's also long-horizon and knowledge-intensive: workflows interleave multiple tasks and span diverse domains such as budgeting, trading, asset management, and operations.  The workflows are derived from real-world enterprise workspaces (primarily Enron, as well as corporations in the EUSES Corpus, investment and securities companies, World Bank, Canadian/British government agencies, and more).  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551016",
+    "title": "Finch: Benchmarking Finance & Accounting across Spreadsheet-Centric Enterprise Workflows",
+    "authors": [
+      "Haoyu Dong",
+      "Pengkun Zhang",
+      "Yan Gao",
+      "Xuanyu Dong",
+      "Yilin Cheng",
+      "Mingzhe Lu",
+      "Adina Yakefu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.13168",
+    "upvote": 49
+  }
+}

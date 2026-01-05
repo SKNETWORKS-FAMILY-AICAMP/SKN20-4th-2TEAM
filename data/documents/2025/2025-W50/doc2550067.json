@@ -1,0 +1,19 @@
+{
+  "context": "Reinforcement learning is used to train sampling procedures for masked discrete diffusion language models, improving token throughput and quality compared to heuristic strategies. Diffusion (Large) Language Models(dLLMs) now match the downstream performance of their autoregressive counterparts on many tasks, while holding the promise of being more efficient during inference. One particularly successful variant ismasked discrete diffusion, in which abufferfilled with specialmask tokensis progressively replaced with tokens sampled from the model's vocabulary. Efficiency can be gained by unmasking several tokens in parallel, but doing too many at once risks degrading the generation quality. Thus, one critical design aspect of dLLMs is thesampling procedurethat selects, at each step of the diffusion process, which tokens to replace. Indeed, recent work has found that heuristic strategies such asconfidence thresholdinglead to both higher quality and token throughput compared to random unmasking. However, such heuristics have downsides: they require manual tuning, and we observe that their performance degrades with largerbuffersizes. In this work, we instead propose to trainsampling procedures usingreinforcement learning. Specifically, we formalize masked diffusion sampling as aMarkov decision processin which the dLLM serves as the environment, and propose a lightweight policy architecture based on asingle-layer transformerthat maps dLLM token confidences to unmasking decisions. Our experiments show that these trained policies match the performance of state-of-the-art heuristics when combined withsemi-autoregressive generation, while outperforming them in thefull diffusion setting. We also examine thetransferabilityof these policies, finding that they can generalize to new underlying dLLMs and longer sequence lengths. However, we also observe that their performance degrades when applied toout-of-domain data, and that fine-grained tuning of theaccuracy-efficiency trade-offcan be challenging with our approach. Trains a lightweight RL-based policy to unmask tokens in masked diffusion LMs, achieving competitive performance with heuristics and generalizing to new models and longer sequences. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550067",
+    "title": "Learning Unmasking Policies for Diffusion Language Models",
+    "authors": [
+      "Metod Jazbec",
+      "Theo X. Olausson",
+      "Louis Béthune",
+      "Pierre Ablin",
+      "Michael Kirchhof",
+      "Marco Cuturi"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.09106",
+    "upvote": 9
+  }
+}

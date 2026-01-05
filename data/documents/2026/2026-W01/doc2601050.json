@@ -1,0 +1,15 @@
+{
+  "context": "The paper addresses the modality gap in autonomous agents for video processing by introducing a benchmark requiring proactive, open-web video reasoning, revealing limitations of current models in metadata-sparse, dynamic video domains. The evolution ofautonomous agentsis redefining information seeking, transitioning from passive retrieval to proactive, open-ended web research. However, while textual and static multimodal agents have seen rapid progress, a significant modality gap remains in processing the web's most dynamic modality: video. Existing video benchmarks predominantly focus onpassive perception, feeding curated clips to models without requiring external retrieval. They fail to evaluate agentic video research, which necessitates actively interrogating video timelines, cross-referencing dispersed evidence, and verifying claims against the open web. To bridge this gap, we presentVideo-BrowseComp, a challenging benchmark comprising 210 questions tailored for open-web agentic video reasoning. Unlike prior benchmarks,Video-BrowseCompenforces a mandatory dependency ontemporal visual evidence, ensuring that answers cannot be derived solely through text search but require navigating video timelines to verify external claims. Our evaluation of state-of-the-art models reveals a critical bottleneck: even advancedsearch-augmented modelslikeGPT-5.1 (w/ Search)achieve only 15.24\\% accuracy. Our analysis reveals that these models largely rely on textual proxies, excelling inmetadata-rich domains(e.g., TV shows with plot summaries) but collapsing in metadata-sparse, dynamic environments (e.g., sports, gameplay) wherevisual groundingis essential. As the first open-web video research benchmark,Video-BrowseCompadvances the field beyondpassive perceptiontowardproactive video reasoning. Introduces Video-BrowseComp, a benchmark of 210 open-web agentic video questions requiring temporal visual evidence to test proactive video reasoning in grounded retrieval. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/video-browsecomp-benchmarking-agentic-video-research-on-open-web-2415-ca5f7fa5 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601050",
+    "title": "Video-BrowseComp: Benchmarking Agentic Video Research on Open Web",
+    "authors": [
+      "Zhengyang Liang",
+      "Yan Shu"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.23044",
+    "upvote": 9
+  }
+}

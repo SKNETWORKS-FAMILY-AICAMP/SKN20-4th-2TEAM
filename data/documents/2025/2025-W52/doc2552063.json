@@ -1,0 +1,14 @@
+{
+  "context": "Research investigates stable advantage estimation strategies for reinforcement learning in multi-turn tasks, finding PPO more robust than GRPO and introducing turn-PPO for improved performance in long-horizon reasoning scenarios. Reinforcement learning(RL) has re-emerged as a natural approach for training interactive LLM agents in real-world environments. However, directly applying the widely usedGroup Relative Policy Optimization(GRPO) algorithm tomulti-turn tasksexposes notable limitations, particularly in scenarios requiringlong-horizon reasoning. To address these challenges, we investigate more stable and effectiveadvantage estimationstrategies, especially for multi-turn settings. We first exploreProximal Policy Optimization(PPO) as an alternative and find it to be more robust than GRPO. To further enhance PPO in multi-turn scenarios, we introduceturn-PPO, a variant that operates on a turn-level MDP formulation, as opposed to the commonly used token-level MDP. Our results on theWebShopandSokobandatasets demonstrate the effectiveness ofturn-PPO, both with and without long reasoning components. Reinforcement learning (RL) has re-emerged as a natural approach for training interactive LLM agents in real-world environments. However, directly applying the widely used Group Relative Policy Optimization (GRPO) algorithm to multi-turn tasks exposes notable limitations, particularly in scenarios requiring long-horizon reasoning. To address these challenges, we investigate more stable and effective advantage estimation strategies, especially for multi-turn settings. We first explore Proximal Policy Optimization (PPO) as an alternative and find it to be more robust than GRPO. To further enhance PPO in multi-turn scenarios, we introduce turn-PPO, a variant that operates on a turn-level MDP formulation, as opposed to the commonly used token-level MDP. Our results on the WebShop and Sokoban datasets demonstrate the effectiveness of turn-PPO, both with and without long reasoning components. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/turn-ppo-turn-level-advantage-estimation-with-ppo-for-improved-multi-turn-rl-in-agentic-llms-5757-38222bea ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552063",
+    "title": "Turn-PPO: Turn-Level Advantage Estimation with PPO for Improved Multi-Turn RL in Agentic LLMs",
+    "authors": [
+      "Junbo Li"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.17008",
+    "upvote": 10
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "LoGoPlanner is an end-to-end navigation framework that improves trajectory planning in unstructured environments by integrating localization, scene geometry reconstruction, and policy conditioning. Trajectory planninginunstructured environmentsis a fundamental and challenging capability for mobile robots. Traditional modular pipelines suffer from latency and cascading errors across perception,localization, mapping, and planning modules. Recentend-to-end learningmethods map raw visual observations directly to control signals or trajectories, promising greater performance and efficiency in open-world settings. However, most prior end-to-end approaches still rely on separatelocalizationmodules that depend on accurate sensor extrinsic calibration for self-state estimation, thereby limiting generalization across embodiments and environments. We introduce LoGoPlanner, alocalization-grounded, end-to-end navigation framework that addresses these limitations by: (1) finetuning along-horizon visual-geometry backboneto ground predictions with absolute metric scale, thereby providingimplicit state estimationfor accuratelocalization; (2) reconstructing surrounding scene geometry from historical observations to supply dense, fine-grained environmental awareness for reliableobstacle avoidance; and (3) conditioning the policy on implicit geometry bootstrapped by the aforementioned auxiliary tasks, thereby reducing error propagation.We evaluate LoGoPlanner in both simulation and real-world settings, where its fully end-to-end design reduces cumulative error whilemetric-aware geometry memoryenhances planning consistency andobstacle avoidance, leading to more than a 27.3\\% improvement over oracle-localizationbaselines and strong generalization across embodiments and environments. The code and models have been made publicly available on the https://steinate.github.io/logoplanner.github.io/{project page}. LoGoPlanner: Localization Grounded Navigation Policy with Metric-aware Visual Geometry arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/logoplanner-localization-grounded-navigation-policy-with-metric-aware-visual-geometry-3740-d2212410 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552031",
+    "title": "LoGoPlanner: Localization Grounded Navigation Policy with Metric-aware Visual Geometry",
+    "authors": [
+      "Jiaqi Peng"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/InternRobotics/NavDP/tree/master/baselines/logoplanner",
+    "huggingface_url": "https://huggingface.co/papers/2512.19629",
+    "upvote": 25
+  }
+}

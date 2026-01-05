@@ -1,0 +1,12 @@
+{
+  "context": "Over++, a video effect generation framework, synthesizes realistic environmental effects conditioned on text prompts while preserving the original video scene without requiring camera pose or dense annotations. In professional video compositing workflows, artists must manually create environmental interactions-such as shadows, reflections, dust, and splashes-between foreground subjects and background layers. Existingvideo generative modelsstruggle to preserve the input video while adding such effects, and currentvideo inpaintingmethods either require costly per-frame masks or yield implausible results. We introduceaugmented compositing, a new task that synthesizes realistic, semi-transparentenvironmental effectsconditioned ontext promptsandinput video layers, while preserving the original scene. To address this task, we presentOver++, a videoeffect generationframework that makes no assumptions about camera pose, scene stationarity, or depth supervision. We construct a paired effect dataset tailored for this task and introduce anunpaired augmentationstrategy that preserves text-driven editability. Our method also supports optionalmask controlandkeyframe guidancewithout requiring dense annotations. Despite training on limited data,Over++produces diverse and realisticenvironmental effectsand outperforms existing baselines in botheffect generationandscene preservation.  ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552055",
+    "title": "Over++: Generative Video Compositing for Layer Interaction Effects",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/luchaoqi/overplusplus",
+    "huggingface_url": "https://huggingface.co/papers/2512.19661",
+    "upvote": 11
+  }
+}

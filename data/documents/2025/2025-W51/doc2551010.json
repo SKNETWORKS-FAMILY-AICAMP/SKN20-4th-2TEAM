@@ -1,0 +1,16 @@
+{
+  "context": "Generative pretraining using next embedding prediction outperforms traditional self-supervised methods in visual learning tasks, achieving high accuracy on ImageNet and effective transfer to semantic segmentation. Inspired by the success ofgenerative pretrainingin natural language, we ask whether the same principles can yield strong self-supervised visual learners. Instead of training models to output features for downstream use, we train them to generate embeddings to performpredictive tasksdirectly. This work explores such a shift from learning representations to learning models. Specifically, models learn to predict future patch embeddings conditioned on past ones, usingcausal maskingandstop gradient, which we refer to asNext-Embedding Predictive Autoregression (NEPA). We demonstrate that a simpleTransformerpretrained onImageNet-1kwith next embedding prediction as its sole learning objective is effective - no pixel reconstruction, discrete tokens, contrastive loss, or task-specific heads. This formulation retains architectural simplicity and scalability, without requiring additional design complexity. NEPA achieves strong results across tasks, attaining 83.8% and 85.3%top-1 accuracyonImageNet-1KwithViT-BandViT-Lbackbones after fine-tuning, and transferring effectively tosemantic segmentationonADE20K. We believegenerative pretrainingfrom embeddings provides a simple, scalable, and potentially modality-agnostic alternative to visual self-supervised learning. Make SSL great again. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/next-embedding-prediction-makes-strong-vision-learners-3414-57fa49de arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/next-embedding-prediction-makes-strong-vision-learners . ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551010",
+    "title": "Next-Embedding Prediction Makes Strong Vision Learners",
+    "authors": [
+      "Sihan Xu",
+      "Ziqiao Ma",
+      "Weiyang Jin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/SihanXU/nepa",
+    "huggingface_url": "https://huggingface.co/papers/2512.16922",
+    "upvote": 82
+  }
+}

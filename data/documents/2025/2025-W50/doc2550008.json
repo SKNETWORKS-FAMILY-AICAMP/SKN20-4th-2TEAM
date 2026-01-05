@@ -1,0 +1,15 @@
+{
+  "context": "LivingSwap enhances video face swapping by using keyframes and reference guidance to maintain identity and fidelity over long sequences, reducing manual effort and achieving state-of-the-art results. Video face swapping is crucial in film and entertainment production, where achieving high fidelity and temporal consistency over long and complex video sequences remains a significant challenge. Inspired by recent advances in reference-guided image editing, we explore whether rich visual attributes from source videos can be similarly leveraged to enhance both fidelity and temporal coherence in video face swapping. Building on this insight, this work presents LivingSwap, the first video reference guided face swapping model. Our approach employs keyframes as conditioning signals to inject the target identity, enabling flexible and controllable editing. By combiningkeyframe conditioningwithvideo reference guidance, the model performstemporal stitchingto ensure stableidentity preservationandhigh-fidelity reconstructionacross long video sequences. To address the scarcity of data for reference-guided training, we construct a paired face-swapping dataset, Face2Face, and further reverse the data pairs to ensure reliable ground-truth supervision. Extensive experiments demonstrate that our method achieves state-of-the-art results, seamlessly integrating the target identity with the source video's expressions, lighting, and motion, while significantly reducing manual effort in production workflows. Project webpage: https://aim-uofa.github.io/LivingSwap Project webpage:this https URL This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550008",
+    "title": "Preserving Source Video Realism: High-Fidelity Face Swapping for Cinematic Quality",
+    "authors": [
+      "Muzhi Zhu",
+      "Wen Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.07951",
+    "upvote": 48
+  }
+}

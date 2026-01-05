@@ -1,0 +1,14 @@
+{
+  "context": "SpaceTimePilot is a video diffusion model enabling independent control of spatial viewpoint and temporal motion through a time-embedding mechanism, temporal-warping training, and a synthetic dataset for precise space-time disentanglement. We present SpaceTimePilot, avideo diffusion modelthat disentangles space and time for controllable generative rendering. Given a monocular video, SpaceTimePilot can independently alter the camera viewpoint and the motion sequence within the generative process, re-rendering the scene for continuous and arbitrary exploration across space and time. To achieve this, we introduce an effectiveanimation time-embedding mechanismin thediffusion process, allowing explicit control of the output video's motion sequence with respect to that of the source video. As no datasets provide paired videos of the same dynamic scene with continuous temporal variations, we propose a simple yet effectivetemporal-warping training schemethat repurposes existingmulti-view datasetsto mimic temporal differences. This strategy effectively supervises the model to learn temporal control and achieve robustspace-time disentanglement. To further enhance the precision of dual control, we introduce two additional components: an improvedcamera-conditioning mechanismthat allows altering the camera from the first frame, and CamxTime, the first synthetic space-and-time full-coverage rendering dataset that provides fully free space-time video trajectories within a scene. Joint training on the temporal-warping scheme and theCamxTime datasetyields more precise temporal control. We evaluate SpaceTimePilot on both real-world and synthetic data, demonstrating clearspace-time disentanglementand strong results compared to prior work. Project page: https://zheninghuang.github.io/Space-Time-Pilot/ Code: https://github.com/ZheningHuang/spacetimepilot This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/spacetimepilot-generative-rendering-of-dynamic-scenes-across-space-and-time-1491-adb405fd ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601046",
+    "title": "SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time",
+    "authors": [
+      "Hyeonho Jeong"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.25075",
+    "upvote": 12
+  }
+}

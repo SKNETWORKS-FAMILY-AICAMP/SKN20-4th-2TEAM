@@ -1,0 +1,15 @@
+{
+  "context": "VGT, a novel paradigm for visual generation tuning, enhances vision language models to achieve high-quality image reconstruction and generation with improved efficiency. Large Vision Language Models (VLMs)effectively bridge the modality gap through extensive pretraining, acquiring sophisticated visual representations aligned with language. However, it remains underexplored whether these representations, optimized formultimodal understandingtasks, harbor an inherent potential forvisual generation. In this paper, we proposeVGT,Visual Generation Tuning, a novel paradigm designed to stimulate the underlying capabilities ofvisual generationwithin any vision language models. By performing efficientvisual generation tuningon well-pretrained VLMs, we significantly mitigate the alignment costs and accelerate the convergence ofautoregressive modelingin thecontinuous space(20x speedup). Specifically, we dismiss the entangledpixel-level VAEsdesigned fordiffusion transformersand formulateVGT-AEthrough aligning thesemantic encodersfrom pretrained VLMs with thelatent representationsofpixel decoders. Inimage reconstructiontasks, we achieve 26.67PSNRand 0.50rFIDat a 28x compression ratio, outperforming specialized VAEs; invisual generationtasks, we achieve state-of-the-art outcomes among autoregressive models, 0.77 onGenEvaland 78.73 onDPG-Bench. Furthermore, our proposedVGTshowcases significant scaling promise and is versatile for endowing any VLMs trained formultimodal understandingwith the capabilities ofvisual generation, which paves the new avenue to explore next-generationunified multimodal foundation models. Models and codes are available at https://github.com/hustvl/VGT. Unleashing Visual Generation Capabilities from Any Pretrained VLMGenEval0.83| DPG-Bench81.28|20×Faster Convergence arXiv:https://arxiv.org/abs/2511.23469GitHub:https://github.com/hustvl/VGT?tab=readme-ov-file   This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550059",
+    "title": "Visual Generation Tuning",
+    "authors": [
+      "Bo Li",
+      "Kai Wu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/hustvl/VGT?tab=readme-ov-file",
+    "huggingface_url": "https://huggingface.co/papers/2511.23469",
+    "upvote": 13
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "MotionEdit is a new dataset for motion-centric image editing, and MotionNFT is a post-training framework that enhances motion editing quality by aligning motion flow between input and edited images. We introduceMotionEdit, a novel dataset formotion-centric image editing-the task of modifying subject actions and interactions while preserving identity, structure, and physical plausibility. Unlike existing image editing datasets that focus on static appearance changes or contain only sparse, low-quality motion edits,MotionEditprovides high-fidelity image pairs depicting realistic motion transformations extracted and verified from continuous videos. This new task is not only scientifically challenging but also practically significant, powering downstream applications such as frame-controlled video synthesis and animation.\n  To evaluate model performance on the novel task, we introduceMotionEdit-Bench, a benchmark that challenges models on motion-centric edits and measures model performance with generative, discriminative, and preference-based metrics. Benchmark results reveal that motion editing remains highly challenging for existing state-of-the-art diffusion-based editing models. To address this gap, we proposeMotionNFT(Motion-guided Negative-aware Fine Tuning), a post-training framework that computes motion alignment rewards based on how well the motion flow between input and model-edited images matches the ground-truth motion, guiding models toward accurate motion transformations. Extensive experiments on FLUX.1 Kontext and Qwen-Image-Edit show thatMotionNFTconsistently improves editing quality and motion fidelity of both base models on the motion editing task without sacrificing general editing ability, demonstrating its effectiveness. MotionEdit: Benchmarking and Learning Motion-Centric Image Editing project page:https://motion-edit.github.iocode:https://github.com/elainew728/motion-edit This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550029",
+    "title": "MotionEdit: Benchmarking and Learning Motion-Centric Image Editing",
+    "authors": [
+      "Lei Ke"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/elainew728/motion-edit",
+    "huggingface_url": "https://huggingface.co/papers/2512.10284",
+    "upvote": 25
+  }
+}

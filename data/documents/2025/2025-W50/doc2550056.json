@@ -1,0 +1,15 @@
+{
+  "context": "VQRAE, a Vector Quantization Representation AutoEncoder, unifies multimodal understanding, generation, and reconstruction using a unified tokenizer with continuous semantic features and discrete tokens. Unifyingmultimodal understanding,generationandreconstructionrepresentation in a singletokenizerremains a key challenge in building unified models. Previous research predominantly attempts to address this in adual encoder paradigm, e.g., utilizing the separateencoders for understanding andgenerationrespectively or balancing semantic representations and low-level features with contrastive loss. In this paper, we proposeVQRAE, aVector Quantizationversion ofRepresentation AutoEncoders, which pioneers the first exploration in unified representation to produce Continuous semantic features for image understanding andDiscrete tokensfor visualgenerationwithin a unifiedtokenizer. Specifically, we build upon pretrained vision foundation models with asymmetric ViT decoderand adopt atwo-stage training strategy: first, it freezes theencoderand learns a high-dimensionalsemantic VQ codebookwithpixel reconstruction objective; then jointly optimizes theencoderwithself-distillation constraints. This design enables negligible semantic information for maintaining the ability ofmultimodal understanding,discrete tokensthat are compatible forgenerationandfine-grained reconstruction. Besides, we identify the intriguing property in quantizing semanticencoders that rely on high-dimensional codebook in contrast to the previous common practice of low-dimensional codebook in imagereconstruction. Thesemantic VQ codebookcan achieve a 100% utilization ratio at a dimension of 1536.VQRAEpresents competitive performance on several benchmarks of visual understanding,generationandreconstructionwith promising scaling property in theautoregressive paradigmfor its discrete merits. arXiv:https://arxiv.org/pdf/2511.23386  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550056",
+    "title": "VQRAE: Representation Quantization Autoencoders for Multimodal Understanding, Generation and Reconstruction",
+    "authors": [
+      "Bo Li",
+      "Kai Wu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2511.23386",
+    "upvote": 15
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "context": "3D-RE-GEN presents a compositional framework for reconstructing single images into textured 3D scenes with improved object decomposition, spatial relationships, and background generation through integrated models and differentiable optimization. Recent advances in3D scene generationproduce visually appealing output, but current representations hinder artists' workflows that require modifiable 3Dtextured mesh scenesfor visual effects and game development. Despite significant advances, current textured mesh scene reconstruction methods are far from artist ready, suffering from incorrect object decomposition, inaccurate spatial relationships, and missing backgrounds. We present 3D-RE-GEN, a compositional framework that reconstructs a single image into textured 3D objects and a background. We show that combining state of the art models from specific domains achieves state of the art scene reconstruction performance, addressing artists' requirements.\n  Our reconstruction pipeline integrates models for asset detection, reconstruction, and placement, pushing certain models beyond their originally intended domains. Obtaining occluded objects is treated as animage editing taskwithgenerative modelsto infer and reconstruct withscene level reasoningunder consistent lighting and geometry. Unlike current methods, 3D-RE-GEN generates a comprehensive background that spatially constrains objects during optimization and provides a foundation for realistic lighting and simulation tasks in visual effects and games. To obtain physically realistic layouts, we employ a novel4-DoF differentiable optimizationthat aligns reconstructed objects with the estimated ground plane. 3D-RE-GEN~achieves state of the art performance in single image 3D scene reconstruction, producing coherent, modifiable scenes through compositional generation guided by precisecamera recoveryandspatial optimization. 🌐https://3dregen.jdihlmann.com/📃https://arxiv.org/abs/2512.17459💾https://github.com/cgtuebingen/3D-RE-GEN arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/3d-re-gen-3d-reconstruction-of-indoor-scenes-with-a-generative-framework-9594-3b238973 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552059",
+    "title": "3D-RE-GEN: 3D Reconstruction of Indoor Scenes with a Generative Framework",
+    "authors": [
+      "Jan-Niklas Dihlmann"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/cgtuebingen/3D-RE-GEN",
+    "huggingface_url": "https://huggingface.co/papers/2512.17459",
+    "upvote": 11
+  }
+}

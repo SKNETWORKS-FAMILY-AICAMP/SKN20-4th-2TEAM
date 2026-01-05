@@ -1,0 +1,16 @@
+{
+  "context": "A video-to-video translation framework converts human-object interaction videos into realistic robot manipulation videos using unpaired training data and a generative model. Robots that learn manipulation skills from everyday human videos could acquire broad capabilities without tedious robot data collection. We propose avideo-to-video translationframework that converts ordinary human-object interaction videos intomotion-consistentrobot manipulation videos with realistic,physically grounded interactions. Our approach does not require any paired human-robot videos for training only a set ofunpaired robot videos, making the system easy to scale. We introduce atransferable representationthat bridges the embodiment gap: byinpaintingthe robot arm in training videos to obtain a clean background and overlaying a simplevisual cue(a marker and arrow indicating the gripper's position and orientation), we can condition agenerative modelto insert the robot arm back into the scene. At test time, we apply the same process to human videos (inpaintingthe person and overlaying human pose cues) and generate high-quality robot videos that mimic the human's actions. We fine-tune a SOTAvideo diffusion model(Wan 2.2) in anin-context learningmanner to ensuretemporal coherenceand leveraging of its richprior knowledge. Empirical results demonstrate that our approach achieves significantly more realistic and grounded robot motions compared to baselines, pointing to a promising direction for scaling up robot learning from unlabeled human videos. Project page: https://showlab.github.io/H2R-Grounder/ A framework to translate human object interaction (HOI) videos into grounded robot object interaction (ROI) videos. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550097",
+    "title": "H2R-Grounder: A Paired-Data-Free Paradigm for Translating Human Interaction Videos into Physically Grounded Robot Videos",
+    "authors": [
+      "Hai Ci",
+      "Yiren Song",
+      "Mike Zheng Shou"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/showlab/H2R-Grounder",
+    "huggingface_url": "https://huggingface.co/papers/2512.09406",
+    "upvote": 3
+  }
+}

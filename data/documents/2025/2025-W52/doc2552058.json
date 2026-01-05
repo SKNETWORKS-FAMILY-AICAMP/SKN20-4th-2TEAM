@@ -1,0 +1,15 @@
+{
+  "context": "LLM-based world models enhance agent performance in text-based environments through action verification, synthetic trajectory generation, and warm-starting reinforcement learning, but their effectiveness is contingent on behavioral coverage and environment complexity. Agentic reinforcement learningincreasingly relies onexperience-driven scaling, yetreal-world environmentsremain non-adaptive, limited in coverage, and difficult to scale.World modelsoffer a potential way to improve learning efficiency through simulated experience, but it remains unclear whetherlarge language modelscan reliably serve this role and under what conditions they meaningfully benefit agents. We study these questions in text-based environments, which provide a controlled setting to reinterpret language modeling asnext-state predictionunder interaction. We introduce athree-level frameworkfor evaluating LLM-basedworld models: (i)fidelityandconsistency, (ii)scalabilityandrobustness, and (iii)agent utility. Across five representative environments, we find that sufficiently trainedworld modelsmaintain coherent latent state, scale predictably with data and model size, and improve agent performance viaaction verification,synthetic trajectory generation, andwarm-starting reinforcement learning. Meanwhile, these gains depend critically on behavioral coverage and environment complexity, delineating clear boundry on when world modeling effectively supports agent learning. Explore the foundation of text-based world model arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/from-word-to-world-can-large-language-models-be-implicit-text-based-world-models-8392-1febbfb7 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552058",
+    "title": "From Word to World: Can Large Language Models be Implicit Text-based World Models?",
+    "authors": [
+      "Yixia Li",
+      "Hongru Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/X1AOX1A/Word2World",
+    "huggingface_url": "https://huggingface.co/papers/2512.18832",
+    "upvote": 11
+  }
+}

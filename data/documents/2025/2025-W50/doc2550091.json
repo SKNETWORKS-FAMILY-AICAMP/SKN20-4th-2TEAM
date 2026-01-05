@@ -1,0 +1,16 @@
+{
+  "context": "MoRel, a novel 4D Gaussian Splatting framework, addresses long-range motion and memory efficiency in dynamic video rendering by using Anchor Relay-based Bidirectional Blending and Feature-variance-guided Hierarchical Densification. Recent advances in4D Gaussian Splatting(4DGS) have extended the high-speed rendering capability of 3DGaussian Splatting(3DGS) into the temporal domain, enabling real-time rendering of dynamic scenes. However, one of the major remaining challenges lies in modeling long-range motion-contained dynamic videos, where a naive extension of existing methods leads to severe memory explosion, temporal flickering, and failure to handle appearing or disappearing occlusions over time. To address these challenges, we propose a novel 4DGS framework characterized by anAnchor Relay-based Bidirectional Blending(ARBB) mechanism, named MoRel, which enables temporally consistent andmemory-efficientmodeling oflong-range dynamic scenes. Our method progressively constructs locally canonical anchor spaces atkey-frame time indexand modelsinter-frame deformationsat the anchor level, enhancingtemporal coherence. By learningbidirectional deformationsbetween KfA and adaptively blending them throughlearnable opacity control, our approach mitigatestemporal discontinuitiesandflickering artifacts. We further introduce aFeature-variance-guided Hierarchical Densification(FHD) scheme that effectively densifies KfA's while keeping rendering quality, based on an assigned level of feature-variance. To effectively evaluate our model's capability to handlereal-world long-range 4D motion, we newly compose long-range 4D motion-contained dataset, called SelfCap_{LR}. It has larger average dynamic motion magnitude, captured at spatially wider spaces, compared to previous dynamic video datasets. Overall, our MoRel achieves temporally coherent and flicker-free long-range 4D reconstruction while maintaining bounded memory usage, demonstrating both scalability and efficiency in dynamic Gaussian-based representations. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550091",
+    "title": "MoRel: Long-Range Flicker-Free 4D Motion Modeling via Anchor Relay-based Bidirectional Blending with Hierarchical Densification",
+    "authors": [
+      "Sangwoon Kwak",
+      "Weeyoung Kwon",
+      "Jun Young Jeong"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/CMLab-Korea/MoRel-arXiv",
+    "huggingface_url": "https://huggingface.co/papers/2512.09270",
+    "upvote": 4
+  }
+}

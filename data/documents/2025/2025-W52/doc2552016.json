@@ -1,0 +1,18 @@
+{
+  "context": "Seed-Prover 1.5, a formal theorem-proving model using large-scale agentic reinforcement learning and an efficient test-time scaling workflow, demonstrates superior performance in solving mathematical problems across various levels with reduced computational resources. Large language modelshave recently made significant progress to generate rigorous mathematical proofs. In contrast, utilizing LLMs fortheorem provinginformal languages(such asLean) remains challenging and computationally expensive, particularly when addressing problems at the undergraduate level and beyond. In this work, we present Seed-Prover 1.5, a formal theorem-proving model trained via large-scale agenticreinforcement learning, alongside an efficienttest-time scaling(TTS) workflow. Through extensive interactions withLeanand other tools, the model continuously accumulates experience during the RL process, substantially enhancing the capability and efficiency of formaltheorem proving. Furthermore, leveraging recent advancements in natural language proving, our TTS workflow efficiently bridges the gap between natural andformal languages. Compared to state-of-the-art methods, Seed-Prover 1.5 achieves superior performance with a smaller compute budget. It solves 88\\% ofPutnamBench(undergraduate-level), 80\\% ofFate-H(graduate-level), and 33\\% ofFate-X(PhD-level) problems. Notably, using our system, we solved 11 out of 12 problems from Putnam 2025 within 9 hours. Our findings suggest that scaling learning from experience, driven by high-quality formal feedback, holds immense potential for the future offormal mathematical reasoning. Github:https://github.com/ByteDance-Seed/Seed-Prover arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/seed-prover-1-5-mastering-undergraduate-level-theorem-proving-via-learning-from-experience-8925-fdfccca3 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552016",
+    "title": "Seed-Prover 1.5: Mastering Undergraduate-Level Theorem Proving via Learning from Experience",
+    "authors": [
+      "Jinyi Hu",
+      "Allan Jie",
+      "Zheng Yuan",
+      "Tianyang Zhan",
+      "Thomas Hanwen Zhu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/ByteDance-Seed/Seed-Prover",
+    "huggingface_url": "https://huggingface.co/papers/2512.17260",
+    "upvote": 48
+  }
+}

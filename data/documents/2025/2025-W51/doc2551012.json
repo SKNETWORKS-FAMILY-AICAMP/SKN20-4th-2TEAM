@@ -1,0 +1,16 @@
+{
+  "context": "LongVie 2, an end-to-end autoregressive framework, enhances controllability, visual quality, and temporal consistency in video world models through three progressive training stages. Buildingvideo world modelsupon pretrained video generation systems represents an important yet challenging step toward general spatiotemporal intelligence. A world model should possess three essential properties:controllability, long-termvisual quality, andtemporal consistency. To this end, we take a progressive approach-first enhancingcontrollabilityand then extending toward long-term, high-quality generation. We present LongVie 2, an end-to-endautoregressive frameworktrained in three stages: (1)Multi-modal guidance, which integrates dense and sparse control signals to provide implicit world-level supervision and improvecontrollability; (2)Degradation-aware trainingon the input frame, bridging the gap between training and long-term inference to maintain highvisual quality; and (3)History-context guidance, which aligns contextual information across adjacent clips to ensuretemporal consistency. We further introduceLongVGenBench, a comprehensive benchmark comprising 100 high-resolution one-minute videos covering diverse real-world and synthetic environments. Extensive experiments demonstrate that LongVie 2 achievesstate-of-the-art performancein long-rangecontrollability,temporal coherence, andvisual fidelity, and supports continuous video generation lasting up to five minutes, marking a significant step toward unified video world modeling. Page:https://vchitect.github.io/LongVie2-project/Github:https://github.com/Vchitect/LongVieHuggingface:https://huggingface.co/Vchitect/LongVie2 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/longvie-2-multimodal-controllable-ultra-long-video-world-model-3764-73ec0817 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551012",
+    "title": "LongVie 2: Multimodal Controllable Ultra-Long Video World Model",
+    "authors": [
+      "Jianxiong Gao",
+      "Junhao Zhuang",
+      "Chenyang Si"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Vchitect/LongVie",
+    "huggingface_url": "https://huggingface.co/papers/2512.13604",
+    "upvote": 72
+  }
+}

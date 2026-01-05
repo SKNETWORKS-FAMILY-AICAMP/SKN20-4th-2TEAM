@@ -1,0 +1,16 @@
+{
+  "context": "Voxify3D is a two-stage framework that combines 3D mesh optimization with 2D pixel art supervision to generate high-quality voxel art with semantic preservation, pixel-art aesthetics, and discrete color coherence. Voxel art is a distinctive stylization widely used in games and digital media, yet automated generation from 3D meshes remains challenging due to conflicting requirements of geometric abstraction, semantic preservation, and discrete color coherence. Existing methods either over-simplify geometry or fail to achieve the pixel-precise, palette-constrained aesthetics of voxel art. We introduce Voxify3D, a differentiable two-stage framework bridging 3D mesh optimization with 2D pixel art supervision. Our core innovation lies in the synergistic integration of three components: (1)orthographic pixel art supervisionthat eliminates perspective distortion for precise voxel-pixel alignment; (2)patch-based CLIP alignmentthat preserves semantics across discretization levels; (3) palette-constrainedGumbel-Softmax quantizationenabling differentiable optimization over discrete color spaces with controllable palette strategies. This integration addresses fundamental challenges: semantic preservation under extreme discretization, pixel-art aesthetics throughvolumetric rendering, and end-to-end discrete optimization. Experiments show superior performance (37.12CLIP-IQA, 77.90\\%user preference) across diverse characters and controllable abstraction (2-8 colors, 20x-50x resolutions). Project page: https://yichuanh.github.io/Voxify-3D/ Stylized voxel art is widely used in games and digital media, but turning 3D meshes into visually appealing voxel forms remains challenging and often requires manual effort. Existing methods struggle to preserve semantic structure and offer limited control over stylization, particularly in discrete color and abstraction. We present Voxify3D, a differentiable two-stage framework for generating stylized voxel art from 3D meshes. In the first stage, we initialize a coarse voxel grid via neural volume rendering. In the second stage, we refine the grid under six-view orthographic pixel art supervision, guided by a discrete color palette derived from clustering strategies (e.g., K-means, Max-Min, Median Cut). To support differentiable palette-based quantization, we design a rendering mechanism based on Gumbel-Softmax and incorporate a CLIP-based perceptual loss to enforce semantic alignment between voxel renderings and the original mesh. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550013",
+    "title": "Voxify3D: Pixel Art Meets Volumetric Rendering",
+    "authors": [
+      "Yi-Chuan Huang",
+      "Jiewen Chan",
+      "Hao-Jen Chien"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.07834",
+    "upvote": 43
+  }
+}

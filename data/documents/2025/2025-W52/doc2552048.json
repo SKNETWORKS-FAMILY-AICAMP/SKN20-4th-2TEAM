@@ -1,0 +1,14 @@
+{
+  "context": "LoPA, a training-free algorithm, enhances the parallelism of diffusion large language models, doubling the tokens per forward pass and boosting throughput with multi-GPU deployment. Diffusion Large Language Models(dLLMs) have demonstrated significant potential for high-speed inference. However, currentconfidence-driven decodingstrategies are constrained by limited parallelism, typically achieving only 1--3 tokens per forward pass (TPF). In this work, we identify that the degree of parallelism during dLLM inference is highly sensitive to theToken Filling Order(TFO). Then, we introduceLookahead PArallel DecodingLoPA, a training-free, plug-and-play algorithm, to identify a superiorTFOand hence accelerate inference.LoPAconcurrently explores distinct candidateTFOs via parallel branches, and selects the one with the highest potential for future parallelism based onbranch confidence. We applyLoPAto the state-of-the-artD2F modeland observe a substantial enhancement in decoding efficiency. Notably,LoPAincreases the TPF of D2F-Dream to 10.1 on theGSM8Kwhile maintaining performance superior to theDream baseline. Furthermore, to facilitate this unprecedented degree of parallelism, we develop a specializedmulti-device inference systemfeaturingBranch Parallelism(BP), which achieves asingle-sample throughputof 1073.9 tokens per second under multi-GPU deployment. The code is available at https://github.com/zhijie-group/LoPA. 🔗Paper：https://arxiv.org/abs/2512.16229🔗GitHub：https://github.com/zhijie-group/LoPA🔗blog:https://zhijie-group.github.io/blogs/lopa arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/lopa-scaling-dllm-inference-via-lookahead-parallel-decoding-875-bf705008 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552048",
+    "title": "LoPA: Scaling dLLM Inference via Lookahead Parallel Decoding",
+    "authors": [
+      "Yijie Jin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/zhijie-group/LoPA",
+    "huggingface_url": "https://huggingface.co/papers/2512.16229",
+    "upvote": 15
+  }
+}

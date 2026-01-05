@@ -1,0 +1,16 @@
+{
+  "context": "StereoSpace uses viewpoint-conditioned diffusion to generate stereo images without explicit depth or warping, achieving superior performance on various scenes. We introduce StereoSpace, adiffusion-based frameworkformonocular-to-stereo synthesisthat models geometry purely throughviewpoint conditioning, without explicit depth or warping. Acanonical rectified spaceand the conditioning guide thegeneratorto infercorrespondencesand filldisocclusionsend-to-end. To ensure fair and leakage-free evaluation, we introduce anend-to-end protocolthat excludes any ground truth or proxy geometry estimates at test time. The protocol emphasizes metrics reflecting downstream relevance:iSQoEforperceptual comfortandMEt3Rforgeometric consistency. StereoSpace surpasses other methods from thewarp & inpaint,latent-warping, andwarped-conditioningcategories, achievingsharp parallaxand strongrobustnesson layered andnon-Lambertian scenes. This establishesviewpoint-conditioned diffusionas a scalable, depth-free solution for stereo generation. Project page:https://huggingface.co/spaces/prs-eth/stereospace_web This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550060",
+    "title": "StereoSpace: Depth-Free Synthesis of Stereo Geometry via End-to-End Diffusion in a Canonical Space",
+    "authors": [
+      "Tjark Behrens",
+      "Anton Obukhov",
+      "Bingxin Ke"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/prs-eth/stereospace",
+    "huggingface_url": "https://huggingface.co/papers/2512.10959",
+    "upvote": 12
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "context": "ReCamDriving generates camera-controlled novel-trajectory videos using dense 3DGS renderings and a two-stage training approach, achieving state-of-the-art results in controllability and consistency. We propose ReCamDriving, a purely vision-based,camera-controllednovel-trajectory video generation framework. While repair-based methods fail to restore complex artifacts and LiDAR-based approaches rely on sparse and incomplete cues, ReCamDriving leverages dense and scene-complete3DGS renderingsfor explicit geometric guidance, achieving precise camera-controllable generation. To mitigate overfitting to restoration behaviors when conditioned on3DGS renderings, ReCamDriving adopts atwo-stage trainingparadigm: the first stage usescamera posesfor coarse control, while the second stage incorporates3DGS renderingsfor fine-grained viewpoint and geometric guidance. Furthermore, we present a 3DGS-basedcross-trajectory data curationstrategy to eliminate the train-test gap in camera transformation patterns, enabling scalable multi-trajectory supervision from monocular videos. Based on this strategy, we construct theParaDrive dataset, containing over 110K parallel-trajectory video pairs. Extensive experiments demonstrate that ReCamDriving achieves state-of-the-artcamera controllabilityandstructural consistency. Project page:https://recamdriving.github.io/ This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550073",
+    "title": "ReCamDriving: LiDAR-Free Camera-Controlled Novel Trajectory Video Generation",
+    "authors": [
+      "Yaokun Li",
+      "Shuaixian Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Iron-LYK/ReCamDriving",
+    "huggingface_url": "https://huggingface.co/papers/2512.03621",
+    "upvote": 8
+  }
+}

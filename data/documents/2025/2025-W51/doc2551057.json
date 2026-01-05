@@ -1,0 +1,15 @@
+{
+  "context": "Voyager is a method that uses determinantal point processes to iteratively generate diverse synthetic datasets for model evaluation and training. Large language models (LLMs) are increasingly being used to generate synthetic datasets for the evaluation and training of downstream models. However, prior work has noted that such generated data lacks diversity. In this paper, we propose Voyager, a novel principled approach to generate diverse datasets. Our approach is iterative and directly optimizes a mathematical quantity that optimizes the diversity of the dataset using the machinery ofdeterminantal point processes. Furthermore, our approach is training-free, applicable to closed-source models, and scalable. In addition to providing theoretical justification for the working of our method, we also demonstrate through comprehensive experiments that Voyager significantly outperforms popular baseline approaches by providing a 1.5-3x improvement in diversity.  Diverse data is ALL you NEED arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/voyager-a-training-free-approach-for-generating-diverse-datasets-using-llms-8061-f219900c ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551057",
+    "title": "VOYAGER: A Training Free Approach for Generating Diverse Datasets using LLMs",
+    "authors": [
+      "Avinash Amballa",
+      "Vivek Kulkarni"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.12072",
+    "upvote": 17
+  }
+}

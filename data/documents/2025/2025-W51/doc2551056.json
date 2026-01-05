@@ -1,0 +1,16 @@
+{
+  "context": "G2RL is a gradient-guided reinforcement learning framework that improves large language model reasoning by aligning exploration with the model's own update geometry rather than using external heuristics. Reinforcement learninghas become essential for strengthening the reasoning abilities oflarge language models, yet currentexplorationmechanisms remain fundamentally misaligned with how these models actually learn.Entropy bonusesand external semantic comparators encourage surface level variation but offer no guarantee that sampled trajectories differ in the update directions that shape optimization. We propose G2RL, a gradient guidedreinforcement learningframework in whichexplorationis driven not by external heuristics but by the model own first orderupdate geometry. For each response, G2RL constructs a sequence level feature from the model final layer sensitivity, obtainable at negligible cost from a standard forward pass, and measures how each trajectory would reshape the policy by comparing these features within a sampled group. Trajectories that introduce novelgradient directionsreceive a bounded multiplicative reward scaler, while redundant or off manifold updates are deemphasized, yielding a self referentialexplorationsignal that is naturally aligned withPPO style stabilityandKL control. Across math and general reasoning benchmarks (MATH500, AMC, AIME24, AIME25, GPQA, MMLUpro) on Qwen3 base 1.7B and 4B models, G2RL consistently improvespass@1,maj@16, and pass@k over entropy based GRPO and external embedding methods. Analyzing the induced geometry, we find that G2RL expandsexplorationinto substantially more orthogonal and often opposinggradient directionswhile maintaining semantic coherence, revealing that a policy own update space provides a far more faithful and effective basis for guidingexplorationin large language modelreinforcement learning. Can LLMs Guide Their Own Exploration? Gradient-Guided Reinforcement Learning for LLM Reasoning arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/can-llms-guide-their-own-exploration-gradient-guided-reinforcement-learning-for-llm-reasoning-3924-1d842e8d ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551056",
+    "title": "Can LLMs Guide Their Own Exploration? Gradient-Guided Reinforcement Learning for LLM Reasoning",
+    "authors": [
+      "Zhenwen Liang",
+      "Sidi Lu",
+      "Kishan Panaganti"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.15687",
+    "upvote": 17
+  }
+}

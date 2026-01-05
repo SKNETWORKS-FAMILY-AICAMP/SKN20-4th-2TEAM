@@ -1,0 +1,12 @@
+{
+  "context": "Complex reasoning problems often involve implicit spatial, geometric, and structural relationships that are not explicitly encoded in text. While recent reasoning models have achieved strong performance across many domains, purely text-based reasoning struggles to represent global structural constraints in complex settings. In this paper, we introduce FIGR, which integrates active visual thinking into multi-turn reasoning via end-to-end reinforcement learning. FIGR externalizes intermediate structural hypotheses by constructing visual representations during problem solving. By adaptively regulating when and how visual reasoning should be invoked, FIGR enables more stable and coherent reasoning over global structural properties that are difficult to capture from text alone. Experiments on challenging mathematical reasoning benchmarks demonstrate that FIGR outperforms strong text-only chain-of-thought baselines. In particular, FIGR improves the base model by 13.12% on AIME 2025 and 11.00% on BeyondAIME, highlighting the effectiveness of figure-guided multimodal reasoning in enhancing the stability and reliability of complex reasoning. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/figure-it-out-improving-the-frontier-of-reasoning-with-active-visual-thinking-1929-fc6809ae ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601062",
+    "title": "Figure It Out: Improving the Frontier of Reasoning with Active Visual Thinking",
+    "authors": [],
+    "publication_year": 2026,
+    "github_url": "https://github.com/chenmeiqii/FIGR",
+    "huggingface_url": "https://huggingface.co/papers/2512.24297",
+    "upvote": 5
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "Resampling Forcing is introduced as a teacher-free framework to train autoregressive video diffusion models with improved temporal consistency using self-resampling and history routing. Autoregressive video diffusion modelshold promise for world simulation but are vulnerable toexposure biasarising from thetrain-test mismatch. While recent works address this via post-training, they typically rely on a bidirectional teacher model or online discriminator. To achieve an end-to-end solution, we introduceResampling Forcing, a teacher-free framework that enables training autoregressive video models from scratch and at scale. Central to our approach is aself-resampling schemethat simulates inference-time model errors on history frames during training. Conditioned on these degraded histories, asparse causal maskenforces temporal causality while enabling parallel training withframe-level diffusion loss. To facilitate efficient long-horizon generation, we further introducehistory routing, a parameter-free mechanism that dynamically retrieves the top-k most relevant history frames for each query. Experiments demonstrate that our approach achieves performance comparable to distillation-based baselines while exhibiting superiortemporal consistencyon longer videos owing to native-length training. End-to-End Training for Autoregressive Video Diffusion via Self-Resampling Hi! The method is proposed to overcome limitations of self-forcing (reliance on teacher model, GAN loss..).  Why does it need a warmup by adopting  self-forcing objective?  How's the result without self-forcing warmup? The abstract claims to enable training AR model from scratch?  Any results without  pretrained weights? arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/end-to-end-training-for-autoregressive-video-diffusion-via-self-resampling-9902-d8f704fd ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551065",
+    "title": "End-to-End Training for Autoregressive Video Diffusion via Self-Resampling",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.15702",
+    "upvote": 14
+  }
+}

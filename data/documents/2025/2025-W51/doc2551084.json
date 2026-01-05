@@ -1,0 +1,16 @@
+{
+  "context": "VG-AVS, a task and framework fine-tunes VLMs to select the most informative next viewpoint for visual question answering, enhancing performance and generalization. Vision Language Models(VLMs) excel atvisual question answering(VQA) but remain limited tosnapshot vision, reasoning from static images. In contrast, embodied agents requireambulatory vision, actively moving to obtain more informative views. We introduceVisually Grounded Active View Selection(VG-AVS), a task that selects the most informative next viewpoint using only the visual information in the current image, without relying on scene memory or external knowledge. To support this task, we construct asynthetic datasetwith automatically generated paired query-target views and question-answer prompts. We also propose a framework that fine-tunes pretrainedVLMsthroughsupervised fine-tuning(SFT) followed byRL-based policy optimization. Our approach achieves strong question answering performance based on viewpoint selection and generalizes robustly to unseen synthetic and real scenes. Furthermore, incorporating our learnedVG-AVSframework into existing scene-exploration-basedEQA systemsimproves downstream question-answering accuracy. Project page:https://active-view-selection.github.ioArxiv:https://arxiv.org/abs/2512.13250Code:https://github.com/KAIST-Visual-AI-Group/VG-AVS This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551084",
+    "title": "Toward Ambulatory Vision: Learning Visually-Grounded Active View Selection",
+    "authors": [
+      "Daehyeon Choi",
+      "Sangwoo Youn",
+      "Phillip Y. Lee"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/KAIST-Visual-AI-Group/VG-AVS",
+    "huggingface_url": "https://huggingface.co/papers/2512.13250",
+    "upvote": 9
+  }
+}

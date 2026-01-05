@@ -1,0 +1,15 @@
+{
+  "context": "WorldWarp addresses the challenge of generating consistent long-range videos by integrating a 3D geometric cache with a spatio-temporal diffusion model, ensuring structural consistency and textural refinement. Generating long-range, geometrically consistent video presents a fundamental dilemma: while consistency demands strict adherence to 3D geometry in pixel space, state-of-the-art generative models operate most effectively in a camera-conditioned latent space. This disconnect causes current methods to struggle with occluded areas and complex camera trajectories. To bridge this gap, we propose WorldWarp, a framework that couples a3D structural anchorwith a2D generative refiner. To establish geometric grounding, WorldWarp maintains an online 3D geometric cache built viaGaussian Splatting(3DGS). By explicitly warping historical content into novel views, this cache acts as astructural scaffold, ensuring each new frame respects prior geometry. However, static warping inevitably leaves holes and artifacts due to occlusions. We address this using aSpatio-Temporal Diffusion(ST-Diff) model designed for a \"fill-and-revise\" objective. Our key innovation is aspatio-temporal varying noise schedule: blank regions receive full noise to trigger generation, while warped regions receive partial noise to enable refinement. By dynamically updating the3D cacheat every step, WorldWarp maintains consistency across video chunks. Consequently, it achieves state-of-the-art fidelity by ensuring that 3D logic guides structure while diffusion logic perfects texture. Project page: https://hyokong.github.io/worldwarp-page/{https://hyokong.github.io/worldwarp-page/}. Long-range camera-conditioned scene generation from a single image. Project page and code:https://hyokong.github.io/worldwarp-page/. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/worldwarp-propagating-3d-geometry-with-asynchronous-video-diffusion-6429-267113df ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552027",
+    "title": "WorldWarp: Propagating 3D Geometry with Asynchronous Video Diffusion",
+    "authors": [
+      "Hanyang Kong",
+      "Xingyi Yang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/HyoKong/WorldWarp",
+    "huggingface_url": "https://huggingface.co/papers/2512.19678",
+    "upvote": 29
+  }
+}

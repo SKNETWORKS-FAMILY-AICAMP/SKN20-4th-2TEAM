@@ -1,0 +1,12 @@
+{
+  "context": "AdaTooler-V, a multimodal large language model, adaptively uses vision tools based on reinforcement learning, improving performance and reducing unnecessary tool invocations in visual reasoning tasks. Recent advances have shown thatmultimodal large language models(MLLMs) benefit frommultimodal interleaved chain-of-thought(CoT) withvision tool interactions. However, existing open-source models often exhibit blind tool-use reasoning patterns, invoking vision tools even when they are unnecessary, which significantly increases inference overhead and degrades model performance. To this end, we propose AdaTooler-V, an MLLM that performsadaptive tool-useby determining whether a visual problem truly requires tools. First, we introduce AT-GRPO, areinforcement learningalgorithm that adaptively adjusts reward scales based on theTool Benefit Scoreof each sample, encouraging the model to invoke tools only when they provide genuine improvements. Moreover, we construct two datasets to support training:AdaTooler-V-CoT-100kfor SFT cold start andAdaTooler-V-300kfor RL with verifiable rewards across single-image, multi-image, and video data. Experiments across twelve benchmarks demonstrate the strong reasoning capability of AdaTooler-V, outperforming existing methods in diversevisual reasoning tasks. Notably, AdaTooler-V-7B achieves an accuracy of 89.8\\% on thehigh-resolution benchmarkV*, surpassing the commercial proprietary model GPT-4o and Gemini 1.5 Pro. All code, models, and data are released. Project page:https://github.com/CYWang735/AdaTooler-V arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/adatooler-v-adaptive-tool-use-for-images-and-videos-7064-2ec72894 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551071",
+    "title": "AdaTooler-V: Adaptive Tool-Use for Images and Videos",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/CYWang735/AdaTooler-V",
+    "huggingface_url": "https://huggingface.co/papers/2512.16918",
+    "upvote": 12
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "Neurophysiological brain activity is used to create interpretable axes for large language models, enhancing their controllability and interpretability. Interpretability methods forlarge language models(LLMs) typically derive directions from textual supervision, which can lack external grounding. We propose usinghuman brain activitynot as a training signal but as a coordinate system for reading and steering LLM states. Using theSMN4Lang MEG dataset, we construct a word-level brain atlas ofphase-locking value(PLV) patterns and extractlatent axesviaICA. We validate axes with independent lexicaandNER-based labels(POS/log-frequency used as sanity checks), then trainlightweight adaptersthat map LLM hidden states to these brain axes without fine-tuning the LLM. Steering along the resulting brain-derived directions yields a robust lexical (frequency-linked) axis in a mid TinyLlama layer, survivingperplexity-matched controls, and abrain-vs-text probecomparison shows larger log-frequency shifts (relative to the text probe) with lower perplexity for the brain axis. Afunction/content axis(axis 13) shows consistent steering in TinyLlama, Qwen2-0.5B, and GPT-2, with PPL-matched text-level corroboration. Layer-4 effects in TinyLlama are large but inconsistent, so we treat them as secondary (Appendix). Axis structure is stable when the atlas is rebuilt without GPT embedding-change features or with word2vec embeddings (|r|=0.64-0.95 across matched axes), reducing circularity concerns. ExploratoryfMRI anchoringsuggests potential alignment forembedding changeandlog frequency, but effects are sensitive to hemodynamic modeling assumptions and are treated as population-level evidence only. These results support a new interface: neurophysiology-grounded axes provide interpretable and controllable handles for LLM behavior. These research supports a new interface: neurophysiology-grounded axes provide interpretable and controllable handles for LLM behavior. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/brain-grounded-axes-for-reading-and-steering-llm-states-8400-3f9eb2c8 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552083",
+    "title": "Brain-Grounded Axes for Reading and Steering LLM States",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/sandroandric/Brain-Grounded-Axes-for-Reading-and-Steering-LLM-States",
+    "huggingface_url": "https://huggingface.co/papers/2512.19399",
+    "upvote": 2
+  }
+}

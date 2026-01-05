@@ -1,0 +1,14 @@
+{
+  "context": "Zoom-Zero, a coarse-to-fine framework, enhances grounded video question answering by improving temporal grounding and answer accuracy through a zoom-in accuracy reward and token-selective credit assignment. Grounded video question answering(GVQA) aims to localize relevant temporal segments in videos and generate accurate answers to a given question; however, large video-language models (LVLMs) exhibit limited temporal awareness. Although existing approaches based onGroup Relative Policy Optimization(GRPO) attempt to improvetemporal grounding, they still struggle to faithfully ground their answers in the relevant video evidence, leading to temporal mislocalization and hallucinations. In this work, we present Zoom-Zero, a coarse-to-fine framework that first localizes query-relevant segments and then temporally zooms into the most salient frames for finer-grainedvisual verification. Our method addresses the limits of GRPO for the GVQA task with two key innovations: (i) azoom-in accuracy rewardthat validates the fidelity oftemporal groundingprediction and facilitates fine-grainedvisual verificationon grounded frames; (ii)token-selective credit assignment, which attributes rewards to the tokens responsible for temporal localization or answer generation, mitigating GRPO's issue in handling multi-faceted reward signals. Our proposed method advancesgrounded video question answering, improvingtemporal groundingby 5.2\\% onNExT-GQAand 4.6\\% onReXTime, while also enhancing average answer accuracy by 2.4\\%. Additionally, the coarse-to-fine zoom-in during inference further benefits long-form video understanding by preserving critical visual details without compromising global context, yielding an average improvement of 6.4\\% onlong-video benchmarks. Project page:https://xiaoqian-shen.github.io/Zoom-Zero/ ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551098",
+    "title": "Zoom-Zero: Reinforced Coarse-to-Fine Video Understanding via Temporal Zoom-in",
+    "authors": [
+      "Min-Hung Chen"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.14273",
+    "upvote": 7
+  }
+}

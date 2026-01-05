@@ -1,0 +1,14 @@
+{
+  "context": "A Spatial-Aware VLA Pretraining paradigm improves 3D spatial understanding in robots by aligning 2D visual inputs with 3D actions using dual-encoder architecture with a 3D visual encoder. Vision-Language-Action (VLA) modelsprovide a promising paradigm for robot learning by integrating visual perception with language-guided policy learning. However, most existing approaches rely on 2D visual inputs to perform actions in 3D physical environments, creating a significant gap between perception and action grounding. To bridge this gap, we propose aSpatial-Aware VLA Pretrainingparadigm that performs explicit alignment between visual space and physical space during pretraining, enabling models to acquire3D spatial understandingbefore robot policy learning. Starting from pretrained vision-language models, we leverage large-scale human demonstration videos to extract3D visual and 3D action annotations, forming a new source of supervision that aligns 2D visual observations with 3D spatial reasoning. We instantiate this paradigm with VIPA-VLA, adual-encoder architecturethat incorporates a3D visual encoderto augment semantic visual representations with 3D-aware features. When adapted to downstream robot tasks, VIPA-VLA achieves significantly improved grounding between 2D vision and 3D action, resulting in more robust and generalizable robotic policies. We propose VIPA-VLA , which learns 2D–to–3D visual–physical grounding from human videos with Spatial-Aware VLA Pretraining, enabling robot policies with stronger spatial understanding and generalization. Website:https://beingbeyond.github.io/VIPA-VLAarXiv:https://arxiv.org/abs/2512.13080 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551064",
+    "title": "Spatial-Aware VLA Pretraining through Visual-Physical Alignment from Human Videos",
+    "authors": [
+      "Wanpeng Zhang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/BeingBeyond/VIPA-VLA",
+    "huggingface_url": "https://huggingface.co/papers/2512.13080",
+    "upvote": 15
+  }
+}

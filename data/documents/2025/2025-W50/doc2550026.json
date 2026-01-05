@@ -1,0 +1,17 @@
+{
+  "context": "Bind & Compose uses Diffusion Transformers with hierarchical binders and temporal strategies to accurately compose complex visual concepts from images and videos. Visual concept composition, which aims to integrate different elements from images and videos into a single, coherent visual output, still falls short in accurately extracting complex concepts from visual inputs and flexibly combining concepts from both images and videos. We introduce Bind & Compose, a one-shot method that enables flexiblevisual concept compositionby binding visual concepts with correspondingprompt tokensand composing the target prompt with bound tokens from various sources. It adopts ahierarchical binder structureforcross-attention conditioninginDiffusion Transformersto encode visual concepts into correspondingprompt tokensfor accurate decomposition of complex visual concepts. To improve concept-token binding accuracy, we design aDiversify-and-Absorb Mechanismthat uses an extraabsorbent tokento eliminate the impact of concept-irrelevant details when training with diversified prompts. To enhance the compatibility between image and video concepts, we present aTemporal Disentanglement Strategythat decouples the training process of video concepts into two stages with adual-branch binder structurefor temporal modeling. Evaluations demonstrate that our method achieves superior concept consistency, prompt fidelity, and motion quality over existing approaches, opening up new possibilities for visual creativity. We introduce Bind & Compose (BiCo), a one-shot method that enables flexible visual concept composition by binding visual concepts with the corresponding prompt tokens and composing the target prompt with bound tokens from various sources. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550026",
+    "title": "Composing Concepts from Images and Videos via Concept-prompt Binding",
+    "authors": [
+      "Xianghao Kong",
+      "Zeyu Zhang",
+      "Zhuoran Zhao",
+      "Anyi Rao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/refkxh/bico",
+    "huggingface_url": "https://huggingface.co/papers/2512.09824",
+    "upvote": 27
+  }
+}

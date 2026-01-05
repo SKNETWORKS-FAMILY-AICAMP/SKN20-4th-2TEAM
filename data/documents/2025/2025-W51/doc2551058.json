@@ -1,0 +1,15 @@
+{
+  "context": "The 2025 BEHAVIOR Challenge addresses long-horizon tasks for physical agents in simulated environments, with a focus on household tasks and mobile manipulation, achieving strong performance through systematic training technique analysis and foundation model adaptation. The 2025 BEHAVIOR Challenge is designed to rigorously track progress toward solvinglong-horizon tasksbyphysical agentsinsimulated environments. BEHAVIOR-1K focuses on everydayhousehold tasksthat people most want robots to assist with and these tasks introduce long-horizonmobile manipulationchallenges in realistic settings, bridging the gap between current research and real-world, human-centric applications. This report presents our solution to the 2025 BEHAVIOR Challenge in a very close 2nd place and substantially outperforms the rest of the submissions. Building on π_{0.5}, we focus on systematically building our solution by studying the effects oftraining techniquesanddata. Through careful ablations, we show the scaling power inpre-trainingandpost-trainingphases for competitive performance. We summarize our practical lessons and design recommendations that we hope will provide actionable insights for the broaderembodied AIcommunity when adapting powerfulfoundation modelsto complex embodied scenarios. OpenPi Comet is the submission of Team Comet for the2025 BEHAVIOR Challenge. We provides a unified framework for pre-training, post-training, data generation and evaluation of π0.5 (Pi05) models on BEHAVIOR-1K. 📄 Arxiv:https://arxiv.org/pdf/2512.10071🤗 Code:https://github.com/mli0603/openpi-comet📝 Blog:https://lnkd.in/gSv2K5ua Below are 8 representative tasks that showcase some of the most interesting results from our system.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551058",
+    "title": "Openpi Comet: Competition Solution For 2025 BEHAVIOR Challenge",
+    "authors": [
+      "Qizhi Chen",
+      "Delin Qu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/mli0603/openpi-comet",
+    "huggingface_url": "https://huggingface.co/papers/2512.10071",
+    "upvote": 17
+  }
+}

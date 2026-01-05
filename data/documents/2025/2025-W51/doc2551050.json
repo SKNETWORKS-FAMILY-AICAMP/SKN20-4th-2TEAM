@@ -1,0 +1,15 @@
+{
+  "context": "IC-Effect is a DiT-based framework for few-shot video VFX editing that synthesizes complex effects while maintaining spatial and temporal consistency through contextual learning and sparse tokenization. We propose IC-Effect, an instruction-guided,DiT-based frameworkfor few-shotvideo VFX editingthat synthesizes complex effects (\\eg flames, particles and cartoon characters) while strictly preserving spatial andtemporal consistency.Video VFX editingis highly challenging because injected effects must blend seamlessly with the background, the background must remain entirely unchanged, and effect patterns must be learned efficiently from limited paired data. However, existing video editing models fail to satisfy these requirements. IC-Effect leverages the source video as clean contextual conditions, exploiting thecontextual learningcapability of DiT models to achieve precise background preservation and natural effect injection. A two-stage training strategy, consisting of general editing adaptation followed by effect-specific learning viaEffect-LoRA, ensures strong instruction following and robust effect modeling. To further improve efficiency, we introducespatiotemporal sparse tokenization, enabling high fidelity with substantially reduced computation. We also release a paired VFX editing dataset spanning 15 high-quality visual styles. Extensive experiments show that IC-Effect delivers high-quality, controllable, and temporally consistent VFX editing, opening new possibilities for video creation.  arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/ic-effect-precise-and-efficient-video-effects-editing-via-in-context-learning-2336-5bd644cb ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551050",
+    "title": "IC-Effect: Precise and Efficient Video Effects Editing via In-Context Learning",
+    "authors": [
+      "Yuanhang Li",
+      "Qi Mao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/CUC-MIPG/IC-Effect",
+    "huggingface_url": "https://huggingface.co/papers/2512.15635",
+    "upvote": 19
+  }
+}

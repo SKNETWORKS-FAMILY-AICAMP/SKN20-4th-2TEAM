@@ -1,0 +1,14 @@
+{
+  "context": "A framework aggregates weak predictions to recover semantic structure, enabling coherent SVG animations and improving VLM interactions with vector graphics. Scalable Vector Graphics (SVG) are central to modern web design, and the demand to animate them continues to grow as web environments become increasingly dynamic. Yet automating the animation of vector graphics remains challenging forvision-language models(VLMs) despite recent progress in code generation and motion planning.VLMsroutinely mis-handle SVGs, since visually coherent parts are often fragmented into low-level shapes that offer little guidance of which elements should move together. In this paper, we introduce a framework that recovers thesemantic structurerequired for reliableSVG animationand reveals the missing layer that current VLM systems overlook. This is achieved through astatistical aggregationof multipleweak part predictions, allowing the system to stably infer semantics from noisy predictions. By reorganizing SVGs into semantic groups, our approach enablesVLMsto produce animations with far greater coherence. Our experiments demonstrate substantial gains over existing approaches, suggesting thatsemantic recoveryis the key step that unlocks robustSVG animationand supports more interpretable interactions betweenVLMsand vector graphics. Project page:https://yeolj00.github.io/personal-projects/vector-prism/ arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/vector-prism-animating-vector-graphics-by-stratifying-semantic-structure-4886-3f063ce3 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551037",
+    "title": "Vector Prism: Animating Vector Graphics by Stratifying Semantic Structure",
+    "authors": [
+      "Jooyeol Yun"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/YeolJ00/vector-prism",
+    "huggingface_url": "https://huggingface.co/papers/2512.14336",
+    "upvote": 28
+  }
+}

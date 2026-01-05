@@ -1,0 +1,15 @@
+{
+  "context": "GRAPE is a unified positional encoding framework that combines multiplicative rotations and additive logit biases, extending existing methods like RoPE and ALiBi. We presentGRAPE(Group RepresentAtional Position Encoding), a unified framework for positional encoding based ongroup actions.GRAPEbrings together two families of mechanisms: (i)multiplicative rotations(MultiplicativeGRAPE) inSO(d)and (ii)additive logit biases(AdditiveGRAPE) arising fromunipotent actionsin the general linear groupGL. In MultiplicativeGRAPE, a position n in Z (or t in R) acts as G(n)=exp(n,ω,L) with arank-2 skew generatorL in R^{d times d}, yielding a relative, compositional, norm-preserving map with a closed-formmatrix exponential.RoPEis recovered exactly when the d/2 planes are the canonical coordinate pairs with log-uniform spectrum.Learned commuting subspacesandcompact non-commuting mixturesstrictly extend this geometry to capture cross-subspace feature coupling at O(d) and O(r d) cost per head, respectively. In AdditiveGRAPE, additive logits arise as rank-1 (or low-rank)unipotent actions, recoveringALiBiand theForgetting Transformer (FoX)as exact special cases while preserving an exactrelative lawandstreaming cacheability. Altogether,GRAPEsupplies a principled design space for positional geometry in long-context models, subsumingRoPEandALiBias special cases. Project Page: https://github.com/model-architectures/GRAPE. Introducing GRAPE: Group Representational Position Encoding. Embracing General Relative Law of Position Encoding, unifying and improving Multiplicative and Additive Position Encoding, such as RoPE and Alibi! Better performance with a clear theoretical formulation! Project Page:https://model-architectures.github.io/GRAPE/ Paper:https://model-architectures.github.io/GRAPE/GRAPE.pdf Devoted to the frontier of superintelligence, hope you will enjoy it! This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550100",
+    "title": "Group Representational Position Encoding",
+    "authors": [
+      "Yifan Zhang",
+      "Yifeng Liu"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/model-architectures/GRAPE",
+    "huggingface_url": "https://huggingface.co/papers/2512.07805",
+    "upvote": 3
+  }
+}

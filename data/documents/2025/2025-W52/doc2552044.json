@@ -1,0 +1,17 @@
+{
+  "context": "TokSuite enables systematic研究 of tokenization effects on language model performance by providing identical models with different tokenizers and a benchmark for real-world perturbations. Tokenizersprovide the fundamental basis through which text is represented and processed bylanguage models(LMs). Despite the importance oftokenization, its role in LM performance and behavior is poorly understood due to the challenge of measuring the impact oftokenizationin isolation. To address this need, we presentTokSuite, a collection of models and abenchmarkthat supports research intotokenization's influence on LMs. Specifically, we train fourteen models that use differenttokenizersbut are otherwise identical using the same architecture, dataset, training budget, and initialization. Additionally, we curate and release a newbenchmarkthat specifically measures model performance subject toreal-world perturbationsthat are likely to influencetokenization. Together,TokSuiteallows robust decoupling of the influence of a model's tokenizer, supporting a series of novel findings that elucidate the respective benefits and shortcomings of a wide range of populartokenizers.  arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/toksuite-measuring-the-impact-of-tokenizer-choice-on-language-model-behavior-4602-6ee8059b ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552044",
+    "title": "TokSuite: Measuring the Impact of Tokenizer Choice on Language Model Behavior",
+    "authors": [
+      "Gül Sena Altıntaş",
+      "Malikeh Ehghaghi",
+      "Marco Ciccone",
+      "Colin Raffel"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/r-three/Tokenizers",
+    "huggingface_url": "https://huggingface.co/papers/2512.20757",
+    "upvote": 16
+  }
+}

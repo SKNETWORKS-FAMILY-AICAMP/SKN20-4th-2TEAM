@@ -1,0 +1,14 @@
+{
+  "context": "A reverse personalization framework using conditional diffusion inversion enables attribute-controllable face anonymization, balancing identity removal and image quality. Recenttext-to-image diffusion modelshave demonstrated remarkable generation of realistic facial images conditioned on textual prompts and human identities, enabling creating personalized facial imagery. However, existing prompt-based methods for removing or modifying identity-specific features rely either on the subject being well-represented in the pre-trained model or require model fine-tuning for specific identities. In this work, we analyze the identity generation process and introduce areverse personalization frameworkfor face anonymization. Our approach leveragesconditional diffusion inversion, allowing direct manipulation of images without using text prompts. To generalize beyond subjects in the model's training data, we incorporate anidentity-guided conditioning branch. Unlike prior anonymization methods, which lack control over facial attributes, our framework supportsattribute-controllable anonymization. We demonstrate that our method achieves a state-of-the-art balance between identity removal, attribute preservation, and image quality. Source code and data are available at https://github.com/hanweikung/reverse-personalization . https://github.com/hanweikung/reverse-personalization This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/reverse-personalization-7985-a234ab46 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601080",
+    "title": "Reverse Personalization",
+    "authors": [
+      "Han-Wei Kung"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/hanweikung/reverse-personalization",
+    "huggingface_url": "https://huggingface.co/papers/2512.22984",
+    "upvote": 0
+  }
+}

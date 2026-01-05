@@ -1,0 +1,12 @@
+{
+  "context": "SS4D synthesizes dynamic 3D objects from monocular video using a native 4D generative model with structured spacetime latents, ensuring high fidelity, temporal coherence, and structural consistency. We present SS4D, a native4D generative modelthat synthesizesdynamic 3D objectsdirectly frommonocular video. Unlike prior approaches that construct4D representationsby optimizing over 3D or video generative models, we train a generator directly on 4D data, achieving high fidelity, temporal coherence, and structural consistency. At the core of our method is a compressed set of structured spacetime latents. Specifically, (1) To address the scarcity of 4D training data, we build on a pre-trained single-image-to-3D model, preserving strongspatial consistency. (2) Temporal consistency is enforced by introducing dedicatedtemporal layersthat reason across frames. (3) To support efficient training and inference over long video sequences, we compress the latent sequence along the temporal axis usingfactorized 4D convolutionsandtemporal downsampling blocks. In addition, we employ a carefully designed training strategy to enhance robustness against occlusion project page:https://lizb6626.github.io/SS4D/code:https://github.com/Lizb6626/SS4D/ ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551067",
+    "title": "SS4D: Native 4D Generative Model via Structured Spacetime Latents",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Lizb6626/SS4D/",
+    "huggingface_url": "https://huggingface.co/papers/2512.14284",
+    "upvote": 13
+  }
+}

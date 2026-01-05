@@ -1,0 +1,15 @@
+{
+  "context": "GroundingME benchmark evaluates multimodal large language models' visual grounding capabilities across complexity dimensions, revealing significant gaps and proposing strategies for improvement. Visual grounding, localizing objects from natural language descriptions, represents a critical bridge between language and vision understanding. Whilemultimodal large language models(MLLMs) achieve impressive scores on existing benchmarks, a fundamental question remains: can MLLMs truly ground language in vision with human-like sophistication, or are they merely pattern-matching on simplified datasets? Current benchmarks fail to capture real-world complexity where humans effortlessly navigate ambiguous references and recognize when grounding is impossible. To rigorously assess MLLMs' true capabilities, we introduceGroundingME, a benchmark that systematically challenges models across four critical dimensions: (1)Discriminative, distinguishing highly similar objects, (2)Spatial, understanding complex relational descriptions, (3)Limited, handling occlusions or tiny objects, and (4)Rejection, recognizing ungroundable queries. Through careful curation combining automated generation with human verification, we create 1,005 challenging examples mirroring real-world complexity. Evaluating 25 state-of-the-art MLLMs reveals a profound capability gap: the best model achieves only 45.1% accuracy, while most score 0% onrejectiontasks, reflexively hallucinating objects rather than acknowledging their absence, raising critical safety concerns for deployment. We explore two strategies for improvements: (1) test-time scaling selects optimal response bythinking trajectoryto improve complex grounding by up to 2.9%, and (2)data-mixture trainingteaches models to recognize ungroundable queries, boostingrejectionaccuracy from 0% to 27.9%.GroundingMEthus serves as both a diagnostic tool revealing current limitations in MLLMs and a roadmap toward human-levelvisual grounding. Our new benchmark for evaluating the grounding capabilities of frontier MLLMs. 🤗 HF dataset:https://huggingface.co/datasets/lirang04/GroundingME arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/groundingme-exposing-the-visual-grounding-gap-in-mllms-through-multi-dimensional-evaluation-1946-69a87f15 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552039",
+    "title": "GroundingME: Exposing the Visual Grounding Gap in MLLMs through Multi-Dimensional Evaluation",
+    "authors": [
+      "Rang Li",
+      "Lei Li"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/lirang04/GroundingME",
+    "huggingface_url": "https://huggingface.co/papers/2512.17495",
+    "upvote": 19
+  }
+}

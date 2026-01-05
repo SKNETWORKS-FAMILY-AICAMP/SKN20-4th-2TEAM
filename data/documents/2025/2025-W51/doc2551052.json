@@ -1,0 +1,14 @@
+{
+  "context": "A bilevel differentiable approach for evolving reward functions in reinforcement learning enhances agent performance across various domains by capturing task structure through reinforcement learning. The design of effectivereward functionspresents a central and often arduous challenge inreinforcement learning(RL), particularly when developing autonomous agents for complex reasoning tasks. Whileautomated reward optimizationapproaches exist, they typically rely on derivative-freeevolutionary heuristicsthat treat the reward function as a black box, failing to capture the causal relationship between reward structure and task performance. To bridge this gap, we proposeDifferentiable Evolutionary Reinforcement Learning(DERL), abilevel frameworkthat enables the autonomous discovery of optimal reward signals. In DERL, aMeta-Optimizerevolves a reward function (i.e.,Meta-Reward) by composingstructured atomic primitives, guiding the training of aninner-loop policy. Crucially, unlike previous evolution, DERL is differentiable in itsmetaoptimization: it treats the inner-loop validation performance as a signal to update theMeta-Optimizerviareinforcement learning. This allows DERL to approximate the \"meta-gradient\" oftask success, progressively learning to generate denser and more actionable feedback. We validate DERL across three distinct domains: robotic agent (ALFWorld), scientific simulation (ScienceWorld), andmathematical reasoning (GSM8k,MATH). Experimental results show that DERL achieves state-of-the-art performance onALFWorldandScienceWorld, significantly outperforming methods relying on heuristic rewards, especially inout-of-distribution scenarios. Analysis of the evolutionary trajectory demonstrates that DERL successfully captures the intrinsic structure of tasks, enabling selfimproving agent alignment without human intervention. Code:https://github.com/sitaocheng/DERLModels:https://huggingface.co/DifferentiableEvolutionaryRL ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551052",
+    "title": "Differentiable Evolutionary Reinforcement Learning",
+    "authors": [
+      "Sitao Cheng"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/sitaocheng/DERL",
+    "huggingface_url": "https://huggingface.co/papers/2512.13399",
+    "upvote": 18
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "context": "SchED, a training-free early-exit algorithm, accelerates diffusion large language model decoding with minimal performance loss across various tasks. Diffusion large language models(dLLMs) offer a promising alternative toautoregressive models, but their practical utility is severely hampered by slow, iterative sampling. We presentSchED, a training-free, model-agnosticearly-exit algorithmthat aggregatesfull-span logit marginsand halts decoding once a smooth, progress-dependentconfidence thresholdis met. We evaluatedSchEDon two dLLM families (Dream and LLaDA), in base and instruction-tuned variants across ten benchmarks spanning downstream tasks includingmultiple-choice question answering(MCQ),math,long-form QA/summarization, andtranslation.SchEDdelivers large, stable accelerations: oninstruction-tuned models, it achieves 3.8-4.0times speedups while retaining 99.8-100% of the baseline score on average. Onbase models,SchEDyields consistent speedup gains with 99.1-100% performance retention, with up to 2.34times under more aggressive settings. Using a conservative speed metric that heavily penalizes quality loss (QPS, γ{=}4), we show thatSchEDis robust and clearly outperforms prior confidence-based early-exit methods, which break down on long-form generation. Anentropy analysisof the model's token predictions reveals that instruction tuning speeds up the decay ofpredictive entropy. By turning genuine confidence stabilization into computational savings,SchEDmakes dLLM decoding substantially more efficient. SchEDintroduces a training-free,early-exit decoding criterion for diffusion LLMs, halting sampling once a smooth, progress-adaptive confidence threshold is satisfied.SchEDachieves up to ~4× decoding speedups on averagewith ≥99–100% performance retention across benchmarks. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550068",
+    "title": "Fast-Decoding Diffusion Language Models via Progress-Aware Confidence Schedules",
+    "authors": [
+      "Amr Mohamed",
+      "Yang Zhang",
+      "Michalis Vazirgiannis",
+      "Guokan Shang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/amr-mohamedd/SchED",
+    "huggingface_url": "https://huggingface.co/papers/2512.02892",
+    "upvote": 9
+  }
+}

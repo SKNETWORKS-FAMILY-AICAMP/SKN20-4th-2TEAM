@@ -1,0 +1,15 @@
+{
+  "context": "WorldCanvas generates coherent, controllable world events using a multimodal framework that integrates text, trajectories, and reference images. We present WorldCanvas, a framework forpromptable world eventsthat enables rich,user-directed simulationby combining text,trajectories, andreference images. Unlike text-only approaches and existing trajectory-controlled image-to-video methods, our multimodal approach combinestrajectories-- encoding motion, timing, and visibility -- withnatural languageforsemantic intentandreference imagesforvisual groundingof object identity, enabling the generation of coherent, controllable events that includemulti-agent interactions,object entry/exit,reference-guided appearanceandcounterintuitive events. The resulting videos demonstrate not onlytemporal coherencebut alsoemergent consistency, preserving object identity and scene despite temporary disappearance. By supporting expressive world events generation, WorldCanvas advancesworld modelsfrom passive predictors to interactive, user-shaped simulators. Our project page is available at: https://worldcanvas.github.io/. Demo page:https://worldcanvas.github.io/Github:https://github.com/pPetrichor/WorldCanvas arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/the-world-is-your-canvas-painting-promptable-events-with-reference-images-trajectories-and-text-9084-11219c98 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551041",
+    "title": "The World is Your Canvas: Painting Promptable Events with Reference Images, Trajectories, and Text",
+    "authors": [
+      "Qiuyu Wang",
+      "Wen Wang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/pPetrichor/WorldCanvas",
+    "huggingface_url": "https://huggingface.co/papers/2512.16924",
+    "upvote": 25
+  }
+}

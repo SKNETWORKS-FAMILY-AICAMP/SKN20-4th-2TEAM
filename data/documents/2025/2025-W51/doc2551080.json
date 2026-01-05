@@ -1,0 +1,16 @@
+{
+  "context": "A4-Agent, a training-free framework, decouples affordance prediction into three stages using specialized pre-trained models to enhance generalization and performance in real-world settings. Affordance prediction, which identifies interaction regions on objects based on language instructions, is critical for embodied AI. Prevailing end-to-end models couple high-level reasoning and low-level grounding into a single monolithic pipeline and rely on training over annotated datasets, which leads to poor generalization on novel objects and unseen environments. In this paper, we move beyond this paradigm by proposing A4-Agent, a training-free agentic framework that decouplesaffordance predictioninto a three-stage pipeline. Our framework coordinates specialized foundation models at test time: (1) aDreamerthat employsgenerative modelsto visualize how an interaction would look; (2) aThinkerthat utilizeslarge vision-language modelsto decide what object part to interact with; and (3) aSpotterthat orchestratesvision foundation modelsto precisely locate where the interaction area is. By leveraging the complementary strengths of pre-trained models without any task-specific fine-tuning, ourzero-shot frameworksignificantly outperforms state-of-the-art supervised methods across multiple benchmarks and demonstrates robust generalization to real-world settings. Project Page:https://zixinzhang02.github.io/A4-Agent-page/ ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551080",
+    "title": "A4-Agent: An Agentic Framework for Zero-Shot Affordance Reasoning",
+    "authors": [
+      "Zixin Zhang",
+      "Harold Haodong Chen",
+      "Chenfei Liao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/EnVision-Research/A4-Agent",
+    "huggingface_url": "https://huggingface.co/papers/2512.14442",
+    "upvote": 10
+  }
+}

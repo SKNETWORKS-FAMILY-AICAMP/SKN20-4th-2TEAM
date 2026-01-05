@@ -1,0 +1,14 @@
+{
+  "context": "Large Language Models (LLMs) are increasingly deployed in time-critical systems, such as robotics, autonomous driving, embodied intelligence, and industrial automation, where generating accurate responses within a given time budget is crucial for decision-making, control, or safety-critical tasks. However, the auto-regressive generation process of LLMs makes it challenging to model and estimate the end-to-end execution time. Furthermore, existing efficient inference methods based on a fixed key-value (KV) cache eviction ratio struggle to adapt to varying tasks with diverse time budgets, where an improper eviction ratio may lead to incomplete inference or a drop in response performance. In this paper, we propose TimeBill, a novel time-budgeted inference framework for LLMs that balances the inference efficiency and response performance. To be more specific, we propose a fine-grained response length predictor (RLP) and an execution time estimator (ETE) to accurately predict the end-to-end execution time of LLMs. Following this, we develop a time-budgeted efficient inference approach that adaptively adjusts the KV cache eviction ratio based on execution time prediction and the given time budget. Finally, through extensive experiments, we demonstrate the advantages of TimeBill in improving task completion rate and maintaining response performance under various overrun strategies. 🚀 Large language models can infer within strict time budgets! 📉 Fixed KV cache eviction or naive speed-up strategies hurt performance under real-time constraints. 🎯 TimeBill enables adaptive, time-aware LLM inference by predicting response length and execution time, then dynamically tuning KV cache eviction to meet deadlines without sacrificing quality. 🆕 We propose a fine-grained Response Length Predictor (RLP) + workload-guided Execution Time Estimator (ETE) for end-to-end time-budgeted inference with guaranteed completion and high response fidelity. 🚀 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/timebill-time-budgeted-inference-for-large-language-models-9534-86b6d791 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601025",
+    "title": "TimeBill: Time-Budgeted Inference for Large Language Models",
+    "authors": [
+      "Qi Fan"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.21859",
+    "upvote": 22
+  }
+}

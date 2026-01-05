@@ -1,0 +1,14 @@
+{
+  "context": "LongShOTBench is a diagnostic benchmark for long-form multimodal video understanding with open-ended questions, dialogues, and multimodal reasoning tasks, highlighting the challenges for state-of-the-art models. Long-formmultimodal video understandingrequires integratingvision,speech, andambient audiowith coherentlong-range reasoning. Existing benchmarks emphasize either temporal length or multimodal richness, but rarely both and while some incorporateopen-ended questionsand advanced metrics, they mostly rely on single-score accuracy, obscuring failure modes. We introduceLongShOTBench, a diagnostic benchmark with open-ended, intent-driven questions; single- andmulti-turn dialogues; and tasks requiringmultimodal reasoningandagentic tool useacross video, audio, andspeech. Each item includes a reference answer andgraded rubricfor interpretable, and traceable evaluation.LongShOTBenchis produced via a scalable, human-validated pipeline to ensure coverage and reproducibility. All samples in ourLongShOTBenchare human-verified and corrected. Furthermore, we presentLongShOTAgent, an agentic system that analyzes long videos viapreprocessing,search, anditerative refinement. OnLongShOTBench, state-of-the-artMLLMsshow large gaps:Gemini-2.5-Flashachieves 52.95%,open-source modelsremain below 30%, andLongShOTAgentattains 44.66%. These results underscore the difficulty of real-world long-form video understanding.LongShOTBenchprovides a practical, reproducible foundation for evaluating and improvingMLLMs. All resources are available on GitHub: https://github.com/mbzuai-oryx/longshot. 🌐 Website:https://mbzuai-oryx.github.io/LongShOT/💻 Github:https://github.com/mbzuai-oryx/longshot🤗 HuggingFace:https://huggingface.co/datasets/MBZUAI/longshot-bench arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/a-benchmark-and-agentic-framework-for-omni-modal-reasoning-and-tool-use-in-long-videos-7157-7bd11533 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552077",
+    "title": "A Benchmark and Agentic Framework for Omni-Modal Reasoning and Tool Use in Long Videos",
+    "authors": [
+      "Mohammed Irfan Kurpath"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/mbzuai-oryx/longshot",
+    "huggingface_url": "https://huggingface.co/papers/2512.16978",
+    "upvote": 4
+  }
+}

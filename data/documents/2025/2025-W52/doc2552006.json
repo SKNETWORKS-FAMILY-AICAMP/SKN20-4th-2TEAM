@@ -1,0 +1,17 @@
+{
+  "context": "Proposed Egocentric2Embodiment pipeline translates human egocentric videos into structured training data for robots, enhancing their egocentric understanding and task performance. Robotic generalization relies on physical intelligence: the ability to reason about state changes, contact-rich interactions, and long-horizon planning under egocentric perception and action. However, most VLMs are trained primarily on third-person data, creating a fundamental viewpoint mismatch for humanoid robots. Scaling robot egocentric data collection remains impractical due to high cost and limited diversity, whereas large-scale human egocentric videos offer a scalable alternative that naturally capture rich interaction context and causal structure. The key challenge is to convert raw egocentric videos into structured and reliable embodiment training supervision. Accordingly, we propose anEgocentric2Embodimenttranslation pipeline that transforms first-person videos into multi-level, schema-drivenVQA supervisionwith enforcedevidence groundingandtemporal consistency, enabling the construction of theEgocentric2Embodiment dataset(E2E-3M) at scale. Anegocentric-awareembodied brain, termedPhysBrain, is obtained by training on theE2E-3Mdataset.PhysBrainexhibits substantially improved egocentric understanding, particularly for planning on EgoThink. It provides anegocentric-awareinitialization that enables more sample-efficientVLA fine-tuningand higherSimplerEnv success rates(53.9\\%), demonstrating effective transfer from human egocentric supervision to downstream robot control.   arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/physbrain-human-egocentric-data-as-a-bridge-from-vision-language-models-to-physical-intelligence-3614-1d27535a arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/physbrain-human-egocentric-data-as-a-bridge-from-vision-language-models-to-physical-intelligence-3614-1d27535a ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552006",
+    "title": "PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to Physical Intelligence",
+    "authors": [
+      "Xiaopeng Lin",
+      "Shijie Lian",
+      "Bin Yu",
+      "Ruoqi Yang"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.16793",
+    "upvote": 72
+  }
+}

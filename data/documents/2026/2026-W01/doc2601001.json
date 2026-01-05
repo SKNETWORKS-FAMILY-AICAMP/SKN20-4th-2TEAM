@@ -1,0 +1,24 @@
+{
+  "context": "Manifold-Constrained Hyper-Connections (mHC) stabilize and scale residual connection architectures by restoring identity mapping properties through manifold projection and infrastructure optimization. Recently, studies exemplified byHyper-Connections (HC)have extended the ubiquitous residual connection paradigm established over the past decade by expanding theresidual stream widthand diversifyingconnectivity patterns. While yielding substantial performance gains, this diversification fundamentally compromises theidentity mapping propertyintrinsic to the residual connection, which causes severetraining instabilityand restrictedscalability, and additionally incurs notablememory access overhead. To address these challenges, we proposeManifold-Constrained Hyper-Connections (mHC), a general framework that projects the residual connection space of HC onto a specific manifold to restore theidentity mapping property, while incorporating rigorousinfrastructure optimizationto ensure efficiency. Empirical experiments demonstrate that mHC is effective for training at scale, offering tangible performance improvements and superiorscalability. We anticipate that mHC, as a flexible and practical extension of HC, will contribute to a deeper understanding of topological architecture design and suggest promising directions for the evolution of foundational models. DeepSeek released a new paper proposing a novel architecture called mHC (Manifold-Constrained Hyper-Connections). This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/mhc-manifold-constrained-hyper-connections-5913-27498555 Video explanation of the paper -https://www.youtube.com/watch?v=HmhV76_3nuAWritten format -https://aipapersacademy.com/deepseek-mhc/ underneath specialities and multi model conditions this break tremendously,  that said by far the best implementation in resource constrained environments to quickly find and fix training, cut hours off  and when combine with layering other models achieved drastic performance boosts Do keep in mind thought it does vary by hardware and methods as I had to build several custom methods on the training side and a JS bridge for practical improvements ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601001",
+    "title": "mHC: Manifold-Constrained Hyper-Connections",
+    "authors": [
+      "Zhenda Xie",
+      "Yixuan Wei",
+      "Chenggang Zhao",
+      "Jiashi Li",
+      "Damai Dai",
+      "Huazuo Gao",
+      "Shangyan Zhou",
+      "Zhean Xu",
+      "Zhengyan Zhang",
+      "Wangding Zeng",
+      "Lean Wang"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.24880",
+    "upvote": 198
+  }
+}

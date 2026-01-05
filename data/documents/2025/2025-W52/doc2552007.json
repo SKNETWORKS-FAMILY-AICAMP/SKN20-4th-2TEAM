@@ -1,0 +1,15 @@
+{
+  "context": "While Large Multimodal Models (LMMs) have made significant progress, they remain largely text-centric, relying on language as their core reasoning modality. As a result, they are limited in their ability to handle reasoning tasks that are predominantly visual. Recent approaches have sought to address this by supervising intermediate visual steps with helper images, depth maps, or image crops. However, these strategies impose restrictive priors on what \"useful\" visual abstractions look like, add heavy annotation costs, and struggle to generalize across tasks. To address this critical limitation, we propose a task-agnostic mechanism that trains LMMs to discover and use visual reasoning tokens without explicit supervision. These tokens attend globally and re-encode the image in a task-adaptive way, enabling the model to extract relevant visual information without hand-crafted supervision. Our approach outperforms direct fine-tuning and achieves state-of-the-art results on a diverse range of vision-centric tasks -- including those where intermediate abstractions are hard to specify -- while also generalizing to multi-task instruction tuning. TL;DR: We introduce a new method that improves visual reasoning by allowing models to implicitly learn latent visual representations, without requiring explicit supervision or additional data for these latents. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/latent-implicit-visual-reasoning-9998-b5005eaa arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/latent-implicit-visual-reasoning This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552007",
+    "title": "Latent Implicit Visual Reasoning",
+    "authors": [
+      "Kelvin Li",
+      "Chuyi Shang"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.21218",
+    "upvote": 65
+  }
+}

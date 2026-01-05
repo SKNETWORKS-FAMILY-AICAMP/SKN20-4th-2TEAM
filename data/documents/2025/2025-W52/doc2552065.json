@@ -1,0 +1,15 @@
+{
+  "context": "LaMer is a meta-reinforcement learning framework that enables large language model agents to actively explore and adapt through cross-episode training and in-context policy adaptation without gradient updates. Reinforcement learning(RL) has enabled the training of large language model (LLM) agents to interact with the environment and to solve multi-turnlong-horizon tasks. However, the RL-trained agents often struggle in tasks that require activeexplorationand fail to efficiently adapt from trial-and-error experiences. In this paper, we present LaMer, a general Meta-RL framework that enables LLM agents to actively explore and learn from theenvironment feedbackat test time. LaMer consists of two key components: (i) across-episode trainingframework to encourageexplorationand long-term rewards optimization; and (ii)in-context policy adaptationviareflection, allowing the agent to adapt their policy from task feedback signal without gradient update. Experiments across diverse environments show that LaMer significantly improves performance over RL baselines, with 11%, 14%, and 19% performance gains on Sokoban, MineSweeper and Webshop, respectively. Moreover, LaMer also demonstrates better generalization to more challenging or previously unseen tasks compared to the RL-trained agents. Overall, our results demonstrate that Meta-RL provides a principled approach to induceexplorationin language agents, enabling more robust adaptation to novel environments through learnedexplorationstrategies. 🌊LaMer, a general Meta-RL framework that enables LLM agents to explore and learn from the environment feedback at test time. Glad to see others are researching the area of meta-RL exploration. I have done similar work in this space: https://arxiv.org/pdf/2508.01287 If you want to collaborate give me a shout. Thank you for sharing your interesting work! arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/meta-rl-induces-exploration-in-language-agents-7228-6ad15b2c ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552065",
+    "title": "Meta-RL Induces Exploration in Language Agents",
+    "authors": [
+      "Yulun Jiang",
+      "Michael Moor"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.16848",
+    "upvote": 10
+  }
+}

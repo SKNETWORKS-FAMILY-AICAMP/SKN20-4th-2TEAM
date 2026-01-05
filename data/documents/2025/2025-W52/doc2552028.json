@@ -1,0 +1,14 @@
+{
+  "context": "Spatia, a spatial memory-aware video generation framework, maintains long-term spatial and temporal consistency by preserving and updating a 3D scene point cloud, enabling realistic video generation and interactive editing. Existing video generation models struggle to maintain long-term spatial and temporal consistency due to the dense, high-dimensional nature of video signals. To overcome this limitation, we propose Spatia, aspatial memory-awarevideo generation frameworkthat explicitly preserves a3D scene point cloudas persistent spatial memory. Spatia iteratively generates video clips conditioned on this spatial memory and continuously updates it throughvisual SLAM. Thisdynamic-static disentanglementdesign enhances spatial consistency throughout the generation process while preserving the model's ability to produce realistic dynamic entities. Furthermore, Spatia enables applications such asexplicit camera controland3D-aware interactive editing, providing a geometrically grounded framework for scalable, memory-driven video generation. Existing video generation models struggle to maintain long-term spatial and temporal consistency due to the dense, high-dimensional nature of video signals. To overcome this limitation, we propose Spatia, a spatial memory-aware video generation framework that explicitly preserves a 3D scene point cloud as persistent spatial memory. Spatia iteratively generates video clips conditioned on this spatial memory and continuously updates it through visual SLAM. Thisdynamic-static disentanglementdesign enhances spatial consistency throughout the generation process while preserving the model's ability to produce realistic dynamic entities. Furthermore, Spatia enables applications such as: arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/spatia-video-generation-with-updatable-spatial-memory-7151-fc1e45e1 arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/spatia-video-generation-with-updatable-spatial-memory This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552028",
+    "title": "Spatia: Video Generation with Updatable Spatial Memory",
+    "authors": [
+      "Jinjing Zhao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/ZhaoJingjing713/Spatia",
+    "huggingface_url": "https://huggingface.co/papers/2512.15716",
+    "upvote": 29
+  }
+}

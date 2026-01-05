@@ -1,0 +1,18 @@
+{
+  "context": "The ReViSE framework integrates reasoning and visual editing in video models using a self-reflective reasoning mechanism, enhancing editing accuracy and visual fidelity through intrinsic feedback from an internal vision-language model. Video unified models exhibit strong capabilities in understanding and generation, yet they struggle with reason-informed visual editing even when equipped with powerful internalvision-language models(VLMs). We attribute this gap to two factors: 1) existing datasets are inadequate for training and evaluatingreasoning-aware video editing, and 2) an inherent disconnect between the models' reasoning and editing capabilities, which prevents the rich understanding from effectively instructing the editing process. Bridging this gap requires an integrated framework that connects reasoning with visual transformation. To address this gap, we introduce theReason-Informed Video Editing(RVE) task, which requires reasoning about physical plausibility and causal dynamics during editing. To support systematic evaluation, we constructRVE-Bench, a comprehensive benchmark with two complementary subsets: Reasoning-Informed Video Editing and In-Context Video Generation. These subsets cover diverse reasoning dimensions and real-world editing scenarios. Building upon this foundation, we propose the ReViSE, aSelf-Reflective Reasoning(SRF) framework that unifies generation and evaluation within a single architecture. The model's internal VLM providesintrinsic feedbackby assessing whether the edited video logically satisfies the given instruction. The differential feedback that refines the generator's reasoning behavior during training. Extensive experiments onRVE-Benchdemonstrate that ReViSE significantly enhancesediting accuracyandvisual fidelity, achieving a 32% improvement of the Overall score in the reasoning-informed video editing subset over state-of-the-art methods. Code:https://github.com/Liuxinyv/ReViSE This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550096",
+    "title": "ReViSE: Towards Reason-Informed Video Editing in Unified Models with Self-Reflective Learning",
+    "authors": [
+      "Hangjie Yuan",
+      "Jiahao Pan",
+      "Yanbiao Ma",
+      "Wenhan Luo",
+      "Yike Guo"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Liuxinyv/ReViSE",
+    "huggingface_url": "https://huggingface.co/papers/2512.09924",
+    "upvote": 3
+  }
+}

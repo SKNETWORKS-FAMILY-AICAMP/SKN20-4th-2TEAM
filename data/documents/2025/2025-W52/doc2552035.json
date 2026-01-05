@@ -1,0 +1,14 @@
+{
+  "context": "High-resolution video generation, while crucial for digital media and film, is computationally bottlenecked by the quadratic complexity of diffusion models, making practical inference infeasible. To address this, we introduce HiStream, an efficient autoregressive framework that systematically reduces redundancy across three axes: i) Spatial Compression: denoising at low resolution before refining at high resolution with cached features; ii) Temporal Compression: a chunk-by-chunk strategy with a fixed-size anchor cache, ensuring stable inference speed; and iii) Timestep Compression: applying fewer denoising steps to subsequent, cache-conditioned chunks. On 1080p benchmarks, our primary HiStream model (i+ii) achieves state-of-the-art visual quality while demonstrating up to 76.2x faster denoising compared to the Wan2.1 baseline and negligible quality loss. Our faster variant, HiStream+, applies all three optimizations (i+ii+iii), achieving a 107.5x acceleration over the baseline, offering a compelling trade-off between speed and quality, thereby making high-resolution video generation both practical and scalable. HiStream is an efficient autoregressive framework for high-resolution video generation that removes the quadratic inference bottleneck of diffusion models by reducing spatial, temporal, and timestep redundancy. It achieves state-of-the-art quality with up to 76× speedup at 1080p, and up to 107× acceleration with HiStream+, making high-resolution video generation practical and scalable. Project Page:http://haonanqiu.com/projects/HiStream.html arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/histream-efficient-high-resolution-video-generation-via-redundancy-eliminated-streaming-3154-59e166e0 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552035",
+    "title": "HiStream: Efficient High-Resolution Video Generation via Redundancy-Eliminated Streaming",
+    "authors": [
+      "Shoufa Chen"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/arthur-qiu/HiStream",
+    "huggingface_url": "https://huggingface.co/papers/2512.21338",
+    "upvote": 21
+  }
+}

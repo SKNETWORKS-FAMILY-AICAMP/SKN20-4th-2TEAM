@@ -1,0 +1,12 @@
+{
+  "context": "SecureCode v2.0 is a comprehensive dataset providing security-focused coding examples grounded in real incidents, with vulnerable and secure implementations, attacks, defense guidance, and operational security context across multiple languages. AI assistants produce vulnerable code in 45% of security-relevant scenarios, introducing flaws into production systems at scale. Yet existing secure coding datasets fall short. They lack incident grounding, don't provide the scale modern training requires, and miss the operational security context developers need for production deployments. We presentSecureCode v2.0, a production-grade dataset of 1,215 security-focused coding examples that passedstructural validationandexpert security review. Every example ties to actual documented security incidents withCVE references, provides vulnerable and secure implementations, demonstrates concrete attacks, and includesdefense-in-depthoperational guidance. The dataset covers 11 vulnerability categories (completeOWASP Top 10:2025plusAI/ML Security Threats) across 11 languages (Python, JavaScript, Java, Go, PHP, C#, TypeScript, Ruby, Rust, Kotlin, and YAML for infrastructure-as-code).\n  Our quality assurance framework ensures complete incident grounding. Each example includesSIEM integrationstrategies,infrastructure hardeningrecommendations (Docker,AppArmor,WAF configurations), and testing approaches usinglanguage-appropriate frameworks. The dataset uses a 4-turnconversational structuremirroring actual developer-AI interactions, escalating from basic implementations to advanced security considerations anddefense-in-depthguidance.\n  Our contributions: (1) 1,215 rigorously validated examples split into 989 training, 122 validation, and 104 test sets, (2) an automated validation framework ensuring dataset consistency, (3) a 4-turnconversational structurecapturing realistic security workflows, (4) comprehensive operational security guidance withSIEM integrationstrategies, (5) complete language-specific implementation fidelity, and (6) open-source release of data, validation tools, and benchmarking protocols.  ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552084",
+    "title": "SecureCode v2.0: A Production-Grade Dataset for Training Security-Aware Code Generation Models",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/scthornton/securecode-v2",
+    "huggingface_url": "https://huggingface.co/papers/2512.18542",
+    "upvote": 2
+  }
+}

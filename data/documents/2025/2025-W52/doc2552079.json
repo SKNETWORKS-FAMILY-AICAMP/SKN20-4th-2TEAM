@@ -1,0 +1,14 @@
+{
+  "context": "A new open-source framework, simulstream, is introduced for evaluating and demonstrating streaming speech-to-text translation systems, supporting both incremental decoding and re-translation methods with a focus on long-form audio processing. Streaming Speech-to-Text Translation(StreamST) requires producing translations concurrently with incoming speech, imposing strict latency constraints and demanding models that balance partial-information decision-making with high translation quality. Research efforts on the topic have so far relied on theSimulEvalrepository, which is no longer maintained and does not support systems that revise their outputs. In addition, it has been designed for simulating the processing of short segments, rather than long-form audio streams, and it does not provide an easy method to showcase systems in a demo. As a solution, we introducesimulstream, the first open-source framework dedicated to unified evaluation and demonstration of StreamST systems. Designed forlong-form speech processing, it supports not onlyincremental decodingapproaches, but alsore-translation methods, enabling for their comparison within the same framework both in terms of quality and latency. In addition, it also offers an interactiveweb interfaceto demo any system built within the tool. Already available on PyPi athttps://pypi.org/project/simulstream/ arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/simulstream-open-source-toolkit-for-evaluation-and-demonstration-of-streaming-speech-to-text-translation-systems-972-e3c64cbd ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552079",
+    "title": "Simulstream: Open-Source Toolkit for Evaluation and Demonstration of Streaming Speech-to-Text Translation Systems",
+    "authors": [
+      "Sara Papi"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/hlt-mt/simulstream",
+    "huggingface_url": "https://huggingface.co/papers/2512.17648",
+    "upvote": 3
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "context": "SpatialTree, a cognitive-science-inspired hierarchy, evaluates and improves spatial abilities in MLLMs across multiple levels, revealing transfer dynamics and proposing an auto-think strategy for consistent performance enhancement. Cognitive science suggests that spatial ability develops progressively-from perception to reasoning and interaction. Yet in multimodal LLMs (MLLMs), this hierarchy remains poorly understood, as most studies focus on a narrow set of tasks. We introduceSpatialTree, a cognitive-science-inspired hierarchy that organizes spatial abilities into four levels:low-level perception(L1),mental mapping(L2),simulation(L3), andagentic competence(L4). Based on this taxonomy, we construct the firstcapability-centric hierarchical benchmark, thoroughly evaluating mainstream MLLMs across 27 sub-abilities. The evaluation results reveal a clear structure: L1 skills are largely orthogonal, whereas higher-level skills are strongly correlated, indicating increasing interdependency. Throughtargeted supervised fine-tuning, we uncover a surprising transfer dynamic-negative transferwithin L1, but strongcross-level transferfrom low- to high-level abilities with notable synergy. Finally, we explore how to improve the entire hierarchy. We find thatnaive RLthat encourages extensive \"thinking\" is unreliable: it helps complex reasoning but hurts intuitive perception. We propose a simpleauto-think strategythat suppresses unnecessary deliberation, enabling RL to consistently improve performance across all levels. By buildingSpatialTree, we provide a proof-of-concept framework for understanding and systematically scaling spatial abilities in MLLMs. Introducing SpatialTree, a four-level hierarchy for spatial abilities in multimodal LLMs, benchmark 27 sub-abilities, reveal transfer patterns, and propose auto-think to improve reinforcement-learning performance. Cognitive-inspired design, impressive work on MLLM spatial skills! arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/spatialtree-how-spatial-abilities-branch-out-in-mllms-9396-5c55863d ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552017",
+    "title": "SpatialTree: How Spatial Abilities Branch Out in MLLMs",
+    "authors": [
+      "Yuxi Xiao",
+      "Longfei Li"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.20617",
+    "upvote": 42
+  }
+}

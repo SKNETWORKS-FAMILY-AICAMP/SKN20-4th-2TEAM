@@ -1,0 +1,14 @@
+{
+  "context": "A framework called Real2Edit2Real generates new manipulation demonstrations by using 3D reconstruction, editing, and video synthesis, improving data efficiency in robot learning. Recent progress in robot learning has been driven by large-scale datasets and powerful visuomotor policy architectures, yet policy robustness remains limited by the substantial cost of collecting diverse demonstrations, particularly for spatial generalization in manipulation tasks. To reduce repetitive data collection, we present Real2Edit2Real, a framework that generates new demonstrations by bridging 3D editability with 2D visual data through a 3D control interface. Our approach first reconstructs scene geometry from multi-view RGB observations with ametric-scale 3D reconstruction model. Based on the reconstructed geometry, we performdepth-reliable 3D editingon point clouds to generate new manipulation trajectories while geometrically correcting the robot poses to recover physically consistentdepth, which serves as a reliable condition for synthesizing new demonstrations. Finally, we propose amulti-conditional video generation modelguided bydepthas the primary control signal, together withaction,edge, andray maps, to synthesizespatially augmented multi-view manipulation videos. Experiments on four real-world manipulation tasks demonstrate that policies trained on data generated from only 1-5 source demonstrations can match or outperform those trained on 50 real-world demonstrations, improving data efficiency by up to 10-50x. Moreover, experimental results on height and texture editing demonstrate the framework's flexibility and extensibility, indicating its potential to serve as a unified data generation framework. Paper:https://arxiv.org/abs/2512.19402Project Page:https://real2edit2real.github.io/ arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/real2edit2real-generating-robotic-demonstrations-via-a-3d-control-interface-7786-1127e186 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552074",
+    "title": "Real2Edit2Real: Generating Robotic Demonstrations via a 3D Control Interface",
+    "authors": [
+      "Yujie Zhao"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.19402",
+    "upvote": 7
+  }
+}

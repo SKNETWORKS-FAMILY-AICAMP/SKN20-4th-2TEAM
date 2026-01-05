@@ -1,0 +1,14 @@
+{
+  "context": "GenEnv, a framework using a co-evolutionary game with a generative environment simulator, enhances LLM agent performance by 40.3% over 7B baselines and uses less data than offline augmentation. Training capableLarge Language Model(LLM) agents is critically bottlenecked by the high cost and static nature of real-world interaction data. We address this by introducingGenEnv, a framework that establishes a difficulty-alignedco-evolutionary gamebetween an agent and a scalable,generative environment simulator. Unlike traditional methods that evolve models on static datasets,GenEnvinstantiates a dataevolving: the simulator acts as adynamic curriculum policy, continuously generating tasks specifically tailored to the agent's ``zone of proximal development''. This process is guided by a simple but effectiveα-Curriculum Reward, which aligns task difficulty with the agent's current capabilities. We evaluateGenEnvon five benchmarks, includingAPI-Bank,ALFWorld,BFCL,Bamboogle, andTravelPlanner. Across these tasks,GenEnvimproves agent performance by up to +40.3\\% over 7B baselines and matches or exceeds the average performance of larger models. Compared to Gemini 2.5 Pro-based offline data augmentation,GenEnvachieves better performance while using 3.3times less data. By shifting from static supervision toadaptive simulation,GenEnvprovides adata-efficientpathway for scaling agent capabilities. Training capable Large Language Model (LLM) agents is critically bottlenecked by the high cost and static nature of real-world interaction data. We address this by introducing GenEnv, a framework that establishes a difficulty-aligned co-evolutionary game between an agent and a scalable, generative environment simulator. Unlike traditional methods that evolve models on static datasets, GenEnv instantiates a dataevolving: the simulator acts as a dynamic curriculum policy, continuously generating tasks specifically tailored to the agent's ``zone of proximal development''. This process is guided by a simple but effective arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/genenv-difficulty-aligned-co-evolution-between-llm-agents-and-environment-simulators-5729-d167f90d ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552047",
+    "title": "GenEnv: Difficulty-Aligned Co-Evolution Between LLM Agents and Environment Simulators",
+    "authors": [
+      "Peter Chen"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/Gen-Verse/GenEnv",
+    "huggingface_url": "https://huggingface.co/papers/2512.19682",
+    "upvote": 15
+  }
+}

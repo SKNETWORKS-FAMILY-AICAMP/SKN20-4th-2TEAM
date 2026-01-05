@@ -1,0 +1,14 @@
+{
+  "context": "AutoQ-VIS achieves state-of-the-art results in unsupervised Video Instance Segmentation using quality-guided self-training to bridge the synthetic-to-real domain gap. Video Instance Segmentation (VIS) faces significant annotation challenges due to its dual requirements of pixel-level masks and temporal consistency labels. While recentunsupervised methodslikeVideoCutLEReliminate optical flow dependencies through synthetic data, they remain constrained by the synthetic-to-real domain gap. We present AutoQ-VIS, a novel unsupervised framework that bridges this gap throughquality-guided self-training. Our approach establishes aclosed-loop systembetweenpseudo-label generationandautomatic quality assessment, enabling progressive adaptation from synthetic to real videos. Experiments demonstrate state-of-the-art performance with 52.6 AP_{50} onYouTubeVIS-2019val set, surpassing the previous state-of-the-artVideoCutLERby 4.4%, while requiring no human annotations. This demonstrates the viability of quality-aware self-training for unsupervised VIS. We will release the code at https://github.com/wcbup/AutoQ-VIS. Accepted at WACV'26! Keywords: Video Instance Segmentation; Unsupervised Learning; Segmentation Quality Assessment This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550061",
+    "title": "Boosting Unsupervised Video Instance Segmentation with Automatic Quality-Guided Self-Training",
+    "authors": [
+      "Mehmet Onurcan Kaya"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/wcbup/AutoQ-VIS/",
+    "huggingface_url": "https://huggingface.co/papers/2512.06864",
+    "upvote": 12
+  }
+}

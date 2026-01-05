@@ -1,0 +1,24 @@
+{
+  "context": "LLaDA2.0 converts auto-regressive models into discrete diffusion large language models with a novel training scheme, achieving superior performance and efficiency at scale. This paper presents LLaDA2.0 -- a tuple ofdiscrete diffusion large language models(dLLM) scaling up to 100B total parameters through systematic conversion from auto-regressive (AR) models -- establishing a new paradigm for frontier-scale deployment. Instead of costly training from scratch, LLaDA2.0 upholdsknowledge inheritance, progressive adaption andefficiency-aware designprinciple, and seamless converts a pre-trained AR model intodLLMwith a novel 3-phaseblock-level WSDbased training scheme: progressive increasing block-size inblock diffusion(warm-up), large-scalefull-sequence diffusion(stable) and reverting back to compact-sizeblock diffusion(decay). Along withpost-training alignmentwithSFTandDPO, we obtain LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B), two instruction-tunedMixture-of-Experts(MoE) variants optimized for practical deployment. By preserving the advantages ofparallel decoding, these models deliver superior performance and efficiency at the frontier scale. Both models were open-sourced. This paper presents LLaDA2.0 -- a tuple of discrete diffusion large language models (dLLM) scaling up to 100B total parameters through systematic conversion from auto-regressive (AR) models -- establishing a new paradigm for frontier-scale deployment. Instead of costly training from scratch, LLaDA2.0 upholds knowledge inheritance, progressive adaption and efficiency-aware design principle, and seamless converts a pre-trained AR model into dLLM with a novel 3-phase block-level WSD based training scheme: progressive increasing block-size in block diffusion (warm-up), large-scale full-sequence diffusion (stable) and reverting back to compact-size block diffusion (decay). Along with post-training alignment with SFT and DPO, we obtain LLaDA2.0-mini (16B) and LLaDA2.0-flash (100B), two instruction-tuned Mixture-of-Experts (MoE) variants optimized for practical deployment. By preserving the advantages of parallel decoding, these models deliver superior performance and efficiency at the frontier scale. Both models were open-sourced. arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/llada2-0-scaling-up-diffusion-language-models-to-100b-1694-1ee2b201 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551011",
+    "title": "LLaDA2.0: Scaling Up Diffusion Language Models to 100B",
+    "authors": [
+      "Mingliang Gong",
+      "Zhuochen Gong",
+      "Zenan Huang",
+      "Chengxi Li",
+      "Chongxuan Li",
+      "Jianguo Li",
+      "Huabin Liu",
+      "Ling Liu",
+      "Guoshan Lu",
+      "Jianfeng Tan",
+      "Ji-Rong Wen"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/inclusionAI/LLaDA2.0",
+    "huggingface_url": "https://huggingface.co/papers/2512.15745",
+    "upvote": 78
+  }
+}

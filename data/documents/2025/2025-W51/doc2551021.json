@@ -1,0 +1,14 @@
+{
+  "context": "The Universal Reasoning Model enhances Universal Transformers with short convolution and truncated backpropagation to improve reasoning performance on ARC-AGI tasks. Universal transformers(UTs) have been widely used for complex reasoning tasks such asARC-AGIand Sudoku, yet the specific sources of their performance gains remain underexplored. In this work, we systematically analyze UTs variants and show that improvements onARC-AGIprimarily arise from therecurrent inductive biasand strongnonlinear componentsof Transformer, rather than from elaborate architectural designs. Motivated by this finding, we propose theUniversal Reasoning Model(URM), which enhances the UT with short convolution andtruncated backpropagation. Our approach substantially improves reasoning performance, achieving state-of-the-art 53.8% pass@1 onARC-AGI1 and 16.0% pass@1 onARC-AGI2. Our code is avaliable at https://github.com/zitian-gao/URM. Universal transformers (UTs) have been widely used for complex reasoning tasks such as ARC-AGI and Sudoku, yet the specific sources of their performance gains remain underexplored. In this work, we systematically analyze UTs variants and show that improvements on ARC-AGI primarily arise from the recurrent inductive bias and strong nonlinear components of Transformer, rather than from elaborate architectural designs. Motivated by this finding, we propose the Universal Reasoning Model (URM), which enhances the UT with short convolution and truncated backpropagation. Our approach substantially improves reasoning performance, achieving state-of-the-art∗ 53.8% pass@1 on ARC-AGI 1 and 16.0% pass@1 on ARC-AGI 2. Our code is avaliable athttps://github.com/zitian-gao/URM. Pla explain arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/universal-reasoning-model-537-94f00915 Great stuff! Could you please release open weights? I would be very grateful. ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551021",
+    "title": "Universal Reasoning Model",
+    "authors": [
+      "Zitian Gao"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/zitian-gao/URM",
+    "huggingface_url": "https://huggingface.co/papers/2512.14693",
+    "upvote": 41
+  }
+}

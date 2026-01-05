@@ -1,0 +1,14 @@
+{
+  "context": "Omni-Attribute, an open-vocabulary image attribute encoder, learns attribute-specific representations to enable precise visual concept personalization and compositional generation. Visual concept personalizationaims to transfer only specific image attributes, such as identity, expression, lighting, and style, into unseen contexts. However, existing methods rely on holistic embeddings from general-purpose image encoders, which entangle multiple visual factors and make it difficult to isolate a single attribute. This often leads to information leakage and incoherent synthesis. To address this limitation, we introduce Omni-Attribute, the first open-vocabularyimage attribute encoderdesigned to learnhigh-fidelity,attribute-specific representations. Our approach jointly designs the data and model: (i) we curatesemantically linked image pairsannotated with positive and negative attributes to explicitly teach the encoder what to preserve or suppress; and (ii) we adopt adual-objective training paradigmthat balancesgenerative fidelitywithcontrastive disentanglement. The resulting embeddings prove effective foropen-vocabulary attribute retrieval, personalization, andcompositional generation, achieving state-of-the-art performance across multiple benchmarks. This work can isolate a specific attribute from any image and merge those selected attributes from multiple images into a coherent generation. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend Nice work. Any plans to open source code and/or model weights? ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550080",
+    "title": "Omni-Attribute: Open-vocabulary Attribute Encoder for Visual Concept Personalization",
+    "authors": [
+      "Tsai-Shien Chen"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.10955",
+    "upvote": 6
+  }
+}

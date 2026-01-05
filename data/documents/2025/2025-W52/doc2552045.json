@@ -1,0 +1,15 @@
+{
+  "context": "DramaBench is a comprehensive benchmark for evaluating drama script continuation across six dimensions using a combination of rule-based analysis and LLM-based labeling. Drama script continuation requires models to maintain character consistency, advance plot coherently, and preserve dramatic structurecapabilities that existing benchmarks fail to evaluate comprehensively. We present DramaBench, the first large-scale benchmark for evaluating drama script continuation across six independent dimensions: Format Standards, Narrative Efficiency, Character Consistency, Emotional Depth, Logic Consistency, and Conflict Handling. Our framework combines rulebased analysis withLLM-based labelingandstatistical metrics, ensuring objective and reproducible evaluation. We conduct comprehensive evaluation of 8 state-of-the-art language models on 1,103 scripts (8,824 evaluations total), with rigorous statistical significance testing (252 pairwise comparisons, 65.9% significant) andhuman validation(188 scripts, substantial agreement on 3/5 dimensions). Ourablation studiesconfirm all six dimensions capture independent quality aspects (mean | r | = 0.020). DramaBench provides actionable, dimensionspecific feedback for model improvement and establishes a rigorous standard for creative writing evaluation. Hi everyone! I'm Shijian, the first author of DramaBench. We're excited to share our work on evaluating creative writing, specifically drama script continuation. 🎭 Why DramaBench?Traditional \"LLM-as-a-Judge\" metrics often suffer from subjectivity and bias. We introduce a Structured Labeling + Statistical Analysis framework that evaluates scripts across 6 independent dimensions: Format, Narrative Efficiency, Character Consistency, Emotional Depth, Logic Consistency, and Conflict Handling. 📊 Key Highlights: 🚀 Key Findings: We hope DramaBench establishes a more rigorous standard for evaluating AI’s creative storytelling capabilities. We’d love to hear your thoughts! 🔗https://github.com/IIIIQIIII/DramaBench arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/dramabench-a-six-dimensional-evaluation-framework-for-drama-script-continuation-5729-c37ec496 Thanks for sharing this breakdown! It’s a great summary of our work on DramaBench. Glad to see it being useful to the community. ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552045",
+    "title": "DramaBench: A Six-Dimensional Evaluation Framework for Drama Script Continuation",
+    "authors": [
+      "Shijian Ma",
+      "Yan Lin"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/IIIIQIIII/DramaBench",
+    "huggingface_url": "https://huggingface.co/papers/2512.19012",
+    "upvote": 16
+  }
+}

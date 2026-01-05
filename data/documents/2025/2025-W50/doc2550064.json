@@ -1,0 +1,12 @@
+{
+  "context": "WonderZoom generates multi-scale 3D scenes from a single image using scale-adaptive Gaussian surfels and a progressive detail synthesizer, outperforming existing models in quality and alignment. We present WonderZoom, a novel approach to generating 3D scenes with contents across multiple spatial scales from asingle image. Existing3D world generationmodels remain limited to single-scale synthesis and cannot produce coherent scene contents at varying granularities. The fundamental challenge is the lack of a scale-aware 3D representation capable of generating and rendering content with largely different spatial sizes. WonderZoom addresses this through two key innovations: (1)scale-adaptive Gaussian surfelsfor generating andreal-time renderingofmulti-scale 3D scenes, and (2) aprogressive detail synthesizerthat iteratively generates finer-scale 3D contents. Our approach enables users to \"zoom into\" a 3D region and auto-regressively synthesize previously non-existentfine detailsfrom landscapes to microscopic features. Experiments demonstrate that WonderZoom significantly outperforms state-of-the-art video and 3D models in both quality and alignment, enabling multi-scale 3D world creation from asingle image. We showvideo resultsand aninteractive viewerof generated multi-scale 3D worlds in https://wonderzoom.github.io/ WonderZoom enables multi-scale 3D world generation from a single image via scale-adaptive Gaussian surfels and progressive detail synthesis for zoomed-in realism. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550064",
+    "title": "WonderZoom: Multi-Scale 3D World Generation",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/jin-cao-tma/WonderZoom",
+    "huggingface_url": "https://huggingface.co/papers/2512.09164",
+    "upvote": 11
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "context": "JustRL achieves state-of-the-art performance on reasoning models with minimal complexity, using single-stage training and fixed hyperparameters, outperforming sophisticated approaches in terms of compute and stability. Recent advances inreinforcement learningforlarge language modelshave converged on increasing complexity:multi-stage trainingpipelines,dynamic hyperparameter schedules, andcurriculum learningstrategies. This raises a fundamental question: Is this complexity necessary? We present JustRL, a minimal approach usingsingle-stage trainingwithfixed hyperparametersthat achieves state-of-the-art performance on two 1.5Breasoning models(54.9\\% and 64.3\\% average accuracy across ninemathematical benchmarks) while using 2times less compute than sophisticated approaches. The same hyperparameters transfer across both models without tuning, and training exhibits smooth, monotonic improvement over 4,000+ steps without the collapses or plateaus that typically motivate interventions. Critically, ablations reveal that adding ``standard tricks'' likeexplicit length penaltiesandrobust verifiersmay degrade performance by collapsing exploration. These results suggest that the field may be adding complexity to solve problems that disappear with a stable, scaled-up baseline. We release our models and code to establish a simple, validated baseline for the community. ✨What if the simplest RL recipe is all you need? Introducing JustRL: new SOTA among 1.5B reasoning models with 2× less compute. Stable improvement over 4,000+ steps. No multi-stage pipelines. No dynamic schedules. Just simple RL at scale. X thread is athttps://x.com/HBX_hbx/status/1988474153436090776 arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/justrl-scaling-a-1-5b-llm-with-a-simple-rl-recipe-5543-f15a4aa2 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551045",
+    "title": "JustRL: Scaling a 1.5B LLM with a Simple RL Recipe",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "https://github.com/thunlp/JustRL",
+    "huggingface_url": "https://huggingface.co/papers/2512.16649",
+    "upvote": 24
+  }
+}

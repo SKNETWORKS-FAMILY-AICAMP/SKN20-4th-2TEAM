@@ -1,0 +1,14 @@
+{
+  "context": "A framework called BEDA uses probabilistic constraints on belief estimation to improve strategic dialogue through formalized adversarial and alignment acts, outperforming baselines across multiple task settings. Strategic dialogue requires agents to execute distinct dialogue acts, for which belief estimation is essential. While prior work often estimates beliefs accurately, it lacks a principled mechanism to use those beliefs during generation. We bridge this gap by first formalizing two core actsAdversarialandAlignment, and by operationalizing them viaprobabilistic constraintson what an agent may generate. We instantiate this idea inBEDA, a framework that consists of the world set, thebelief estimatorfor belief estimation, and theconditional generatorthat selects acts and realizes utterances consistent with the inferred beliefs. Across three settings, Conditional Keeper Burglar (CKBG,adversarial), Mutual Friends (MF, cooperative), and CaSiNo (negotiation),BEDAconsistently outperforms strong baselines: on CKBG it improves success rate by at least 5.0 points across backbones and by 20.6 points with GPT-4.1-nano; on Mutual Friends it achieves an average improvement of 9.3 points; and on CaSiNo it achieves the optimal deal relative to all baselines. These results indicate that casting belief estimation as constraints provides a simple, general mechanism for reliable strategic dialogue. Arxiv:https://arxiv.org/abs/2512.24885X thread:https://x.com/Hengli_Li_pku/status/2006606887652045158 This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/beda-belief-estimation-as-probabilistic-constraints-for-performing-strategic-dialogue-acts-6476-c6a1361f ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601067",
+    "title": "BEDA: Belief Estimation as Probabilistic Constraints for Performing Strategic Dialogue Acts",
+    "authors": [
+      "Hengli Li"
+    ],
+    "publication_year": 2026,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.24885",
+    "upvote": 4
+  }
+}

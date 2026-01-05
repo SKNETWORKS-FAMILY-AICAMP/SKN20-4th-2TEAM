@@ -1,0 +1,12 @@
+{
+  "context": "Alchemist, a meta-gradient-based framework, automatically selects high-quality subsets from large-scale text-image datasets to improve visual quality and training efficiency in Text-to-Image models. Recent advances inText-to-Image (T2I)generative models, such asImagen,Stable Diffusion, andFLUX, have led to remarkable improvements invisual quality. However, their performance is fundamentally limited by the quality of training data. Web-crawled and synthetic image datasets often contain low-quality or redundant samples, which lead to degraded visual fidelity, unstable training, and inefficient computation. Hence, effectivedata selectionis crucial for improving data efficiency. Existing approaches rely on costly manual curation or heuristic scoring based on single-dimensional features in Text-to-Imagedata filtering. Althoughmeta-learningbased method has been explored in LLM, there is no adaptation for image modalities. To this end, we propose **Alchemist**, ameta-gradient-basedframework to select a suitable subset from large-scale text-image data pairs. Our approach automatically learns to assess the influence of each sample by iteratively optimizing the model from a data-centric perspective. Alchemist consists of two key stages:data ratinganddata pruning. We train alightweight raterto estimate each sample's influence based ongradient information, enhanced withmulti-granularity perception. We then use theShift-Gsamplingstrategy to select informative subsets for efficient model training. Alchemist is the first automatic, scalable,meta-gradient-baseddata selectionframework for Text-to-Image model training. Experiments on both synthetic and web-crawled datasets demonstrate that Alchemist consistently improvesvisual qualityanddownstream performance. Training on an Alchemist-selected 50% of the data can outperform training on the full dataset. data selection arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/alchemist-unlocking-efficiency-in-text-to-image-model-training-via-meta-gradient-data-selection-9010-6fad12f7 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551035",
+    "title": "Alchemist: Unlocking Efficiency in Text-to-Image Model Training via Meta-Gradient Data Selection",
+    "authors": [],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.16905",
+    "upvote": 31
+  }
+}

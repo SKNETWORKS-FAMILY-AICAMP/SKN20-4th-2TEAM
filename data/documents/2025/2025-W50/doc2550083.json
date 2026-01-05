@@ -1,0 +1,17 @@
+{
+  "context": "This survey reviews efficient techniques for 3D and 4D Gaussian Splatting, focusing on parameter and restructuring compression methods to improve memory and computational efficiency while maintaining reconstruction quality. 3DGaussian Splatting(3DGS) has emerged as a powerful explicit representation enablingreal-time,high-fidelity3D reconstruction andnovel view synthesis. However, its practical use is hindered by the massive memory andcomputational demandsrequired to store and render millions of Gaussians. These challenges become even more severe in 4Ddynamic scenes. To address these issues, the field ofEfficient Gaussian Splattinghas rapidly evolved, proposing methods that reduce redundancy while preserving reconstruction quality. This survey provides the first unified overview of efficient 3D and 4DGaussian Splattingtechniques. For both 3D and 4D settings, we systematically categorize existing methods into two major directions,Parameter CompressionandRestructuring Compression, and comprehensively summarize the core ideas and methodological trends within each category. We further cover widely useddatasets,evaluation metrics, and representativebenchmark comparisons. Finally, we discuss current limitations and outline promising research directions toward scalable, compact, andreal-timeGaussian Splattingfor both static and dynamic 3D scene representation. project page:https://cmlab-korea.github.io/Awesome-Efficient-GS/ This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550083",
+    "title": "SUCCESS-GS: Survey of Compactness and Compression for Efficient Static and Dynamic Gaussian Splatting",
+    "authors": [
+      "Seokhyun Youn",
+      "Weeyoung Kwon",
+      "Sung-Ho Bae",
+      "Jihyong Oh"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/CMLab-Korea/Awesome-Efficient-GS",
+    "huggingface_url": "https://huggingface.co/papers/2512.07197",
+    "upvote": 6
+  }
+}

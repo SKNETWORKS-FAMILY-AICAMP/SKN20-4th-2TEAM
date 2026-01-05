@@ -1,0 +1,16 @@
+{
+  "context": "InternGeometry, an LLM agent, surpasses human performance on IMO geometry problems using a heuristic-driven approach with iterative proposition verification and a dynamic memory mechanism, significantly outperforming AlphaGeometry 2 with limited training data. Large language model (LLM) agents exhibit strongmathematical problem-solvingabilities and can even solveInternational Mathematical Olympiad(IMO) level problems with the assistance of formal proof systems. However, due to weak heuristics forauxiliary constructions,AI for geometryproblem solving remains dominated by expert models such asAlphaGeometry 2, which rely heavily onlarge-scale data synthesisandsearchfor both training and evaluation. In this work, we make the first attempt to build a medalist-level LLM agent for geometry and present InternGeometry. InternGeometry overcomes theheuristic limitationsin geometry by iteratively proposingpropositionsandauxiliary constructions, verifying them with asymbolic engine, and reflecting on the engine's feedback to guide subsequent proposals. Adynamic memory mechanismenables InternGeometry to conduct more than two hundred interactions with thesymbolic engineper problem. To further accelerate learning, we introduceComplexity-Boosting Reinforcement Learning(CBRL), which gradually increases the complexity of synthesized problems across training stages. Built onInternThinker-32B, InternGeometry solves 44 of 50 IMO geometry problems (2000-2024), exceeding the average gold medalist score (40.9), using only 13Ktraining examples, just 0.004% of the data used byAlphaGeometry 2, demonstrating the potential ofLLM agentsonexpert-level geometry tasks. InternGeometry can also propose novelauxiliary constructionsfor IMO problems that do not appear in human solutions. We will release the model, data, andsymbolic engineto support future research. InternGeometry overcomes the heuristic limitations in geometry by iteratively proposing propositions and auxiliary constructions, verifying them with a symbolic engine, and reflecting on the engine's feedback to guide subsequent proposals.Built on InternThinker-32B, InternGeometry solves 44 of 50 IMO geometry problems (2000-2024), exceeding the average gold medalist score (40.9), using only 13K training examples, just 0.004% of the data used by AlphaGeometry 2, demonstrating the potential of LLM agents on expert-level geometry tasks. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550020",
+    "title": "Achieving Olympia-Level Geometry Large Language Model Agent via Complexity Boosting Reinforcement Learning",
+    "authors": [
+      "Junhao Shen",
+      "Yiming Zhang",
+      "Kuikun Liu"
+    ],
+    "publication_year": 2025,
+    "github_url": "",
+    "huggingface_url": "https://huggingface.co/papers/2512.10534",
+    "upvote": 31
+  }
+}

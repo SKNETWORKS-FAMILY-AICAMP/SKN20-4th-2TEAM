@@ -1,0 +1,19 @@
+{
+  "context": "Wan-Move enhances motion control in video generative models by integrating motion-aware features into latent space, enabling high-quality and scalable video synthesis. We present Wan-Move, a simple and scalable framework that bringsmotion controltovideo generative models. Existing motion-controllable methods typically suffer from coarse control granularity and limited scalability, leaving their outputs insufficient for practical use. We narrow this gap by achieving precise and high-qualitymotion control. Our core idea is to directly make the original condition features motion-aware for guiding video synthesis. To this end, we first represent object motions withdense point trajectories, allowing fine-grained control over the scene. We then project these trajectories intolatent spaceand propagate the first frame's features along each trajectory, producing an alignedspatiotemporal feature mapthat tells how each scene element should move. This feature map serves as the updated latent condition, which is naturally integrated into the off-the-shelfimage-to-video model, e.g., Wan-I2V-14B, asmotion guidancewithout any architecture change. It removes the need forauxiliary motion encodersand makesfine-tuningbase models easily scalable. Through scaled training, Wan-Move generates 5-second, 480p videos whosemotion controllability rivals Kling 1.5 Pro's commercial Motion Brush, as indicated by user studies. To support comprehensive evaluation, we further designMoveBench, a rigorously curated benchmark featuring diverse content categories and hybrid-verified annotations. It is distinguished by larger data volume, longer video durations, and high-qualitymotion annotations. Extensive experiments onMoveBenchand the public dataset consistently show Wan-Move's superior motion quality. Code, models, and benchmark data are made publicly available. NeurIPS 2025: Wan-Move: Motion-controllable Video Generation viaLatent Trajectory Guidance Paper:https://arxiv.org/abs/2512.08765Code:https://github.com/ali-vilab/Wan-MoveModel (Hugging Face):https://huggingface.co/Ruihang/Wan-Move-14B-480PModel (ModelScope):https://modelscope.cn/models/churuihang/Wan-Move-14B-480PBenchmark:https://huggingface.co/datasets/Ruihang/MoveBenchDemo Page:https://wan-move.github.io/Introduction Video:https://www.youtube.com/watch?v=_5Cy7Z2NQJQ This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/wan-move-motion-controllable-video-generation-via-latent-trajectory-guidance-8992-1e41b41d arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/wan-move-motion-controllable-video-generation-via-latent-trajectory-guidance ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550001",
+    "title": "Wan-Move: Motion-controllable Video Generation via Latent Trajectory Guidance",
+    "authors": [
+      "Ruihang Chu",
+      "Zhekai Chen",
+      "Xiaogang Xu",
+      "Xihui Liu",
+      "Hengshuang Zhao",
+      "Yujiu Yang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/ali-vilab/Wan-Move",
+    "huggingface_url": "https://huggingface.co/papers/2512.08765",
+    "upvote": 128
+  }
+}

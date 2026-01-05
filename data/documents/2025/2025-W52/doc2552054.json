@@ -1,0 +1,14 @@
+{
+  "context": "HERBench is a VideoQA benchmark that tests models' ability to integrate multiple, temporally separated visual cues, revealing significant challenges in current Video-LLMs. Video Large Language Models(Video-LLMs) are rapidly improving, yet current Video Question Answering (VideoQA) benchmarks often allow questions to be answered from a single salient cue, under-testing reasoning that must aggregate multiple, temporally separated visual evidence. We presentHERBench, aVideoQAbenchmark purpose-built to assessmulti-evidence integrationacross time. Each question requires aggregating at least three non-overlapping evidential cues across distinct video segments, so neither language priors nor a single snapshot can suffice.HERBenchcomprises 26K five-way multiple-choice questions organized into twelve compositional tasks that probe identity binding, cross-entity relations, temporal ordering, co-occurrence verification, and counting. To make evidential demand measurable, we introduce theMinimum Required Frame-Set(MRFS), the smallest number of frames a model must fuse to answer correctly, and show thatHERBenchimposes substantially higher demand than prior datasets (mean MRFS 5.5 vs. 2.6-4.2). Evaluating 13 state-of-the-art Video-LLMs onHERBenchreveals pervasive failures: accuracies of 31-42% are only slightly above the 20% random-guess baseline. We disentangle this failure into two critical bottlenecks: (1) a retrieval deficit, whereframe selectorsoverlook key evidence, and (2) afusion deficit, where models fail to integrate information even when all necessary evidence is provided. By making cross-time evidence both unavoidable and quantifiable,HERBenchestablishes a principled target for advancing robust, compositionalvideo understanding. 🔗 Project page:https://herbench.github.io/📄  arXiv:https://arxiv.org/abs/2512.14870🤗  HF dataset card:https://huggingface.co/datasets/DanBenAmi/HERBench🖥  Code (GitHub):https://github.com/DanBenAmi/HERBench Looks like a really comprehensive benchmark. Thank you for sharing arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/herbench-a-benchmark-for-multi-evidence-integration-in-video-question-answering-5806-4c113a6f ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2552054",
+    "title": "HERBench: A Benchmark for Multi-Evidence Integration in Video Question Answering",
+    "authors": [
+      "Gabriele Serussi"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/DanBenAmi/HERBench",
+    "huggingface_url": "https://huggingface.co/papers/2512.14870",
+    "upvote": 12
+  }
+}

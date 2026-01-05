@@ -1,0 +1,15 @@
+{
+  "context": "InsertAnywhere framework enhances video object insertion by generating geometrically consistent and visually coherent scenarios through 4D aware mask generation and diffusion-based synthesis. Recent advances indiffusion-based video generationhave opened new possibilities for controllable video editing, yetrealistic video object insertion(VOI) remains challenging due to limited4D scene understandingand inadequate handling of occlusion and lighting effects. We present InsertAnywhere, a new VOI framework that achievesgeometrically consistent object placementandappearance-faithful video synthesis. Our method begins with a4D aware mask generationmodule that reconstructs the scene geometry and propagates user specified object placement across frames while maintaining temporal coherence and occlusion consistency. Building upon this spatial foundation, we extend adiffusion based video generation modelto jointly synthesize the inserted object and its surrounding local variations such as illumination and shading. To enable supervised training, we introduceROSE++, anillumination aware synthetic datasetconstructed by transforming the ROSEobject removal datasetinto triplets of object removed video, object present video, and aVLM generated reference image. Through extensive experiments, we demonstrate that our framework producesgeometrically plausibleandvisually coherent object insertionsacross diverse real world scenarios, significantly outperforming existing research and commercial models.  This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/insertanywhere-bridging-4d-scene-geometry-and-diffusion-models-for-realistic-video-object-insertion-1312-7d1a695a arXiv explained breakdown of this paper 👉https://arxivexplained.com/papers/insertanywhere-bridging-4d-scene-geometry-and-diffusion-models-for-realistic-video-object-insertion ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2601004",
+    "title": "InsertAnywhere: Bridging 4D Scene Geometry and Diffusion Models for Realistic Video Object Insertion",
+    "authors": [
+      "Hoiyeong Jin",
+      "Hyojin Jang"
+    ],
+    "publication_year": 2026,
+    "github_url": "https://github.com/myyzzzoooo/InsertAnywhere",
+    "huggingface_url": "https://huggingface.co/papers/2512.17504",
+    "upvote": 95
+  }
+}

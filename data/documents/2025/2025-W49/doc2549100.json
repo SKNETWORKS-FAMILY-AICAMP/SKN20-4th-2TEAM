@@ -1,0 +1,15 @@
+{
+  "context": "FMA-Net++ addresses motion and exposure degradation in video restoration using a sequence-level architecture with exposure-aware modulation and flow-guided dynamic filtering, achieving state-of-the-art results on new benchmarks. Real-world video restoration is plagued by complex degradations from motion coupled with dynamically varying exposure - a key challenge largely overlooked by prior works and a common artifact of auto-exposure or low-light capture. We present FMA-Net++, a framework for joint video super-resolution and deblurring that explicitly models this coupled effect of motion and dynamically varying exposure. FMA-Net++ adopts a sequence-level architecture built fromHierarchical RefinementwithBidirectional Propagationblocks, enabling parallel, long-range temporal modeling. Within each block, anExposure Time-aware Modulationlayer conditions features on per-frame exposure, which in turn drives an exposure-awareFlow-Guided Dynamic Filteringmodule to infer motion- and exposure-aware degradation kernels. FMA-Net++ decouplesdegradation learningfrom restoration: the former predicts exposure- and motion-aware priors to guide the latter, improving both accuracy and efficiency. To evaluate under realistic capture conditions, we introduceREDS-ME(multi-exposure) andREDS-RE(random-exposure) benchmarks. Trained solely on synthetic data, FMA-Net++ achieves state-of-the-art accuracy andtemporal consistencyon our new benchmarks and GoPro, outperforming recent methods in both restoration quality and inference speed, and generalizes well to challenging real-world videos. Project page:https://kaist-viclab.github.io/fmanetpp_site/ This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2549100",
+    "title": "FMA-Net++: Motion- and Exposure-Aware Real-World Joint Video Super-Resolution and Deblurring",
+    "authors": [
+      "Geunhyuk Youk",
+      "Jihyong Oh"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/KAIST-VICLab/FMA-Net-PlusPlus",
+    "huggingface_url": "https://huggingface.co/papers/2512.04390",
+    "upvote": 8
+  }
+}

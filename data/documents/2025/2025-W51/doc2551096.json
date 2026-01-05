@@ -1,0 +1,15 @@
+{
+  "context": "Lattice coding provides a unified framework for non-parametric quantization, with Leech lattice-based quantization achieving superior performance in image tokenization, compression, and generation tasks. Non-parametric quantizationhas received much attention due to its efficiency on parameters and scalability to a large codebook. In this paper, we present a unified formulation of differentnon-parametric quantizationmethods through the lens oflattice coding. The geometry of lattice codes explains the necessity of auxiliary loss terms when trainingauto-encoderswith certain existing lookup-free quantization variants such asBSQ. As a step forward, we explore a few possible candidates, includingrandom lattices,generalized Fibonacci lattices, anddensest sphere packing lattices. Among all, we find theLeech lattice-based quantization method, which is dubbed asSpherical Leech Quantization(Λ_{24}-SQ), leads to both a simplified training recipe and an improved reconstruction-compressiontradeoff thanks to its high symmetry and even distribution on the hypersphere. Inimage tokenizationandcompressiontasks, this quantization approach achieves better reconstruction quality across all metrics thanBSQ, the best prior art, while consuming slightly fewer bits. The improvement also extends to state-of-the-artauto-regressive image generationframeworks. Blog:https://ai.stanford.edu/~yzz/blog/articles/npq.htmlCode for reconstruction and compression:https://github.com/zhaoyue-zephyrus/bsq-vitCode for generation with InfinityCC:https://github.com/zhaoyue-zephyrus/InfinityCC arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/spherical-leech-quantization-for-visual-tokenization-and-generation-8217-b008b131 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551096",
+    "title": "Spherical Leech Quantization for Visual Tokenization and Generation",
+    "authors": [
+      "Yue Zhao",
+      "Ehsan Adeli"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/zhaoyue-zephyrus/InfinityCC",
+    "huggingface_url": "https://huggingface.co/papers/2512.14697",
+    "upvote": 7
+  }
+}

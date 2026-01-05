@@ -1,0 +1,14 @@
+{
+  "context": "Recent multilingual named entity recognition (NER) work has shown that large language models (LLMs) can provide effective synthetic supervision, yet such datasets have mostly appeared as by-products of broader experiments rather than as systematic, reusable resources. We introduce FiNERweb, a dataset-creation pipeline that scales the teacher-student paradigm to 91 languages and 25 scripts. Building on FineWeb-Edu, our approach trains regression models to identify NER-relevant passages and annotates them with multilingual LLMs, resulting in about 225k passages with 235k distinct entity labels. Our experiments show that the regression model achieves more than 84 F1, and that models trained on FiNERweb obtain comparable or improved performance in zero shot transfer settings on English, Thai, and Swahili, despite being trained on 19x less data than strong baselines. In addition, we assess annotation quality using LLM-as-a-judge and observe consistently high scores for both faithfulness (3.99 out of 5) and completeness (4.05 out of 5), indicating reliable and informative annotations. Further, we release the dataset with both English labels and translated label sets in the respective target languages because we observe that the performance of current state-of-the-art models drops by 0.02 to 0.09 F1 when evaluated using target language labels instead of English ones. We release FiNERweb together with all accompanying artifacts to the research community in order to facilitate more effective student-teacher training for multilingual named entity recognition. GitHub Repo:https://github.com/whoisjones/FiNERwebHF Collection:https://huggingface.co/collections/whoisjones/finerweb arXiv lens breakdown of this paper 👉https://arxivlens.com/PaperView/Details/finerweb-datasets-and-artifacts-for-scalable-multilingual-named-entity-recognition-1956-ac652ff2 ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551066",
+    "title": "FiNERweb: Datasets and Artifacts for Scalable Multilingual Named Entity Recognition",
+    "authors": [
+      "Jonas Golde"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/whoisjones/FiNERweb",
+    "huggingface_url": "https://huggingface.co/papers/2512.13884",
+    "upvote": 14
+  }
+}

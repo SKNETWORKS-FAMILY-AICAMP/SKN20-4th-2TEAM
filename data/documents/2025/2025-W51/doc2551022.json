@@ -1,0 +1,15 @@
+{
+  "context": "Error-Free Linear Attention (EFLA) is a stable, parallelizable, and theoretically sound linear-time attention mechanism that outperforms DeltaNet in language modeling and downstream tasks. Linear-time attentionandState Space Models(SSMs) promise to solve the quadratic cost bottleneck in long-context language models employingsoftmax attention. We introduceError-Free Linear Attention(EFLA), a numerically stable, fully parallelism and generalized formulation of thedelta rule. Specifically, we formulate the online learning update as acontinuous-time dynamical systemand prove that its exact solution is not only attainable but also computable in linear time with full parallelism. By leveraging therank-1 structureof the dynamics matrix, we directly derive the exact closed-form solution effectively corresponding to theinfinite-order Runge-Kutta method. This attention mechanism is theoretically free from error accumulation, perfectly capturing the continuous dynamics while preserving the linear-time complexity. Through an extensive suite of experiments, we show that EFLA enables robust performance in noisy environments, achieving lowerlanguage modeling perplexityand superior downstream benchmark performance thanDeltaNetwithout introducing additional parameters. Our work provides a new theoretical foundation for building high-fidelity, scalablelinear-time attentionmodels. Error-Free Linear Attention is a Free Lunch! This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2551022",
+    "title": "Error-Free Linear Attention is a Free Lunch: Exact Solution from Continuous-Time Dynamics",
+    "authors": [
+      "Jingdi Lei",
+      "Di Zhang"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/declare-lab/EFLA",
+    "huggingface_url": "https://huggingface.co/papers/2512.12602",
+    "upvote": 41
+  }
+}

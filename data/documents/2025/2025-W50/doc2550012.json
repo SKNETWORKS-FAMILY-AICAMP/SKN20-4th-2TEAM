@@ -1,0 +1,15 @@
+{
+  "context": "VideoCoF, a Chain-of-Frames approach, improves video editing precision and instruction-to-region mapping by using reasoning tokens without requiring user-provided masks. Existing video editing methods face a critical trade-off: expert models offer precision but rely on task-specific priors like masks, hindering unification; conversely, unified temporal in-context learning models are mask-free but lack explicit spatial cues, leading to weak instruction-to-region mapping and imprecise localization. To resolve this conflict, we propose VideoCoF, a novelChain-of-Framesapproach inspired byChain-of-Thought reasoning. VideoCoF enforces a ``see, reason, then edit\" procedure by compelling thevideo diffusion modelto first predictreasoning tokens(edit-region latents) before generating thetarget video tokens. This explicit reasoning step removes the need for user-provided masks while achieving preciseinstruction-to-region alignmentandfine-grained video editing. Furthermore, we introduce aRoPE alignmentstrategy that leverages thesereasoning tokensto ensuremotion alignmentand enablelength extrapolationbeyond the training duration. We demonstrate that with a minimal data cost of only 50k video pairs, VideoCoF achieves state-of-the-art performance on VideoCoF-Bench, validating the efficiency and effectiveness of our approach. Our code, weight, data are available at https://github.com/knightyxp/VideoCoF. A Chain of Frames video editing method enbale temporal reasoning and 4x video length extrapolation with just 50k training pairs!🏠 Page: videocof.github.io/📄 Paper: arxiv.org/abs/2512.07469💻 Code: github.com/knightyxp/VideoCoF Dear@XiangpengYangin the attached video, there is a missing S at the front cover in the word Reasoner. This is an automated message from theLibrarian Bot. I found the following papers similar to this paper. The following papers were recommended by the Semantic Scholar API Please give a thumbs up to this comment if you found it helpful! If you want recommendations for any Paper on Hugging Face checkoutthisSpace You can directly ask Librarian Bot for paper recommendations by tagging it in a comment:@librarian-botrecommend ·Sign uporlog into comment",
+  "metadata": {
+    "doc_id": "doc2550012",
+    "title": "Unified Video Editing with Temporal Reasoner",
+    "authors": [
+      "Xiangpeng Yang",
+      "Ji Xie"
+    ],
+    "publication_year": 2025,
+    "github_url": "https://github.com/knightyxp/VideoCoF",
+    "huggingface_url": "https://huggingface.co/papers/2512.07469",
+    "upvote": 45
+  }
+}
