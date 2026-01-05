@@ -1,0 +1,28 @@
+# Core Dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+tqdm>=4.66.0
+
+# LangChain
+langchain>=0.1.0
+langchain-community>=0.0.10
+langchain-openai>=0.0.5
+langchain-huggingface
+langchain-chroma
+langchain-core>=0.1.0
+
+# LangGraph
+langgraph>=0.0.20
+
+# FastAPI
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+python-multipart>=0.0.6
+pydantic>=2.5.0
+
+# Django
+django>=5.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+black>=24.0.0

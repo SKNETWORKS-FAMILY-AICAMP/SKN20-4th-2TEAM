@@ -1,0 +1,72 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+# .claude/
+# CLAUDE.md
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data & Logs
+data/vector_db/
+data/logs/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Streamlit
+.streamlit/
+
+# Model cache
+.cache/
+models/
+02_src/02_utils/CLAUDE_KR.md
+01_data/embeddings/
+01_data/vector_db/
+*.backup
+01_data/vector_db.zip
+
+# Django Backend
+backend/db.sqlite3
+backend/staticfiles/
+backend/*.sqlite3
