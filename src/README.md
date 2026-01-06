@@ -49,12 +49,12 @@ src/
 ### 1단계: 데이터 준비
 ```bash
 .venv\Scripts\activate
-python src/utils/data_init.py
+python src.utils.data_init
 ```
 
 ### 2단계: FastAPI 서버 실행
 ```bash
-uvicorn src.rag.rag_api:app --reload --port 8001
+uvicorn src.rag.api:app --reload --port 8001
 ```
 
 ### 3단계: API 테스트

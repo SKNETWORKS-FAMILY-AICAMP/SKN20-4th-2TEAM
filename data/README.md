@@ -71,7 +71,7 @@ data/
 .venv\Scripts\activate
 
 # 크롤링 스크립트 실행
-python src/utils/data_init.py
+python src.utils.data_init
 ```
 
 ### 단계 2: 벡터화

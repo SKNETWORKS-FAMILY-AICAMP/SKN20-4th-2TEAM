@@ -167,7 +167,7 @@ python src/rag/api.py
 ### 1. 대화형 모드 (기본)
 
 ```bash
-python src/rag/rag_system.py
+python src.rag.rag_system
 ```
 
 **명령어:**
@@ -199,13 +199,13 @@ AI/ML 관련: True
 ### 2. 단일 질문 모드
 
 ```bash
-python src/rag/rag_system.py --question "Transformer란 무엇인가요?"
+python src.rag.rag_system --question "Transformer란 무엇인가요?"
 ```
 
 ### 3. 배치 테스트 모드
 
 ```bash
-python src/rag/rag_system.py --mode batch
+python src.rag.rag_system --mode batch
 ```
 
 **자동 테스트 질문 (5개):**
@@ -214,29 +214,6 @@ python src/rag/rag_system.py --mode batch
 3. 최신 diffusion model에 대해 알려주세요
 4. GPT-4와 Claude의 차이는?
 5. LangChain은 어떻게 사용하나요?
-
-### 4. 고급 옵션
-
-```bash
-# LLM 모델 변경
-python src/rag/rag_system.py --llm gpt-4o
-
-# 재랭커 타입 변경
-python src/rag/rag_system.py --reranker cross-encoder  # 기본값 (권장)
-python src/rag/rag_system.py --reranker llm           # LLM 재랭킹 (느림, 비용 발생)
-python src/rag/rag_system.py --reranker none          # 재랭킹 없음
-
-# 임베딩 모델 변경 (ChromaDB와 일치해야 함!)
-python src/rag/rag_system.py --model text-embedding-3-small  # 기본값
-python src/rag/rag_system.py --model text-embedding-3-large  # 더 정확
-
-# 모든 옵션 조합
-python src/rag/rag_system.py \
-  --mode interactive \
-  --llm gpt-4o-mini \
-  --model text-embedding-3-small \
-  --reranker cross-encoder
-```
 
 ## 📄 파일별 역할
 
@@ -315,7 +292,7 @@ initialize_rag_system(
 - ChromaDB는 생성 시 사용한 임베딩 모델과 **동일한 모델**로 로드해야 합니다
 - 모델 변경 시 ChromaDB 재생성 필요:
   ```bash
-  python src/utils/data_init.py
+  python src.utils.data_init
   ```
 
 ### 2. 재랭커 설정
@@ -492,7 +469,7 @@ Collection expecting embedding with dimension of 1536, got 384
 **해결:**
 ```bash
 # ChromaDB 재생성
-python src/utils/data_init.py
+python src.utils.data_init
 ```
 
 또는 `rag_system.py`에서 모델 변경:
