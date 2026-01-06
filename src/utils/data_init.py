@@ -5,7 +5,6 @@ HuggingFace Weekly Papers 크롤링 및 벡터 DB 생성을 통합 수행
 크롤링 범위: 2025-W41 ~ 2026-W01 (총 13주)
 """
 
-import os
 import sys
 from pathlib import Path
 
