@@ -89,8 +89,9 @@ def extract_keywords(text: str) -> Set[str]:
     pattern2 = r"\b[A-Z]{2,}[a-z]?\d*\b"
     keywords.update([w.lower() for w in re.findall(pattern2, text)])
 
-    # 패턴 3: 하이픈/언더스코어 연결어
-    pattern3 = r"\b\w+[-_]\w+\b"
+    # 패턴 3: 하이픈/언더스코어 연결어 (다중 하이픈 지원)
+    # 예: Cache-to-Cache, BERT-base, Multi-Head-Attention
+    pattern3 = r"\b\w+(?:[-_]\w+)+\b"
     keywords.update(re.findall(pattern3, text.lower()))
 
     # 기술 용어
@@ -149,13 +150,14 @@ def is_ai_ml_related_by_llm(question: str, llm) -> bool:
 class CrossEncoderReranker:
     """Cross-encoder 기반 재랭커"""
 
-    def __init__(self, model_name: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"):
+    def __init__(self, model_name: str = "BAAI/bge-reranker-large"):
         """
         Args:
             model_name: Cross-encoder 모델 이름
                 - cross-encoder/ms-marco-MiniLM-L-6-v2 (빠름, 작음)
                 - cross-encoder/ms-marco-MiniLM-L-12-v2 (중간)
-                - BAAI/bge-reranker-base (정확함)
+                - BAAI/bge-reranker-base (정확함, 중간 크기)
+                - BAAI/bge-reranker-large (가장 정확함, 논문 검색에 최적) [기본값]
         """
         try:
             from sentence_transformers import CrossEncoder
@@ -315,7 +317,7 @@ Relevance score (0-100):""",
 
 def create_reranker(
     reranker_type: str = "cross-encoder",
-    model_name: str = "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    model_name: str = "BAAI/bge-reranker-large",
     llm=None,
 ):
     """
@@ -323,7 +325,7 @@ def create_reranker(
 
     Args:
         reranker_type: "cross-encoder" 또는 "llm"
-        model_name: Cross-encoder 모델 이름
+        model_name: Cross-encoder 모델 이름 (기본값: BAAI/bge-reranker-large)
         llm: LLM 인스턴스 (reranker_type="llm"인 경우)
 
     Returns:
@@ -617,13 +619,15 @@ def evaluate_document_relevance_node(state: GraphState) -> dict:
     if not query_keywords:
         query_keywords = extract_keywords(original_q)
 
+    print(f"[evaluate] 추출된 키워드: {query_keywords}")
+
     if documents and query_keywords:
         for doc in documents[:3]:
             metadata = doc.metadata or {}
             title = metadata.get("title", "").lower()
             for keyword in query_keywords:
                 if keyword in title:
-                    print(f"[evaluate] ✅ 메타데이터 매칭: '{keyword}'")
+                    print(f"[evaluate] ✅ 메타데이터 매칭: '{keyword}' in '{metadata.get('title', '')}'")
                     return {
                         "relevance_level": "high",
                         "is_ai_ml_related": is_ai_ml_related,
@@ -906,14 +910,11 @@ def route_after_evaluate(
     elif level == "medium":
         print("generate")
         return "generate"
-    else:
+    else:  # level == "low"
         if is_ai_ml_related:
-            if documents and len(documents) > 0:
-                print("generate")
-                return "generate"
-            else:
-                print("web_search")
-                return "web_search"
+            # AI/ML 관련 질문이지만 LOW 점수 → 무조건 웹 검색
+            print("web_search (LOW score)")
+            return "web_search"
         else:
             print("reject")
             return "reject"
@@ -1041,7 +1042,7 @@ def initialize_rag_system(
             try:
                 _reranker = create_reranker(
                     reranker_type=reranker_type,
-                    model_name="cross-encoder/ms-marco-MiniLM-L-6-v2",
+                    model_name="BAAI/bge-reranker-large",  # 논문 검색 정확도 향상
                     llm=_llm if reranker_type == "llm" else None,
                 )
                 print("[SUCCESS] 재랭커 로드 완료")
