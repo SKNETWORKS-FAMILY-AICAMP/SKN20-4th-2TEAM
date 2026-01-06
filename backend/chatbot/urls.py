@@ -1,0 +1,18 @@
+from django.urls import path
+from . import views
+
+app_name = "chatbot"
+
+urlpatterns = [
+    # Main pages
+    path("", views.index, name="index"),
+    path("register/", views.register_view, name="register"),
+    path("login/", views.login_view, name="login"),
+    path("logout/", views.logout_view, name="logout"),
+    path("profile/", views.profile_view, name="profile"),
+    # API endpoints
+    path("api/send/", views.send_message, name="send_message"),
+    path("api/history/", views.get_history, name="get_history"),
+    path("api/stats/", views.proxy_stats, name="proxy_stats"),
+    path("api/trending-keywords/", views.proxy_trending_keywords, name="proxy_trending_keywords"),
+]
