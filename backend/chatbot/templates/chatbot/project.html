@@ -627,22 +627,7 @@
 {% endblock %}
 
 {% block content %}
-<!-- Header -->
-<div class="header">
-    <div>
-        <h1>📁 프로젝트 관리</h1>
-        <div class="subtitle">대화를 프로젝트별로 관리하세요</div>
-    </div>
-    <div class="header-right">
-        <div class="user-info">
-            <span>👤 {{ user.username }}</span>
-            <a href="{% url 'chatbot:chatbot' %}">챗봇</a>
-            <a href="{% url 'chatbot:profile' %}">프로필</a>
-            <a href="{% url 'chatbot:logout' %}">로그아웃</a>
-        </div>
-        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
-    </div>
-</div>
+{% include 'chatbot/header.html' with header_title="📁 프로젝트 관리" header_subtitle="대화를 프로젝트별로 관리하세요" %}
 
 <!-- Main Container -->
 <div class="container">
