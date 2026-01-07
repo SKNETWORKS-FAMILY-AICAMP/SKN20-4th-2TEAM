@@ -231,26 +231,7 @@
 
 <body>
 
-<header>
-    <nav>
-        <a href="{% url 'chatbot:home' %}" class="logo">
-            <div class="logo">
-                <img src="{% static 'images/cookie_3.png' %}" width="60" a href="{% url 'chatbot:home' %}" class="slide" alt="photo3">
-            </div>
-            PaperSnack
-        </a>
-        <ul class="nav-menu">
-            <li><a href="{% url 'chatbot:home' %}">Home</a></li>
-            <li><a href="{% url 'chatbot:services' %}">Services</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url 'chatbot:profile' %}">Profile</a></li>
-                <li><a href="{% url 'chatbot:logout' %}">Logout</a></li>
-            {% else %}
-                <li><a href="{% url 'chatbot:login' %}" class="active">Sign In</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-</header>
+{% include 'chatbot/header.html' %}
 
 <section class="profile-section">
     <div class="profile-container">
