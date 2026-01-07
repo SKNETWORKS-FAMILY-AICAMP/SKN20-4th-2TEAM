@@ -164,6 +164,7 @@ def get_history(request):
                 "answer": chat.answer,
                 "sources": chat.sources,
                 "search_type": chat.search_type,
+                "project_id": chat.project_id,
                 "created_at": chat.created_at.isoformat(),
             }
             for chat in history
@@ -203,6 +204,7 @@ def send_message(request):
             question=message,
             answer=result.get("response", ""),
             sources=result.get("sources", []),
+            project_id=0,
             search_type=result.get("metadata", {}).get("search_type", "unknown"),
         )
 
@@ -212,6 +214,7 @@ def send_message(request):
                 "response": result.get("response", ""),
                 "sources": result.get("sources", []),
                 "search_type": result.get("metadata", {}).get("search_type", "unknown"),
+                "project_id": 0,
                 "uid": chat_history.uid,
             }
         )
