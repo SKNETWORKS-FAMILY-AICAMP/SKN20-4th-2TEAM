@@ -8,7 +8,7 @@ from django.contrib.auth.models import User
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
-from .models import ChatHistory
+from .models import ChatHistory, ChatProject
 
 
 # FastAPI 서버 URL
@@ -267,3 +267,92 @@ def proxy_trending_keywords(request):
             {"keywords": ["LLM", "Transformer", "RAG", "Vision", "Diffusion", "Agent", "Multimodal"]},
             status=500,
         )
+
+
+@login_required
+def project_view(request):
+    """프로젝트 관리 페이지 - 모든 프로젝트와 대화를 context로 전달"""
+    try:
+        # 사용자의 모든 프로젝트 조회
+        projects = ChatProject.objects.filter(user=request.user).order_by("-updated_at")
+
+        # 사용자의 모든 대화 조회
+        chats = ChatHistory.objects.filter(user=request.user).order_by("-created_at")
+
+        # 프로젝트 데이터 직렬화
+        projects_data = [
+            {
+                "uid": project.uid,
+                "folder_name": project.folder_name,
+                "created_at": project.created_at.isoformat(),
+                "updated_at": project.updated_at.isoformat(),
+            }
+            for project in projects
+        ]
+
+        # 대화 데이터 직렬화
+        chats_data = [
+            {
+                "uid": chat.uid,
+                "question": chat.question,
+                "answer": chat.answer,
+                "sources": chat.sources,
+                "search_type": chat.search_type,
+                "project_id": chat.project_id,
+                "created_at": chat.created_at.isoformat(),
+            }
+            for chat in chats
+        ]
+
+        context = {
+            "user": request.user,
+            "projects_json": json.dumps(projects_data),
+            "chats_json": json.dumps(chats_data),
+        }
+
+        return render(request, "chatbot/project.html", context)
+
+    except Exception as e:
+        context = {
+            "user": request.user,
+            "projects_json": "[]",
+            "chats_json": "[]",
+            "error": str(e),
+        }
+        return render(request, "chatbot/project.html", context)
+
+
+@login_required
+@require_http_methods(["POST"])
+def create_project(request):
+    """새 프로젝트 생성"""
+    try:
+        data = json.loads(request.body)
+        folder_name = data.get("folder_name", "").strip()
+
+        if not folder_name:
+            return JsonResponse({"success": False, "error": "프로젝트 이름을 입력해주세요."}, status=400)
+
+        # 같은 이름의 프로젝트가 이미 있는지 확인
+        if ChatProject.objects.filter(user=request.user, folder_name=folder_name).exists():
+            return JsonResponse(
+                {"success": False, "error": "이미 같은 이름의 프로젝트가 있습니다."}, status=400
+            )
+
+        # 새 프로젝트 생성
+        project = ChatProject.objects.create(user=request.user, folder_name=folder_name)
+
+        return JsonResponse(
+            {
+                "success": True,
+                "project": {
+                    "uid": project.uid,
+                    "folder_name": project.folder_name,
+                    "created_at": project.created_at.isoformat(),
+                    "updated_at": project.updated_at.isoformat(),
+                },
+            }
+        )
+
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)

@@ -52,7 +52,6 @@ header {
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     align-content: center;
-    z-index: 1000;
 }
 
 nav {

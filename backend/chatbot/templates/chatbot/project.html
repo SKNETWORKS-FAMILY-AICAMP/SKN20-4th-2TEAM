@@ -8,21 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
     :root {
-        --primary: #f59e0b;
-        --primary-dark: #d97706;
-        --text-dark: #3f2d20;
-        --text-gray: #6b5a4a;
-        --bg-light: #fffaf3;
-        --white: #ffffff;
-        --border: #f3e8d9;
-        --shadow: rgba(63, 45, 32, 0.08);
         --sidebar-width: 280px;
     }
 
@@ -45,74 +31,6 @@
         transition: background 0.3s, color 0.3s;
     }
 
-    /* Header */
-    .header {
-        background: var(--white);
-        border-bottom: 2px solid var(--border);
-        padding: 1.5rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 0 2px 15px var(--shadow);
-    }
-
-    .header h1 {
-        font-size: 1.8rem;
-        color: var(--primary);
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 900;
-    }
-
-    .header .subtitle {
-        font-size: 0.9rem;
-        color: var(--text-gray);
-        margin-top: 0.3rem;
-        font-weight: 600;
-    }
-
-    .header-right {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .user-info {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.9rem;
-        font-weight: 700;
-    }
-
-    .user-info a {
-        color: var(--text-dark);
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .user-info a:hover {
-        color: var(--primary);
-    }
-
-    .theme-toggle {
-        background: var(--bg-light);
-        border: 2px solid var(--border);
-        padding: 0.5rem 1rem;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 1.2rem;
-        transition: all 0.3s;
-    }
-
-    .theme-toggle:hover {
-        background: var(--primary);
-        border-color: var(--primary);
-        color: white;
-        transform: scale(1.05);
-    }
-
     /* Layout */
     .container {
         display: flex;
@@ -121,6 +39,7 @@
         margin: 0 auto;
         background: var(--white);
         box-shadow: 0 10px 40px var(--shadow);
+        padding-top: 80px;
     }
 
     /* Project Sidebar */
@@ -725,54 +644,49 @@
     const csrftoken = getCookie('csrftoken');
     let currentProjectId = null;
 
+    // Django context에서 데이터 로드
+    const allProjects = {{ projects_json|safe }};
+    const allChats = {{ chats_json|safe }};
+
     // 초기화
-    window.addEventListener('DOMContentLoaded', async () => {
+    window.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', savedTheme);
         document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '🌙' : '☀️';
 
-        await loadProjects();
-        await loadAllChats();
+        // TODO: 프로젝트 기능 구현 시 활성화
+        // loadProjects();
+
+        // 전체 대화 로드
+        loadAllChats();
     });
 
     // 프로젝트 목록 로드
-    async function loadProjects() {
-        try {
-            // TODO: API 엔드포인트 구현 필요
-            const response = await fetch('/api/projects/', {
-                headers: {
-                    'X-CSRFToken': csrftoken
-                }
-            });
+    function loadProjects() {
+        const projectList = document.getElementById('project-list');
 
-            if (!response.ok) throw new Error('프로젝트 로드 실패');
+        // 전체 대화 항목 유지 (이미 HTML에 있음)
+        const allChatsItem = projectList.querySelector('.all-chats-item');
 
-            const data = await response.json();
-            const projectList = document.getElementById('project-list');
+        // 프로젝트 항목 추가
+        allProjects.forEach(project => {
+            // 해당 프로젝트의 대화 개수 계산
+            const chatCount = allChats.filter(chat => chat.project_id === project.uid).length;
 
-            // 전체 대화 항목 유지
-            const allChatsItem = projectList.querySelector('.all-chats-item');
-
-            // 프로젝트 항목 추가
-            data.projects.forEach(project => {
-                const projectItem = document.createElement('div');
-                projectItem.className = 'project-item';
-                projectItem.setAttribute('data-project-id', project.uid);
-                projectItem.innerHTML = `
-                    <span class="project-item-name">📁 ${project.folder_name}</span>
-                    <span class="project-item-count">${project.chat_count || 0}</span>
-                `;
-                projectItem.onclick = () => selectProject(project.uid, project.folder_name);
-                projectList.appendChild(projectItem);
-            });
-
-        } catch (error) {
-            console.error('[ERROR] 프로젝트 로드 실패:', error);
-        }
+            const projectItem = document.createElement('div');
+            projectItem.className = 'project-item';
+            projectItem.setAttribute('data-project-id', project.uid);
+            projectItem.innerHTML = `
+                <span class="project-item-name">📁 ${project.folder_name}</span>
+                <span class="project-item-count">${chatCount}</span>
+            `;
+            projectItem.onclick = () => selectProject(project.uid, project.folder_name);
+            projectList.appendChild(projectItem);
+        });
     }
 
     // 전체 대화 선택
-    async function selectAllChats() {
+    function selectAllChats() {
         currentProjectId = null;
 
         // 활성화 상태 변경
@@ -785,7 +699,7 @@
         document.getElementById('main-title').textContent = '전체 대화';
         document.getElementById('main-subtitle').textContent = '모든 대화 내용을 확인할 수 있습니다';
 
-        await loadAllChats();
+        loadAllChats();
     }
 
     // 프로젝트 선택
@@ -806,42 +720,18 @@
     }
 
     // 전체 대화 로드
-    async function loadAllChats() {
-        try {
-            const response = await fetch('{% url "chatbot:get_history" %}');
-            if (!response.ok) throw new Error('대화 로드 실패');
+    function loadAllChats() {
+        renderChatList(allChats);
 
-            const data = await response.json();
-            renderChatList(data.history);
-
-            // 전체 개수 업데이트
-            document.getElementById('all-count').textContent = data.history.length;
-
-        } catch (error) {
-            console.error('[ERROR] 전체 대화 로드 실패:', error);
-            showEmptyState();
-        }
+        // 전체 개수 업데이트
+        document.getElementById('all-count').textContent = allChats.length;
     }
 
-    // 프로젝트별 대화 로드
-    async function loadProjectChats(projectId) {
-        try {
-            // TODO: API 엔드포인트 구현 필요
-            const response = await fetch(`/api/projects/${projectId}/chats/`, {
-                headers: {
-                    'X-CSRFToken': csrftoken
-                }
-            });
-
-            if (!response.ok) throw new Error('대화 로드 실패');
-
-            const data = await response.json();
-            renderChatList(data.chats);
-
-        } catch (error) {
-            console.error('[ERROR] 프로젝트 대화 로드 실패:', error);
-            showEmptyState();
-        }
+    // TODO: 프로젝트별 대화 로드 (향후 구현)
+    function loadProjectChats(projectId) {
+        // 해당 프로젝트의 대화만 필터링
+        const projectChats = allChats.filter(chat => chat.project_id === projectId);
+        renderChatList(projectChats);
     }
 
     // 대화 목록 렌더링
@@ -973,7 +863,7 @@
         document.getElementById('project-name').value = '';
     }
 
-    // 프로젝트 생성
+    // TODO: 프로젝트 생성 (향후 구현)
     async function createProject(event) {
         event.preventDefault();
 
@@ -981,8 +871,7 @@
         if (!projectName) return;
 
         try {
-            // TODO: API 엔드포인트 구현 필요
-            const response = await fetch('/api/projects/', {
+            const response = await fetch('{% url "chatbot:create_project" %}', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -991,19 +880,28 @@
                 body: JSON.stringify({ folder_name: projectName })
             });
 
-            if (!response.ok) throw new Error('프로젝트 생성 실패');
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '프로젝트 생성 실패');
+            }
 
             const data = await response.json();
 
-            closeNewProjectModal();
-            await loadProjects();
+            if (data.success) {
+                // 새 프로젝트를 allProjects에 추가
+                allProjects.push(data.project);
 
-            // 새로 생성된 프로젝트 선택
-            selectProject(data.uid, data.folder_name);
+                closeNewProjectModal();
+
+                // 프로젝트 목록 다시 로드
+                // TODO: 전체 페이지 새로고침 대신 동적으로 추가
+                alert('프로젝트가 생성되었습니다. 페이지를 새로고침합니다.');
+                location.reload();
+            }
 
         } catch (error) {
             console.error('[ERROR] 프로젝트 생성 실패:', error);
-            alert('프로젝트 생성에 실패했습니다.');
+            alert(error.message || '프로젝트 생성에 실패했습니다.');
         }
     }
 
