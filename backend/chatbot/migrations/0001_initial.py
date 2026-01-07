@@ -15,70 +15,6 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-<<<<<<< HEAD
-            name="ChatSession",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                ("title", models.CharField(blank=True, max_length=200, null=True)),
-                ("created_at", models.DateTimeField(default=django.utils.timezone.now)),
-                ("updated_at", models.DateTimeField(auto_now=True)),
-                (
-                    "user",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="chat_sessions",
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
-            ],
-            options={
-                "db_table": "chat_sessions",
-                "ordering": ["-updated_at"],
-            },
-        ),
-        migrations.CreateModel(
-            name="ChatMessage",
-            fields=[
-                (
-                    "id",
-                    models.BigAutoField(
-                        auto_created=True,
-                        primary_key=True,
-                        serialize=False,
-                        verbose_name="ID",
-                    ),
-                ),
-                (
-                    "role",
-                    models.CharField(
-                        choices=[("user", "User"), ("ai", "AI")], max_length=10
-                    ),
-                ),
-                ("content", models.TextField()),
-                ("sources", models.JSONField(blank=True, null=True)),
-                ("search_type", models.CharField(blank=True, max_length=50, null=True)),
-                ("created_at", models.DateTimeField(default=django.utils.timezone.now)),
-                (
-                    "session",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        related_name="messages",
-                        to="chatbot.chatsession",
-                    ),
-                ),
-            ],
-            options={
-                "db_table": "chat_messages",
-                "ordering": ["created_at"],
-=======
             name='ChatHistory',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
@@ -93,7 +29,6 @@ class Migration(migrations.Migration):
                 'verbose_name': 'Chat History',
                 'verbose_name_plural': 'Chat Histories',
                 'ordering': ['-created_at'],
->>>>>>> feature/django
             },
         ),
     ]
