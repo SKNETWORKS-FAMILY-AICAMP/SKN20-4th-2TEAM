@@ -432,7 +432,8 @@ def retrieve_node(state: GraphState) -> dict:
 
     # ===== 1. Query 확장 =====
     try:
-        expanded_queries = expand_query_for_papers(question, llm)
+        # expanded_queries = expand_query_for_papers(question, llm)
+        expanded_queries = [question]
     except Exception as e:
         print(f"[WARN] Query 확장 실패: {e}")
         expanded_queries = [question]
