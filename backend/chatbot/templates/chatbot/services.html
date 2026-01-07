@@ -107,7 +107,7 @@
         .nav-menu {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
         }
 
         .nav-menu a {
@@ -197,9 +197,9 @@
 
 <header>
     <nav>
-        <a href="#" class="logo">
+        <a href="{% url 'chatbot:home' %}" class="logo">
             <div class="logo">
-                <img src="{% static 'images/cookie_3.png' %}" class="slide" alt="photo2">
+                <img src="{% static 'images/cookie_3.png' %}" width="60" a href="{% url 'chatbot:home' %}" class="slide" alt="photo3">
             </div>
             PaperSnack
         </a>
