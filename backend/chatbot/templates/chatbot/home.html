@@ -5,11 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PaperSnack - Snack-sized AI Papers</title>
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
     <style>
 /* Slideshow Animation */
@@ -28,8 +24,8 @@
     object-fit: cover;
     opacity: 0;
     animation: slideshow 5s infinite;
-    background: transparent; /* 배경 투명 */
-    mix-blend-mode: multiply; /* 흰 배경 제거 효과 */
+    background: transparent;
+    mix-blend-mode: multiply;
 }
 
 .slideshow .slide:nth-child(1) { animation-delay: 0s; }
@@ -40,78 +36,7 @@
     33%, 100% { opacity: 0; }
 }
 
-
-
-        :root {
-            --primary: #f59e0b;
-            --primary-dark: #d97706;
-            --text-dark: #3f2d20;
-            --text-gray: #6b5a4a;
-            --bg-light: #fffaf3;
-            --white: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-            background: var(--bg-light);
-            color: var(--text-gray);
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
-            z-index: 1000;
-        }
-
-        nav {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 5px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 28px;
-            font-weight: 900;
-            color: var(--text-dark);
-            text-decoration: none;
-        }
-
-
-        .nav-menu {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-menu a {
-            text-decoration: none;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .nav-menu a.active,
-        .nav-menu a:hover {
-            color: var(--primary);
-        }
-
-        /* Hero */
+/* Hero */
         .hero {
             padding: 160px 40px 100px;
             max-width: 1320px;
@@ -142,26 +67,6 @@
             margin-bottom: 40px;
         }
 
-        .btn-get-started {
-            background: var(--primary);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 10px;
-            font-weight: 800;
-            font-size: 16px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-
-        .btn-get-started:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
-        }
 
         .hero-image-placeholder {
             width: 100%;
@@ -258,7 +163,7 @@
                 Discover and track the latest HuggingFace papers<br>
                 without the overwhelm.
             </p>
-            <a href="{% url 'chatbot:chatbot' %}" class="btn-get-started">Start Snacking</a>
+            <a href="{% url 'chatbot:chatbot' %}" class="btn-primary">Start Snacking</a>
         </div>
 
 <div class="hero-image">

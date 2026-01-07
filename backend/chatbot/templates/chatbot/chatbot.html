@@ -79,35 +79,30 @@
     .container {
         display: flex;
         height: 100vh;
+        padding-top: 80px;
     }
 
     /* Sidebar */
-    .sidebar_bottom {
-        position: fixed;  /* 고정 */
-        bottom: 0;        /* 화면 아래쪽에 고정 */
-        left: 0;          
-        right: 0;         
-        background: white;
-        padding: 24px 40px;
-        box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);  /* 위쪽으로 그림자 */
-        z-index: 1000;    /* 다른 요소 위에 표시 */
-    }
     .sidebar {
         width: var(--sidebar-width);
         background: white;
         box-shadow: 2px 0px 15px rgba(0, 0, 0, 0.05);
         display: flex;
         flex-direction: column;
-        will-change: transform;
+        transition: transform 0.3s ease;
+        position: fixed;
+        left: 0;
+        top: 80px;
+        bottom: 0;
+        z-index: 100;
     }
-
 
     [data-theme="dark"] .sidebar {
         background: var(--white);
     }
 
     .sidebar.collapsed {
-        transform: translateX(-100%);
+        transform: translateX(calc(-1 * var(--sidebar-width)));
     }
 
     .sidebar-header {
@@ -235,20 +230,18 @@
     /* Toggle Button */
     .sidebar-toggle {
         position: fixed;
-        left: 20px;
+        left: calc(var(--sidebar-width) + 20px);
         top: 100px;
         width: 40px;
         height: 40px;
         background: white;
-        {% comment %} border: 2px solid var(--border); {% endcomment %}
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         cursor: pointer;
         z-index: 999;
-        {% comment %} box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); {% endcomment %}
-        transition: all 0.3s;
+        transition: all 0.3s ease;
         font-weight: 700;
         color: var(--text-dark);
     }
@@ -263,8 +256,8 @@
         border-color: var(--primary);
     }
 
-    .sidebar-toggle.shifted {
-        left: calc(var(--sidebar-width) + 20px);
+    .sidebar-toggle:not(.shifted) {
+        left: 20px;
     }
 
     /* Main Chat Area */
@@ -273,7 +266,14 @@
         display: flex;
         flex-direction: column;
         background: var(--bg-light);
-        padding-top: 80px;
+        margin-left: var(--sidebar-width);
+        transition: margin-left 0.3s ease;
+        width: calc(100% - var(--sidebar-width));
+    }
+
+    .main-chat.expanded {
+        margin-left: 0;
+        width: 100%;
     }
 
     .messages-area {
@@ -729,7 +729,6 @@
         <div class="sidebar" id="sidebar">
 
             <!-- Stats Section -->
-            <br><br><br>
             <div class="sidebar-footer">
                 <button class="btn-view-all" onclick="viewAllChats()">
                     📋 View All Chats
@@ -843,14 +842,17 @@
     // 사이드바 토글
     function toggleSidebar() {
         const sidebar = document.getElementById('sidebar');
+        const mainChat = document.querySelector('.main-chat');
         const toggleBtn = document.getElementById('toggle-btn');
         sidebarOpen = !sidebarOpen;
-        
+
         if (sidebarOpen) {
             sidebar.classList.remove('collapsed');
+            mainChat.classList.remove('expanded');
             toggleBtn.classList.add('shifted');
         } else {
             sidebar.classList.add('collapsed');
+            mainChat.classList.add('expanded');
             toggleBtn.classList.remove('shifted');
         }
     }
