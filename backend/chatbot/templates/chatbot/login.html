@@ -123,7 +123,7 @@
         }
 
         /* Messages */
-        .errors {
+        .error {
             background: #fee2e2;
             border: 2px solid #fca5a5;
             padding: 20px;
@@ -131,17 +131,17 @@
             margin-bottom: 30px;
         }
 
-        .errors ul {
+        .error ul {
             list-style: none;
         }
 
-        .errors li {
+        .error li {
             color: #dc2626;
             margin-bottom: 8px;
             font-weight: 600;
         }
 
-        .errors li:last-child {
+        .error li:last-child {
             margin-bottom: 0;
         }
 
@@ -178,7 +178,7 @@
             box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
         }
 
-        /* Back Links */
+        /* Back Links */sssssssssssssssss
         .back-links {
             text-align: center;
             margin-top: 30px;
@@ -240,13 +240,11 @@
             <p>PaperSnack : HuggingFace Papers Chatbot</p>
         </div>
 
-        {% if errors %}
-        <div class="errors">
-            <ul>
-                {% for error in errors %}
-                <li>{{ error }} 😥</li>
-                {% endfor %}
-            </ul>
+
+
+        {% if error %}
+        <div class="error">
+            {{ error }}😥
         </div>
         {% endif %}
 
