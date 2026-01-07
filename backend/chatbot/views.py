@@ -15,8 +15,16 @@ from .models import ChatHistory
 FASTAPI_BASE_URL = "http://localhost:8001"
 
 
+def home(request):
+    '''홈페이지'''
+    return render(request, "chatbot/home.html")
+
+def services(request):
+    '''서비스'''
+    return render(request, "chatbot/services.html")
+
 @login_required
-def index(request):
+def chatbot(request):
     """챗봇 메인 페이지"""
     return render(request, "chatbot/chatbot.html", {"user": request.user})
 
@@ -24,7 +32,7 @@ def index(request):
 def register_view(request):
     """회원가입 페이지"""
     if request.user.is_authenticated:
-        return redirect("chatbot:index")
+        return redirect("chatbot:home")
 
     if request.method == "POST":
         username = request.POST.get("username")
@@ -54,7 +62,7 @@ def register_view(request):
         # 사용자 생성
         user = User.objects.create_user(username=username, email=email, password=password)
         login(request, user)
-        return redirect("chatbot:index")
+        return redirect("chatbot:home")
 
     return render(request, "chatbot/register.html")
 
@@ -62,7 +70,7 @@ def register_view(request):
 def login_view(request):
     """로그인 페이지"""
     if request.user.is_authenticated:
-        return redirect("chatbot:index")
+        return redirect("chatbot:home")
 
     if request.method == "POST":
         username = request.POST.get("username")
@@ -72,7 +80,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)
-            next_url = request.GET.get("next", "chatbot:index")
+            next_url = request.GET.get("next", "chatbot:home")
             return redirect(next_url)
         else:
             return render(

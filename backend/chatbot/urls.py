@@ -5,11 +5,14 @@ app_name = "chatbot"
 
 urlpatterns = [
     # Main pages
-    path("", views.index, name="index"),
+    path("", views.home, name="home"),
+    path("services/", views.services, name="services"),
     path("register/", views.register_view, name="register"),
     path("login/", views.login_view, name="login"),
     path("logout/", views.logout_view, name="logout"),
     path("profile/", views.profile_view, name="profile"),
+    path("chatbot/", views.chatbot, name='chatbot'),
+
     # API endpoints
     path("api/send/", views.send_message, name="send_message"),
     path("api/history/", views.get_history, name="get_history"),
