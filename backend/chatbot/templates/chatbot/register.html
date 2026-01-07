@@ -1,145 +1,333 @@
-{% extends 'chatbot/base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - PaperSnack</title>
 
-{% block title %}회원가입 - HuggingFace Papers Chatbot{% endblock %}
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
-{% block extra_css %}
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --text-dark: #3f2d20;
+            --text-gray: #6b5a4a;
+            --bg-light: #fffaf3;
+            --white: #ffffff;
+        }
 
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .register-container {
-        background: white;
-        padding: 3rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-        max-width: 500px;
-        width: 100%;
-    }
+        body {
+            font-family: 'Nunito', "나눔고딕", sans-serif;
+            background: var(--bg-light);
+            color: var(--text-gray);
+        }
 
-    .register-header {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            z-index: 1000;
+        }
 
-    .register-header h1 {
-        font-size: 2rem;
-        color: #333;
-        margin-bottom: 0.5rem;
-    }
+        nav {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .register-header p {
-        color: #666;
-        font-size: 0.9rem;
-    }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
 
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
 
-    .form-group label {
-        display: block;
-        margin-bottom: 0.5rem;
-        color: #333;
-        font-weight: 500;
-    }
+        .nav-menu {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
 
-    .form-group input {
-        width: 100%;
-        padding: 0.8rem;
-        border: 2px solid #e0e0e0;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border-color 0.3s;
-    }
+        .nav-menu a {
+            text-decoration: none;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
 
-    .form-group input:focus {
-        outline: none;
-        border-color: #667eea;
-    }
+        .nav-menu a.active,
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
 
-    .errors {
-        background: #fee;
-        border: 1px solid #fcc;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-bottom: 1.5rem;
-    }
+        /* Profile Container */
+        .profile-section {
+            padding: 140px 40px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+            min-height: 100vh;
+        }
 
-    .errors ul {
-        list-style: none;
-        color: #c00;
-    }
+        .profile-container {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
 
-    .errors li {
-        margin-bottom: 0.5rem;
-    }
+        .profile-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-    .btn-register {
-        width: 100%;
-        padding: 1rem;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
+        .profile-header h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
 
-    .btn-register:hover {
-        transform: translateY(-2px);
-    }
+        .profile-header p {
+            font-size: 16px;
+            color: var(--text-gray);
+        }
 
-    .login-link {
-        text-align: center;
-        margin-top: 1.5rem;
-        color: #666;
-    }
+        /* Form Sections */
+        .form-section {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 2px solid #fef3c7;
+        }
 
-    .login-link a {
-        color: #667eea;
-        text-decoration: none;
-        font-weight: 600;
-    }
+        .form-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
 
-    .login-link a:hover {
-        text-decoration: underline;
-    }
-</style>
-{% endblock %}
+        .form-section h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+        }
 
-{% block content %}
-<div class="register-container">
-    <div class="register-header">
-        <h1>🤗 회원가입</h1>
-        <p>HuggingFace Papers Chatbot에 오신 것을 환영합니다</p>
-    </div>
+        .form-group {
+            margin-bottom: 24px;
+        }
 
-    {% if errors %}
-    <div class="errors">
-        <ul>
-            {% for error in errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #fcd34d;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Nunito', sans-serif;
+            transition: all 0.3s;
+            background: var(--bg-light);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.1);
+        }
+
+        .hint {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+
+        /* Messages */
+        .errors {
+            background: #fee2e2;
+            border: 2px solid #fca5a5;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .errors ul {
+            list-style: none;
+        }
+
+        .errors li {
+            color: #dc2626;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .errors li:last-child {
+            margin-bottom: 0;
+        }
+
+        .success {
+            background: #d1fae5;
+            border: 2px solid #6ee7b7;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            color: #047857;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* Button */
+        .btn-update {
+            width: 100%;
+            padding: 16px 40px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Nunito', sans-serif;
+            margin-top: 20px;
+        }
+
+        .btn-update:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Back Links */
+        .back-links {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .back-links a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .back-links a:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-section {
+                padding: 120px 20px 60px;
+            }
+
+            .profile-container {
+                padding: 30px 25px;
+            }
+
+            .profile-header h1 {
+                font-size: 32px;
+            }
+
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="{% url 'chatbot:home' %}" class="logo">
+            <div class="logo">
+                <img src="{% static 'images/cookie_3.png' %}" width="60" a href="{% url 'chatbot:home' %}" class="slide" alt="photo3">
+            </div>
+            PaperSnack
+        </a>
+        <ul class="nav-menu">
+            <li><a href="{% url 'chatbot:home' %}">Home</a></li>
+            <li><a href="{% url 'chatbot:services' %}">Services</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'chatbot:profile' %}">Profile</a></li>
+                <li><a href="{% url 'chatbot:logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'chatbot:login' %}" class="active">Sign In</a></li>
+            {% endif %}
         </ul>
-    </div>
-    {% endif %}
+    </nav>
+</header>
 
-    <form method="POST" action="{% url 'chatbot:register' %}">
+<section class="profile-section">
+    <div class="profile-container">
+        <div class="profile-header">
+            <h1>🍪회원가입</h1>
+            <p>PaperSnack : HuggingFace Papers Chatbot</p>
+        </div>
+
+        {% if errors %}
+        <div class="errors">
+            <ul>
+                {% for error in errors %}
+                <li>{{ error }} 😥</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+
+    <form method="POST" action="{% url 'chatbot:login' %}">
         {% csrf_token %}
 
         <div class="form-group">
@@ -166,6 +354,7 @@
             />
         </div>
 
+
         <div class="form-group">
             <label for="password">비밀번호</label>
             <input
@@ -176,6 +365,7 @@
                 placeholder="비밀번호를 입력하세요"
             />
         </div>
+
 
         <div class="form-group">
             <label for="password_confirm">비밀번호 확인</label>
@@ -188,11 +378,14 @@
             />
         </div>
 
-        <button type="submit" class="btn-register">회원가입</button>
+        <button type="submit" class="btn-update">회원가입</button>
     </form>
 
     <div class="login-link">
-        이미 계정이 있으신가요? <a href="{% url 'chatbot:login' %}">로그인</a>
+        <br> 이미 계정이 있으신가요? <a href="{% url 'chatbot:login' %}">로그인</a>
     </div>
 </div>
-{% endblock %}
+</section>
+
+</body>
+</html>
