@@ -1,0 +1,198 @@
+{% extends 'chatbot/base.html' %}
+
+{% block title %}회원가입 - HuggingFace Papers Chatbot{% endblock %}
+
+{% block extra_css %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .register-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        max-width: 500px;
+        width: 100%;
+    }
+
+    .register-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .register-header h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .register-header p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .errors {
+        background: #fee;
+        border: 1px solid #fcc;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .errors ul {
+        list-style: none;
+        color: #c00;
+    }
+
+    .errors li {
+        margin-bottom: 0.5rem;
+    }
+
+    .btn-register {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .btn-register:hover {
+        transform: translateY(-2px);
+    }
+
+    .login-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #666;
+    }
+
+    .login-link a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .login-link a:hover {
+        text-decoration: underline;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <div class="register-header">
+        <h1>🤗 회원가입</h1>
+        <p>HuggingFace Papers Chatbot에 오신 것을 환영합니다</p>
+    </div>
+
+    {% if errors %}
+    <div class="errors">
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{% url 'chatbot:register' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="username">사용자 이름</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                value="{{ username }}"
+                required
+                placeholder="사용자 이름을 입력하세요"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="email">이메일</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                value="{{ email }}"
+                required
+                placeholder="이메일을 입력하세요"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="password">비밀번호</label>
+            <input
+                type="password"
+                id="password"
+                name="password"
+                required
+                placeholder="비밀번호를 입력하세요"
+            />
+        </div>
+
+        <div class="form-group">
+            <label for="password_confirm">비밀번호 확인</label>
+            <input
+                type="password"
+                id="password_confirm"
+                name="password_confirm"
+                required
+                placeholder="비밀번호를 다시 입력하세요"
+            />
+        </div>
+
+        <button type="submit" class="btn-register">회원가입</button>
+    </form>
+
+    <div class="login-link">
+        이미 계정이 있으신가요? <a href="{% url 'chatbot:login' %}">로그인</a>
+    </div>
+</div>
+{% endblock %}

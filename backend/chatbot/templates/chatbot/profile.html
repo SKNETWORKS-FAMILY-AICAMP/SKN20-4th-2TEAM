@@ -1,0 +1,251 @@
+{% extends 'chatbot/base.html' %}
+
+{% block title %}프로필 편집 - HuggingFace Papers Chatbot{% endblock %}
+
+{% block extra_css %}
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .profile-container {
+        background: white;
+        padding: 3rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .profile-header h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .profile-header p {
+        color: #666;
+        font-size: 0.9rem;
+    }
+
+    .form-section {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 2px solid #f0f0f0;
+    }
+
+    .form-section:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+
+    .form-section h2 {
+        font-size: 1.2rem;
+        color: #667eea;
+        margin-bottom: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+    }
+
+    .form-group input:focus {
+        outline: none;
+        border-color: #667eea;
+    }
+
+    .errors {
+        background: #fee;
+        border: 1px solid #fcc;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+    }
+
+    .errors ul {
+        list-style: none;
+        color: #c00;
+    }
+
+    .errors li {
+        margin-bottom: 0.5rem;
+    }
+
+    .success {
+        background: #efe;
+        border: 1px solid #cfc;
+        padding: 1rem;
+        border-radius: 8px;
+        margin-bottom: 1.5rem;
+        color: #0a0;
+    }
+
+    .btn-update {
+        width: 100%;
+        padding: 1rem;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .btn-update:hover {
+        transform: translateY(-2px);
+    }
+
+    .back-link {
+        text-align: center;
+        margin-top: 1.5rem;
+        color: #666;
+    }
+
+    .back-link a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .back-link a:hover {
+        text-decoration: underline;
+    }
+
+    .hint {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 0.3rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="profile-container">
+    <div class="profile-header">
+        <h1>⚙️ 프로필 편집</h1>
+        <p>계정 정보를 수정할 수 있습니다</p>
+    </div>
+
+    {% if errors %}
+    <div class="errors">
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+
+    {% if success %}
+    <div class="success">
+        프로필이 성공적으로 업데이트되었습니다!
+    </div>
+    {% endif %}
+
+    <form method="POST" action="{% url 'chatbot:profile' %}">
+        {% csrf_token %}
+
+        <div class="form-section">
+            <h2>기본 정보</h2>
+
+            <div class="form-group">
+                <label for="username">사용자 이름</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    value="{{ user.username }}"
+                    placeholder="사용자 이름을 입력하세요"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value="{{ user.email }}"
+                    placeholder="이메일을 입력하세요"
+                />
+            </div>
+        </div>
+
+        <div class="form-section">
+            <h2>비밀번호 변경</h2>
+            <p class="hint">비밀번호를 변경하지 않으려면 아래 필드를 비워두세요.</p>
+
+            <div class="form-group">
+                <label for="current_password">현재 비밀번호</label>
+                <input
+                    type="password"
+                    id="current_password"
+                    name="current_password"
+                    placeholder="현재 비밀번호를 입력하세요"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="new_password">새 비밀번호</label>
+                <input
+                    type="password"
+                    id="new_password"
+                    name="new_password"
+                    placeholder="새 비밀번호를 입력하세요"
+                />
+            </div>
+
+            <div class="form-group">
+                <label for="password_confirm">새 비밀번호 확인</label>
+                <input
+                    type="password"
+                    id="password_confirm"
+                    name="password_confirm"
+                    placeholder="새 비밀번호를 다시 입력하세요"
+                />
+            </div>
+        </div>
+
+        <button type="submit" class="btn-update">프로필 업데이트</button>
+    </form>
+
+    <div class="back-link">
+        <a href="{% url 'chatbot:index' %}">← 챗봇으로 돌아가기</a>
+    </div>
+</div>
+{% endblock %}
