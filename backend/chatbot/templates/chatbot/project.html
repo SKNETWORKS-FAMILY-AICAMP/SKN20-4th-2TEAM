@@ -1,0 +1,1078 @@
+{% extends 'chatbot/base.html' %}
+
+{% block title %}프로젝트 관리 - PaperSnack{% endblock %}
+
+{% block extra_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --primary: #f59e0b;
+        --primary-dark: #d97706;
+        --text-dark: #3f2d20;
+        --text-gray: #6b5a4a;
+        --bg-light: #fffaf3;
+        --white: #ffffff;
+        --border: #f3e8d9;
+        --shadow: rgba(63, 45, 32, 0.08);
+        --sidebar-width: 280px;
+    }
+
+    [data-theme="dark"] {
+        --primary: #fbbf24;
+        --primary-dark: #f59e0b;
+        --text-dark: #f5f5f5;
+        --text-gray: #d1d1d1;
+        --bg-light: #1a1714;
+        --white: #2a2622;
+        --border: #3f3832;
+        --shadow: rgba(0, 0, 0, 0.3);
+    }
+
+    body {
+        font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: var(--bg-light);
+        color: var(--text-gray);
+        min-height: 100vh;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    /* Header */
+    .header {
+        background: var(--white);
+        border-bottom: 2px solid var(--border);
+        padding: 1.5rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 2px 15px var(--shadow);
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 900;
+    }
+
+    .header .subtitle {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        margin-top: 0.3rem;
+        font-weight: 600;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .user-info a {
+        color: var(--text-dark);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .user-info a:hover {
+        color: var(--primary);
+    }
+
+    .theme-toggle {
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+    }
+
+    .theme-toggle:hover {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+        transform: scale(1.05);
+    }
+
+    /* Layout */
+    .container {
+        display: flex;
+        height: calc(100vh - 100px);
+        max-width: 1600px;
+        margin: 0 auto;
+        background: var(--white);
+        box-shadow: 0 10px 40px var(--shadow);
+    }
+
+    /* Project Sidebar */
+    .project-sidebar {
+        width: var(--sidebar-width);
+        background: var(--bg-light);
+        border-right: 2px solid var(--border);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-header {
+        padding: 1.5rem 1rem;
+        border-bottom: 2px solid var(--border);
+    }
+
+    .project-header h3 {
+        font-size: 1rem;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        font-weight: 800;
+    }
+
+    .btn-new-project {
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 0.95rem;
+    }
+
+    .btn-new-project:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    .project-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 0.5rem;
+        min-height: 0;
+    }
+
+    .project-item {
+        padding: 1rem;
+        margin-bottom: 0.5rem;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .project-item:hover {
+        border-color: var(--primary);
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px var(--shadow);
+    }
+
+    .project-item.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+    .project-item-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .project-item-count {
+        font-size: 0.75rem;
+        color: var(--text-gray);
+        background: var(--bg-light);
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-weight: 700;
+    }
+
+    .project-item.active .project-item-count {
+        background: rgba(255, 255, 255, 0.3);
+        color: white;
+    }
+
+    .all-chats-item {
+        background: var(--bg-light);
+        font-weight: 800;
+    }
+
+    .all-chats-item.active {
+        background: var(--primary);
+    }
+
+    /* Main Area */
+    .main-area {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        background: var(--white);
+        overflow: hidden;
+    }
+
+    .main-header {
+        padding: 1.5rem 2rem;
+        border-bottom: 2px solid var(--border);
+        background: var(--bg-light);
+    }
+
+    .main-header h2 {
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+        font-weight: 900;
+    }
+
+    .main-header p {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        font-weight: 600;
+    }
+
+    .chat-list {
+        flex: 1;
+        overflow-y: auto;
+        padding: 1.5rem;
+    }
+
+    .chat-card {
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .chat-card:hover {
+        border-color: var(--primary);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px var(--shadow);
+    }
+
+    .chat-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 0.8rem;
+    }
+
+    .chat-card-question {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        flex: 1;
+        margin-right: 1rem;
+    }
+
+    .chat-card-time {
+        font-size: 0.75rem;
+        color: var(--text-gray);
+        white-space: nowrap;
+        font-weight: 600;
+    }
+
+    .chat-card-answer {
+        font-size: 0.85rem;
+        color: var(--text-gray);
+        line-height: 1.6;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        margin-bottom: 0.8rem;
+    }
+
+    .chat-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 0.8rem;
+        border-top: 2px solid var(--border);
+    }
+
+    .search-badge {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 800;
+    }
+
+    .search-badge.internal {
+        background: #d1e7dd;
+        color: #0f5132;
+    }
+
+    .search-badge.hybrid {
+        background: #cfe2ff;
+        color: #084298;
+    }
+
+    .search-badge.vector {
+        background: #e2d9f3;
+        color: #59359a;
+    }
+
+    .search-badge.cluster {
+        background: #cfe2ff;
+        color: #084298;
+    }
+
+    .search-badge.web {
+        background: #fff3cd;
+        color: #664d03;
+    }
+
+    .search-badge.rejected {
+        background: #f8d7da;
+        color: #842029;
+    }
+
+    [data-theme="dark"] .search-badge.internal {
+        background: #0f5132;
+        color: #d1e7dd;
+    }
+
+    [data-theme="dark"] .search-badge.hybrid {
+        background: #084298;
+        color: #cfe2ff;
+    }
+
+    [data-theme="dark"] .search-badge.vector {
+        background: #59359a;
+        color: #e2d9f3;
+    }
+
+    [data-theme="dark"] .search-badge.cluster {
+        background: #084298;
+        color: #cfe2ff;
+    }
+
+    [data-theme="dark"] .search-badge.web {
+        background: #664d03;
+        color: #fff3cd;
+    }
+
+    [data-theme="dark"] .search-badge.rejected {
+        background: #842029;
+        color: #f8d7da;
+    }
+
+    .source-count {
+        font-size: 0.75rem;
+        color: var(--text-gray);
+        font-weight: 700;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 4rem 2rem;
+        color: var(--text-gray);
+    }
+
+    .empty-state h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-dark);
+        font-weight: 900;
+    }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(63, 45, 32, 0.6);
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal.active {
+        display: flex;
+    }
+
+    .modal-content {
+        background: var(--white);
+        padding: 2rem;
+        border-radius: 20px;
+        max-width: 900px;
+        width: 90%;
+        max-height: 85vh;
+        overflow-y: auto;
+        box-shadow: 0 20px 60px var(--shadow);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--border);
+    }
+
+    .modal-header h2 {
+        color: var(--primary);
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .modal-close {
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 1.2rem;
+        transition: all 0.3s;
+        font-weight: 800;
+    }
+
+    .modal-close:hover {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: white;
+    }
+
+    .modal-body {
+        line-height: 1.7;
+    }
+
+    .modal-question {
+        background: var(--primary);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 16px;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.7;
+        font-weight: 600;
+    }
+
+    .modal-answer {
+        background: var(--bg-light);
+        padding: 1.5rem;
+        border-radius: 16px;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        color: var(--text-gray);
+    }
+
+    .modal-answer a {
+        color: var(--primary);
+        text-decoration: none;
+        word-break: break-all;
+        font-weight: 700;
+    }
+
+    .modal-answer a:hover {
+        text-decoration: underline;
+    }
+
+    .message-sources {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--border);
+    }
+
+    .source-header {
+        font-size: 0.9rem;
+        color: var(--text-gray);
+        margin-bottom: 0.8rem;
+        font-weight: 800;
+    }
+
+    .source-item {
+        background: var(--white);
+        padding: 1rem 1.2rem;
+        margin: 0.6rem 0;
+        border-radius: 12px;
+        border-left: 4px solid var(--primary);
+        font-size: 0.85rem;
+        box-shadow: 0 2px 8px var(--shadow);
+    }
+
+    .source-title {
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 0.3rem;
+    }
+
+    .source-meta {
+        color: var(--text-gray);
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .source-link {
+        color: var(--primary);
+        text-decoration: none;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+        font-weight: 700;
+    }
+
+    .source-link:hover {
+        text-decoration: underline;
+    }
+
+    /* New Project Modal */
+    .modal-form {
+        padding: 1rem 0;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 800;
+    }
+
+    .form-group input {
+        width: 100%;
+        padding: 0.8rem;
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        color: var(--text-dark);
+        font-size: 1rem;
+        outline: none;
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+
+    .form-group input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    }
+
+    .btn-submit {
+        width: 100%;
+        padding: 1rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: all 0.3s;
+        font-size: 1rem;
+    }
+
+    .btn-submit:hover {
+        background: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    }
+
+    /* Scrollbar */
+    .project-list::-webkit-scrollbar,
+    .chat-list::-webkit-scrollbar,
+    .modal-content::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .project-list::-webkit-scrollbar-track,
+    .chat-list::-webkit-scrollbar-track,
+    .modal-content::-webkit-scrollbar-track {
+        background: var(--bg-light);
+    }
+
+    .project-list::-webkit-scrollbar-thumb,
+    .chat-list::-webkit-scrollbar-thumb,
+    .modal-content::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 4px;
+    }
+
+    .project-list::-webkit-scrollbar-thumb:hover,
+    .chat-list::-webkit-scrollbar-thumb:hover,
+    .modal-content::-webkit-scrollbar-thumb:hover {
+        background: var(--primary);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Header -->
+<div class="header">
+    <div>
+        <h1>📁 프로젝트 관리</h1>
+        <div class="subtitle">대화를 프로젝트별로 관리하세요</div>
+    </div>
+    <div class="header-right">
+        <div class="user-info">
+            <span>👤 {{ user.username }}</span>
+            <a href="{% url 'chatbot:chatbot' %}">챗봇</a>
+            <a href="{% url 'chatbot:profile' %}">프로필</a>
+            <a href="{% url 'chatbot:logout' %}">로그아웃</a>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+    </div>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+    <!-- Project Sidebar -->
+    <div class="project-sidebar">
+        <div class="project-header">
+            <h3>📂 프로젝트 목록</h3>
+            <button class="btn-new-project" onclick="showNewProjectModal()">
+                ➕ 새 프로젝트
+            </button>
+        </div>
+        <div class="project-list" id="project-list">
+            <!-- 전체 대화 항목 -->
+            <div class="project-item all-chats-item active" onclick="selectAllChats()">
+                <span class="project-item-name">📜 전체 대화</span>
+                <span class="project-item-count" id="all-count">0</span>
+            </div>
+            <!-- 프로젝트 항목들이 동적으로 로드됨 -->
+        </div>
+    </div>
+
+    <!-- Main Area -->
+    <div class="main-area">
+        <div class="main-header">
+            <h2 id="main-title">전체 대화</h2>
+            <p id="main-subtitle">모든 대화 내용을 확인할 수 있습니다</p>
+        </div>
+
+        <div class="chat-list" id="chat-list">
+            <div class="empty-state">
+                <h3>💬 대화가 없습니다</h3>
+                <p>챗봇과 대화를 시작해보세요!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chat Detail Modal -->
+<div class="modal" id="chat-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>💬 대화 내용</h2>
+            <button class="modal-close" onclick="closeChatModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-question" id="modal-question"></div>
+            <div class="modal-answer" id="modal-answer"></div>
+        </div>
+    </div>
+</div>
+
+<!-- New Project Modal -->
+<div class="modal" id="new-project-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>📁 새 프로젝트 만들기</h2>
+            <button class="modal-close" onclick="closeNewProjectModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <form class="modal-form" onsubmit="createProject(event)">
+                <div class="form-group">
+                    <label for="project-name">프로젝트 이름</label>
+                    <input
+                        type="text"
+                        id="project-name"
+                        placeholder="예: Transformer 논문 연구"
+                        required
+                    />
+                </div>
+                <button type="submit" class="btn-submit">만들기</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // CSRF 토큰 가져오기
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie) {
+            const cookies = document.cookie.split(';');
+            for (let cookie of cookies) {
+                cookie = cookie.trim();
+                if (cookie.startsWith(name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    const csrftoken = getCookie('csrftoken');
+    let currentProjectId = null;
+
+    // 초기화
+    window.addEventListener('DOMContentLoaded', async () => {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.body.setAttribute('data-theme', savedTheme);
+        document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '🌙' : '☀️';
+
+        await loadProjects();
+        await loadAllChats();
+    });
+
+    // 프로젝트 목록 로드
+    async function loadProjects() {
+        try {
+            // TODO: API 엔드포인트 구현 필요
+            const response = await fetch('/api/projects/', {
+                headers: {
+                    'X-CSRFToken': csrftoken
+                }
+            });
+
+            if (!response.ok) throw new Error('프로젝트 로드 실패');
+
+            const data = await response.json();
+            const projectList = document.getElementById('project-list');
+
+            // 전체 대화 항목 유지
+            const allChatsItem = projectList.querySelector('.all-chats-item');
+
+            // 프로젝트 항목 추가
+            data.projects.forEach(project => {
+                const projectItem = document.createElement('div');
+                projectItem.className = 'project-item';
+                projectItem.setAttribute('data-project-id', project.uid);
+                projectItem.innerHTML = `
+                    <span class="project-item-name">📁 ${project.folder_name}</span>
+                    <span class="project-item-count">${project.chat_count || 0}</span>
+                `;
+                projectItem.onclick = () => selectProject(project.uid, project.folder_name);
+                projectList.appendChild(projectItem);
+            });
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트 로드 실패:', error);
+        }
+    }
+
+    // 전체 대화 선택
+    async function selectAllChats() {
+        currentProjectId = null;
+
+        // 활성화 상태 변경
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        document.querySelector('.all-chats-item').classList.add('active');
+
+        // 헤더 업데이트
+        document.getElementById('main-title').textContent = '전체 대화';
+        document.getElementById('main-subtitle').textContent = '모든 대화 내용을 확인할 수 있습니다';
+
+        await loadAllChats();
+    }
+
+    // 프로젝트 선택
+    async function selectProject(projectId, projectName) {
+        currentProjectId = projectId;
+
+        // 활성화 상태 변경
+        document.querySelectorAll('.project-item').forEach(item => {
+            item.classList.remove('active');
+        });
+        document.querySelector(`[data-project-id="${projectId}"]`).classList.add('active');
+
+        // 헤더 업데이트
+        document.getElementById('main-title').textContent = projectName;
+        document.getElementById('main-subtitle').textContent = `${projectName} 프로젝트의 대화 내용`;
+
+        await loadProjectChats(projectId);
+    }
+
+    // 전체 대화 로드
+    async function loadAllChats() {
+        try {
+            const response = await fetch('{% url "chatbot:get_history" %}');
+            if (!response.ok) throw new Error('대화 로드 실패');
+
+            const data = await response.json();
+            renderChatList(data.history);
+
+            // 전체 개수 업데이트
+            document.getElementById('all-count').textContent = data.history.length;
+
+        } catch (error) {
+            console.error('[ERROR] 전체 대화 로드 실패:', error);
+            showEmptyState();
+        }
+    }
+
+    // 프로젝트별 대화 로드
+    async function loadProjectChats(projectId) {
+        try {
+            // TODO: API 엔드포인트 구현 필요
+            const response = await fetch(`/api/projects/${projectId}/chats/`, {
+                headers: {
+                    'X-CSRFToken': csrftoken
+                }
+            });
+
+            if (!response.ok) throw new Error('대화 로드 실패');
+
+            const data = await response.json();
+            renderChatList(data.chats);
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트 대화 로드 실패:', error);
+            showEmptyState();
+        }
+    }
+
+    // 대화 목록 렌더링
+    function renderChatList(chats) {
+        const chatList = document.getElementById('chat-list');
+
+        if (!chats || chats.length === 0) {
+            showEmptyState();
+            return;
+        }
+
+        chatList.innerHTML = chats.map(chat => {
+            const searchBadgeText = {
+                'internal': '📚 내부 검색',
+                'hybrid': '🔍 하이브리드',
+                'vector': '🎯 벡터 검색',
+                'cluster': '🔍 클러스터',
+                'web': '🌐 웹 검색',
+                'rejected': '❌ 관련 없음'
+            }[chat.search_type] || chat.search_type;
+
+            const sourceCount = chat.sources ? chat.sources.length : 0;
+
+            return `
+                <div class="chat-card" onclick='showChatModal(${JSON.stringify(chat)})'>
+                    <div class="chat-card-header">
+                        <div class="chat-card-question">${chat.question}</div>
+                        <div class="chat-card-time">${new Date(chat.created_at).toLocaleString('ko-KR')}</div>
+                    </div>
+                    <div class="chat-card-answer">${chat.answer}</div>
+                    <div class="chat-card-footer">
+                        <span class="search-badge ${chat.search_type}">${searchBadgeText}</span>
+                        <span class="source-count">📚 ${sourceCount}개 출처</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    // 빈 상태 표시
+    function showEmptyState() {
+        const chatList = document.getElementById('chat-list');
+        chatList.innerHTML = `
+            <div class="empty-state">
+                <h3>💬 대화가 없습니다</h3>
+                <p>챗봇과 대화를 시작해보세요!</p>
+            </div>
+        `;
+    }
+
+    // 대화 상세 모달 표시
+    function showChatModal(chat) {
+        document.getElementById('modal-question').textContent = chat.question;
+
+        // 답변 포맷팅
+        const formattedAnswer = formatAnswerText(linkifyText(chat.answer));
+
+        // 검색 타입 배지
+        let searchBadgeHtml = '';
+        if (chat.search_type) {
+            const badgeText = {
+                'internal': '📚 내부 검색',
+                'hybrid': '🔍 하이브리드 검색',
+                'vector': '🎯 벡터 검색',
+                'cluster': '🔍 클러스터 검색',
+                'web': '🌐 웹 검색',
+                'rejected': '❌ 관련 없음'
+            }[chat.search_type] || chat.search_type;
+
+            searchBadgeHtml = `<div class="search-badge ${chat.search_type}">${badgeText}</div>`;
+        }
+
+        // 출처 정보
+        let sourcesHtml = '';
+        if (chat.search_type !== 'rejected' && chat.sources && chat.sources.length > 0) {
+            const sourceItems = chat.sources.map((src) => {
+                if (src.type === 'web') {
+                    const displayTitle = src.title && src.title !== 'Web Search Result'
+                        ? src.title
+                        : '웹 검색 결과';
+
+                    return `
+                        <div class="source-item">
+                            <div class="source-title">🌐 ${displayTitle}</div>
+                            <div class="source-meta">
+                                <a href="${src.url}" target="_blank" class="source-link">링크 보기 →</a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    return `
+                        <div class="source-item">
+                            <div class="source-title">📄 ${src.title}</div>
+                            <div class="source-meta">
+                                ${src.authors ? src.authors.join(', ') : ''} ${src.year ? '· ' + src.year : ''}<br>
+                                ${src.huggingface_url ? `<a href="${src.huggingface_url}" target="_blank" class="source-link">HuggingFace →</a>` : ''}
+                                ${src.github_url ? `<a href="${src.github_url}" target="_blank" class="source-link">GitHub →</a>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }
+            }).join('');
+
+            sourcesHtml = `
+                <div class="message-sources">
+                    <div class="source-header">📚 참조 자료 (${chat.sources.length}개)</div>
+                    ${sourceItems}
+                </div>
+            `;
+        }
+
+        document.getElementById('modal-answer').innerHTML = searchBadgeHtml + formattedAnswer + sourcesHtml;
+        document.getElementById('chat-modal').classList.add('active');
+    }
+
+    // 대화 모달 닫기
+    function closeChatModal() {
+        document.getElementById('chat-modal').classList.remove('active');
+    }
+
+    // 새 프로젝트 모달 표시
+    function showNewProjectModal() {
+        document.getElementById('new-project-modal').classList.add('active');
+    }
+
+    // 새 프로젝트 모달 닫기
+    function closeNewProjectModal() {
+        document.getElementById('new-project-modal').classList.remove('active');
+        document.getElementById('project-name').value = '';
+    }
+
+    // 프로젝트 생성
+    async function createProject(event) {
+        event.preventDefault();
+
+        const projectName = document.getElementById('project-name').value.trim();
+        if (!projectName) return;
+
+        try {
+            // TODO: API 엔드포인트 구현 필요
+            const response = await fetch('/api/projects/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken
+                },
+                body: JSON.stringify({ folder_name: projectName })
+            });
+
+            if (!response.ok) throw new Error('프로젝트 생성 실패');
+
+            const data = await response.json();
+
+            closeNewProjectModal();
+            await loadProjects();
+
+            // 새로 생성된 프로젝트 선택
+            selectProject(data.uid, data.folder_name);
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트 생성 실패:', error);
+            alert('프로젝트 생성에 실패했습니다.');
+        }
+    }
+
+    // URL을 클릭 가능한 링크로 변환
+    function linkifyText(text) {
+        const urlPattern = /(https?:\/\/[^\s]+)/g;
+
+        return text.replace(urlPattern, function(url) {
+            let cleanUrl = url;
+            const punctuation = /[.,;!?)]$/;
+            let suffix = '';
+
+            if (punctuation.test(url)) {
+                cleanUrl = url.slice(0, -1);
+                suffix = url.slice(-1);
+            }
+
+            return `<a href="${cleanUrl}" target="_blank">${cleanUrl}</a>${suffix}`;
+        });
+    }
+
+    // 답변 텍스트 포맷팅
+    function formatAnswerText(text) {
+        let formatted = text.replace(/\n/g, '<br>');
+        formatted = formatted.replace(/^(\d+\).*?)$/gm, '<div style="margin: 0.3rem 0;">$1</div>');
+        formatted = formatted.replace(/^[-*•]\s(.+)$/gm, '<div style="margin: 0.3rem 0; padding-left: 1rem;">• $1</div>');
+
+        return formatted;
+    }
+
+    // 테마 토글
+    function toggleTheme() {
+        const body = document.body;
+        const currentTheme = body.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        body.setAttribute('data-theme', newTheme);
+
+        const themeBtn = document.querySelector('.theme-toggle');
+        themeBtn.textContent = newTheme === 'light' ? '🌙' : '☀️';
+
+        localStorage.setItem('theme', newTheme);
+    }
+
+    // 모달 외부 클릭 시 닫기
+    document.getElementById('chat-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeChatModal();
+        }
+    });
+
+    document.getElementById('new-project-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeNewProjectModal();
+        }
+    });
+</script>
+{% endblock %}
