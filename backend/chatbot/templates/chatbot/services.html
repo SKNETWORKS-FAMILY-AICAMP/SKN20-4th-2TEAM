@@ -204,8 +204,8 @@
             PaperSnack
         </a>
         <ul class="nav-menu">
-                <li><a href="{% url 'chatbot:home' %}" class="active">Home</a></li>
-                <li><a href="{% url 'chatbot:services' %}">Services</a></li>
+                <li><a href="{% url 'chatbot:home' %}" >Home</a></li>
+                <li><a href="{% url 'chatbot:services' %}" class="active">Services</a></li>
                 {% if user.is_authenticated %}
                     <li><a href="{% url 'chatbot:profile' %}">Profile</a></li>
                     <li><a href="{% url 'chatbot:logout' %}">Logout</a></li>
