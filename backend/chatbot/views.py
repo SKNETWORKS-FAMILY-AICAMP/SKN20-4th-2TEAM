@@ -1,5 +1,6 @@
 import json
 import requests
+from datetime import datetime
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate, update_session_auth_hash
@@ -16,8 +17,25 @@ FASTAPI_BASE_URL = "http://localhost:8001"
 
 
 def home(request):
-    '''홈페이지'''
-    return render(request, "chatbot/home.html")
+    """홈페이지"""
+    # 오늘 날짜
+    today = datetime.now()
+
+    # FastAPI에서 논문 개수 가져오기
+    paper_count = 0
+    try:
+        response = requests.get(f"{FASTAPI_BASE_URL}/api/stats", timeout=5)
+        if response.status_code == 200:
+            stats_data = response.json()
+            paper_count = stats_data.get("paper_count", 0)
+    except Exception as e:
+        # FastAPI 연결 실패 시 기본값 사용
+        print(f"[WARNING] FastAPI 연결 실패: {e}")
+        paper_count = 0
+
+    context = {"today": today, "paper_count": paper_count}
+
+    return render(request, "chatbot/home.html", context)
 
 def services(request):
     '''서비스'''
@@ -353,6 +371,26 @@ def create_project(request):
                 },
             }
         )
+
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+@login_required
+@require_http_methods(["DELETE"])
+def delete_chat(request, chat_uid):
+    """대화 삭제"""
+    try:
+        # 해당 대화가 현재 사용자의 것인지 확인
+        chat = ChatHistory.objects.filter(uid=chat_uid, user=request.user).first()
+
+        if not chat:
+            return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
+
+        # 대화 삭제
+        chat.delete()
+
+        return JsonResponse({"success": True, "message": "대화가 삭제되었습니다."})
 
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)

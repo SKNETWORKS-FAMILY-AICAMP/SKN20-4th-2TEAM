@@ -163,6 +163,9 @@
                 Discover and track the latest HuggingFace papers<br>
                 without the overwhelm.
             </p>
+            <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
+                <strong>{{ today|date:"Y년 m월 d일" }}</strong> 기준 | 🍪 PaperSnack <strong><span id="paper-count" data-count="{{ paper_count|default:"0" }}">0</span>개</strong> 보유 중
+            </p>
             <a href="{% url 'chatbot:chatbot' %}" class="btn-primary">Start Snacking</a>
         </div>
 
@@ -174,6 +177,41 @@
 </div>
     </div>
 </section>
+
+<script>
+// 논문 개수 카운트업 애니메이션
+document.addEventListener('DOMContentLoaded', function() {
+    const counterElement = document.getElementById('paper-count');
+    const targetCount = parseInt(counterElement.getAttribute('data-count')) || 0;
+
+    if (targetCount === 0) {
+        counterElement.textContent = '0';
+        return;
+    }
+
+    const duration = 2000; // 2초 동안 애니메이션
+    const startTime = performance.now();
+
+    function updateCounter(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        // easeOutExpo 효과 (빠르게 시작해서 천천히 끝남)
+        const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+        const currentCount = Math.floor(easeProgress * targetCount);
+        counterElement.textContent = currentCount.toLocaleString();
+
+        if (progress < 1) {
+            requestAnimationFrame(updateCounter);
+        } else {
+            counterElement.textContent = targetCount.toLocaleString();
+        }
+    }
+
+    requestAnimationFrame(updateCounter);
+});
+</script>
 
 </body>
 </html>
