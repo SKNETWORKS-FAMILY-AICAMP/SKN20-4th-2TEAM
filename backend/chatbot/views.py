@@ -1,3 +1,4 @@
+import os
 import json
 import requests
 from datetime import datetime
@@ -12,9 +13,8 @@ from django.views.decorators.http import require_http_methods
 from .models import ChatHistory, ChatProject
 
 
-# FastAPI 서버 URL
-FASTAPI_BASE_URL = "http://localhost:8001"
-
+# FastAPI 서버 URL (환경 변수에서 읽어오기, 없으면 기본값 사용)
+FASTAPI_BASE_URL = os.getenv("RAG_API_URL", "http://localhost:8001")
 
 def home(request):
     """홈페이지"""

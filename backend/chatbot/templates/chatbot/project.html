@@ -3,12 +3,16 @@
 {% block title %}프로젝트 관리 - PaperSnack{% endblock %}
 
 {% block extra_css %}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
     :root {
+        --primary: #f7af35;
+        --primary-dark: #d97706;
+        --text-dark: #3f2d20;
+        --text-gray: #6b5a4a;
+        --bg-light: #fffaf3;
+        --white: #ffffff;
+        --border: #f3e8d7;
         --sidebar-width: 280px;
     }
 
@@ -24,12 +28,13 @@
     }
 
     body {
-        font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        font-family: 'Nunito', sans-serif;
         background: var(--bg-light);
         color: var(--text-gray);
         min-height: 100vh;
         transition: background 0.3s, color 0.3s;
     }
+
 
     /* Layout */
     .container {
@@ -53,47 +58,102 @@
     .project-header {
         padding: 1.5rem 1rem;
         border-bottom: 2px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
     }
 
     .project-header h3 {
         font-size: 1rem;
         color: var(--text-dark);
-        margin-bottom: 1rem;
+        margin-bottom: 0;
         font-weight: 800;
     }
 
-    .btn-new-project {
-        width: 100%;
-        padding: 0.8rem;
-        background: var(--primary);
-        color: white;
+    .btn-project-menu {
+        background: none;
         border: none;
-        border-radius: 10px;
-        font-weight: 800;
+        color: var(--text-dark);
+        cursor: pointer;
+        font-size: 1.5rem;
+        padding: 0.3rem 0.6rem;
+        border-radius: 8px;
+        transition: all 0.3s;
+        line-height: 1;
+        font-weight: 700;
+    }
+
+    .btn-project-menu:hover {
+        background: var(--bg-light);
+        color: var(--primary);
+    }
+
+    .project-menu-dropdown {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px var(--shadow);
+        min-width: 200px;
+        z-index: 100;
+        overflow: hidden;
+        display: none;
+        margin-top: 0.5rem;
+    }
+
+    .project-menu-dropdown.active {
+        display: block;
+    }
+
+    .project-menu-item {
+        padding: 0.8rem 1rem;
         cursor: pointer;
         transition: all 0.3s;
-        font-size: 0.95rem;
+        border-bottom: 1px solid var(--border);
+        color: var(--text-dark);
+        font-size: 0.9rem;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
 
-    .btn-new-project:hover {
-        background: var(--primary-dark);
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
+    .project-menu-item:last-child {
+        border-bottom: none;
+    }
+
+    .project-menu-item:hover {
+        background: var(--bg-light);
+    }
+
+    .project-menu-item.delete:hover {
+        background: #f8d7da;
+        color: #842029;
+    }
+
+    [data-theme="dark"] .project-menu-item.delete:hover {
+        background: #842029;
+        color: #f8d7da;
     }
 
     .project-list {
         flex: 1;
         overflow-y: auto;
-        padding: 0.5rem;
+        padding: 0.5rem 1rem;
         min-height: 0;
     }
 
+
+    
     .project-item {
-        padding: 1rem;
+        padding: 0.8rem;
         margin-bottom: 0.5rem;
         background: var(--white);
         border: 2px solid var(--border);
-        border-radius: 12px;
+        border-radius: 10px;
         cursor: pointer;
         transition: all 0.3s;
         display: flex;
@@ -141,6 +201,12 @@
         background: var(--primary);
     }
 
+    .all-chats-item:hover {
+        border-color: var(--primary);
+        transform: translateX(5px);
+        box-shadow: 0 4px 12px var(--shadow);
+    }
+
     /* Main Area */
     .main-area {
         flex: 1;
@@ -157,7 +223,7 @@
     }
 
     .main-header h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
         color: var(--text-dark);
         margin-bottom: 0.5rem;
         font-weight: 900;
@@ -662,15 +728,21 @@
     <!-- Project Sidebar -->
     <div class="project-sidebar">
         <div class="project-header">
-            <h3>📂 프로젝트 목록</h3>
-            <button class="btn-new-project" onclick="showNewProjectModal()">
-                ➕ 새 프로젝트
-            </button>
+            <h3>📂 Project List</h3>
+            <button class="btn-project-menu" onclick="toggleProjectMenu()" title="메뉴">⋮</button>
+            <div class="project-menu-dropdown" id="project-menu-dropdown">
+                <div class="project-menu-item" onclick="showNewProjectModal(); closeProjectMenu()">
+                    ➕ 프로젝트 생성
+                </div>
+                <div class="project-menu-item delete" onclick="showDeleteProjectModal(); closeProjectMenu()">
+                    🗑️ 프로젝트 삭제
+                </div>
+            </div>
         </div>
         <div class="project-list" id="project-list">
             <!-- 전체 대화 항목 -->
             <div class="project-item all-chats-item active" onclick="selectAllChats()">
-                <span class="project-item-name">📜 전체 대화</span>
+                <span class="project-item-name">🗒️ 전체 대화</span>
                 <span class="project-item-count" id="all-count">0</span>
             </div>
             <!-- 프로젝트 항목들이 동적으로 로드됨 -->
@@ -681,14 +753,13 @@
     <div class="main-area">
         <div class="main-header">
             <h2 id="main-title">전체 대화</h2>
-            <p id="main-subtitle">모든 대화 내용을 확인할 수 있습니다</p>
             <div class="search-box">
                 <span class="search-icon">🔍</span>
                 <input
                     type="text"
                     class="search-input"
                     id="chat-search"
-                    placeholder="대화 내용을 검색하세요..."
+                    placeholder="대화 내용을 검색하세요🍪"
                     oninput="filterChats()"
                 />
             </div>
@@ -1254,10 +1325,34 @@
         }
     });
 
+    // 프로젝트 메뉴 토글
+    function toggleProjectMenu() {
+        const dropdown = document.getElementById('project-menu-dropdown');
+        dropdown.classList.toggle('active');
+    }
+
+    // 프로젝트 메뉴 닫기
+    function closeProjectMenu() {
+        const dropdown = document.getElementById('project-menu-dropdown');
+        if (dropdown) {
+            dropdown.classList.remove('active');
+        }
+    }
+
+    // 프로젝트 삭제 모달 표시
+    function showDeleteProjectModal() {
+        // TODO: 프로젝트 삭제 기능은 향후 구현
+        alert('프로젝트 삭제 기능은 향후 구현 예정입니다.');
+        console.log('[INFO] Delete project feature - coming soon');
+    }
+
     // 외부 클릭 시 드롭다운 닫기
     document.addEventListener('click', function(e) {
         if (!e.target.closest('.chat-card-actions')) {
             closeAllChatDropdowns();
+        }
+        if (!e.target.closest('.project-header')) {
+            closeProjectMenu();
         }
     });
 </script>
