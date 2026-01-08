@@ -448,6 +448,53 @@ def add_chat_to_project(request, chat_id):
 
 
 @login_required
+@require_http_methods(["POST"])
+def remove_chat_from_project(request, chat_id):
+    """대화를 프로젝트에서 제거 (project_id를 0으로 설정)"""
+    try:
+        # 해당 대화가 현재 사용자의 것인지 확인
+        chat = ChatHistory.objects.filter(id=chat_id, user=request.user).first()
+
+        if not chat:
+            return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
+
+        # 대화를 프로젝트에서 제거 (project_id를 0으로 설정)
+        chat.project_id = 0
+        chat.save()
+
+        return JsonResponse({"success": True, "message": "대화가 프로젝트에서 제거되었습니다."})
+
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+@login_required
+@require_http_methods(["DELETE"])
+def delete_project(request, project_id):
+    """프로젝트 삭제 - 해당 프로젝트에 속한 대화들은 전체 대화로 이동"""
+    try:
+        # 해당 프로젝트가 현재 사용자의 것인지 확인
+        project = ChatProject.objects.filter(id=project_id, user=request.user).first()
+
+        if not project:
+            return JsonResponse({"success": False, "error": "프로젝트를 찾을 수 없습니다."}, status=404)
+
+        # 해당 프로젝트에 속한 모든 대화의 project_id를 0으로 변경
+        ChatHistory.objects.filter(user=request.user, project_id=project_id).update(project_id=0)
+
+        # 프로젝트 삭제
+        project_name = project.folder_name
+        project.delete()
+
+        return JsonResponse(
+            {"success": True, "message": f"'{project_name}' 프로젝트가 삭제되었습니다."}
+        )
+
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+@login_required
 def delete_account_view(request):
     """회원 탈퇴 페이지"""
     if request.method == "POST":

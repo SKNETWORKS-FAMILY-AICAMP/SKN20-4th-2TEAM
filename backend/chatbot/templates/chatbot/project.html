@@ -57,7 +57,6 @@
 
     .project-header {
         padding: 1.5rem 1rem;
-        border-bottom: 2px solid var(--border);
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -69,6 +68,31 @@
         color: var(--text-dark);
         margin-bottom: 0;
         font-weight: 800;
+    }
+
+    .btn-project-toggle {
+        background: none;
+        border: none;
+        color: var(--text-dark);
+        cursor: pointer;
+        font-size: 0.9rem;
+        padding: 0.3rem;
+        border-radius: 6px;
+        transition: all 0.3s;
+        line-height: 1;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-project-toggle:hover {
+        background: var(--bg-light);
+        color: var(--primary);
+    }
+
+    .btn-project-toggle.collapsed {
+        transform: rotate(-90deg);
     }
 
     .btn-project-menu {
@@ -140,14 +164,31 @@
     }
 
     .project-list {
-        flex: 1;
         overflow-y: auto;
-        padding: 0.5rem 1rem;
         min-height: 0;
     }
 
+    .user-projects-container {
+        padding: 0.5rem 1rem;
+        max-height: 500px;
+        overflow-y: auto;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
 
-    
+    .user-projects-container.collapsed {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 1rem;
+    }
+
+    .all-chats-container {
+        padding: 0.5rem 1rem;
+        border-top: 2px solid var(--border);
+        background: var(--bg-light);
+    }
+
+
     .project-item {
         padding: 0.8rem;
         margin-bottom: 0.5rem;
@@ -765,18 +806,21 @@
 
     /* Scrollbar */
     .project-list::-webkit-scrollbar,
+    .user-projects-container::-webkit-scrollbar,
     .chat-list::-webkit-scrollbar,
     .modal-content::-webkit-scrollbar {
         width: 8px;
     }
 
     .project-list::-webkit-scrollbar-track,
+    .user-projects-container::-webkit-scrollbar-track,
     .chat-list::-webkit-scrollbar-track,
     .modal-content::-webkit-scrollbar-track {
         background: var(--bg-light);
     }
 
     .project-list::-webkit-scrollbar-thumb,
+    .user-projects-container::-webkit-scrollbar-thumb,
     .chat-list::-webkit-scrollbar-thumb,
     .modal-content::-webkit-scrollbar-thumb {
         background: var(--border);
@@ -784,6 +828,7 @@
     }
 
     .project-list::-webkit-scrollbar-thumb:hover,
+    .user-projects-container::-webkit-scrollbar-thumb:hover,
     .chat-list::-webkit-scrollbar-thumb:hover,
     .modal-content::-webkit-scrollbar-thumb:hover {
         background: var(--primary);
@@ -799,7 +844,10 @@
     <!-- Project Sidebar -->
     <div class="project-sidebar">
         <div class="project-header">
-            <h3>📂 Project List</h3>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <h3>📂 Project List</h3>
+                <button class="btn-project-toggle" onclick="toggleProjectList()" title="프로젝트 목록 접기/펼치기">▼</button>
+            </div>
             <button class="btn-project-menu" onclick="toggleProjectMenu()" title="메뉴">⋮</button>
             <div class="project-menu-dropdown" id="project-menu-dropdown">
                 <div class="project-menu-item" onclick="showNewProjectModal(); closeProjectMenu()">
@@ -812,10 +860,12 @@
         </div>
         <div class="project-list" id="project-list">
             <!-- 프로젝트 항목들이 동적으로 로드됨 -->
-            <div id="user-projects-container">
+            <div id="user-projects-container" class="user-projects-container">
                 <!-- 사용자가 생성한 프로젝트들이 여기에 추가됨 -->
             </div>
-            <!-- 전체 대화 항목 (맨 아래) -->
+        </div>
+        <!-- 전체 대화 항목 (항상 아래에 표시) -->
+        <div class="all-chats-container">
             <div class="project-item all-chats-item active" onclick="selectAllChats()">
                 <span class="project-item-name">🗒️ 전체 대화</span>
                 <span class="project-item-count" id="all-count">0</span>
@@ -827,6 +877,7 @@
     <div class="main-area">
         <div class="main-header">
             <h2 id="main-title">전체 대화</h2>
+            <p id="main-subtitle">모든 대화 내용을 확인할 수 있습니다</p>
             <div class="search-box">
                 <span class="search-icon">🔍</span>
                 <input
@@ -900,6 +951,21 @@
         </div>
     </div>
 </div>
+
+<!-- Delete Project Modal -->
+<div class="modal" id="delete-project-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>🗑️ 프로젝트 삭제</h2>
+            <button class="modal-close" onclick="closeDeleteProjectModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <div id="delete-project-list" class="project-select-list">
+                <!-- 삭제할 프로젝트 목록이 동적으로 로드됨 -->
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
@@ -951,6 +1017,17 @@
 
         if (countElement) {
             countElement.textContent = count;
+        }
+
+        // 프로젝트 목록 접기/펼치기 상태 복원
+        const isCollapsed = localStorage.getItem('projectListCollapsed') === 'true';
+        if (isCollapsed) {
+            const container = document.getElementById('user-projects-container');
+            const toggleBtn = document.querySelector('.btn-project-toggle');
+            if (container && toggleBtn) {
+                container.classList.add('collapsed');
+                toggleBtn.classList.add('collapsed');
+            }
         }
 
         // 프로젝트 목록 로드
@@ -1042,10 +1119,21 @@
         document.getElementById('chat-search').value = '';
     }
 
-    // TODO: 프로젝트별 대화 로드 (향후 구현)
+    // 프로젝트별 대화 로드
     function loadProjectChats(projectId) {
-        // 해당 프로젝트의 대화만 필터링
-        const projectChats = allChats.filter(chat => chat.project_id === projectId);
+        console.log('[DEBUG] loadProjectChats called with projectId:', projectId);
+        console.log('[DEBUG] allChats:', allChats);
+
+        // 해당 프로젝트의 대화만 필터링 (타입 변환 확실히 하기)
+        const projectChats = allChats.filter(chat => {
+            const matches = parseInt(chat.project_id) === parseInt(projectId);
+            console.log('[DEBUG] chat.project_id:', chat.project_id, 'projectId:', projectId, 'matches:', matches);
+            return matches;
+        });
+
+        console.log('[DEBUG] Filtered projectChats:', projectChats);
+        console.log('[DEBUG] projectChats length:', projectChats.length);
+
         currentChats = projectChats;
         renderChatList(projectChats);
 
@@ -1105,6 +1193,16 @@
 
             const sourceCount = chat.sources ? chat.sources.length : 0;
 
+            // 프로젝트 뷰인지 전체 대화 뷰인지에 따라 다른 삭제 옵션 표시
+            const isProjectView = currentProjectId !== null;
+            const deleteOption = isProjectView
+                ? `<div class="chat-dropdown-item delete" onclick="event.stopPropagation(); removeChatFromProject(${chat.id}); closeChatDropdown(${index})">
+                    📤 프로젝트에서 제거
+                </div>`
+                : `<div class="chat-dropdown-item delete" onclick="event.stopPropagation(); deleteChat(${chat.id}); closeChatDropdown(${index})">
+                    🗑️ 삭제
+                </div>`;
+
             return `
                 <div class="chat-card">
                     <div onclick='showChatModal(${JSON.stringify(chat)})' style="flex: 1; cursor: pointer;">
@@ -1125,9 +1223,7 @@
                                 <div class="chat-dropdown-item" onclick="event.stopPropagation(); addToProject(${chat.id}); closeChatDropdown(${index})">
                                     📁 프로젝트에 추가
                                 </div>
-                                <div class="chat-dropdown-item delete" onclick="event.stopPropagation(); deleteChat(${chat.id}); closeChatDropdown(${index})">
-                                    🗑️ 삭제
-                                </div>
+                                ${deleteOption}
                             </div>
                         </div>
                     </div>
@@ -1470,6 +1566,55 @@
         }
     }
 
+    // 대화를 프로젝트에서 제거 (project_id를 0으로 설정)
+    async function removeChatFromProject(chatUid) {
+        if (!confirm('이 대화를 프로젝트에서 제거하시겠습니까? (전체 대화에서는 계속 볼 수 있습니다)')) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/chat/${chatUid}/remove-from-project/`, {
+                method: 'POST',
+                headers: {
+                    'X-CSRFToken': csrftoken
+                }
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '프로젝트에서 제거 실패');
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                // allChats 배열에서 해당 대화의 project_id를 0으로 업데이트
+                const chatIndex = allChats.findIndex(chat => chat.id === chatUid);
+                if (chatIndex !== -1) {
+                    allChats[chatIndex].project_id = 0;
+                }
+
+                // currentChats 배열에서 해당 대화 제거 (프로젝트 뷰에서만)
+                const currentChatIndex = currentChats.findIndex(chat => chat.id === chatUid);
+                if (currentChatIndex !== -1) {
+                    currentChats.splice(currentChatIndex, 1);
+                }
+
+                // UI 업데이트
+                renderChatList(currentChats);
+
+                // 프로젝트 카운트 업데이트
+                loadProjects();
+
+                console.log('[INFO] 대화가 프로젝트에서 제거되었습니다.');
+            }
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트에서 제거 실패:', error);
+            alert(error.message || '프로젝트에서 제거하는데 실패했습니다.');
+        }
+    }
+
     // URL을 클릭 가능한 링크로 변환
     function linkifyText(text) {
         const urlPattern = /(https?:\/\/[^\s]+)/g;
@@ -1531,6 +1676,19 @@
         }
     });
 
+    // 프로젝트 목록 접기/펼치기
+    function toggleProjectList() {
+        const container = document.getElementById('user-projects-container');
+        const toggleBtn = document.querySelector('.btn-project-toggle');
+
+        container.classList.toggle('collapsed');
+        toggleBtn.classList.toggle('collapsed');
+
+        // 상태를 로컬 스토리지에 저장
+        const isCollapsed = container.classList.contains('collapsed');
+        localStorage.setItem('projectListCollapsed', isCollapsed);
+    }
+
     // 프로젝트 메뉴 토글
     function toggleProjectMenu() {
         const dropdown = document.getElementById('project-menu-dropdown');
@@ -1547,9 +1705,109 @@
 
     // 프로젝트 삭제 모달 표시
     function showDeleteProjectModal() {
-        // TODO: 프로젝트 삭제 기능은 향후 구현
-        alert('프로젝트 삭제 기능은 향후 구현 예정입니다.');
-        console.log('[INFO] Delete project feature - coming soon');
+        // 프로젝트가 없으면 안내 메시지
+        if (allProjects.length === 0) {
+            showEmptyDeleteProjectList();
+            return;
+        }
+
+        // 프로젝트 목록 렌더링
+        const deleteProjectList = document.getElementById('delete-project-list');
+        deleteProjectList.innerHTML = allProjects.map(project => {
+            const chatCount = allChats.filter(chat => chat.project_id === project.id).length;
+
+            return `
+                <div class="project-select-item" onclick="confirmDeleteProject(${project.id}, '${project.folder_name.replace(/'/g, "\\'")}', ${chatCount})">
+                    <div class="project-select-item-icon">🗂️</div>
+                    <div class="project-select-item-name">${project.folder_name}</div>
+                    <span class="project-item-count">${chatCount}</span>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('delete-project-modal').classList.add('active');
+    }
+
+    // 빈 프로젝트 삭제 화면 표시
+    function showEmptyDeleteProjectList() {
+        const deleteProjectList = document.getElementById('delete-project-list');
+
+        deleteProjectList.innerHTML = `
+            <div class="project-select-empty">
+                <h3>📁 삭제할 프로젝트가 없습니다</h3>
+                <p>생성된 프로젝트가 없습니다.</p>
+            </div>
+        `;
+
+        document.getElementById('delete-project-modal').classList.add('active');
+    }
+
+    // 프로젝트 삭제 확인
+    function confirmDeleteProject(projectId, projectName, chatCount) {
+        const message = chatCount > 0
+            ? `"${projectName}" 프로젝트를 삭제하시겠습니까?\n\n프로젝트에 속한 ${chatCount}개의 대화는 전체 대화로 이동됩니다.`
+            : `"${projectName}" 프로젝트를 삭제하시겠습니까?`;
+
+        if (confirm(message)) {
+            deleteProjectById(projectId);
+        }
+    }
+
+    // 프로젝트 삭제 실행
+    async function deleteProjectById(projectId) {
+        try {
+            const response = await fetch(`/projects/${projectId}/delete/`, {
+                method: 'DELETE',
+                headers: {
+                    'X-CSRFToken': csrftoken
+                }
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '프로젝트 삭제 실패');
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                // allProjects 배열에서 해당 프로젝트 제거
+                const projectIndex = allProjects.findIndex(p => p.id === projectId);
+                if (projectIndex !== -1) {
+                    allProjects.splice(projectIndex, 1);
+                }
+
+                // allChats 배열에서 해당 프로젝트에 속한 대화들의 project_id를 0으로 변경
+                allChats.forEach(chat => {
+                    if (chat.project_id === projectId) {
+                        chat.project_id = 0;
+                    }
+                });
+
+                // 모달 닫기
+                closeDeleteProjectModal();
+
+                // 프로젝트 목록 다시 로드
+                loadProjects();
+
+                // 현재 삭제된 프로젝트를 보고 있었다면 전체 대화로 이동
+                if (currentProjectId === projectId) {
+                    selectAllChats();
+                }
+
+                console.log('[INFO] 프로젝트가 삭제되었습니다.');
+                alert(data.message);
+            }
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트 삭제 실패:', error);
+            alert(error.message || '프로젝트 삭제에 실패했습니다.');
+        }
+    }
+
+    // 프로젝트 삭제 모달 닫기
+    function closeDeleteProjectModal() {
+        document.getElementById('delete-project-modal').classList.remove('active');
     }
 
     // 외부 클릭 시 드롭다운 닫기
@@ -1559,6 +1817,13 @@
         }
         if (!e.target.closest('.project-header')) {
             closeProjectMenu();
+        }
+    });
+
+    // 모달 외부 클릭 시 닫기 - 삭제 프로젝트 모달 추가
+    document.getElementById('delete-project-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeDeleteProjectModal();
         }
     });
 </script>

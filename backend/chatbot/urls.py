@@ -22,7 +22,9 @@ urlpatterns = [
     path("api/trending-keywords/", views.proxy_trending_keywords, name="proxy_trending_keywords"),
     path("api/chat/<int:chat_id>/delete/", views.delete_chat, name="delete_chat"),
     path("api/chat/<int:chat_id>/add-to-project/", views.add_chat_to_project, name="add_chat_to_project"),
+    path("api/chat/<int:chat_id>/remove-from-project/", views.remove_chat_from_project, name="remove_chat_from_project"),
 
-    # Project creation (Django DB operation)
+    # Project management (Django DB operations)
     path("projects/create/", views.create_project, name="create_project"),
+    path("projects/<int:project_id>/delete/", views.delete_project, name="delete_project"),
 ]
