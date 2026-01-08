@@ -802,15 +802,19 @@
     const csrftoken = getCookie('csrftoken');
     let sidebarOpen = true;
 
+
     // 초기화
-    window.addEventListener('DOMContentLoaded', async () => {
+    window.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', savedTheme);
-        document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '🌙' : '☀️';
 
-        await loadStats();
-        await loadTrendingKeywords();
-        await loadHistory();
+        // 테마 토글 버튼이 있을 때만 업데이트
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+        }
+
+        loadHistory();
     });
 
     // 히스토리 로드
@@ -1150,7 +1154,9 @@
         body.setAttribute('data-theme', newTheme);
 
         const themeBtn = document.querySelector('.theme-toggle');
-        themeBtn.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        if (themeBtn) {
+            themeBtn.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        }
 
         localStorage.setItem('theme', newTheme);
     }
