@@ -21,6 +21,7 @@ urlpatterns = [
     path("api/stats/", views.proxy_stats, name="proxy_stats"),
     path("api/trending-keywords/", views.proxy_trending_keywords, name="proxy_trending_keywords"),
     path("api/chat/<int:chat_uid>/delete/", views.delete_chat, name="delete_chat"),
+    path("api/chat/<int:chat_uid>/add-to-project/", views.add_chat_to_project, name="add_chat_to_project"),
 
     # Project creation (Django DB operation)
     path("projects/create/", views.create_project, name="create_project"),

@@ -36,10 +36,10 @@ def home(request):
         paper_count = 0
         unique_papers = 0
         
-
     context = {"today": today, "paper_count": paper_count, "unique_papers": unique_papers}
 
     return render(request, "chatbot/home.html", context)
+
 
 def services(request):
     '''서비스'''
@@ -400,6 +400,48 @@ def delete_chat(request, chat_uid):
         chat.delete()
 
         return JsonResponse({"success": True, "message": "대화가 삭제되었습니다."})
+
+    except Exception as e:
+        return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+@login_required
+@require_http_methods(["POST"])
+def add_chat_to_project(request, chat_uid):
+    """대화를 프로젝트에 추가"""
+    try:
+        data = json.loads(request.body)
+        project_id = data.get("project_id")
+
+        if not project_id:
+            return JsonResponse({"success": False, "error": "프로젝트를 선택해주세요."}, status=400)
+
+        # 해당 대화가 현재 사용자의 것인지 확인
+        chat = ChatHistory.objects.filter(uid=chat_uid, user=request.user).first()
+
+        if not chat:
+            return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
+
+        # 해당 프로젝트가 현재 사용자의 것인지 확인
+        project = ChatProject.objects.filter(uid=project_id, user=request.user).first()
+
+        if not project:
+            return JsonResponse({"success": False, "error": "프로젝트를 찾을 수 없습니다."}, status=404)
+
+        # 대화를 프로젝트에 추가
+        chat.project_id = project_id
+        chat.save()
+
+        # 프로젝트 updated_at 업데이트
+        project.save()
+
+        return JsonResponse(
+            {
+                "success": True,
+                "message": "대화가 프로젝트에 추가되었습니다.",
+                "project_name": project.folder_name,
+            }
+        )
 
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)

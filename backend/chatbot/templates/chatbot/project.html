@@ -692,6 +692,77 @@
         box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
     }
 
+    /* Project Select List */
+    .project-select-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .project-select-item {
+        padding: 1.2rem;
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .project-select-item:hover {
+        border-color: var(--primary);
+        background: var(--white);
+        transform: translateX(5px);
+    }
+
+    .project-select-item-icon {
+        font-size: 1.5rem;
+    }
+
+    .project-select-item-name {
+        flex: 1;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-dark);
+    }
+
+    .project-select-empty {
+        text-align: center;
+        padding: 3rem 2rem;
+        color: var(--text-gray);
+    }
+
+    .project-select-empty h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-dark);
+        font-weight: 800;
+    }
+
+    .project-select-empty p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-select-empty button {
+        padding: 0.8rem 1.5rem;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: 700;
+        transition: all 0.3s;
+    }
+
+    .project-select-empty button:hover {
+        background: var(--primary-dark);
+    }
+
     /* Scrollbar */
     .project-list::-webkit-scrollbar,
     .chat-list::-webkit-scrollbar,
@@ -740,12 +811,15 @@
             </div>
         </div>
         <div class="project-list" id="project-list">
-            <!-- 전체 대화 항목 -->
+            <!-- 프로젝트 항목들이 동적으로 로드됨 -->
+            <div id="user-projects-container">
+                <!-- 사용자가 생성한 프로젝트들이 여기에 추가됨 -->
+            </div>
+            <!-- 전체 대화 항목 (맨 아래) -->
             <div class="project-item all-chats-item active" onclick="selectAllChats()">
                 <span class="project-item-name">🗒️ 전체 대화</span>
                 <span class="project-item-count" id="all-count">0</span>
             </div>
-            <!-- 프로젝트 항목들이 동적으로 로드됨 -->
         </div>
     </div>
 
@@ -811,6 +885,21 @@
         </div>
     </div>
 </div>
+
+<!-- Add to Project Modal -->
+<div class="modal" id="add-to-project-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>📁 프로젝트 선택</h2>
+            <button class="modal-close" onclick="closeAddToProjectModal()">✕</button>
+        </div>
+        <div class="modal-body">
+            <div id="project-select-list" class="project-select-list">
+                <!-- 프로젝트 목록이 동적으로 로드됨 -->
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
@@ -864,8 +953,8 @@
             countElement.textContent = count;
         }
 
-        // TODO: 프로젝트 기능 구현 시 활성화
-        // loadProjects();
+        // 프로젝트 목록 로드
+        loadProjects();
 
         // 전체 대화 로드
         loadAllChats();
@@ -873,10 +962,10 @@
 
     // 프로젝트 목록 로드
     function loadProjects() {
-        const projectList = document.getElementById('project-list');
+        const userProjectsContainer = document.getElementById('user-projects-container');
 
-        // 전체 대화 항목 유지 (이미 HTML에 있음)
-        const allChatsItem = projectList.querySelector('.all-chats-item');
+        // 기존 프로젝트 항목 초기화
+        userProjectsContainer.innerHTML = '';
 
         // 프로젝트 항목 추가
         allProjects.forEach(project => {
@@ -887,11 +976,11 @@
             projectItem.className = 'project-item';
             projectItem.setAttribute('data-project-id', project.uid);
             projectItem.innerHTML = `
-                <span class="project-item-name">📁 ${project.folder_name}</span>
+                <span class="project-item-name">🗂️ ${project.folder_name}</span>
                 <span class="project-item-count">${chatCount}</span>
             `;
             projectItem.onclick = () => selectProject(project.uid, project.folder_name);
-            projectList.appendChild(projectItem);
+            userProjectsContainer.appendChild(projectItem);
         });
     }
 
@@ -1139,7 +1228,7 @@
         document.getElementById('project-name').value = '';
     }
 
-    // TODO: 프로젝트 생성 (향후 구현)
+    // 프로젝트 생성
     async function createProject(event) {
         event.preventDefault();
 
@@ -1167,12 +1256,13 @@
                 // 새 프로젝트를 allProjects에 추가
                 allProjects.push(data.project);
 
+                // 모달 닫기
                 closeNewProjectModal();
 
-                // 프로젝트 목록 다시 로드
-                // TODO: 전체 페이지 새로고침 대신 동적으로 추가
-                alert('프로젝트가 생성되었습니다. 페이지를 새로고침합니다.');
-                location.reload();
+                // 프로젝트 목록 다시 로드 (동적으로 추가)
+                loadProjects();
+
+                console.log('[INFO] 프로젝트가 생성되었습니다:', data.project.folder_name);
             }
 
         } catch (error) {
@@ -1211,11 +1301,118 @@
         });
     }
 
-    // 프로젝트에 추가
+    // 프로젝트에 추가 - 전역 변수로 chatUid 저장
+    let selectedChatUidForProject = null;
+
     function addToProject(chatUid) {
-        // TODO: 프로젝트 선택 모달 구현
-        alert('프로젝트 추가 기능은 향후 구현 예정입니다.');
-        console.log('[INFO] Add to project:', chatUid);
+        selectedChatUidForProject = chatUid;
+
+        // 프로젝트가 없으면 안내 메시지
+        if (allProjects.length === 0) {
+            showEmptyProjectSelect();
+            return;
+        }
+
+        // 프로젝트 선택 모달 표시
+        showAddToProjectModal();
+    }
+
+    // 프로젝트 선택 모달 표시
+    function showAddToProjectModal() {
+        const projectSelectList = document.getElementById('project-select-list');
+
+        // 프로젝트 목록 렌더링
+        projectSelectList.innerHTML = allProjects.map(project => {
+            const chatCount = allChats.filter(chat => chat.project_id === project.uid).length;
+
+            return `
+                <div class="project-select-item" onclick="assignChatToProject(${project.uid}, '${project.folder_name.replace(/'/g, "\\'")}')">
+                    <div class="project-select-item-icon">🗂️</div>
+                    <div class="project-select-item-name">${project.folder_name}</div>
+                    <span class="project-item-count">${chatCount}</span>
+                </div>
+            `;
+        }).join('');
+
+        document.getElementById('add-to-project-modal').classList.add('active');
+    }
+
+    // 빈 프로젝트 선택 화면 표시
+    function showEmptyProjectSelect() {
+        const projectSelectList = document.getElementById('project-select-list');
+
+        projectSelectList.innerHTML = `
+            <div class="project-select-empty">
+                <h3>📁 프로젝트가 없습니다</h3>
+                <p>먼저 프로젝트를 생성해주세요.</p>
+                <button onclick="closeAddToProjectModal(); showNewProjectModal();">
+                    프로젝트 만들기
+                </button>
+            </div>
+        `;
+
+        document.getElementById('add-to-project-modal').classList.add('active');
+    }
+
+    // 프로젝트 선택 모달 닫기
+    function closeAddToProjectModal() {
+        document.getElementById('add-to-project-modal').classList.remove('active');
+        selectedChatUidForProject = null;
+    }
+
+    // 대화를 프로젝트에 추가
+    async function assignChatToProject(projectId, projectName) {
+        if (!selectedChatUidForProject) {
+            console.error('[ERROR] No chat UID selected');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/chat/${selectedChatUidForProject}/add-to-project/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken
+                },
+                body: JSON.stringify({ project_id: projectId })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || '프로젝트에 추가 실패');
+            }
+
+            const data = await response.json();
+
+            if (data.success) {
+                console.log(`[INFO] 대화가 "${projectName}" 프로젝트에 추가되었습니다.`);
+
+                // allChats 배열 업데이트
+                const chatIndex = allChats.findIndex(chat => chat.uid === selectedChatUidForProject);
+                if (chatIndex !== -1) {
+                    allChats[chatIndex].project_id = projectId;
+                }
+
+                // currentChats 배열 업데이트
+                const currentChatIndex = currentChats.findIndex(chat => chat.uid === selectedChatUidForProject);
+                if (currentChatIndex !== -1) {
+                    currentChats[currentChatIndex].project_id = projectId;
+                }
+
+                // 프로젝트 목록 다시 로드 (카운트 업데이트)
+                loadProjects();
+
+                // 모달 닫기
+                closeAddToProjectModal();
+
+                // 성공 메시지
+                alert(`"${projectName}" 프로젝트에 추가되었습니다.`);
+            }
+
+        } catch (error) {
+            console.error('[ERROR] 프로젝트에 추가 실패:', error);
+            alert(error.message || '프로젝트에 추가하는데 실패했습니다.');
+        }
     }
 
     // 대화 삭제
@@ -1260,6 +1457,9 @@
                 if (countElement) {
                     countElement.textContent = allChats.length;
                 }
+
+                // 프로젝트 카운트 업데이트
+                loadProjects();
 
                 console.log('[INFO] 대화가 삭제되었습니다.');
             }
@@ -1322,6 +1522,12 @@
     document.getElementById('new-project-modal').addEventListener('click', function(e) {
         if (e.target === this) {
             closeNewProjectModal();
+        }
+    });
+
+    document.getElementById('add-to-project-modal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeAddToProjectModal();
         }
     });
 
