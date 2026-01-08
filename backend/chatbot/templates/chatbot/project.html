@@ -970,16 +970,16 @@
         // 프로젝트 항목 추가
         allProjects.forEach(project => {
             // 해당 프로젝트의 대화 개수 계산
-            const chatCount = allChats.filter(chat => chat.project_id === project.uid).length;
+            const chatCount = allChats.filter(chat => chat.project_id === project.id).length;
 
             const projectItem = document.createElement('div');
             projectItem.className = 'project-item';
-            projectItem.setAttribute('data-project-id', project.uid);
+            projectItem.setAttribute('data-project-id', project.id);
             projectItem.innerHTML = `
                 <span class="project-item-name">🗂️ ${project.folder_name}</span>
                 <span class="project-item-count">${chatCount}</span>
             `;
-            projectItem.onclick = () => selectProject(project.uid, project.folder_name);
+            projectItem.onclick = () => selectProject(project.id, project.folder_name);
             userProjectsContainer.appendChild(projectItem);
         });
     }
@@ -1122,10 +1122,10 @@
                         <div class="chat-card-actions">
                             <button class="btn-chat-menu" onclick="event.stopPropagation(); toggleChatDropdown(${index})" title="메뉴">⋮</button>
                             <div class="chat-dropdown" id="chat-dropdown-${index}">
-                                <div class="chat-dropdown-item" onclick="event.stopPropagation(); addToProject(${chat.uid}); closeChatDropdown(${index})">
+                                <div class="chat-dropdown-item" onclick="event.stopPropagation(); addToProject(${chat.id}); closeChatDropdown(${index})">
                                     📁 프로젝트에 추가
                                 </div>
-                                <div class="chat-dropdown-item delete" onclick="event.stopPropagation(); deleteChat(${chat.uid}); closeChatDropdown(${index})">
+                                <div class="chat-dropdown-item delete" onclick="event.stopPropagation(); deleteChat(${chat.id}); closeChatDropdown(${index})">
                                     🗑️ 삭제
                                 </div>
                             </div>
@@ -1323,10 +1323,10 @@
 
         // 프로젝트 목록 렌더링
         projectSelectList.innerHTML = allProjects.map(project => {
-            const chatCount = allChats.filter(chat => chat.project_id === project.uid).length;
+            const chatCount = allChats.filter(chat => chat.project_id === project.id).length;
 
             return `
-                <div class="project-select-item" onclick="assignChatToProject(${project.uid}, '${project.folder_name.replace(/'/g, "\\'")}')">
+                <div class="project-select-item" onclick="assignChatToProject(${project.id}, '${project.folder_name.replace(/'/g, "\\'")}')">
                     <div class="project-select-item-icon">🗂️</div>
                     <div class="project-select-item-name">${project.folder_name}</div>
                     <span class="project-item-count">${chatCount}</span>
@@ -1388,13 +1388,13 @@
                 console.log(`[INFO] 대화가 "${projectName}" 프로젝트에 추가되었습니다.`);
 
                 // allChats 배열 업데이트
-                const chatIndex = allChats.findIndex(chat => chat.uid === selectedChatUidForProject);
+                const chatIndex = allChats.findIndex(chat => chat.id === selectedChatUidForProject);
                 if (chatIndex !== -1) {
                     allChats[chatIndex].project_id = projectId;
                 }
 
                 // currentChats 배열 업데이트
-                const currentChatIndex = currentChats.findIndex(chat => chat.uid === selectedChatUidForProject);
+                const currentChatIndex = currentChats.findIndex(chat => chat.id === selectedChatUidForProject);
                 if (currentChatIndex !== -1) {
                     currentChats[currentChatIndex].project_id = projectId;
                 }
@@ -1438,13 +1438,13 @@
 
             if (data.success) {
                 // allChats 배열에서 해당 대화 제거
-                const chatIndex = allChats.findIndex(chat => chat.uid === chatUid);
+                const chatIndex = allChats.findIndex(chat => chat.id === chatUid);
                 if (chatIndex !== -1) {
                     allChats.splice(chatIndex, 1);
                 }
 
                 // currentChats 배열에서도 제거
-                const currentChatIndex = currentChats.findIndex(chat => chat.uid === chatUid);
+                const currentChatIndex = currentChats.findIndex(chat => chat.id === chatUid);
                 if (currentChatIndex !== -1) {
                     currentChats.splice(currentChatIndex, 1);
                 }

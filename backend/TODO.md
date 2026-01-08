@@ -252,7 +252,7 @@ def rename_project(request, project_id):
         project.save()
 
         return JsonResponse({"success": True, "project": {
-            "uid": project.uid,
+            "uid": project.id,
             "folder_name": project.folder_name,
             "updated_at": project.updated_at.isoformat(),
         }})

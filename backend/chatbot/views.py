@@ -186,7 +186,7 @@ def get_history(request):
 
         history_data = [
             {
-                "uid": chat.uid,
+                "id": chat.id,
                 "question": chat.question,
                 "answer": chat.answer,
                 "sources": chat.sources,
@@ -242,7 +242,7 @@ def send_message(request):
                 "sources": result.get("sources", []),
                 "search_type": result.get("metadata", {}).get("search_type", "unknown"),
                 "project_id": 0,
-                "uid": chat_history.uid,
+                "id": chat_history.id,
             }
         )
 
@@ -309,7 +309,7 @@ def project_view(request):
         # 프로젝트 데이터 직렬화
         projects_data = [
             {
-                "uid": project.uid,
+                "id": project.id,
                 "folder_name": project.folder_name,
                 "created_at": project.created_at.isoformat(),
                 "updated_at": project.updated_at.isoformat(),
@@ -320,7 +320,7 @@ def project_view(request):
         # 대화 데이터 직렬화
         chats_data = [
             {
-                "uid": chat.uid,
+                "id": chat.id,
                 "question": chat.question,
                 "answer": chat.answer,
                 "sources": chat.sources,
@@ -373,7 +373,7 @@ def create_project(request):
             {
                 "success": True,
                 "project": {
-                    "uid": project.uid,
+                    "id": project.id,
                     "folder_name": project.folder_name,
                     "created_at": project.created_at.isoformat(),
                     "updated_at": project.updated_at.isoformat(),
@@ -387,11 +387,11 @@ def create_project(request):
 
 @login_required
 @require_http_methods(["DELETE"])
-def delete_chat(request, chat_uid):
+def delete_chat(request, chat_id):
     """대화 삭제"""
     try:
         # 해당 대화가 현재 사용자의 것인지 확인
-        chat = ChatHistory.objects.filter(id=chat_uid, user=request.user).first()
+        chat = ChatHistory.objects.filter(id=chat_id, user=request.user).first()
 
         if not chat:
             return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
@@ -407,7 +407,7 @@ def delete_chat(request, chat_uid):
 
 @login_required
 @require_http_methods(["POST"])
-def add_chat_to_project(request, chat_uid):
+def add_chat_to_project(request, chat_id):
     """대화를 프로젝트에 추가"""
     try:
         data = json.loads(request.body)
@@ -417,7 +417,7 @@ def add_chat_to_project(request, chat_uid):
             return JsonResponse({"success": False, "error": "프로젝트를 선택해주세요."}, status=400)
 
         # 해당 대화가 현재 사용자의 것인지 확인
-        chat = ChatHistory.objects.filter(id=chat_uid, user=request.user).first()
+        chat = ChatHistory.objects.filter(id=chat_id, user=request.user).first()
 
         if not chat:
             return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)

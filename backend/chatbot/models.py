@@ -27,11 +27,6 @@ class ChatProject(models.Model):
     def __str__(self):
         return f"{self.user.username} - {self.folder_name}"
 
-    @property
-    def uid(self):
-        """uid 속성 (실제로는 Django의 id 필드)"""
-        return self.id
-
 
 class ChatHistory(models.Model):
     """
@@ -62,8 +57,3 @@ class ChatHistory(models.Model):
 
     def __str__(self):
         return f"{self.user.username} - {self.question[:50]}"
-
-    @property
-    def uid(self):
-        """uid 속성 (실제로는 Django의 id 필드)"""
-        return self.id

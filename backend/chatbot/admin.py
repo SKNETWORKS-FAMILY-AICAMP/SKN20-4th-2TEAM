@@ -4,7 +4,7 @@ from .models import ChatHistory
 
 @admin.register(ChatHistory)
 class ChatHistoryAdmin(admin.ModelAdmin):
-    list_display = ("uid", "user", "question_preview", "search_type", "created_at")
+    list_display = ("id", "user", "question_preview", "search_type", "created_at")
     list_filter = ("search_type", "created_at")
     search_fields = ("question", "answer", "user__username")
     readonly_fields = ("created_at",)
