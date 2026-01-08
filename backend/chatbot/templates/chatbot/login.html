@@ -15,18 +15,14 @@
 <section class="profile-section">
     <div class="profile-container">
         <div class="profile-header">
-            <h1>Login</h1>
-            <p>PaperSnack : HuggingFace Papers Chatbot</p>
+            <h1><img src="{% static 'images/cookie_4.png' %}" width="60" alt="PaperSnack Logo"> Login</h1>
         </div>
-
-
 
         {% if error %}
         <div class="error">
             {{ error }}😥
         </div>
         {% endif %}
-
 
     <form method="POST" action="{% url 'chatbot:login' %}">
         {% csrf_token %}
