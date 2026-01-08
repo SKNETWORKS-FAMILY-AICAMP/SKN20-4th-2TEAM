@@ -99,7 +99,10 @@ def login_view(request):
         if user is not None:
             login(request, user)
             next_url = request.GET.get("next", "chatbot:home")
-            return redirect(next_url)
+            response = redirect(next_url)
+            # 로그인 성공 시 username을 쿠키에 저장 (30일 유지)
+            response.set_cookie("last_username", username, max_age=30 * 24 * 60 * 60)
+            return response
         else:
             return render(
                 request,
@@ -107,7 +110,9 @@ def login_view(request):
                 {"error": "사용자 이름 또는 비밀번호가 올바르지 않습니다.", "username": username},
             )
 
-    return render(request, "chatbot/login.html")
+    # GET 요청 시 쿠키에서 마지막 username 가져오기
+    last_username = request.COOKIES.get("last_username", "")
+    return render(request, "chatbot/login.html", {"username": last_username})
 
 
 @login_required
@@ -394,3 +399,38 @@ def delete_chat(request, chat_uid):
 
     except Exception as e:
         return JsonResponse({"success": False, "error": str(e)}, status=500)
+
+
+@login_required
+def delete_account_view(request):
+    """회원 탈퇴 페이지"""
+    if request.method == "POST":
+        password = request.POST.get("password")
+        reason = request.POST.get("reason")
+
+        errors = []
+
+        # 비밀번호 확인
+        if not password:
+            errors.append("비밀번호를 입력해주세요.")
+        elif not request.user.check_password(password):
+            errors.append("비밀번호가 올바르지 않습니다.")
+
+        # 탈퇴 이유 확인
+        if not reason:
+            errors.append("탈퇴 이유를 선택해주세요.")
+
+        if errors:
+            return render(request, "chatbot/delete_account.html", {"errors": errors})
+
+        # 탈퇴 이유 로깅 (필요시)
+        print(f"[회원 탈퇴] 사용자: {request.user.username}, 이유: {reason}")
+
+        # 사용자 삭제 (관련된 ChatHistory, ChatProject도 CASCADE로 자동 삭제됨)
+        user = request.user
+        logout(request)
+        user.delete()
+
+        return redirect("chatbot:login")
+
+    return render(request, "chatbot/delete_account.html")
