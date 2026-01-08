@@ -391,7 +391,7 @@ def delete_chat(request, chat_uid):
     """대화 삭제"""
     try:
         # 해당 대화가 현재 사용자의 것인지 확인
-        chat = ChatHistory.objects.filter(uid=chat_uid, user=request.user).first()
+        chat = ChatHistory.objects.filter(id=chat_uid, user=request.user).first()
 
         if not chat:
             return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
@@ -417,13 +417,13 @@ def add_chat_to_project(request, chat_uid):
             return JsonResponse({"success": False, "error": "프로젝트를 선택해주세요."}, status=400)
 
         # 해당 대화가 현재 사용자의 것인지 확인
-        chat = ChatHistory.objects.filter(uid=chat_uid, user=request.user).first()
+        chat = ChatHistory.objects.filter(id=chat_uid, user=request.user).first()
 
         if not chat:
             return JsonResponse({"success": False, "error": "대화를 찾을 수 없습니다."}, status=404)
 
         # 해당 프로젝트가 현재 사용자의 것인지 확인
-        project = ChatProject.objects.filter(uid=project_id, user=request.user).first()
+        project = ChatProject.objects.filter(id=project_id, user=request.user).first()
 
         if not project:
             return JsonResponse({"success": False, "error": "프로젝트를 찾을 수 없습니다."}, status=404)
