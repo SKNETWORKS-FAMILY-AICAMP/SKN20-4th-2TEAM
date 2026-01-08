@@ -23,17 +23,21 @@ def home(request):
 
     # FastAPI에서 논문 개수 가져오기
     paper_count = 0
+    unique_papers = 0
     try:
         response = requests.get(f"{FASTAPI_BASE_URL}/api/stats", timeout=5)
         if response.status_code == 200:
             stats_data = response.json()
             paper_count = stats_data.get("paper_count", 0)
+            unique_papers = stats_data.get("unique_papers", 0)
     except Exception as e:
         # FastAPI 연결 실패 시 기본값 사용
         print(f"[WARNING] FastAPI 연결 실패: {e}")
         paper_count = 0
+        unique_papers = 0
+        
 
-    context = {"today": today, "paper_count": paper_count}
+    context = {"today": today, "paper_count": paper_count, "unique_papers": unique_papers}
 
     return render(request, "chatbot/home.html", context)
 

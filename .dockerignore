@@ -1,0 +1,21 @@
+.git
+.venv
+.vscode
+__pycache__
+*.pyc
+*.log
+*.env
+.env.*
+*/.mypy_cache
+*/.pytest_cache
+.DS_Store
+npm-debug.log
+# 데이터 폴더 중 vector_db를 제외한 나머지는 포함하지 않음
+# vector_db는 docker-compose.yml에서 볼륨으로 마운트하여 사용
+data/*
+!data/vector_db
+
+산출물
+repo
+.md
+.claude

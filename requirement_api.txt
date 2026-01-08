@@ -22,9 +22,5 @@ uvicorn[standard]>=0.27.0
 python-multipart>=0.0.6
 pydantic>=2.5.0
 
-# Django
-django>=5.0.0
-
 # Utilities
 python-dotenv>=1.0.0
-black>=24.0.0
