@@ -34,8 +34,7 @@
     /* Layout */
     .container {
         display: flex;
-        height: calc(100vh - 100px);
-        max-width: 1600px;
+        height: 100vh;
         margin: 0 auto;
         background: var(--white);
         box-shadow: 0 10px 40px var(--shadow);
@@ -168,6 +167,41 @@
         font-size: 0.9rem;
         color: var(--text-gray);
         font-weight: 600;
+    }
+
+    .search-box {
+        margin-top: 1rem;
+        position: relative;
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 0.8rem 1rem 0.8rem 2.5rem;
+        background: var(--white);
+        border: 2px solid var(--border);
+        border-radius: 10px;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+        outline: none;
+        transition: all 0.3s;
+        font-weight: 600;
+    }
+
+    .search-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+    }
+
+    .search-input::placeholder {
+        color: var(--text-gray);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.1rem;
     }
 
     .chat-list {
@@ -573,6 +607,16 @@
         <div class="main-header">
             <h2 id="main-title">전체 대화</h2>
             <p id="main-subtitle">모든 대화 내용을 확인할 수 있습니다</p>
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input
+                    type="text"
+                    class="search-input"
+                    id="chat-search"
+                    placeholder="대화 내용을 검색하세요..."
+                    oninput="filterChats()"
+                />
+            </div>
         </div>
 
         <div class="chat-list" id="chat-list">
@@ -643,16 +687,36 @@
 
     const csrftoken = getCookie('csrftoken');
     let currentProjectId = null;
+    let currentChats = [];
 
     // Django context에서 데이터 로드
     const allProjects = {{ projects_json|safe }};
     const allChats = {{ chats_json|safe }};
 
+    console.log('[DEBUG] allChats loaded:', allChats);
+    console.log('[DEBUG] allChats length:', allChats ? allChats.length : 'undefined');
+
     // 초기화
     window.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', savedTheme);
-        document.querySelector('.theme-toggle').textContent = savedTheme === 'light' ? '🌙' : '☀️';
+
+        const themeToggle = document.querySelector('.theme-toggle');
+        if (themeToggle) {
+            themeToggle.textContent = savedTheme === 'light' ? '🌙' : '☀️';
+        }
+
+        console.log('[DEBUG] DOMContentLoaded - updating count');
+
+        // 전체 대화 개수 즉시 업데이트
+        const countElement = document.getElementById('all-count');
+        const count = allChats ? allChats.length : 0;
+        console.log('[DEBUG] Count element:', countElement);
+        console.log('[DEBUG] Count value:', count);
+
+        if (countElement) {
+            countElement.textContent = count;
+        }
 
         // TODO: 프로젝트 기능 구현 시 활성화
         // loadProjects();
@@ -721,17 +785,68 @@
 
     // 전체 대화 로드
     function loadAllChats() {
+        console.log('[DEBUG] loadAllChats called');
+        console.log('[DEBUG] allChats in loadAllChats:', allChats);
+        console.log('[DEBUG] allChats.length in loadAllChats:', allChats ? allChats.length : 'undefined');
+
+        currentChats = allChats;
         renderChatList(allChats);
 
         // 전체 개수 업데이트
-        document.getElementById('all-count').textContent = allChats.length;
+        const countElement = document.getElementById('all-count');
+        const count = allChats ? allChats.length : 0;
+        console.log('[DEBUG] Setting all-count to:', count);
+
+        if (countElement) {
+            countElement.textContent = count;
+        } else {
+            console.error('[ERROR] all-count element not found');
+        }
+
+        // 검색창 초기화
+        document.getElementById('chat-search').value = '';
     }
 
     // TODO: 프로젝트별 대화 로드 (향후 구현)
     function loadProjectChats(projectId) {
         // 해당 프로젝트의 대화만 필터링
         const projectChats = allChats.filter(chat => chat.project_id === projectId);
+        currentChats = projectChats;
         renderChatList(projectChats);
+
+        // 검색창 초기화
+        document.getElementById('chat-search').value = '';
+    }
+
+    // 대화 검색 필터링
+    function filterChats() {
+        const searchTerm = document.getElementById('chat-search').value.toLowerCase().trim();
+
+        if (!searchTerm) {
+            // 검색어가 없으면 전체 대화 표시
+            renderChatList(currentChats);
+            return;
+        }
+
+        // 검색어가 질문 또는 답변에 포함된 대화만 필터링
+        const filteredChats = currentChats.filter(chat => {
+            const questionMatch = chat.question.toLowerCase().includes(searchTerm);
+            const answerMatch = chat.answer.toLowerCase().includes(searchTerm);
+            return questionMatch || answerMatch;
+        });
+
+        renderChatList(filteredChats);
+
+        // 검색 결과가 없을 때 메시지 표시
+        if (filteredChats.length === 0) {
+            const chatList = document.getElementById('chat-list');
+            chatList.innerHTML = `
+                <div class="empty-state">
+                    <h3>🔍 검색 결과가 없습니다</h3>
+                    <p>"${searchTerm}"에 대한 대화를 찾을 수 없습니다.</p>
+                </div>
+            `;
+        }
     }
 
     // 대화 목록 렌더링
@@ -940,7 +1055,9 @@
         body.setAttribute('data-theme', newTheme);
 
         const themeBtn = document.querySelector('.theme-toggle');
-        themeBtn.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        if (themeBtn) {
+            themeBtn.textContent = newTheme === 'light' ? '🌙' : '☀️';
+        }
 
         localStorage.setItem('theme', newTheme);
     }
