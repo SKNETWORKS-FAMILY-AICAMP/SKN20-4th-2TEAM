@@ -1,96 +1,94 @@
-# data/ 폴더 설명
+# data - 데이터 저장소
 
-## 이 폴더는 무엇인가요?
+이 디렉토리는 크롤링한 논문 데이터와 벡터 데이터베이스를 저장합니다.
 
-이 폴더는 **프로젝트의 데이터를 저장**하는 곳입니다. 웹에서 수집한 논문 정보와 이를 AI가 이해할 수 있는 형태로 변환한 데이터를 보관합니다.
-
-## 폴더 구조
+## 디렉토리 구조
 
 ```
 data/
-├── documents/         # 크롤링한 논문 데이터 (JSON 파일)
-│   └── {연도}/
-│       └── {연도}-W{주차}/
-│           ├── doc2545001.json
-│           ├── doc2545002.json
-│           └── ...
-│
-├── vector_db/        # AI가 검색할 수 있는 형태로 변환된 데이터
-│   └── (ChromaDB 또는 FAISS 파일들)
-│
-├── CLAUDE.md         # 개발자용 상세 가이드
-└── README.md         # 이 파일 (초심자용 설명)
+├── documents/          # 크롤링한 논문 JSON 파일
+│   ├── 2025-W41/      # 2025년 41주차 논문
+│   ├── 2025-W42/      # 2025년 42주차 논문
+│   ├── ...
+│   └── 2026-W01/      # 2026년 1주차 논문
+└── vector_db/          # ChromaDB 벡터 데이터베이스
+    └── chroma.sqlite3  # ChromaDB 메타데이터
 ```
 
-## 각 폴더의 역할
+## documents/
 
-### 1. documents/ 폴더
+### 구조
+- 각 주차별로 폴더 구분 (`YYYY-WXX` 형식)
+- 각 논문은 개별 JSON 파일로 저장
+- 파일명: `{paper_id}.json` (HuggingFace URL의 마지막 부분)
 
-**역할**: HuggingFace에서 크롤링한 논문 정보를 JSON 파일로 저장합니다.
-
-**구조**:
-- 연도별 폴더 (예: `2025/`)
-- 주차별 폴더 (예: `2025-W45/`)
-- 논문 파일 (예: `doc2545001.json`)
-
-**파일명 규칙**:
-- `doc{YY}{ww}{NNN}.json`
-  - `YY`: 연도 끝 2자리 (예: 25 = 2025년)
-  - `ww`: 주차 2자리 (예: 45 = 45주차)
-  - `NNN`: 해당 주의 논문 번호 3자리 (예: 001, 002, ...)
-
-**JSON 파일 내용 예시**:
+### JSON 파일 형식
 ```json
 {
-  "context": "This paper presents a novel approach to...",
-  "metadata": {
-    "title": "Attention Is All You Need",
-    "authors": ["Ashish Vaswani", "Noam Shazeer"],
-    "publication_year": 2025,
-    "github_url": "https://github.com/example/repo",
-    "huggingface_url": "https://huggingface.co/papers/12345",
-    "upvote": 150
-  }
+  "paper_id": "2024-multilingual-translation",
+  "title": "Multilingual Neural Machine Translation",
+  "authors": ["John Doe", "Jane Smith"],
+  "abstract": "논문 초록 전문...",
+  "huggingface_url": "https://huggingface.co/papers/2024-multilingual-translation",
+  "github_url": "https://github.com/example/repo",
+  "year": 2025,
+  "week": 41,
+  "upvote": 42
 }
 ```
 
-### 2. vector_db/ 폴더
+### 데이터 수집 범위
+- 기본: 2025-W41 ~ 2026-W01 (총 13주)
+- `src/utils/data_init.py`에서 범위 변경 가능
 
-**역할**: 논문 데이터를 **벡터 데이터베이스**로 변환하여 저장합니다.
+## vector_db/
 
-**벡터 데이터베이스란?**
-- 텍스트를 숫자 벡터로 변환한 데이터
-- AI가 **의미적으로 유사한 문서**를 빠르게 찾을 수 있게 함
-- 예: "Transformer"를 검색하면 관련 논문을 자동으로 찾아줌
+### ChromaDB 저장소
+- **임베딩 모델**: OpenAI `text-embedding-3-small`
+- **저장 내용**: 논문 Abstract의 벡터 표현
+- **메타데이터**: 논문 제목, 저자, URL, 연도, upvote 등
+- **검색 방식**:
+  - Vector Search (임베딩 유사도)
+  - BM25 키워드 검색
+  - 하이브리드 (Vector + BM25)
 
-## 데이터가 어떻게 만들어지나요?
+### 주의사항
+- 이 디렉토리는 Docker 볼륨으로 마운트됨 (`docker-compose.yml`)
+- 벡터 DB 재생성 시 기존 데이터 삭제 후 새로 생성
+- 초기 로딩에 2-3분 소요 (Docker 헬스체크 120초 설정)
 
-### 단계 1: 크롤링
+## 데이터 관리
+
+### 초기 데이터 생성
 ```bash
-# 가상환경 활성화
-.venv\Scripts\activate
-
-# 크롤링 스크립트 실행
-python src.utils.data_init
+# 크롤링 + 벡터 DB 생성 통합 실행
+python -m src.utils.data_init
 ```
 
-### 단계 2: 벡터화
-`data_init.py` 스크립트가 크롤링과 벡터화를 모두 자동으로 수행합니다.
+### 데이터 업데이트
+```bash
+# 새로운 주차 논문 추가 크롤링
+python -m src.utils.crawling
 
-## 초심자를 위한 Q&A
+# 벡터 DB 재생성 (documents/ 기반)
+python -m src.utils.vectordb
+```
 
-**Q: 이 폴더의 파일을 직접 수정해도 되나요?**
-A: `documents/`의 JSON 파일은 수정 가능하지만, `vector_db/`는 자동 생성되므로 직접 수정하지 마세요.
+### 데이터 백업
+```bash
+# documents와 vector_db 디렉토리 전체를 백업
+cp -r data/ data_backup/
+```
 
-**Q: 데이터가 얼마나 필요한가요?**
-A: 최소 10주차 분량의 논문 데이터를 권장합니다.
+## 디스크 사용량
 
-**Q: 벡터 DB가 없으면 RAG가 작동하나요?**
-A: 아니요, 벡터 DB는 필수입니다. 반드시 `data_init.py`를 먼저 실행해야 합니다.
+- **documents/**: 약 5-10MB (13주 기준, 약 300-500개 논문)
+- **vector_db/**: 약 50-100MB (임베딩 크기에 따라 다름)
 
-## 주의사항
+## 데이터 소스
 
-1. **절대 경로 사용**: 코드에서 이 폴더를 참조할 때는 절대 경로를 사용하세요.
-2. **git 관리**: `documents/`와 `vector_db/`는 용량이 크므로 `.gitignore`에 추가 권장.
-3. **백업**: 크롤링한 데이터는 백업해두는 것이 좋습니다.
-4. **디스크 공간**: 10주차 데이터 기준 약 500MB-1GB 필요.
+HuggingFace Weekly Papers: https://huggingface.co/papers
+
+논문 페이지 URL 형식:
+- 주차별 목록: `https://huggingface.co/papers?date=YYYY-MM-DD`
+- 개별 논문: `https://huggingface.co/papers/{paper_id}`
