@@ -1,0 +1,395 @@
+﻿"question","expected_title","search_type","title_found","answer","ground_truth","context_recall","context_precision","faithfulness","answer_relevancy","answer_correctness"
+"ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration","ToolOrchestra","paper","True","1) ToolOrchestra는 소형 오케스트레이터를 통해 다양한 지능형 도구를 효율적으로 조정하여 복잡한 작업을 해결하는 방법을 제시합니다.
+
+2) 주요 통찰:
+- ToolOrchestra는 강화 학습을 사용하여 소형 모델이 다른 모델과 도구를 관리하도록 훈련합니다.
+- Orchestrator라는 8B 모델은 GPT-5보다 높은 정확도와 낮은 비용으로 복잡한 문제를 해결합니다.
+- 이 방법은 다양한 도구를 조합하여 효율적이고 효과적인 도구 보강 추론 시스템을 구축할 수 있는 가능성을 보여줍니다.
+
+3) ToolOrchestra는 소형 오케스트레이터가 다양한 지능형 도구를 조정하여 복잡한 작업을 더 효율적으로 해결할 수 있도록 하는 방법론입니다. 이 방법은 강화 학습을 활용하여 오케스트레이터가 어떤 모델을 사용할지, 언제 도구를 호출할지, 얼마나 오랫동안 추론할지를 스스로 학습하게 합니다. 결과적으로, Orchestrator라는 8B 모델은 Humanity's Last Exam(HLE)에서 37.1%의 점수를 기록하며 GPT-5의 35.1%를 초과하고, 비용은 70% 절감할 수 있었습니다. 이 연구는 기존의 단일 모델 접근 방식에서 벗어나, 모듈화되고 적응 가능한 AI 시스템으로의 전환을 제안하며, 실제로 다양한 도구를 조합하여 더 나은 성능을 발휘할 수 있는 가능성을 보여줍니다.
+
+[출처]
+- 논문: ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
+  HuggingFace URL: https://huggingface.co/papers/2511.21689
+  GitHub: https://github.com/NVlabs/ToolOrchestra/
+  저자: ['Hongxu Yin']
+  Upvote: 111
+- 논문: A Survey on Efficient Vision-Language-Action Models
+  HuggingFace URL: https://huggingface.co/papers/2510.24795
+  GitHub: https://github.com/YuZhaoshu/Efficient-VLAs-Survey
+  저자: []
+  Upvote: 5
+- 논문: Probing Scientific General Intelligence of LLMs with Scientist-Aligned Workflows
+  HuggingFace URL: https://huggingface.co/papers/2512.16969
+  GitHub: https://github.com/InternScience/SGI-Bench
+  저자: ['Wanghan Xu', 'Yuhao Zhou', 'Yifan Zhou', 'Bo Liu', 'Jiaqi Wei']
+  Upvote: 110","1) ToolOrchestra는 소형 오케스트레이터를 통해 다양한 지능형 도구를 효율적으로 조정하여 복잡한 작업을 해결하는 프레임워크입니다.
+
+2) 주요 통찰:
+- 강화 학습을 사용하여 소형 오케스트레이터가 다른 모델과 도구를 관리하도록 훈련합니다.
+- Orchestrator 모델은 GPT-5보다 높은 정확도와 낮은 비용으로 복잡한 문제를 해결합니다.
+- 다양한 도구를 조합하여 효율적인 도구 보강 추론 시스템을 구축할 수 있습니다.
+
+3) ToolOrchestra는 LLM 기반 에이전트가 효율적으로 도구와 모델을 오케스트레이션하는 방법을 제시합니다.
+
+[출처]
+- 논문: ToolOrchestra: Elevating Intelligence via Efficient Model and Tool Orchestration
+  HuggingFace URL: https://huggingface.co/papers/2511.21689
+  GitHub: https://github.com/NVlabs/ToolOrchestra/
+  저자: Hongjin Su, Shizhe Diao, Ximing Lu
+  Upvote: 99","1.0","0.9999999999666667","0.7777777777777778","0.7357602545877502","0.7846545110344679"
+"RFT를 LVLMs (large video language models) 으로 확장하는 방법은 무엇이 있나요?","VIDEOP2R","paper","True","1) RFT를 LVLMs에 확장하기 위한 VideoP2R 프레임워크가 제안되었습니다.
+
+2) 주요 통찰:
+- VideoP2R은 인식과 추론을 별도의 과정으로 모델링하여 비디오 추론을 향상시킵니다.
+- SFT 단계에서 고품질의 체인 오브 생각(CoT) 데이터셋을 생성합니다.
+- RL 단계에서 인식과 추론에 대해 별도의 보상을 제공하는 새로운 알고리즘을 도입합니다.
+
+3) 이 연구에서는 비디오 언어 모델(LVLMs)의 비디오 추론 능력을 향상시키기 위해 VideoP2R이라는 새로운 프레임워크를 제안합니다. 이 프레임워크는 인식(perception)과 추론(reasoning)을 별개의 과정으로 모델링하여 비디오 이해를 개선합니다. SFT(지도 세부 조정) 단계에서는 VideoP2R-CoT-162K라는 고품질의 체인 오브 생각 데이터셋을 생성하는 3단계 파이프라인을 개발합니다. RL(강화 학습) 단계에서는 인식과 추론에 대해 별도의 보상을 제공하는 PA-GRPO(프로세스 인식 그룹 상대 정책 최적화) 알고리즘을 도입합니다. 실험 결과, VideoP2R은 여러 비디오 추론 벤치마크에서 최첨단 성능을 달성하였으며, 이 연구는 LVLMs의 비디오 이해 능력을 향상시키기 위한 새로운 방향을 제시합니다.
+
+[출처]
+- 논문: VIDEOP2R: Video Understanding from Perception to Reasoning
+  HuggingFace URL: https://huggingface.co/papers/2511.11113
+  저자: ['Yifan Jiang']
+  Upvote: 112
+- 논문: TopoPerception: A Shortcut-Free Evaluation of Global Visual Perception in Large Vision-Language Models
+  HuggingFace URL: https://huggingface.co/papers/2511.11831
+  GitHub: https://github.com/Wenhao-Zhou/TopoPerception
+  저자: ['Wenhao Zhou']
+  Upvote: 1
+- 논문: Video-LMM Post-Training: A Deep Dive into Video Reasoning with Large
+  Multimodal Models
+  HuggingFace URL: https://huggingface.co/papers/2510.05034
+  GitHub: https://github.com/yunlong10/Awesome-Video-LMM-Post-Training
+  저자: ['Yunlong Tang', 'Zhenyu Pan', 'Zhangyun Tan', 'Hang Hua', 'Yuhe Nie', 'Daiqing Qi', 'Ziyun Zeng', 'Ali Vosoughi']
+  Upvote: 48","1) VideoP2R은 RFT를 Large Video Language Models로 확장하는 프레임워크입니다.
+
+2) 주요 통찰:
+- 비디오 이해를 위해 인식과 추론을 별도의 과정으로 모델링합니다.
+- SFT 단계에서 고품질의 체인 오브 생각(CoT) 데이터셋을 생성합니다.
+- RL 단계에서 인식과 추론에 대해 별도의 보상을 제공하는 PA-GRPO 알고리즘을 도입합니다.
+
+3) VideoP2R은 비디오 추론 및 이해의 여러 벤치마크에서 최첨단 성능을 달성합니다.
+
+[출처]
+- 논문: VIDEOP2R: Video Understanding from Perception to Reasoning
+  HuggingFace URL: https://huggingface.co/papers/2511.11113
+  저자: Yifan Jiang, Yueying Wang, Rui Zhao, Toufiq Parag
+  Upvote: 111","0.8333333333333334","0.9999999999666667","0.6","0.6868116606314718","0.7524282923402656"
+"LLM에서 긴 문맥의 추론을 향상시키는 GSW (Generative Semantic Workspace)에 대한 논문이 있다면 소개시켜주세요","Generative Semantic Workspaces","paper","True","1) GSW(Generative Semantic Workspace)는 LLM의 긴 문맥 추론 능력을 향상시키는 새로운 메모리 프레임워크입니다.
+
+2) 주요 통찰:
+- GSW는 상황의 구조적이고 해석 가능한 표현을 생성하여 LLM이 복잡한 사건을 추론할 수 있도록 합니다.
+- 기존 방법보다 최대 20% 더 높은 성능을 보이며, 쿼리 시간 동안의 컨텍스트 토큰을 51% 줄입니다.
+- GSW는 인간과 유사한 에피소드 기억을 LLM에 부여하여 더 능력 있는 에이전트를 개발할 수 있는 기반을 제공합니다.
+
+3) GSW는 LLM이 긴 문맥을 이해하고 추론하는 데 필요한 구조적 표현을 생성하는 신경 영감을 받은 메모리 프레임워크입니다. 기존의 LLM은 문서의 길이가 길어질수록 성능이 저하되는 문제를 겪고 있으며, GSW는 이러한 문제를 해결하기 위해 상황의 역할, 행동 및 시공간 맥락을 추론할 수 있도록 돕습니다. GSW는 두 가지 주요 구성 요소로 이루어져 있습니다: 관찰을 중간 의미 구조로 매핑하는 'Operator'와 이러한 구조를 통합하여 일관된 작업 공간을 만드는 'Reconciler'입니다. GSW는 에피소드 메모리 벤치마크에서 기존 방법보다 뛰어난 성능을 보이며, 긴 문맥을 다루는 데 있어 LLM의 능력을 크게 향상시킵니다. 이 기술은 다양한 분야에서 더 나은 에이전트를 개발하는 데 활용될 수 있습니다.
+
+[출처]
+- 논문: Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces
+  HuggingFace URL: https://huggingface.co/papers/2511.07587
+  저자: ['Shreyas Rajesh']
+  Upvote: 9
+- 논문: Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding
+  HuggingFace URL: https://huggingface.co/papers/2512.17220
+  저자: ['Mo Yu']
+  Upvote: 107
+- 논문: QwenLong-L1.5: Post-Training Recipe for Long-Context Reasoning and Memory Management
+  HuggingFace URL: https://huggingface.co/papers/2512.12967
+  GitHub: https://github.com/Tongyi-Zhiwen/Qwen-Doc
+  저자: ['Weizhou Shen', 'Ziyi Yang', 'Miao Peng', 'Huashan Sun', 'Shengyi Liao']
+  Upvote: 103","1) GSW(Generative Semantic Workspace)는 LLM의 긴 문맥 추론 능력을 향상시키는 신경 영감을 받은 메모리 프레임워크입니다.
+
+2) 주요 통찰:
+- 상황의 구조적이고 해석 가능한 표현을 생성하여 LLM이 역할, 행동 및 시공간 맥락을 추론할 수 있도록 합니다.
+- 기존 방법보다 최대 20% 더 높은 성능을 보이며, 쿼리 시간의 컨텍스트 토큰을 51% 줄입니다.
+- 인간과 유사한 에피소드 기억을 LLM에 부여합니다.
+
+3) GSW는 긴 문서에서 중요한 정보를 효율적으로 추출하고 추론할 수 있게 합니다.
+
+[출처]
+- 논문: Beyond Fact Retrieval: Episodic Memory for RAG with Generative Semantic Workspaces
+  HuggingFace URL: https://huggingface.co/papers/2511.07587
+  저자: Shreyas Rajesh, Pavan Holur, Chenda Duan, David Chong
+  Upvote: 8","0.6666666666666666","0.9999999999666667","0.9285714285714286","0.7125271116860225","0.6905364409191442"
+"GUI-360: A Comprehensive Dataset and Benchmark for Computer-Using Agents","GUI-360","paper","True","1) GUI-360은 컴퓨터 사용 에이전트를 위한 대규모 데이터셋과 벤치마크로, GUI 기반 작업의 평가와 자동화된 데이터 수집을 지원합니다.
+
+2) 
+- GUI-360은 120만 개 이상의 실행된 작업 단계를 포함하여 다양한 Windows 오피스 애플리케이션에서 수집된 데이터로 구성됩니다.
+- 이 데이터셋은 GUI 기반 작업의 평가를 위한 세 가지 주요 작업(GUI 그라운딩, 화면 파싱, 행동 예측)을 지원합니다.
+- 최신 비전-언어 모델의 성능을 평가한 결과, 인간 수준의 신뢰성에는 미치지 못하지만, 지도 학습과 강화 학습을 통해 성능 향상이 가능함을 보여줍니다.
+
+3) GUI-360은 컴퓨터 사용 에이전트(CUA)의 발전을 위해 설계된 데이터셋으로, 실제 작업에서의 부족한 데이터와 자동화된 수집 및 주석 프로세스의 필요성을 해결하고자 합니다. 이 데이터셋은 120만 개 이상의 실행된 작업 단계를 포함하고 있으며, Windows 오피스 애플리케이션에서 수집된 스크린샷과 메타데이터를 제공합니다. 연구자들은 이 데이터셋을 통해 GUI 그라운딩, 화면 파싱, 행동 예측과 같은 작업을 평가할 수 있으며, 최신 비전-언어 모델의 성능을 비교하여 개선점을 찾을 수 있습니다. 이 데이터셋은 연구자들이 CUA의 신뢰성을 높이기 위한 기초 자료로 활용될 수 있습니다.
+
+[출처]
+- 논문: GUI-360: A Comprehensive Dataset and Benchmark for Computer-Using Agents
+  HuggingFace URL: https://huggingface.co/papers/2511.04307
+  저자: []
+  Upvote: 14
+- 논문: Computer-Use Agents as Judges for Generative User Interface
+  HuggingFace URL: https://huggingface.co/papers/2511.15567
+  GitHub: https://github.com/showlab/AUI
+  저자: ['Kevin Qinghong Lin', 'Zhengyuan Yang', 'Philip Torr', 'Mike Zheng Shou']
+  Upvote: 52
+- 논문: MAI-UI Technical Report: Real-World Centric Foundation GUI Agents
+  HuggingFace URL: https://huggingface.co/papers/2512.22047
+  저자: []
+  Upvote: 26","1) GUI-360은 컴퓨터 사용 에이전트를 위한 대규모 데이터셋과 벤치마크입니다.
+
+2) 주요 통찰:
+- 120만 개 이상의 실행된 작업 단계를 포함하여 다양한 Windows 오피스 애플리케이션에서 수집된 데이터로 구성됩니다.
+- GUI 그라운딩, 화면 파싱, 행동 예측의 세 가지 주요 작업을 지원합니다.
+- 감독 학습과 강화 학습을 통해 성능 향상이 가능합니다.
+
+3) GUI-360은 다양한 GUI 환경에서 에이전트의 성능을 평가하고 훈련할 수 있는 데이터를 제공합니다.
+
+[출처]
+- 논문: GUI-360: A Comprehensive Dataset and Benchmark for Computer-Using Agents
+  HuggingFace URL: https://huggingface.co/papers/2511.04307
+  저자: Jian Mu, Chaoyun Zhang, Chiming Ni, Lu Wang
+  Upvote: 14","0.8333333333333334","0.9999999999666667","1.0","0.5358430140062739","0.5759803346337348"
+"오디오 기반 애니메이션의 캐릭터 정체성을 유지하는 모델이 있나요?","Lookahead Anchoring","paper","True","1) 오디오 기반 애니메이션에서 캐릭터 정체성을 유지하는 모델이 여러 가지가 있습니다.
+
+2) 주요 통찰:
+- Lookahead Anchoring은 미래의 키프레임을 활용하여 캐릭터의 정체성을 유지합니다.
+- ORCA는 비디오 아바타의 목표 지향적 계획을 가능하게 하여 자율적인 작업 수행을 지원합니다.
+- SCAIL은 3D 포즈 표현과 확산-변환기 아키텍처를 사용하여 스튜디오 수준의 애니메이션 품질을 달성합니다.
+
+3) 
+- Lookahead Anchoring은 오디오 기반 인간 애니메이션에서 미래의 키프레임을 동적 가이드로 사용하여 입술 동기화, 정체성 유지 및 시각적 품질을 향상시킵니다. 이 방법은 캐릭터가 시간에 따라 정체성을 잃는 문제를 해결하며, 키프레임을 생성하는 추가 단계 없이도 자연스러운 움직임을 유지할 수 있습니다.
+  
+- ORCA는 비디오 아바타가 자율적으로 장기 목표를 추구할 수 있도록 하는 프레임워크입니다. 내부 세계 모델과 이중 시스템 아키텍처를 통해 환경과 상호작용하며 목표 지향적인 작업을 수행할 수 있습니다. 이는 비디오 아바타의 지능을 수동 애니메이션에서 능동적이고 목표 지향적인 행동으로 발전시키는 데 기여합니다.
+
+- SCAIL은 스튜디오 수준의 캐릭터 애니메이션을 위해 설계된 프레임워크로, 새로운 3D 포즈 표현과 전체 맥락 주입 메커니즘을 사용하여 복잡한 상황에서도 안정적이고 사실적인 움직임 전이를 제공합니다. 이로 인해 스튜디오 품질의 애니메이션을 달성할 수 있습니다.
+
+[출처]
+- 논문: Lookahead Anchoring: Preserving Character Identity in Audio-Driven Human
+  Animation
+  HuggingFace URL: https://huggingface.co/papers/2510.23581
+  GitHub: https://github.com/j0seo/lookahead-anchoring
+  저자: []
+  Upvote: 41
+- 논문: Active Intelligence in Video Avatars via Closed-loop World Modeling
+  HuggingFace URL: https://huggingface.co/papers/2512.20615
+  저자: ['Ruiqi Wu']
+  Upvote: 8
+- 논문: SCAIL: Towards Studio-Grade Character Animation via In-Context Learning of 3D-Consistent Pose Representations
+  HuggingFace URL: https://huggingface.co/papers/2512.05905
+  GitHub: https://github.com/teal024/SCAIL-Official
+  저자: ['Wenhao Yan', 'Jiayan Teng', 'Kairui Wen', 'Xiaotao Gu', 'Jie Tang']
+  Upvote: 19","1) Lookahead Anchoring은 오디오 기반 휴먼 애니메이션에서 캐릭터 정체성을 유지하는 기법입니다.
+
+2) 주요 통찰:
+- 미래의 키프레임을 동적 가이드로 사용하여 입술 동기화, 정체성 유지 및 시각적 품질을 향상시킵니다.
+- 캐릭터가 시간에 따라 정체성을 잃는 문제를 해결합니다.
+- 키프레임을 생성하는 추가 단계 없이도 자연스러운 움직임을 유지할 수 있습니다.
+
+3) 음성이나 음악에 맞춰 캐릭터를 애니메이션화하면서도 캐릭터의 고유한 특성과 스타일을 보존합니다.
+
+[출처]
+- 논문: Lookahead Anchoring: Preserving Character Identity in Audio-Driven Human Animation
+  HuggingFace URL: https://huggingface.co/papers/2510.23581
+  저자: Junyoung Seo, Rodrigo Mira, Alexandros Haliassos
+  Upvote: 41","1.0","0.9999999999","0.9166666666666666","0.43884574608626165","0.44728251985799483"
+"core attention disaggregation 은 무엇인가요?","Core Attention Disaggregation","paper","True","1) 코어 어텐션 분리(CAD)는 긴 컨텍스트의 대형 언어 모델 훈련을 개선하는 기술입니다.
+
+2) 주요 통찰:
+- CAD는 코어 어텐션 계산을 모델의 나머지 부분과 분리하여 별도의 장치 풀에서 실행합니다.
+- 코어 어텐션은 상태가 없고, 훈련 가능한 매개변수가 없으며, 최소한의 전이 데이터만 필요합니다.
+- DistCA라는 시스템을 통해 CAD를 구현하여 훈련 속도를 최대 1.35배 향상시킵니다.
+
+3) 코어 어텐션 분리(CAD)는 긴 컨텍스트를 가진 대형 언어 모델을 훈련할 때 발생하는 계산 부하 불균형 문제를 해결하기 위해 개발된 기술입니다. 기존 시스템에서는 코어 어텐션이 다른 레이어와 함께 위치해 있어, 긴 컨텍스트 길이에서 계산량이 기하급수적으로 증가하게 됩니다. CAD는 코어 어텐션 계산을 모델의 나머지 부분과 분리하여, 전용 장치에서 실행하도록 합니다. 
+
+이 기술은 두 가지 관찰에 기반합니다. 첫째, 코어 어텐션은 상태가 없기 때문에 훈련 가능한 매개변수가 없고, 최소한의 데이터만 필요하여 계산 작업을 효율적으로 스케줄링할 수 있습니다. 둘째, 현대의 어텐션 커널은 다양한 길이의 토큰 배치를 처리할 때 높은 효율성을 유지합니다. 
+
+CAD는 코어 어텐션을 토큰 수준의 작업으로 나누고, 이를 전용 어텐션 서버에 배포하여 계산을 균형 있게 조정합니다. DistCA라는 시스템을 통해 이 기술을 구현하였으며, 512개의 H200 GPU와 최대 512k 토큰의 컨텍스트 길이에서 훈련 속도를 최대 1.35배 향상시키고, 데이터 및 파이프라인 병렬 처리에서의 지연 문제를 제거하며, 계산과 메모리의 균형을 거의 완벽하게 달성합니다.
+
+[출처]
+- 논문: Efficient Long-context Language Model Training by Core Attention
+  Disaggregation
+  HuggingFace URL: https://huggingface.co/papers/2510.18121
+  저자: ['Yonghao Zhuang', 'Junda Chen', 'Bo Pang', 'Yi Gu']
+  Upvote: 122
+- 논문: Vote-in-Context: Turning VLMs into Zero-Shot Rank Fusers
+  HuggingFace URL: https://huggingface.co/papers/2511.01617
+  GitHub: https://github.com/mohammad2012191/ViC
+  저자: ['Mohamed Eltahir']
+  Upvote: 2
+- 논문: The Strong Lottery Ticket Hypothesis for Multi-Head Attention Mechanisms
+  HuggingFace URL: https://huggingface.co/papers/2511.04217
+  GitHub: https://github.com/Hikari43/SLTH-for-MHAs
+  저자: ['Hikari Otsuka']
+  Upvote: 16","1) Core Attention Disaggregation(CAD)은 긴 컨텍스트의 대형 언어 모델 훈련을 개선하는 기술입니다.
+
+2) 주요 통찰:
+- 코어 어텐션 계산을 모델의 나머지 부분과 분리하여 별도의 장치 풀에서 실행합니다.
+- 코어 어텐션은 상태가 없고 조정 가능한 작업으로 나눌 수 있어 효율적인 스케줄링이 가능합니다.
+- DistCA 시스템을 통해 훈련 속도를 최대 1.35배 향상시키고 메모리 사용을 줄입니다.
+
+3) 어텐션 연산을 분해하여 처리함으로써 긴 문맥 언어 모델 학습의 효율성을 높입니다.
+
+[출처]
+- 논문: Efficient Long-context Language Model Training by Core Attention Disaggregation
+  HuggingFace URL: https://huggingface.co/papers/2510.18121
+  저자: Yonghao Zhuang, Junda Chen, Bo Pang, Yi Gu
+  Upvote: 121","0.8333333333333334","0.8333333332916666","1.0","0.526891162635977","0.64653575948853"
+"LLM에서 환각탐지를 할 수 있는 모델에 대해서 알려주세요","FaithLens","paper","True","1) FaithLens는 LLM의 환각 탐지를 위한 비용 효율적인 모델로, 신뢰성을 높이기 위해 이진 예측과 설명을 제공합니다.
+
+2) 주요 통찰:
+- FaithLens는 고급 LLM을 활용하여 훈련 데이터를 합성하고, 규칙 기반 강화 학습으로 최적화됩니다.
+- 12개의 다양한 작업에서 GPT-4.1 및 o3보다 뛰어난 성능을 보입니다.
+- 이 모델은 신뢰성, 효율성, 효과성의 균형을 제공합니다.
+
+3) FaithLens는 LLM의 출력에서 신뢰성 환각을 탐지하는 데 중요한 역할을 합니다. 이 모델은 먼저 고급 LLM을 사용하여 훈련 데이터를 생성하고, 데이터 필터링 전략을 통해 레이블의 정확성과 설명의 질을 보장합니다. 이후, 잘 정제된 훈련 데이터를 기반으로 모델을 미세 조정하고, 규칙 기반 강화 학습을 통해 예측의 정확성과 설명의 질에 대한 보상을 사용하여 최적화합니다. 실험 결과, FaithLens는 8B 파라미터로 구성되어 있으며, 다양한 작업에서 높은 품질의 설명을 제공하면서 신뢰성을 높이는 데 기여합니다. 이 모델은 실제 응용 프로그램에서 LLM의 신뢰성을 높이는 데 유용하게 사용될 수 있습니다.
+
+[출처]
+- 논문: FaithLens: Detecting and Explaining Faithfulness Hallucination
+  HuggingFace URL: https://huggingface.co/papers/2512.20182
+  GitHub: https://github.com/S1s-Z/FaithLens
+  저자: []
+  Upvote: 8
+- 논문: Large Language Models Do NOT Really Know What They Don't Know
+  HuggingFace URL: https://huggingface.co/papers/2510.09033
+  저자: ['Chi Seng Cheang', 'Hou Pong Chan', 'Yang Deng']
+  Upvote: 16
+- 논문: On Epistemic Uncertainty of Visual Tokens for Object Hallucinations in
+  Large Vision-Language Models
+  HuggingFace URL: https://huggingface.co/papers/2510.09008
+  GitHub: https://github.com/joohoonlee/Epistemic
+  저자: ['Hoigi Seo', 'Hyunjin Cho']
+  Upvote: 15","1) FaithLens는 LLM의 환각 탐지를 위한 비용 효율적이고 효과적인 모델입니다.
+
+2) 주요 통찰:
+- 고급 LLM을 사용하여 훈련 데이터를 합성하고 규칙 기반 강화 학습을 적용합니다.
+- 다양한 작업에서 GPT-4 및 o3보다 우수한 성능을 보입니다.
+- 이진 예측과 함께 신뢰성을 높이기 위한 설명을 제공합니다.
+
+3) FaithLens는 생성된 텍스트가 사실에 기반하지 않은 정보를 포함하는지 감지하고 설명합니다.
+
+[출처]
+- 논문: FaithLens: Detecting and Explaining Faithfulness Hallucination
+  HuggingFace URL: https://huggingface.co/papers/2512.20182","1.0","0.9999999999","0.9285714285714286","0.33107902362625313","0.8990039324661762"
+"LLM에서 캐시와 관련된 논문이 있나요?","Cache-to-Cache","paper","True","1) LLM에서 캐시를 활용한 두 가지 연구가 있습니다: Cache-to-Cache(C2C)와 Elastic-Cache입니다.
+
+2) 주요 통찰:
+- Cache-to-Cache(C2C)는 LLM 간의 직접적인 의미 전달을 통해 정확도를 높이고 지연 시간을 줄입니다.
+- Elastic-Cache는 키-값 캐시 관리를 최적화하여 디코딩 지연 시간을 줄이면서 예측 정확도를 유지합니다.
+- 두 방법 모두 LLM의 성능을 향상시키는 데 기여하며, 실용적인 배포 가능성을 높입니다.
+
+3) Cache-to-Cache(C2C) 연구에서는 LLM들이 텍스트가 아닌 캐시를 통해 직접적으로 의미를 전달할 수 있는 방법을 제안합니다. 이 방법은 LLM 간의 KV-캐시를 프로젝션하고 융합하여 의미를 전송하며, 기존의 텍스트 기반 통신보다 평균 8.5-10.5% 높은 정확도를 달성하고, 약 2배의 속도 향상을 보여줍니다. 
+
+Elastic-Cache 연구는 디퓨전 LLM에서 키-값 캐시 관리를 최적화하여 디코딩 지연 시간을 줄이는 방법을 다룹니다. 이 방법은 불필요한 계산을 줄이고, 깊이에 따라 선택적으로 캐시를 업데이트하여 성능을 향상시킵니다. 실험 결과, GSM8K에서 8.7배, 긴 시퀀스에서 45.1배의 속도 향상을 달성하면서도 정확도를 유지합니다. 
+
+이 두 연구는 LLM의 성능을 개선하고, 실용적인 응용 가능성을 높이는 데 중요한 기여를 하고 있습니다.
+
+[출처]
+- 논문: Cache-to-Cache: Direct Semantic Communication Between Large Language
+  Models
+  HuggingFace URL: https://huggingface.co/papers/2510.03215
+  GitHub: https://github.com/thu-nics/C2C
+  저자: ['Tianyu Fu', 'Zihan Min', 'Hanling Zhang', 'Jichao Yan']
+  Upvote: 97
+- 논문: Attention Is All You Need for KV Cache in Diffusion LLMs
+  HuggingFace URL: https://huggingface.co/papers/2510.14973
+  저자: ['Quan Nguyen-Tri', 'Mukul Ranjan']
+  Upvote: 40
+- 논문: Understanding Syllogistic Reasoning in LLMs from Formal and Natural Language Perspectives
+  HuggingFace URL: https://huggingface.co/papers/2512.12620
+  GitHub: https://github.com/XAheli/Logic-in-LLMs
+  저자: ['Aheli Poddar']
+  Upvote: 2","1) Cache-to-Cache(C2C)는 LLM 간의 직접적인 시맨틱 통신을 가능하게 하는 기법입니다.
+
+2) 주요 통찰:
+- LLM들이 텍스트가 아닌 캐시를 통해 직접적으로 의미를 전달할 수 있습니다.
+- 기존의 텍스트 기반 통신보다 평균 8.5-10.5% 높은 정확도를 달성합니다.
+- 약 2배의 속도 향상을 보여줍니다.
+
+3) KV-캐시를 프로젝션하고 융합하여 LLM 간 효율적인 의미 전송을 가능하게 합니다.
+
+[출처]
+- 논문: Cache-to-Cache: Direct Semantic Communication Between Large Language Models
+  HuggingFace URL: https://huggingface.co/papers/2510.03215
+  GitHub: https://github.com/thu-nics/C2C
+  저자: Tianyu Fu, Zihan Min, Hanling Zhang
+  Upvote: 97","0.8333333333333334","0.99999999995","1.0","0.40849671239532065","0.8125290994372971"
+"rag란 무엇인가?","","web","True","1) RAG는 다양한 정보 출처에서 지식을 검색하고 생성하는 통합 프레임워크입니다.
+
+2) 주요 통찰:
+- RAG-Anything은 텍스트, 이미지, 표 등 다양한 형식의 정보를 통합하여 검색할 수 있는 프레임워크입니다.
+- 분산형 RAG 시스템은 블록체인을 활용하여 데이터 출처의 신뢰성을 관리합니다.
+- MiA-RAG는 긴 문맥 이해를 개선하기 위해 계층적 요약을 사용하여 전반적인 의미 표현을 생성합니다.
+
+3) RAG(검색 증강 생성)는 대규모 언어 모델이 정적 훈련 한계를 넘어 지식을 검색하고 생성하는 데 도움을 주는 방법론입니다. RAG-Anything은 이러한 RAG의 한계를 극복하기 위해 다양한 형식의 정보를 통합하여 처리할 수 있는 새로운 프레임워크입니다. 이 프레임워크는 서로 다른 정보 유형을 독립된 데이터가 아닌 상호 연결된 지식 단위로 재구성하여, 복잡한 문서에서도 효과적으로 정보를 검색할 수 있도록 합니다.
+
+또한, 분산형 RAG 시스템은 데이터 소스의 신뢰성을 블록체인 기반으로 평가하여, 데이터 소유자가 자신의 정보를 안전하게 관리할 수 있도록 합니다. 이는 중앙 집중식 시스템보다 성능과 비용 효율성을 높이는 데 기여합니다.
+
+마지막으로, MiA-RAG는 긴 문맥을 이해하는 데 필요한 전반적인 의미를 제공하기 위해 계층적 요약을 도입하여, 정보 검색과 생성 과정에서 더 나은 성능을 발휘합니다. 이러한 접근은 인간이 긴 텍스트를 이해하는 방식과 유사하게 작동하여, 보다 일관된 정보 처리를 가능하게 합니다.
+
+[출처]
+- 논문: RAG-Anything: All-in-One RAG Framework
+  HuggingFace URL: https://huggingface.co/papers/2510.12323
+  GitHub: https://github.com/HKUDS/RAG-Anything
+  저자: []
+  Upvote: 54
+- 논문: A Decentralized Retrieval Augmented Generation System with Source Reliabilities Secured on Blockchain
+  HuggingFace URL: https://huggingface.co/papers/2511.07577
+  GitHub: https://github.com/yining610/Reliable-dRAG
+  저자: ['Yining Lu']
+  Upvote: 1
+- 논문: Mindscape-Aware Retrieval Augmented Generation for Improved Long Context Understanding
+  HuggingFace URL: https://huggingface.co/papers/2512.17220
+  저자: ['Mo Yu']
+  Upvote: 107","1) RAG(Retrieval-Augmented Generation)는 검색 증강 생성 기법입니다.
+
+2) 주요 통찰:
+- 외부 지식 베이스에서 관련 정보를 검색하여 LLM의 응답 생성에 활용합니다.
+- LLM의 지식을 확장하고 최신 정보를 반영할 수 있습니다.
+- 환각(hallucination)을 줄일 수 있습니다.
+
+3) RAG는 검색과 생성을 결합하여 더 정확하고 신뢰할 수 있는 답변을 생성합니다.","0.8","0.9999999999666667","0.9333333333333333","0.4111006895620494","0.3085357252070503"
+"langgraph란 무엇인가요?","","web","True","1) LangGraph는 AI 에이전트 워크플로우를 구축하고 관리하기 위한 오픈 소스 프레임워크입니다.
+
+2) 주요 통찰:
+- LangGraph는 그래프 기반 아키텍처를 사용하여 AI 에이전트 간의 복잡한 관계를 모델링합니다.
+- 노드와 엣지를 통해 워크플로우를 구성하여 투명하고 확장 가능한 시스템을 제공합니다.
+- 다양한 AI 솔루션과 워크플로우를 개발할 수 있는 API와 도구를 제공합니다.
+
+3) LangGraph는 LangChain에서 개발한 라이브러리로, 여러 LLM(대형 언어 모델) 에이전트를 구조적이고 효율적으로 정의하고 조정하며 실행할 수 있는 프레임워크입니다. 이 프레임워크는 데이터 흐름과 작업 순서를 관리하여 개발자가 애플리케이션의 고수준 논리에 집중할 수 있도록 도와줍니다. LangGraph는 챗봇이나 복잡한 작업을 수행하는 다중 에이전트 시스템을 구축하는 데 필요한 도구를 제공합니다. 또한, LangGraph Studio라는 시각적 개발 환경을 통해 복잡한 에이전트 애플리케이션을 쉽게 개발할 수 있습니다. LangGraph는 노드를 사용하여 AI 워크플로우 내의 개별 구성 요소를 나타내며, 이를 통해 에이전트의 상태를 완전히 투명하게 관리할 수 있습니다.
+
+[출처]
+- 웹: LangGraph Tutorial: What Is LangGraph and How to Use It?
+  URL: https://www.datacamp.com/tutorial/langgraph-tutorial
+- 웹: What is LangGraph? - IBM
+  URL: https://www.ibm.com/think/topics/langgraph
+- 웹: What is LangGraph? - GeeksforGeeks
+  URL: https://www.geeksforgeeks.org/machine-learning/what-is-langgraph/","1) LangGraph는 AI 에이전트 워크플로우를 구축하고 관리하기 위한 오픈 소스 프레임워크입니다.
+
+2) 주요 통찰:
+- 그래프 기반 아키텍처를 사용하여 AI 에이전트 간의 복잡한 관계를 모델링합니다.
+- 여러 LLM 에이전트를 효율적으로 정의하고 조정할 수 있는 구조화된 프레임워크를 제공합니다.
+- 조건부 분기, 순환, 상태 관리, 체크포인팅 등을 지원합니다.
+
+3) StateGraph를 통해 노드와 엣지로 워크플로우를 정의합니다.","0.6","0.9999999999666667","1.0","0.5926657605710006","0.5349621332259298"
+"랭체인에 대해서 설명해주세요","","web","True","1) 랭체인은 대형 언어 모델(LLM)을 활용한 애플리케이션 개발을 간소화하는 오픈 소스 프레임워크입니다.
+
+2) 주요 통찰:
+- 다양한 데이터 소스와 도구와 연결된 AI 애플리케이션을 구축할 수 있도록 지원합니다.
+- 10줄 이하의 코드로 OpenAI, Anthropic, Google 등과 연결할 수 있습니다.
+- 모델 간의 상호작용을 표준화하여 공급자 변경이 용이합니다.
+
+3) 랭체인은 대형 언어 모델을 활용하여 AI 애플리케이션을 쉽게 개발할 수 있도록 설계된 프레임워크입니다. 이 프레임워크는 사전 구축된 에이전트 아키텍처와 다양한 모델 및 도구와의 통합 기능을 제공합니다. 사용자는 복잡한 설정 없이 간단한 코드로 여러 AI 모델에 연결할 수 있으며, 이를 통해 빠르게 애플리케이션을 개발할 수 있습니다. 랭체인의 에이전트는 LangGraph 위에 구축되어 있어 내구성 있는 실행, 스트리밍, 인간의 개입, 데이터 지속성 등을 지원합니다. 랭체인을 사용하면 모델 간의 상호작용을 표준화하여 특정 공급자에 종속되지 않고 유연하게 애플리케이션을 개발할 수 있습니다.
+
+[출처]
+- 웹: can someone explain Langchain in a simple manner - Reddit
+  URL: https://www.reddit.com/r/LangChain/comments/1n0qam7/can_someone_explain_langchain_in_a_simple_manner/
+- 웹: LangChain overview - Docs by LangChain
+  URL: https://docs.langchain.com/oss/python/langchain/overview
+- 웹: Introduction to LangChain - GeeksforGeeks
+  URL: https://www.geeksforgeeks.org/artificial-intelligence/introduction-to-langchain/","1) LangChain은 LLM 애플리케이션 개발을 위한 프레임워크입니다.
+
+2) 주요 통찰:
+- 다양한 데이터 소스와 도구와 연결할 수 있는 모듈을 제공합니다.
+- 프롬프트 관리, 체인 구성, 에이전트, 메모리, 문서 로더, 벡터 저장소 등 다양한 컴포넌트를 제공합니다.
+- 챗봇, 가상 비서, 맞춤형 질문-응답 시스템 등 생성적 AI 애플리케이션을 쉽게 구축할 수 있습니다.
+
+3) Python과 JavaScript/TypeScript 버전이 있습니다.","0.4","0.9999999999666667","1.0","0.14106196163568965","0.7816120950326708"

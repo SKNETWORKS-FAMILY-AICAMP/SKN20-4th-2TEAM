@@ -137,14 +137,28 @@
 
         /* Responsive */
         @media (max-width: 992px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        display: grid;           /* 🔥 flex → grid */
+        place-items: center;     /* 🔥 완전 중앙 고정 */
+        margin-top: 40px;
+    }
+
+    .slideshow {
+        width: 320px;            /* 🔥 % 말고 고정 기준 */
+        max-width: 90vw;
+        aspect-ratio: 1;
+        margin: 0 auto;
+        justify-self: center;
+    }
+}
     </style>
 </head>
 

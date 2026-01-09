@@ -123,7 +123,7 @@ def login_view(request):
 def logout_view(request):
     """로그아웃"""
     logout(request)
-    return redirect("chatbot:login")
+    return redirect("chatbot:home")
 
 
 @login_required
@@ -524,6 +524,6 @@ def delete_account_view(request):
         logout(request)
         user.delete()
 
-        return redirect("chatbot:login")
+        return redirect("chatbot:home")
 
     return render(request, "chatbot/delete_account.html")
