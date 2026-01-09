@@ -178,7 +178,7 @@
                 without the overwhelm.
             </p>
             <p style="font-size: 16px; color: #666; margin-bottom: 20px;">
-                <strong>{{ today|date:"Y년 m월 d일" }}</strong> 기준 | 🍪 PaperSnack <strong><span id="paper-count" data-count="{{ unique_papers|default:"0" }}">0</span>개</strong> 보유 중
+                {{ today|date:"Y년 m월 d일" }} 기준 | <span style="font-size: 20px; font-family: 'Nunito', sans-serif; font-weight: 800;"> 🍪 PaperSnack </span><strong><span id="paper-count" data-count="{{ unique_papers|default:"0" }}" style="font-size: 20px">0</span><span style="font-size: 19px">개</strong></span> <span style="font-size: 19px; font-weight: bold;">보유 중</span>
             </p>
             <a href="{% url 'chatbot:chatbot' %}" class="btn-primary">Start Snacking</a>
         </div>

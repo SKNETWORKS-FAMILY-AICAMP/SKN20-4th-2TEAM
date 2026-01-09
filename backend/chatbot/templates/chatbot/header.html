@@ -13,7 +13,7 @@
             <li><a href="{% url 'chatbot:services' %}" {% if request.resolver_match.url_name == 'services' %}class="active"{% endif %}>Services</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'chatbot:chatbot' %}" {% if request.resolver_match.url_name == 'chatbot' %}class="active"{% endif %}>Chatbot</a></li>
-                <li><a href="{% url 'chatbot:profile' %}" {% if request.resolver_match.url_name == 'profile' %}class="active"{% endif %}>Profile</a></li>
+                <li><a href="{% url 'chatbot:profile' %}" {% if request.resolver_match.url_name == 'profile' %}class="active"{% endif %}>🤗{{ user.username }}</a></li>
                 <li><a href="{% url 'chatbot:logout' %}">Logout</a></li>
             {% else %}
                 <li><a href="{% url 'chatbot:login' %}" {% if request.resolver_match.url_name == 'login' %}class="active"{% endif %}>Sign In</a></li>
