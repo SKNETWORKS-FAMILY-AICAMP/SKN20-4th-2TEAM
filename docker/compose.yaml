@@ -2,13 +2,8 @@ services:
   # Django 웹 애플리케이션 서비스
   backend:
     image: grustar02/django-app
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile
     ports:
       - "80:80"
-    volumes:
-      - ../:/app
     # RAG API 서비스가 실행된 후에 backend 서비스를 시작합니다.
     depends_on:
       rag_api:
@@ -22,14 +17,9 @@ services:
   # FastAPI RAG API 서비스
   rag_api:
     image: grustar02/rag-api
-    build:
-      context: ..
-      dockerfile: docker/Dockerfile.fastapi
     ports:
       - "8001:8001"
     volumes:
-      # 소스코드 동기화
-      - ../:/app
       # Vector DB 데이터 유지
       - ../data/vector_db:/app/data/vector_db
     # .env 파일로부터 환경 변수를 읽어옵니다.
