@@ -42,7 +42,7 @@ from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.documents import Document
 
 # RAG 시스템 모듈 임포트 (변수가 아닌 모듈 자체를 임포트)
-from . import rag_system
+from . import evaluate_rag_system
 
 # 환경 변수 로드
 load_dotenv()
@@ -608,7 +608,7 @@ def run_ragas_evaluation(
                 print(f"  예상 논문: {expected_title}")
 
         # RAG 시스템으로 답변 생성
-        result = rag_system.ask_question(query, verbose=False)
+        result = evaluate_rag_system.ask_question(query, verbose=False)
 
         if result["success"]:
             answer_text = result["answer"]
@@ -928,7 +928,7 @@ def main():
 
     # RAG 시스템 초기화
     print("\n[INIT] RAG 시스템 초기화 중...")
-    init_result = rag_system.initialize_rag_system(
+    init_result = evaluate_rag_system.initialize_rag_system(
         model_name="text-embedding-3-small",
         llm_model="gpt-4o-mini",
         llm_temperature=0,
@@ -941,16 +941,16 @@ def main():
         return
 
     # 시스템 상태 확인
-    status = rag_system.get_system_status()
+    status = evaluate_rag_system.get_system_status()
     print("\n[시스템 상태]")
     for key, value in status.items():
         print(f"  {key}: {'O' if value else 'X'}")
 
     # 모듈 변수 확인
     print("\n[모듈 변수 확인]")
-    print(f"  _vectorstore: {'O' if rag_system._vectorstore is not None else 'X'}")
-    print(f"  _bm25_retriever: {'O' if rag_system._bm25_retriever is not None else 'X'}")
-    print(f"  _llm: {'O' if rag_system._llm is not None else 'X'}")
+    print(f"  _vectorstore: {'O' if evaluate_rag_system._vectorstore is not None else 'X'}")
+    print(f"  _bm25_retriever: {'O' if evaluate_rag_system._bm25_retriever is not None else 'X'}")
+    print(f"  _llm: {'O' if evaluate_rag_system._llm is not None else 'X'}")
 
     # RAGAS 평가 실행
     results_df = run_ragas_evaluation(verbose=True)

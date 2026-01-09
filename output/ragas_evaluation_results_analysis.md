@@ -1,17 +1,17 @@
 # RAGAS 평가 결과 분석
 
-> 생성일시: 2026-01-09 14:41:31
+> 생성일시: 2026-01-09 15:03:23
 
 ## 전체 평가
 
 | 항목 | 상태 | 설명 |
 |------|------|------|
 | 예상 논문 정확도 | 100.0% (8/8) | 매우 좋음 |
-| context_recall | 0.40~1.00 | ✅ 양호 |
+| context_recall | 0.60~1.00 | ✅ 양호 |
 | context_precision | 0.83~1.00 | ✅ 우수 |
-| faithfulness | 0.60~1.00 | ✅ 우수 |
-| answer_relevancy | 0.14~0.74 | ⚠️ 보통 |
-| answer_correctness | 0.31~0.90 | ⚠️ 보통 |
+| faithfulness | 0.67~1.00 | ✅ 우수 |
+| answer_relevancy | 0.15~0.76 | ❌ 미흡 |
+| answer_correctness | 0.41~0.97 | ✅ 양호 |
 
 ---
 
@@ -20,7 +20,7 @@
 ### Context Recall
 - **의미**: 검색된 문서가 정답에 필요한 정보를 얼마나 포함하는지
 - **좋은 점수**: 0.8+
-- **현재 결과**: 0.40~1.00 ✅ 양호
+- **현재 결과**: 0.60~1.00 ✅ 양호
 
 ### Context Precision
 - **의미**: 검색된 문서 중 실제로 관련 있는 문서 비율
@@ -30,30 +30,30 @@
 ### Faithfulness
 - **의미**: 답변이 컨텍스트에만 기반하는지 (환각 여부)
 - **좋은 점수**: 0.9+
-- **현재 결과**: 0.60~1.00 ✅ 우수
+- **현재 결과**: 0.67~1.00 ✅ 우수
 
 ### Answer Relevancy
 - **의미**: 답변이 질문과 얼마나 관련 있는지
 - **좋은 점수**: 0.7+
-- **현재 결과**: 0.14~0.74 ⚠️ 보통
+- **현재 결과**: 0.15~0.76 ❌ 미흡
 
 ### Answer Correctness
 - **의미**: 답변이 정답(Ground Truth)과 얼마나 일치하는지
 - **좋은 점수**: 0.7+
-- **현재 결과**: 0.31~0.90 ⚠️ 보통
+- **현재 결과**: 0.41~0.97 ✅ 양호
 
 ---
 
 ## 해석
 
 ### 좋은 점
-- **Faithfulness 0.92** → RAG가 환각 없이 문서 기반으로 답변
-- **Context Recall 0.80** → 관련 문서를 잘 검색함
+- **Faithfulness 0.93** → RAG가 환각 없이 문서 기반으로 답변
+- **Context Recall 0.79** → 관련 문서를 잘 검색함
 - **Context Precision 0.98** → 검색된 문서의 관련성이 높음
 - **예상 논문 100.0% 정확도** → 원하는 논문을 잘 찾음
 
 ### 문제점
-- **Answer Relevancy 0.50** → 답변과 질문의 관련성 개선 필요
+- **Answer Relevancy 0.45** → 답변과 질문의 관련성 개선 필요
 
 ---
 
@@ -71,26 +71,26 @@
 ## 상세 결과
 
 ### 전체 평균
-- context_recall: **0.8000**
+- context_recall: **0.7939**
 - context_precision: **0.9848**
-- faithfulness: **0.9168**
-- answer_relevancy: **0.5019**
-- answer_correctness: **0.6576**
+- faithfulness: **0.9347**
+- answer_relevancy: **0.4514**
+- answer_correctness: **0.7230**
 
 ### 논문 검색 (8개)
-- context_recall: **0.8750**
+- context_recall: **0.8167**
 - context_precision: **0.9792**
-- faithfulness: **0.8939**
-- answer_relevancy: **0.5470**
-- answer_correctness: **0.7011**
+- faithfulness: **0.9519**
+- answer_relevancy: **0.4874**
+- answer_correctness: **0.7908**
 - 예상 논문 정확도: **100.0%** (8/8)
 
 ### 웹 검색 (3개)
-- context_recall: **0.6000**
+- context_recall: **0.7333**
 - context_precision: **1.0000**
-- faithfulness: **0.9778**
-- answer_relevancy: **0.3816**
-- answer_correctness: **0.5417**
+- faithfulness: **0.8889**
+- answer_relevancy: **0.3555**
+- answer_correctness: **0.5422**
 
 ---
 
