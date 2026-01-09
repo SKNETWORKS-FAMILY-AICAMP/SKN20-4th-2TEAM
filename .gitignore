@@ -70,3 +70,6 @@ models/
 backend/db.sqlite3
 backend/staticfiles/
 backend/*.sqlite3
+
+.claude/
+CLAUDE.md

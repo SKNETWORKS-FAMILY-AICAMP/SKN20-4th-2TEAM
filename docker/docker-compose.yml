@@ -5,7 +5,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     ports:
       - "8000:8000"
     volumes:
@@ -24,7 +24,7 @@ services:
   rag_api:
     build:
       context: .
-      dockerfile: Dockerfile.fastapi
+      dockerfile: docker/Dockerfile.fastapi
     ports:
       - "8001:8001"
     volumes:
