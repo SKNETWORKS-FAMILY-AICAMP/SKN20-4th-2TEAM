@@ -23,7 +23,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-iqwjw414&+2=vn0p^mj8@i^ngk041wgjxw_cw3zm6+8jovjca9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = True # local
+DEBUG = False # Docker
 
 ALLOWED_HOSTS = ['*', 'localhost', '127.0.0.1']
 
