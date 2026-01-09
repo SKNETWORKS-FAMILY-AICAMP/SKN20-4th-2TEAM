@@ -25,7 +25,7 @@ def home(request):
     paper_count = 0
     unique_papers = 0
     try:
-        response = requests.get(f"{FASTAPI_BASE_URL}/api/stats", timeout=5)
+        response = requests.get(f"{FASTAPI_BASE_URL}/api/stats", timeout=20)
         if response.status_code == 200:
             stats_data = response.json()
             paper_count = stats_data.get("paper_count", 0)
