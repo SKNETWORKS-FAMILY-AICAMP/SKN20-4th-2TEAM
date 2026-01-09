@@ -11,10 +11,11 @@
 /* Slideshow Animation */
 .slideshow {
     position: relative;
-    width: 100%;
+    width: clamp(200px, 35vw, 400px);
     aspect-ratio: 1;
     border-radius: 20px;
     overflow: hidden;
+    margin: 0 auto;
 }
 
 .slideshow .slide {
@@ -85,6 +86,12 @@
             50% { transform: translateY(-20px); }
         }
 
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         /* Features */
         .features {
             padding: 80px 40px;
@@ -137,28 +144,28 @@
 
         /* Responsive */
         @media (max-width: 992px) {
+            .hero {
+                padding: 120px 20px 60px;
+                overflow: hidden;
+            }
 
-    .hero-container {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        text-align: center;
-    }
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
 
-    .hero-image {
-        width: 100%;
-        display: grid;           /* 🔥 flex → grid */
-        place-items: center;     /* 🔥 완전 중앙 고정 */
-        margin-top: 40px;
-    }
+            .hero-content {
+                text-align: center;
+            }
 
-    .slideshow {
-        width: 320px;            /* 🔥 % 말고 고정 기준 */
-        max-width: 90vw;
-        aspect-ratio: 1;
-        margin: 0 auto;
-        justify-self: center;
-    }
-}
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .hero-image {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
