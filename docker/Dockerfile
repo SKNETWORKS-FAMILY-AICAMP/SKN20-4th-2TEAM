@@ -25,14 +25,13 @@ COPY . /app/
 RUN rm -f /etc/nginx/sites-enabled/default
 COPY docker/nginx.conf /etc/nginx/sites-enabled/default
 
-# 8. Django 정적 파일 수집
-RUN python backend/manage.py collectstatic --noinput
+
 
 # 9. 포트 노출
 EXPOSE 80
 
 # 10. 시작 스크립트 실행
-# Dockerfile 위치가 변경되었으므로, 컨텍스트 루트에서부터의 경로를 지정합니다.
-COPY docker/start.sh /app/start.sh
-RUN chmod +x /app/start.sh
-CMD ["/app/start.sh"]
+# docker-compose volume 마운트로 인해 /app이 덮어씌워지므로, 스크립트 경로를 /app/docker/로 변경
+COPY docker/start.sh /app/docker/start.sh
+RUN chmod +x /app/docker/start.sh
+CMD ["/app/docker/start.sh"]
