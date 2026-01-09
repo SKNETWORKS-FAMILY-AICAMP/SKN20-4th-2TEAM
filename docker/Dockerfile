@@ -5,8 +5,8 @@ FROM python:3.10
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# 3. Nginx 설치
-RUN apt-get update && apt-get install -y nginx
+# 3. Nginx 및 유틸리티 설치
+RUN apt-get update && apt-get install -y nginx gettext-base
 
 # 4. 작업 디렉터리 생성 및 설정
 WORKDIR /app
@@ -20,10 +20,9 @@ RUN pip install --no-cache-dir -r requirement_django.txt
 # 빌드 컨텍스트('.')의 모든 파일을 /app/으로 복사합니다.
 COPY . /app/
 
-# 7. Nginx 설정
-# Dockerfile 위치가 변경되었으므로, 컨텍스트 루트에서부터의 경로를 지정합니다.
-RUN rm -f /etc/nginx/sites-enabled/default
-COPY docker/nginx.conf /etc/nginx/sites-enabled/default
+# 7. Nginx 설정 템플릿 복사
+# 시작 스크립트가 이 템플릿을 사용하여 최종 설정 파일을 생성합니다.
+COPY docker/nginx.conf.template /app/docker/nginx.conf.template
 
 
 

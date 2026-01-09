@@ -1,0 +1,48 @@
+# render.yaml - Render Blueprint
+# 이 파일을 사용하여 Render.com에 서비스를 배포합니다.
+
+services:
+  # RAG API 서비스 (Private Service)
+  # 외부에서는 직접 접근할 수 없으며, backend 서비스만 내부적으로 통신합니다.
+  - type: pserv
+    name: rag-api
+    # Docker 빌드 설정
+    dockerfilePath: ./docker/Dockerfile.fastapi
+    dockerContext: .
+    # 환경 변수 설정
+    # .env 파일의 내용을 아래 'Secret File' 또는 Render 대시보드의 'Environment' 탭에서 'Secret Group'으로 추가해야 합니다.
+    envVars:
+      - fromGroup: rag-api-secrets # 'rag-api-secrets'라는 이름의 Secret Group을 생성하세요.
+    # 데이터베이스를 위한 영구 디스크 설정
+    disks:
+      - name: vector-db
+        mountPath: /app/data/vector_db
+
+  # Backend 웹 서비스 (Web Service)
+  # 외부 인터넷에서 접근 가능한 웹 서비스입니다.
+  - type: web
+    name: backend
+    # Docker 빌드 설정
+    dockerfilePath: ./docker/Dockerfile
+    dockerContext: .
+    # 환경 변수 설정
+    envVars:
+      - key: RAG_API_URL
+        # Render의 내부 DNS를 사용하여 rag-api 서비스에 연결합니다.
+        # 포트는 Dockerfile.fastapi에 노출된 포트(8001)를 사용합니다.
+        value: http://rag-api:8001
+    # Render는 서비스 상태를 확인하기 위해 이 경로를 주기적으로 호출합니다.
+    healthCheckPath: /
+
+# Render 대시보드에서 생성해야 할 Secret Group에 대한 설명입니다.
+# .env 파일에 있는 모든 KEY=VALUE 쌍을 이 그룹에 추가하세요.
+envVarGroups:
+  - name: rag-api-secrets
+    envVars:
+      - key: OPENAI_API_KEY # .env 파일에 있는 변수 이름의 예시입니다.
+        sync: false # sync: false는 이 값이 Render 대시보드에서만 관리됨을 의미합니다.
+
+# 영구 디스크에 대한 정의입니다.
+disks:
+  - name: vector-db
+    sizeGB: 1 # 필요에 따라 디스크 크기를 조절하세요.
