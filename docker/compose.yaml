@@ -4,6 +4,9 @@ services:
     image: grustar02/django-app
     ports:
       - "80:80"
+    volumes:
+      # SQLite DB 파일을 호스트에 마운트하여 데이터 유지
+      - ../data/db.sqlite3:/app/backend/db.sqlite3
     # RAG API 서비스가 실행된 후에 backend 서비스를 시작합니다.
     depends_on:
       rag_api:
@@ -22,6 +25,8 @@ services:
     volumes:
       # Vector DB 데이터 유지
       - ../data/vector_db:/app/data/vector_db
+      # HuggingFace 모델 캐시 유지 (Cross-encoder 등)
+      - ../data/huggingface_cache:/root/.cache/huggingface
     # .env 파일로부터 환경 변수를 읽어옵니다.
     env_file:
       - ../.env

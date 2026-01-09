@@ -60,9 +60,8 @@ htmlcov/
 # Model cache
 .cache/
 models/
-02_src/02_utils/CLAUDE_KR.md
-01_data/embeddings/
-01_data/vector_db/
+huggingface_cache/
+data/db.sqlite3
 *.backup
 01_data/vector_db.zip
 
