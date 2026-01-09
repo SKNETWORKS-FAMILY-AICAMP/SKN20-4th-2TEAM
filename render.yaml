@@ -6,6 +6,7 @@ services:
   # 외부에서는 직접 접근할 수 없으며, backend 서비스만 내부적으로 통신합니다.
   - type: pserv
     name: rag-api
+    runtime: docker # Docker 런타임 사용을 명시합니다.
     # Docker 빌드 설정
     dockerfilePath: ./docker/Dockerfile.fastapi
     dockerContext: .
@@ -22,6 +23,7 @@ services:
   # 외부 인터넷에서 접근 가능한 웹 서비스입니다.
   - type: web
     name: backend
+    runtime: docker # Docker 런타임 사용을 명시합니다.
     # Docker 빌드 설정
     dockerfilePath: ./docker/Dockerfile
     dockerContext: .
