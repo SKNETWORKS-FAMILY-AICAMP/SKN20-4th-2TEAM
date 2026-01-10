@@ -32,6 +32,8 @@ services:
       - ../:/app
       # Vector DB 데이터 유지
       - ../data/vector_db:/app/data/vector_db
+      # HuggingFace 모델 캐시 유지 (Cross-encoder 등)
+      - ../data/huggingface_cache:/root/.cache/huggingface
     # .env 파일로부터 환경 변수를 읽어옵니다.
     env_file:
       - ../.env
