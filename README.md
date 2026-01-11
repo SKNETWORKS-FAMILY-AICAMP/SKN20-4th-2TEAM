@@ -46,9 +46,9 @@ HuggingFace WeeklyPapers 기반 최신 AI/ML/DL/LLM 논문 검색 및 대화형 
 
 #### 기술적 목표
 - ✅ **RAG 파이프라인 전체 구현 및 이해** (크롤링 → 전처리 → 벡터DB → RAG → UI)
-- ✅ **하이브리드 검색 시스템 구축** (Vector Search + BM25 + RRF + 재랭킹)
+- ✅ **하이브리드 검색 시스템 구축** (Vector Search + BM25 + RRF + Rerank)
 - ✅ **LangGraph 기반 조건부 라우팅** + 웹 검색 fallback 구조
-- ✅ **실무 웹 프레임워크 경험** (Django + FastAPI 마이크로서비스 패턴)
+- ✅ **⭐️⭐️실무 웹 프레임워크 경험** (Django + FastAPI 마이크로서비스 패턴)
 - ✅ **Docker 컨테이너 오케스트레이션** (멀티 컨테이너 배포 자동화)
 
 #### 학습 목표
@@ -60,9 +60,9 @@ HuggingFace WeeklyPapers 기반 최신 AI/ML/DL/LLM 논문 검색 및 대화형 
 
 ## 🚀 2. 주요 개선사항 (3rd → 4th)
 
-> **"단순 기능 구현을 넘어, 실무에서 사용 가능한 수준의 시스템 설계로 발전"**
+> **"단순 기능 구현을 넘어, 실무에서 사용 가능한 수준의 시스템 설계로 발전 가능성 높히기"**
 
-### 🎉 Version 4.0 핵심 업데이트
+### 🎉 4th 핵심 업데이트
 
 #### 1️⃣ Docker 컨테이너화 ⭐️ **NEW**
 
@@ -74,6 +74,7 @@ docker/
 ├── Dockerfile              # Django + Nginx 컨테이너
 ├── Dockerfile.fastapi      # FastAPI RAG 서버 컨테이너
 ├── docker-compose.yml      # 멀티 컨테이너 오케스트레이션
+├── compose.yaml            # 배포 모드 (Docker Hub 이미지)
 ├── nginx.conf              # Nginx 리버스 프록시 설정
 ├── requirement_django.txt  # Django 의존성
 ├── requirement_api.txt     # FastAPI 의존성
@@ -342,23 +343,44 @@ python src.rag.rag_system --mode batch
 
 ---
 
-### 📊 개선 효과 요약 ====================수정 필요
+### 📊 성능 평가 (RAGAS)
 
-| 지표 | 3rd 버전 | 4th 버전 | 개선율 |
-|------|----------|----------|--------|
-| **검색 정확도** | 70% | 85% | **+21%** |
-| **응답 속도** | 2.5초 | 1.5초 | **+40%** |
-| **배포 시간** | 30분 (수동) | 1분 (Docker) | **-97%** |
-| **코드 파일 수** | 8개 | 5개 | **-37%** |
-| **문서 페이지** | 1개 | 5개 | **+400%** |
-| **토큰 비용** | $0.05/query | $0.03/query | **-40%** |
+### 🎯 핵심 성과
+```
+Reranker 적용으로 모든 지표 향상
+```
 
----
+### 📈 Before vs After (Reranker 적용)
+
+| 지표 | Before | After | 변화 | 평가 |
+|------|--------|-------|------|------|
+| **논문 검색 정확도** | 87.5% (7/8) | **100% (8/8)** | +12.5%p | 🎉 |
+| Context Recall | 0.63 | **0.82** | +30% | ✅ |
+| Context Precision | 0.90 | **0.98** | +9% | ✅ |
+| Faithfulness | 0.94 | **0.95** | +1% | ✅ |
+| Answer Correctness | 0.63 | **0.79** | +25% | ✅ |
+
+### ✅ 잘된 점
+- **완벽한 논문 검색**: 8개 질문 모두 정확한 논문 찾기 성공
+- **검색 품질 대폭 개선**: Context Recall +30% (필요한 정보를 더 잘 찾음)
+- **답변 정확도 향상**: Answer Correctness +25%
+- **노이즈 감소**: Context Precision 0.98 (검색된 문서의 98%가 관련 있음)
+
+### 📖 점수 해석 가이드
+
+| 지표 | 의미 | 좋은 점수 |
+|------|------|----------|
+| **Context Recall** | 필요한 정보를 얼마나 잘 찾았나? | 0.8+ |
+| **Context Precision** | 불필요한 정보는 없는가? | 0.8+ |
+| **Faithfulness** | 환각 없이 문서 기반 답변인가? | 0.9+ |
+| **Answer Correctness** | 정답과 얼마나 일치하나? | 0.7+ |
+
+> 상세 평가 결과: `SKN20-4th-2TEAM/output/ragas_comparison_report.md`
 
 ## 📁 3. 프로젝트 디렉토리 구조
 
 ```bash
-PaperSnack/
+SKN20-4th-2TEAM/
 │
 ├── backend/                    # Django 웹 애플리케이션 (8000 포트)
 │   ├── hugging_project/        # Django 프로젝트 설정
@@ -391,11 +413,14 @@ PaperSnack/
 ├── docker/                     # 🐳 Docker 설정 파일
 │   ├── Dockerfile              # Django + Nginx 컨테이너
 │   ├── Dockerfile.fastapi      # FastAPI 컨테이너
-│   ├── docker-compose.yml      # 멀티 컨테이너 오케스트레이션
+│   ├── docker-compose.yml      # 개발 모드 (소스 코드 마운트)
+│   ├── compose.yaml            # 배포 모드 (Docker Hub 이미지)
 │   ├── nginx.conf              # Nginx 리버스 프록시 설정
 │   ├── requirement_django.txt  # Django 의존성
 │   ├── requirement_api.txt     # FastAPI 의존성
-│   └── start.sh               # Django + Nginx 시작 스크립트
+│   ├── start.sh               # Django + Nginx 시작 스크립트
+│   └── data/                   # 배포 모드용 데이터
+│       └── vector_db/
 │
 ├── data/                       # 데이터 저장소
 │   ├── documents/              # 크롤링한 논문 JSON
@@ -411,9 +436,11 @@ PaperSnack/
 │   └── diagrams/               # 아키텍처 다이어그램
 │
 ├── .env                        # 환경 변수 (API 키 등)
+├── .env.example                # 환경 변수 템플릿
 ├── .dockerignore               # Docker 빌드 제외 파일
 ├── requirements.txt            # Python 의존성
 ├── README.md                   # 프로젝트 메인 문서 (이 파일)
+├── DEPLOYMENT.md               # Docker 배포 가이드
 └── EXPLAIN.md                  # 프로젝트 개요
 ```
 
@@ -741,14 +768,14 @@ class ChatHistory(models.Model):
 
 - Python 3.10+
 - OpenAI API Key
-- (선택) Tavily API Key (웹 검색)
+- Tavily API Key (웹 검색)
 
 ### 💻 8.2 로컬 설치 (비Docker)
 
 #### 1️⃣ 저장소 클론
 ```bash
 git clone https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN20-4th-2TEAM
-cd papersnack
+cd SKN20-4th-2TEAM
 ```
 
 #### 2️⃣ 가상환경 생성 및 활성화
@@ -827,31 +854,64 @@ python manage.py runserver 8000
 #### 1️⃣ 저장소 클론
 ```bash
 git clone https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN20-4th-2TEAM
-cd papersnack
+cd SKN20-4th-2TEAM
 ```
 
 #### 2️⃣ 환경 변수 설정
 `.env` 파일 생성:
 ```env
-OPENAI_API_KEY=your-openai-api-key
-TAVILY_API_KEY=your-tavily-api-key
+# OpenAI API 키 (https://platform.openai.com/api-keys 에서 발급)
+OPENAI_API_KEY=your-openai-api-key-here
+
+# Tavily API 키 (https://tavily.com/ 에서 발급) 
+TAVILY_API_KEY=your-tavily-api-key-here
+
+# Vector DB 설정
+MODEL_NAME=text-embedding-3-small
+
+# Django 설정
+DJANGO_SECRET_KEY=your-django-secret-key-here
+DEBUG=False
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# FastAPI 설정 (기본값, 변경 불필요)
+FASTAPI_HOST=localhost
+FASTAPI_PORT=8001
+
+# Django 설정 (기본값, 변경 불필요)
+DJANGO_HOST=localhost
+DJANGO_PORT=8000
 ```
 
-#### 3️⃣ 데이터 준비 (최초 1회만)
+#### 3️⃣ Docker 이미지 다운로드 및 실행
 ```bash
-# Vector DB 생성
-docker-compose run --rm rag_api python -m src.utils.data_init
-```
+# compose.yaml이 있는 폴더로 이동
+cd 배포폴더
 
-#### 4️⃣ 빌드 및 실행
-```bash
-# 백그라운드 실행
-docker-compose up -d --build
+# 이미지 다운로드
+docker compose pull
+# 이 프로젝트 기준 (예시)
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml pull
+
+# 서비스 실행 (백그라운드)
+docker compose up -d
+# 이 프로젝트 기준 (예시)
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml up -d
+
+# 로그 확인
+docker compose logs -f
+# 이 프로젝트 기준 (예시)
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml up -f
+
+# 서비스 중지
+docker compose down
+# 이 프로젝트 기준 (예시)
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml down
 ```
 
 #### 5️⃣ 접속
-- **웹 UI**: http://localhost:8000
-- **FastAPI Docs**: http://localhost:8001/docs
+- Django 웹 애플리케이션: http://localhost
+- FastAPI RAG API: http://localhost:8001
 
 ---
 
@@ -886,12 +946,11 @@ docker-compose restart
 4. 출처 3개 (제목, 저자, URL, Upvote)
 
 ---
+### 🙋‍♂️10.2 회원 관리
 
-### 🔥 10.2 트렌딩 키워드
-
-화면 상단에 **상위 7개 트렌드 키워드** 표시
-- 클릭 시 자동 질문 전송
-- 예: "Transformer", "LLM", "Diffusion", "RAG"
+- 회원 가입
+- 로그인, 로그아웃
+- 회원 탈퇴
 
 ---
 
@@ -903,17 +962,10 @@ docker-compose restart
 
 ---
 
-### 🌙 10.4 다크모드
-
-- 토글 버튼으로 다크/라이트 모드 전환
-- 사용자 설정 저장
-
----
-
 ## 🎨 11. 향후 개발 계획
 
 ### 📊 데이터 확장
-- [ ] arXiv, CVPR, NeurIPS 등 추가 소스
+- [ ] arXiv API 연동 (무료, 공식 API 제공)
 - [ ] 논문 PDF 전문 분석
 - [ ] 주차별 트렌드 변화 시각화
 
@@ -921,20 +973,19 @@ docker-compose restart
 - [ ] **Multi-Query Retrieval** 활성화 (질문 확장으로 재현율 향상)
 - [ ] 사용자 피드백 기반 재랭킹
 - [ ] 쿼리 임베딩 캐싱 (속도 향상)
-- [ ] A/B 테스트 프레임워크
 
 ### 🎨 UI/UX 개선
 - [ ] 답변 내 문장 클릭 → 논문 하이라이트
 - [ ] 북마크 기능
 - [ ] 모바일 최적화
-- [ ] 다국어 지원 (영어, 한국어)
+- [ ] 다크 모드 지원
+- [ ] 다국어 지원 (영어, 한국어, 일본어, 중국어)
 
 ### 🛠️ 인프라
 - [ ] ~~Docker 컨테이너화~~ ✅ **완료**
-- [ ] Kubernetes 배포 (EKS, AKS, GKE)
 - [ ] PostgreSQL 마이그레이션
 - [ ] Redis 캐싱
-- [ ] 모니터링 (Prometheus + Grafana)
+- [ ] 환경변수 관리 (.env 파일 체계화)
 - [ ] CI/CD 파이프라인 (GitHub Actions)
 
 ### 🤖 AI 모델

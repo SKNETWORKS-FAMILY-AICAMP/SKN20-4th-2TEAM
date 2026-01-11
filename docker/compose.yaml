@@ -2,6 +2,7 @@ services:
   # Django 웹 애플리케이션 서비스
   backend:
     image: grustar02/django-app
+    platform: linux/amd64
     ports:
       - "80:80"
     volumes:
@@ -20,6 +21,7 @@ services:
   # FastAPI RAG API 서비스
   rag_api:
     image: grustar02/rag-api
+    platform: linux/amd64
     ports:
       - "8001:8001"
     volumes:
