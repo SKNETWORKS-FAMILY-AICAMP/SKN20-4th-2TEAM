@@ -44,34 +44,34 @@ cd 배포폴더
 # 이미지 다운로드
 docker compose pull
 # 이 프로젝트 기준 (예시)
-C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml pull
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f docker-compose.prod.yml pull
 
 # 서비스 실행 (백그라운드)
 docker compose up -d
 # 이 프로젝트 기준 (예시)
-C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml up -d
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f docker-compose.prod.yml up -d
 
 # 로그 확인
 docker compose logs -f
 # 이 프로젝트 기준 (예시)
-C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml up -f
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f docker-compose.prod.yml up -f
 
 # 서비스 중지
 docker compose down
 # 이 프로젝트 기준 (예시)
-C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f compose.yaml down
+C:\.workspace\SKN20-4th-2TEAM\docker> docker compose -f docker-compose.prod.yml down
 ```
 
 ### 4. 접속 확인
 
-- Django 웹 애플리케이션: http://localhost
+- Django 웹 애플리케이션(Nginx): http://localhost
 - FastAPI RAG API: http://localhost:8001
 
 ## 트러블슈팅
 
 ### 포트가 이미 사용 중인 경우
 
-`compose.yaml`에서 포트를 변경합니다:
+`docker-compose.prod.yml`에서 포트를 변경합니다:
 
 ```yaml
 ports:
@@ -85,8 +85,8 @@ ports:
 docker compose logs
 
 # 특정 서비스 로그
-docker compose logs backend
-docker compose logs rag_api
+docker compose logs django-app
+docker compose logs rag-engine
 
 # 실시간 로그
 docker compose logs -f
