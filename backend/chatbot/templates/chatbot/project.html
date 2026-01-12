@@ -1188,71 +1188,118 @@
     // 대화 목록 렌더링
     function renderChatList(chats) {
         const chatList = document.getElementById('chat-list');
+        chatList.innerHTML = ''; // Clear list
 
         if (!chats || chats.length === 0) {
             showEmptyState();
             return;
         }
 
-        chatList.innerHTML = chats.map((chat, index) => {
-            const searchBadgeText = {
-                'internal': '📚 내부 검색',
-                'hybrid': '🔍 하이브리드',
-                'vector': '🎯 벡터 검색',
-                'cluster': '🔍 클러스터',
-                'web': '🌐 웹 검색',
-                'rejected': '❌ 관련 없음'
-            }[chat.search_type] || chat.search_type;
+        chats.forEach((chat, index) => {
+            const card = document.createElement('div');
+            card.className = 'chat-card';
 
-            const sourceCount = chat.sources ? chat.sources.length : 0;
+            const clickableArea = document.createElement('div');
+            clickableArea.style.cssText = 'flex: 1; cursor: pointer;';
+            clickableArea.addEventListener('click', () => showChatModal(chat));
+            card.appendChild(clickableArea);
 
-            // 프로젝트 뷰인지 전체 대화 뷰인지에 따라 다른 삭제 옵션 표시
-            const isProjectView = currentProjectId !== null;
-            const deleteOption = isProjectView
-                ? `<div class="chat-dropdown-item delete" onclick="event.stopPropagation(); removeChatFromProject(${chat.id}); closeChatDropdown(${index})">
-                    📤 프로젝트에서 제거
-                </div>`
-                : `<div class="chat-dropdown-item delete" onclick="event.stopPropagation(); deleteChat(${chat.id}); closeChatDropdown(${index})">
-                    🗑️ 삭제
-                </div>`;
-
-            // 프로젝트 배지 표시 (project_id가 0이 아닐 때)
-            let projectBadge = '';
             if (chat.project_id && chat.project_id !== 0) {
                 const project = allProjects.find(p => p.id === chat.project_id);
                 if (project) {
-                    projectBadge = `<div class="chat-card-project-badge">🗂️ ${project.folder_name}</div>`;
+                    const badge = document.createElement('div');
+                    badge.className = 'chat-card-project-badge';
+                    badge.textContent = `🗂️ ${project.folder_name}`;
+                    clickableArea.appendChild(badge);
                 }
             }
 
-            return `
-                <div class="chat-card">
-                    <div onclick='showChatModal(${JSON.stringify(chat)})' style="flex: 1; cursor: pointer;">
-                        ${projectBadge}
-                        <div class="chat-card-header">
-                            <div class="chat-card-question">${chat.question}</div>
-                            <div class="chat-card-time">${new Date(chat.created_at).toLocaleString('ko-KR')}</div>
-                        </div>
-                        <div class="chat-card-answer">${chat.answer}</div>
-                    </div>
-                    <div class="chat-card-footer">
-                        <div style="display: flex; gap: 0.5rem;">
-                            <span class="search-badge ${chat.search_type}">${searchBadgeText}</span>
-                            <span class="source-count">📚 ${sourceCount}개 출처</span>
-                        </div>
-                        <div class="chat-card-actions">
-                            <button class="btn-chat-menu" onclick="event.stopPropagation(); toggleChatDropdown(${index})" title="메뉴">⋮</button>
-                            <div class="chat-dropdown" id="chat-dropdown-${index}">
-                                <div class="chat-dropdown-item" onclick="event.stopPropagation(); addToProject(${chat.id}); closeChatDropdown(${index})">
-                                    📁 프로젝트에 추가
-                                </div>
-                                ${deleteOption}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).join('');
+            const header = document.createElement('div');
+            header.className = 'chat-card-header';
+            const question = document.createElement('div');
+            question.className = 'chat-card-question';
+            question.textContent = chat.question;
+            header.appendChild(question);
+            const time = document.createElement('div');
+            time.className = 'chat-card-time';
+            time.textContent = new Date(chat.created_at).toLocaleString('ko-KR');
+            header.appendChild(time);
+            clickableArea.appendChild(header);
+
+            const answer = document.createElement('div');
+            answer.className = 'chat-card-answer';
+            answer.textContent = chat.answer;
+            clickableArea.appendChild(answer);
+
+            const footer = document.createElement('div');
+            footer.className = 'chat-card-footer';
+            card.appendChild(footer);
+
+            const footerLeft = document.createElement('div');
+            footerLeft.style.cssText = 'display: flex; align-items: center; gap: 0.5rem;';
+            const searchBadge = document.createElement('span');
+            searchBadge.className = `search-badge ${chat.search_type}`;
+            const searchBadgeText = {
+                'internal': '📚 내부 검색', 'hybrid': '🔍 하이브리드', 'vector': '🎯 벡터 검색',
+                'cluster': '🔍 클러스터', 'web': '🌐 웹 검색', 'rejected': '❌ 관련 없음'
+            }[chat.search_type] || chat.search_type;
+            searchBadge.textContent = searchBadgeText;
+            footerLeft.appendChild(searchBadge);
+            const sourceCount = document.createElement('span');
+            sourceCount.className = 'source-count';
+            sourceCount.textContent = `📚 ${chat.sources ? chat.sources.length : 0}개 출처`;
+            footerLeft.appendChild(sourceCount);
+            footer.appendChild(footerLeft);
+
+            const actions = document.createElement('div');
+            actions.className = 'chat-card-actions';
+            const menuBtn = document.createElement('button');
+            menuBtn.className = 'btn-chat-menu';
+            menuBtn.title = '메뉴';
+            menuBtn.innerHTML = '⋮';
+            menuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                toggleChatDropdown(index);
+            });
+            actions.appendChild(menuBtn);
+
+            const dropdown = document.createElement('div');
+            dropdown.className = 'chat-dropdown';
+            dropdown.id = `chat-dropdown-${index}`;
+            const addItem = document.createElement('div');
+            addItem.className = 'chat-dropdown-item';
+            addItem.innerHTML = '📁 프로젝트에 추가';
+            addItem.addEventListener('click', (e) => {
+                e.stopPropagation();
+                addToProject(chat.id);
+                closeChatDropdown(index);
+            });
+            dropdown.appendChild(addItem);
+
+            const deleteItem = document.createElement('div');
+            deleteItem.className = 'chat-dropdown-item delete';
+            const isProjectView = currentProjectId !== null;
+            if (isProjectView) {
+                deleteItem.innerHTML = '📤 프로젝트에서 제거';
+                deleteItem.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    removeChatFromProject(chat.id);
+                    closeChatDropdown(index);
+                });
+            } else {
+                deleteItem.innerHTML = '🗑️ 삭제';
+                deleteItem.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    deleteChat(chat.id);
+                    closeChatDropdown(index);
+                });
+            }
+            dropdown.appendChild(deleteItem);
+            actions.appendChild(dropdown);
+            footer.appendChild(actions);
+
+            chatList.appendChild(card);
+        });
     }
 
     // 빈 상태 표시
@@ -1268,6 +1315,14 @@
 
     // 대화 상세 모달 표시
     function showChatModal(chat) {
+        // Helper to escape HTML special characters
+        const escapeHTML = (str) => {
+            if (!str) return '';
+            return str.toString().replace(/[&<>"']/g, c => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'
+            }[c]));
+        };
+
         document.getElementById('modal-question').textContent = chat.question;
 
         // 답변 포맷팅
@@ -1299,7 +1354,7 @@
 
                     return `
                         <div class="source-item">
-                            <div class="source-title">🌐 ${displayTitle}</div>
+                            <div class="source-title">🌐 ${escapeHTML(displayTitle)}</div>
                             <div class="source-meta">
                                 <a href="${src.url}" target="_blank" class="source-link">링크 보기 →</a>
                             </div>
@@ -1308,9 +1363,9 @@
                 } else {
                     return `
                         <div class="source-item">
-                            <div class="source-title">📄 ${src.title}</div>
+                            <div class="source-title">📄 ${escapeHTML(src.title)}</div>
                             <div class="source-meta">
-                                ${src.authors ? src.authors.join(', ') : ''} ${src.year ? '· ' + src.year : ''}<br>
+                                ${src.authors ? escapeHTML(src.authors.join(', ')) : ''} ${src.year ? '· ' + src.year : ''}<br>
                                 ${src.huggingface_url ? `<a href="${src.huggingface_url}" target="_blank" class="source-link">HuggingFace →</a>` : ''}
                                 ${src.github_url ? `<a href="${src.github_url}" target="_blank" class="source-link">GitHub →</a>` : ''}
                             </div>

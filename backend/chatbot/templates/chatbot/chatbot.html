@@ -826,20 +826,38 @@
             const data = await response.json();
 
             const historyList = document.getElementById('chat-history');
-            
+            historyList.innerHTML = ''; // Clear existing list
+
             if (data.history.length === 0) {
                 historyList.innerHTML = '<p style="padding: 20px; text-align: center; color: var(--text-gray); font-size: 14px;">No chat history yet</p>';
                 return;
             }
             
-            historyList.innerHTML = data.history.map(item => `
-                <div class="chat-history-item" onclick='showHistoryModal(${JSON.stringify(item)})'>
-                    <div class="chat-title">${item.question}</div>
-                    <div class="chat-time">${new Date(item.created_at).toLocaleString('ko-KR')}</div>
-                </div>
-            `).join('');
+            data.history.forEach(item => {
+                const historyItemDiv = document.createElement('div');
+                historyItemDiv.className = 'chat-history-item';
+
+                const titleDiv = document.createElement('div');
+                titleDiv.className = 'chat-title';
+                titleDiv.textContent = item.question;
+
+                const timeDiv = document.createElement('div');
+                timeDiv.className = 'chat-time';
+                timeDiv.textContent = new Date(item.created_at).toLocaleString('ko-KR');
+
+                historyItemDiv.appendChild(titleDiv);
+                historyItemDiv.appendChild(timeDiv);
+
+                historyItemDiv.addEventListener('click', () => {
+                    showHistoryModal(item);
+                });
+
+                historyList.appendChild(historyItemDiv);
+            });
         } catch (error) {
             console.error('[ERROR] 히스토리 로드 실패:', error);
+            const historyList = document.getElementById('chat-history');
+            historyList.innerHTML = '<p style="padding: 20px; text-align: center; color: red; font-size: 14px;">채팅 기록을 불러오는 데 실패했습니다.</p>';
         }
     }
 
@@ -881,6 +899,18 @@
 
     // 히스토리 모달 표시
     function showHistoryModal(item) {
+        // Helper to escape HTML special characters
+        const escapeHTML = (str) => {
+            if (!str) return '';
+            return str.toString().replace(/[&<>"']/g, c => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            }[c]));
+        };
+        
         document.getElementById('modal-question').textContent = item.question;
 
         const formattedAnswer = formatAnswerText(linkifyText(item.answer));
@@ -911,7 +941,7 @@
 
                     return `
                         <div class="source-item">
-                            <div class="source-title">🌐 ${displayTitle}</div>
+                            <div class="source-title">🌐 ${escapeHTML(displayTitle)}</div>
                             <div class="source-meta">
                                 <a href="${src.url}" target="_blank" class="source-link">링크 보기 →</a>
                             </div>
@@ -920,9 +950,9 @@
                 } else {
                     return `
                         <div class="source-item">
-                            <div class="source-title">📄 ${src.title}</div>
+                            <div class="source-title">📄 ${escapeHTML(src.title)}</div>
                             <div class="source-meta">
-                                ${src.authors ? src.authors.join(', ') : ''} ${src.year ? '· ' + src.year : ''}<br>
+                                ${src.authors ? escapeHTML(src.authors.join(', ')) : ''} ${src.year ? '· ' + src.year : ''}<br>
                                 ${src.huggingface_url ? `<a href="${src.huggingface_url}" target="_blank" class="source-link">HuggingFace →</a>` : ''}
                                 ${src.github_url ? `<a href="${src.github_url}" target="_blank" class="source-link">GitHub →</a>` : ''}
                             </div>
