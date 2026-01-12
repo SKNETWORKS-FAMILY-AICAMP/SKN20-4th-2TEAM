@@ -1,5 +1,5 @@
 services:
-  # 1. Nginx: 외부 요청을 가장 먼저 받는 대문
+  # 1. Nginx: 외부 요청을 받는 대문
   nginx:
     image: nginx:alpine
     container_name: nginx-proxy
@@ -7,15 +7,14 @@ services:
       - "80:80"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
-      - ./backend/staticfiles:/app/static  # Django에서 모은 정적 파일 서빙
+      # [수정] static 파일은 이제 Django 컨테이너와 공유 볼륨을 통해 전달받습니다.
+      - static_volume:/app/static
     depends_on:
       - web-backend
 
-  # 2. Django: 실제 웹 백엔드
+  # 2. Django: 백엔드 서비스
   web-backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile.prod # 배포용 도커파일 사용
+    image: 77eileen/backend:latest
     container_name: django-app
     env_file:
       - .env
@@ -23,24 +22,26 @@ services:
       - DEBUG=False
       - RAG_API_URL=http://rag-engine:8001
     volumes:
-      - ./backend/staticfiles:/app/staticfiles # 정적 파일을 Nginx와 공유하기 위한 볼륨
-    # 주석: 배포 시에는 소스 코드 자체를 볼륨으로 연결하지 않고, 빌드된 이미지 내 코드를 사용합니다.
+      # [수정] 이미지 빌드 시 생성된 static 파일을 Nginx와 공유하기 위해 볼륨 사용
+      - static_volume:/app/staticfiles
 
   # 3. FastAPI: RAG 엔진
   rag-engine:
-    build:
-      context: .
-      dockerfile: src/Dockerfile
+    image: 77eileen/rag-engine:latest
     container_name: rag-engine
     env_file:
       - .env
+    # [수정] 이제 이미지에 데이터와 코드가 모두 포함되어 있으므로 volumes 마운트가 필요 없습니다.
     volumes:
-      - ./data:/app/data
-      # 1. 배포용이지만 경로 문제를 확실히 잡기 위해 소스도 연결해줍니다.
-      - ./src:/app/src 
-    # 2. 파이썬이 파일을 찾는 기준점 고정
+      # [추가] 생성된 벡터 DB를 영속적으로 저장하기 위한 볼륨
+      - rag_db_data:/app/data/vector_db
     working_dir: /app
     environment:
       - PYTHONPATH=/app:/app/src
-    # 3. 개발용과 동일하게 실행
+      - VECTOR_DB_PATH=/app/data/vector_db/chroma
     command: ["uvicorn", "src.rag.api:app", "--host", "0.0.0.0", "--port", "8001", "--workers", "1"]
+
+# [추가] Nginx와 Django가 static 파일을 공유하기 위한 볼륨
+volumes:
+  static_volume:
+  rag_db_data:

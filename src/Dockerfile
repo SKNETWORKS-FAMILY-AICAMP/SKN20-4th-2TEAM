@@ -12,8 +12,9 @@ RUN apt-get update && apt-get install -y \
 COPY src/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# [팁] 코드는 자주 바뀌므로 가장 마지막에 복사
-COPY src/ ./src/
+# [수정] 소스코드와 '데이터'를 이미지에 복사합니다.
+COPY ./src /app/src
+COPY ./data /app/data
 
 ENV PYTHONPATH=/app
 
