@@ -1,0 +1,13 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install gunicorn  # 배포용 웹 서버 추가
+
+COPY . .
+
+# 정적 파일 모으기 실행
+RUN python manage.py collectstatic --noinput
+
+CMD ["gunicorn", "hugging_project.wsgi:application", "--bind", "0.0.0.0:8000"]

@@ -1,3 +1,7 @@
+# 기본 환경
+python-dotenv
+
+
 # Core Dependencies
 requests>=2.31.0
 beautifulsoup4>=4.12.0
@@ -13,8 +17,17 @@ langchain-core>=0.1.0
 rank-bm25
 sentence-transformers
 
+
+# OpenAI 연동
+langchain-openai
+openai
+
 # LangGraph
 langgraph>=0.0.20
+
+# 웹서치
+tavily-python
+
 
 # FastAPI
 fastapi>=0.109.0

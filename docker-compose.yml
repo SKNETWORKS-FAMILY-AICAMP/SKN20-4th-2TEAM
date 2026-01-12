@@ -1,0 +1,24 @@
+services:
+  rag-engine:
+    build:
+      context: .             # 최상위 폴더 기준
+      dockerfile: src/Dockerfile
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src       # 코드 수정 반영용
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+
+  web-backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/app          # 코드 및 static 파일 실시간 반영
+    ports:
+      - "8000:8000"
+    depends_on:
+      - rag-engine
+    env_file:
+      - .env

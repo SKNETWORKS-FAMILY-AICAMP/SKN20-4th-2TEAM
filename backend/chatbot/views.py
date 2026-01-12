@@ -14,7 +14,16 @@ from .models import ChatHistory, ChatProject
 
 
 # FastAPI 서버 URL (환경 변수에서 읽어오기, 없으면 기본값 사용)
-FASTAPI_BASE_URL = os.getenv("RAG_API_URL", "http://localhost:8001")
+# 1. 환경 변수가 있으면 그것을 최우선으로 사용
+# 2. 도커 내부라면 보통 '/.dockerenv' 파일이 존재함
+if os.path.exists('/.dockerenv'):
+    DEFAULT_URL = "http://rag-engine:8001"
+else:
+    DEFAULT_URL = "http://localhost:8001"
+
+FASTAPI_BASE_URL = os.getenv("RAG_API_URL", DEFAULT_URL)
+
+
 
 def home(request):
     """홈페이지"""
