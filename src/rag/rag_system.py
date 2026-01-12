@@ -3,7 +3,7 @@ LangGraph 기반 RAG 시스템
 
 HuggingFace Weekly Papers 데이터를 기반으로 한 AI/ML/DL/LLM 논문 검색 및 답변 시스템
 """
-
+import os
 import sys
 from pathlib import Path
 import json
@@ -34,7 +34,7 @@ from .prompts import (
 )
 
 # VectorDB 로드 함수 import (상대 import 사용)
-from ..utils.vectordb import load_vectordb
+from ..utils.vectordb import load_vectordb, create_vectordb_no_chunking
 
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
@@ -1008,10 +1008,15 @@ def initialize_rag_system(
 
         # VectorStore 로드
         print(f"[LOADING] VectorStore: {model_name}")
+        vector_db_path_env = os.getenv("VECTOR_DB_PATH")
+        if vector_db_path_env:
+            persist_dir = vector_db_path_env
+            print(f"[INIT] Using VECTOR_DB_PATH from environment: {persist_dir}")
+        else :
+            persist_dir = str(PROJECT_ROOT / "data" / "vector_db" / "chroma")
+            print(f"[INIT] Using default PROJECT_ROOT path: {persist_dir}")
         _vectorstore = load_vectordb(
-            persist_directory=str(
-                PROJECT_ROOT / "data" / "vector_db" / "chroma"
-            ),
+            persist_directory=persist_dir,
             model_name=model_name,
         )
 
@@ -1026,8 +1031,41 @@ def initialize_rag_system(
                 collection_data["documents"], collection_data["metadatas"]
             )
         ]
+
+        # 만약 벡터 DB가 비어있다면, 소스 문서로부터 재생성 시도
         if not all_documents:
-            raise ValueError("문서 없음")
+            print("[INIT] Vector DB is empty. Attempting to create from source documents...")
+            
+            # 소스 문서 경로 설정 (컨테이너 내부 경로)
+            # Dockerfile에서 COPY ./data /app/data 로 복사했으므로
+            documents_dir = "/app/data/documents"
+            
+            if not os.path.exists(documents_dir):
+                print(f"[ERROR] Source documents directory not found at {documents_dir}. Cannot build Vector DB.")
+                raise ValueError("문서 소스 디렉터리가 없어 DB를 생성할 수 없습니다.")
+
+            # 벡터 DB 생성
+            _vectorstore = create_vectordb_no_chunking(
+                documents_dir=documents_dir,
+                output_dir=persist_dir, # 이미 위에서 정의된 경로 변수 사용
+                model_name=model_name
+            )
+            
+            # 데이터 다시 로드
+            print("[INIT] Re-loading data from newly created Vector DB...")
+            collection_data = _vectorstore._collection.get(include=["documents", "metadatas"])
+            all_documents = [
+                Document(page_content=content, metadata=metadata)
+                for content, metadata in zip(
+                    collection_data["documents"], collection_data["metadatas"]
+                )
+            ]
+            
+            # 재생성 후에도 비어있으면 최종 에러 발생
+            if not all_documents:
+                print("[ERROR] Failed to create Vector DB from source documents.")
+                raise ValueError("문서 없음")
+
 
         _bm25_retriever = BM25Retriever.from_documents(all_documents)
         _bm25_retriever.k = 3
