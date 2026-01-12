@@ -394,7 +394,9 @@ SKN20-4th-2TEAM/
 │   │   └── urls.py
 │   ├── static/                 # 정적 파일 (CSS, JS)
 │   ├── manage.py
-│   └── db.sqlite3              # SQLite 데이터베이스
+│   ├── db.sqlite3              # SQLite 데이터베이스
+│   ├── Dockerfile.prod         # Docker 설정 파일 Django 배포용
+│   └── Dockerfile              # Docker 설정 파일 Django 개발자용
 │
 ├── src/                        # 핵심 소스 코드
 │   ├── utils/                  # 데이터 수집 및 전처리
@@ -408,19 +410,12 @@ SKN20-4th-2TEAM/
 │   │   ├── api.py              # FastAPI 서버 (8001 포트)
 │   │   └── README.md           # RAG 모듈 상세 가이드
 │   │
+│   ├── Dockerfile              # Docker 설정 파일 배포용 및 개발자용
 │   └── README.md               # src 폴더 가이드
 │
-├── docker/                     # 🐳 Docker 설정 파일
-│   ├── Dockerfile              # Django + Nginx 컨테이너
-│   ├── Dockerfile.fastapi      # FastAPI 컨테이너
-│   ├── docker-compose.yml      # 개발 모드 (소스 코드 마운트)
-│   ├── compose.yaml            # 배포 모드 (Docker Hub 이미지)
-│   ├── nginx.conf              # Nginx 리버스 프록시 설정
-│   ├── requirement_django.txt  # Django 의존성
-│   ├── requirement_api.txt     # FastAPI 의존성
-│   ├── start.sh               # Django + Nginx 시작 스크립트
-│   └── data/                   # 배포 모드용 데이터
-│       └── vector_db/
+├── nginx                       # Nginx 리버스 프록시 설정
+│   └── conf.d/                 
+│       └── default.conf
 │
 ├── data/                       # 데이터 저장소
 │   ├── documents/              # 크롤링한 논문 JSON
@@ -441,6 +436,8 @@ SKN20-4th-2TEAM/
 ├── requirements.txt            # Python 의존성
 ├── README.md                   # 프로젝트 메인 문서 (이 파일)
 ├── DEPLOYMENT.md               # Docker 배포 가이드
+├── docker-compose.prod.yml     # Docker 배포용 컨테이너 설정
+├── docker-compose.yml          # Docker 개발자용 컨테이너 설정
 └── EXPLAIN.md                  # 프로젝트 개요
 ```
 
@@ -998,19 +995,21 @@ docker-compose restart
 ## 💬 12. 팀 회고
 
 ### 👩‍💻 김지은
-> 
+> 허공에 삽질을 하다가 알게된게..
+진짜 기초적인 개념은 정리하면서 삽질해야겠다는 생각이들었고, (개념의 중요성을 깨닫는 계기였다.)
+산출물 QA 부분을 맡았었는데, 완성도 있는 결과를 내기위해선 QA도 거쳐가면 좋겠구나 라는 생각이 들었다.
 
 ### 🎯 박다정
-> 
+> 도커는 아직도 어렵지만, 삽질 자체가 학습이라는 걸 알게 됐다.
 
 ### 🚀 오학성
-> 
+> FastAPI를 활용한 RESTful API 서버 구축과 Django 서빙 과정에서 기술적 깊이를 더할 수 있었으나, Docker 환경을 최적화하고 배포하는 과정에서 맞닥뜨린 수많은 시행착오가 가장 큰 도전이자 배움의 시간이었습니다.
 
 ### ✨ 정소영
-> 
+> 미니 프로젝트 3에 이어진 이번 미니 프로젝트4에서는 산출물 중심으로 기여했지만, 코드를 살펴보며 챗봇 시스템이 어떻게 구성되고 동작하는지 전체 흐름을 이해하는 데 도움이 되었습니다.
 
 ### 💡 황수현
-> 
+> 완벽한 실무 수준까진 아니지만 Django 웹 구조에 대해 파악하고, 어떻게 구축하는지 알아가고 추가로 Docker를 사용하는 방법을 조금이나마 알고 사용해 볼 수 있는 좋은 프로젝트 시간이었습니다.
 
 ---
 
